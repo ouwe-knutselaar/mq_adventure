@@ -11,15 +11,27 @@
         look: "it is an old scroll"
         read: "behold stranger, save the orange lion from the messaing monster to escape this dungeon"
     - name: skull
-      description: "There is an old skull in the corner of the room"
+      description: "There is an old skull in the corner"
       actions:
         look: "The poor fellow is long dead"
-  fixed_object:
+    - name: stone
+      description: "In the middle is a yellow stone"
+    - name: paperclip
+      description: "You can just see a paperclip"
+  fixed_objects:
     - name: table
       description: "There is a table in the corner"
+  junctions:
+    north:
+      goes_to: great_hall
+
+
 
 - name: great_hall
   type: room
   description: "you are in the great hall"
+  junctions:
+    south:
+      goes_to: startingpoint
 
 
