@@ -1,0 +1,18 @@
+- name: startingpoint
+  type: room
+  description: "you are in a cold dark room"
+  look:
+    north: "you see a door"
+    ground: "on the ground lies a piece of paper"
+  moveable_objects:
+    scroll:
+      description: "on the floor lies an old scroll of perkament"
+      actions:
+        look: "it is an old scroll"
+        read: "behold stranger, save the orange lion from the messaing monster to escape this dungeon"
+
+- name: great_hall
+  type: room
+  description: "you are in the great hall"
+
+
