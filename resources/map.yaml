@@ -2,8 +2,7 @@
   type: room
   description: "you are in a cold dark room"
   look:
-    north: "you see a door"
-    ground: "on the ground lies a piece of paper"
+    north: "You see a door on the north side of this room"
   moveable_objects:
     - name: scroll
       description: "On the floor lies an old scroll of perkament"
@@ -14,8 +13,10 @@
       description: "There is an old skull in the corner"
       actions:
         look: "The poor fellow is long dead"
-    - name: stone
+    - name: "yellow stone"
       description: "In the middle is a yellow stone"
+      actions:
+        look: "A very yellow stone, what else had you expected?"
     - name: paperclip
       description: "You can just see a paperclip"
   fixed_objects:
@@ -23,7 +24,11 @@
       description: "There is a table in the corner"
   junctions:
     north:
+      name: "door"
       goes_to: great_hall
+      description: "You open the door"
+      blocked: "yes"
+      unblock: "paperclip"
 
 
 
