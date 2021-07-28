@@ -10,37 +10,39 @@ def get_location(location_name):
         if objs['name'] == location_name:
             return objs
 
+
+def get_record_in_group_by_name(location,group,name):
+    for item in location[group]:
+        if item['name'] == name:
+            return item
+    return None
+
 def get_look(location,look_to):
     if look_to == 'nill':
         print(get_description(location))
         return
-    if 'look' in location:
-        if look_to in location['look']:
-            print(location['look'][look_to])
-            return
-    for obj in location['moveable_objects']:
-        if look_to == obj['name']:
-            try:
-                print(obj['actions']['look'])
-            except:
-                print("you see just a "+look_to)
-            return
-    try:
-        print(globals.object_file['location'][location['type']]['look'][look_to])
-    except:
-        print(globals.object_file['location'][location['type']]['look']['default'])
+    if look_to in location['look']:
+        print(location['look'][look_to])
+        return
+
+    item = get_record_in_group_by_name(location,'moveable_objects',look_to)
+    if item != None:
+        if 'actions' in item:
+            if 'look' in item['actions']:
+                print(item['actions']['look'])
+        else:
+            print("you see just a "+look_to)
+        return
+    print('I see no '+look_to)
 
 def get_description(location):
     description=location['description']+"\n"
-    if 'fixed_objects' in location:
-        for obj in location['fixed_objects']:
+    if 'persons' in location:
+        for obj in location['persons']:
             description += obj['description']+"\n"
     if 'moveable_objects' in location:
         for obj in location['moveable_objects']:
             description += obj['description']+"\n"
-    if 'look' in location:
-        for key,value in location['look'].items():
-            description += value + "\n"
     return description
 
 def pick_object(location, object_name):
@@ -116,6 +118,37 @@ def use_object_on(location,t_array):
             return
     print("that didn't work")
 
+def give_object_to_person(location,t_array):
+    t_array.pop(0)
+
+    on_index = t_array.index('to')
+    object_to_give = ' '.join(map(str, t_array[:on_index]))
+
+    on_index = t_array.index('to') + 1
+    person_name = ' '.join(map(str, t_array[on_index:]))
+
+    if 'persons' in location:
+        for person in location['persons']:
+            if person['name'] == person_name and 'give' in person:
+                print(person['give']['response'])
+
+
+def read_object(location,object_to_read):
+    for item in location['moveable_objects']:
+        if object_to_read == item['name']:
+            try:
+                print(item['read'])
+            except:
+                print("Nothing to read on "+object_to_read)
+
+def talk_person(location,person_to_talk):
+    for item in location['persons']:
+        if person_to_talk == item['name']:
+            try:
+                print(item['talk'])
+            except:
+                print("Nothing to read on "+person_to_talk)
+
 def get_help():
     print(
 """
@@ -125,6 +158,7 @@ drop ....     drop an object
 inventory     see what you got
 go ....       go direction
 use ... on .. try to use 
+read ...      read something
 """
     )
 
@@ -132,37 +166,53 @@ def concat_array(t_array):
     t_array.pop(0)
     return ' '.join(map(str, t_array))
 
-def start():
-    while loop:
-        location = get_location(player.current_place)
-        user_input = input(">>> ")
-        user_input = re.sub("\s\s+", " ", user_input)
-        #print(user_input)
-        user_input_array = user_input.split(" ")
-        if len(user_input_array) == 1:
-            user_input_array.append("nill")
+def execute(user_input):
+    location = get_location(player.current_place)
+    #print(user_input)
+    user_input_array = user_input.split(" ")
+    if len(user_input_array) == 1:
+        user_input_array.append("nill")
 
-        if user_input_array[0] == "look":
-            get_look(location,concat_array(user_input_array))
-            continue
-        if user_input_array[0] == "pick":
-            pick_object(location,concat_array(user_input_array))
-            continue
-        if user_input_array[0] == "drop":
-            drop_object(location, concat_array(user_input_array))
-            continue
-        if user_input_array[0] == "inventory":
-            get_inventory()
-            continue
-        if user_input_array[0] == "go":
-            go_direction(location, user_input_array[1])
-            continue
-        if  user_input_array[0] == "use":
-            use_object_on(location,user_input_array)
-            continue
-        if user_input_array[0] == "help":
-            get_help()
-            continue
-        print("what?")
+    if user_input_array[0] == "look":
+        get_look(location,concat_array(user_input_array))
+        return
+
+    if user_input_array[0] == "pick":
+        pick_object(location,concat_array(user_input_array))
+        return
+
+    if user_input_array[0] == "drop":
+        drop_object(location, concat_array(user_input_array))
+        return
+
+    if user_input_array[0] == "inventory":
+        get_inventory()
+        return
+
+    if user_input_array[0] == "go":
+        go_direction(location, concat_array(user_input_array))
+        return
+
+    if  user_input_array[0] == "use":
+        use_object_on(location,user_input_array)
+        return
+
+    if  user_input_array[0] == "give":
+        give_object_to_person(location,user_input_array)
+        return
+
+    if  user_input_array[0] == "read":
+        read_object(location,concat_array(user_input_array))
+        return
+
+    if  user_input_array[0] == "talk":
+        talk_person(location,concat_array(user_input_array))
+        return
+
+    if user_input_array[0] == "help":
+        get_help()
+        return
+
+    print("what?")
 
     return

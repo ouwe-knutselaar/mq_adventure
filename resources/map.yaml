@@ -1,27 +1,48 @@
+- name: template
+  type: room
+  description: "description"
+  look:
+  persons:
+  moveable_objects:
+  fixed_objects:
+  junctions:
+
+
 - name: startingpoint
   type: room
-  description: "you are in a cold dark room"
+  description: "you are in a cold dark room. There is an old table in the corner. In the north is a door"
   look:
-    north: "You see a door on the north side of this room"
+    door: "You see a door on the north side of this room."
+    table: "A dirty old table"
   moveable_objects:
     - name: scroll
       description: "On the floor lies an old scroll of perkament"
-      actions:
-        look: "it is an old scroll"
-        read: "behold stranger, save the orange lion from the messaing monster to escape this dungeon"
+      look: "it is an old scroll"
+      read: |
+        Behold stranger, thou shall not leave this place before
+        you have saved the orange lion from the horrible messaging monster
+        Collect the xxx spells to evoke the magical message flow and drain
+        the power form the messaging monster.
     - name: skull
       description: "There is an old skull in the corner"
-      actions:
-        look: "The poor fellow is long dead"
+      look: "The poor fellow is long dead"
     - name: "yellow stone"
       description: "In the middle is a yellow stone"
-      actions:
-        look: "A very yellow stone, what else had you expected?"
+      look: "A very yellow stone, what else had you expected?"
     - name: paperclip
       description: "You can just see a paperclip"
-  fixed_objects:
-    - name: table
-      description: "There is a table in the corner"
+  persons:
+    - name: "old man"
+      description: "There stands an old man in the room"
+      talk: "yeah, the weather is bad today. But the lion has an umbrella"
+      give:
+        object: skull
+        response: "Is this my future?"
+        receive:
+          - name: "bottle"
+            description: "On the floor lies a bottle with a green liquid"
+            look: "A bottle with a green substance, it looks as if it is alive"
+            read: "DO NOT DRINK, unless you really want to die"
   junctions:
     north:
       name: "door"
@@ -31,12 +52,205 @@
       unblock: "paperclip"
 
 
-
 - name: great_hall
   type: room
-  description: "you are in the great hall"
+  description: |
+    You are in a great Hall. The roof is made of glass en you can see the blue sky. In the middle is a statue of a big lion.
+    In on the statue is a plate with something written on it.
+  look:
+    south: "The is a door in the south side of the wall"
+    north: "In the north you see an opening in the wall that leads to a jungle"
+    east: "In the east you see an golden door"
+    plate: |
+      Go to the jungle in the north west corner to meet the quee on the jungle
+      She is the keeper of the first spells
+  moveable_objects:
   junctions:
+   south:
+     name: "door"
+     goes_to: startingpoint
+   north:
+     name: "golden door"
+     blocked: yes
+
+# Enter the realm of the queeen of the jungle
+
+- name: j1
+  type: room
+  description: "You enter the jungle, it is warm and wet. You have the feeling that behind every leaf something is watching you"
+  look:
+  moveable_objects:
+  junctions:
+    north:
+      goes_to: j2
+    east:
+      goes_to: j4
     south:
-      goes_to: startingpoint
+      goes_to: great_hall
+    west:
+      goes_to: j1
 
+- name: j2
+  type: room
+  description: "This jungle is hot and moisty."
+  look:
+  moveable_objects:
+    - name: coconut
+      description: "On the floor lies a coconut"
+      actions:
+        look: "Just an ordinary coconut"
+    - name: bottle
+      description: "There lies an empty bottle of beer"
+  junctions:
+    north:
+      goes_to: j3
+    east:
+      goes_to: j5
+    south:
+      goes_to: j1
+    west:
+      goes_to: j2
 
+- name: j3
+  type: room
+  description: "It look like a jungle from the Tarzan books."
+  look:
+  moveable_objects:
+    - name: "old basket"
+      description: "Under some leaves you see an old basket"
+      actions:
+      look: "When you look closer you hear some barking. As if a young puppy is stucked there"
+      open:
+        - name: puppy
+          description: "A little puppy with sad brown eyes is looking at you"
+          look: "It is a cute little puppy"
+  junctions:
+    north:
+      goes_to: j3
+    east:
+      goes_to: j6
+    south:
+      goes_to: j2
+    west:
+      goes_to: j3
+
+- name: j4
+  type: room
+  description: "Still in the jungle and beautifull nature. But all you want is a good glass of cold beer"
+  look:
+  moveable_objects:
+    - name: beerpull
+      description: "On the ground lies a beerpull"
+      look: "The beerpull is empty. The ants drank everthing"
+  junctions:
+    north:
+      goes_to: j5
+    east:
+      goes_to: j7
+    south:
+      goes_to: j4
+    west:
+      goes_to: j1
+
+- name: j5
+  type: room
+  description: "The green hell goes on for ever"
+  look:
+  moveable_objects:
+    - name: "pile of bones"
+      description: "A pile of old with bones"
+  junctions:
+    north:
+      goes_to: j6
+    east:
+      goes_to: j8
+    south:
+      goes_to: j4
+    west:
+      goes_to: j2
+
+- name: j6
+  type: room
+  description: "Leafs, leafs, everywhere leafs. You are beginning to hate this jungle"
+  look:
+  moveable_objects:
+    - name: banana
+      desription: "A normal banana"
+  junctions:
+    north:
+      goes_to: j6
+    east:
+      goes_to: j9
+    south:
+      goes_to: j5
+    west:
+      goes_to: j3
+
+- name: j7
+  type: room
+  description: "Endless and endless jungle. Maybe cutting the whole jungle and make it into a parking garage look more and more like a good idea"
+  look:
+  moveable_objects:
+  junctions:
+    north:
+      goes_to: j8
+    east:
+      goes_to: j7
+    south:
+      goes_to: j7
+    west:
+      goes_to: j4
+
+- name: j8
+  type: room
+  description: "Jungle, al this green starts to irritate you. Some monkeys are trying to hit you with sticks"
+  look:
+  moveable_objects:
+    - name: "computer"
+      description: "Covered with sand there is an old SX486 PC"
+      actions:
+        look: "If it was in a good shape, this could be a collectors item"
+  junctions:
+    north:
+      goes_to: j9
+    east:
+      goes_to: j8
+    south:
+      goes_to: j7
+    west:
+      goes_to: j5
+
+- name: j9
+  type: room
+  description: "description"
+  look:
+    west: "You see in the west the entrance of a old palace"
+  moveable_objects:
+    - name: "cdrom"
+      description: "A cdrom that contains an installation of OS/2 warp 4.0"
+  junctions:
+    north:
+      goes_to: j9
+    east:
+      goes_to: palace
+    south:
+      goes_to: j8
+    west:
+      goes_to: j6
+
+- name: palace
+  type: room
+  description: |
+    You are in the palace of the Queen of the jungle.
+    On an throne sits the most beautifull woman you have ever seen.
+    However see looks very sad.
+  look:
+  talk:
+    - name: "queen"
+      response: |
+        My little cute puppy. It has runned away!
+        Please help me to find it.
+        I will reward you with the first two spells to defeat the Messaging Monster
+  moveable_objects:
+  junctions:
+    west: j9
