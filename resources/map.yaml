@@ -37,7 +37,7 @@
       talk: "yeah, the weather is bad today. But the lion has an umbrella"
       give:
         object: skull
-        response: "Is this my future?"
+        response: "Is this my future?, says the old man"
         receive:
           - name: "bottle"
             description: "On the floor lies a bottle with a green liquid"
@@ -61,17 +61,24 @@
     south: "The is a door in the south side of the wall"
     north: "In the north you see an opening in the wall that leads to a jungle"
     east: "In the east you see an golden door"
+  read:
     plate: |
-      Go to the jungle in the north west corner to meet the quee on the jungle
-      She is the keeper of the first spells
-  moveable_objects:
+      Go to the jungle in the to the north east corner to meet the queen on the jungle
+      She is the keeper of the first spells. But beware, her beauty will blind your eyes.
   junctions:
-   south:
-     name: "door"
-     goes_to: startingpoint
-   north:
-     name: "golden door"
-     blocked: yes
+    north:
+      name: "jungle entrance"
+      description: "You enter the deep green jungle"
+      goes_to: j1
+    south:
+      name: "door"
+      description: "You go the this door, you really want to go back?"
+      goes_to: startingpoint
+    west:
+      name: "golden door"
+      description: "Go, mortal. Pass this golden gate! And... well thats all."
+      blocked: yes
+      unblock: "incident ticket"
 
 # Enter the realm of the queeen of the jungle
 
@@ -79,7 +86,6 @@
   type: room
   description: "You enter the jungle, it is warm and wet. You have the feeling that behind every leaf something is watching you"
   look:
-  moveable_objects:
   junctions:
     north:
       goes_to: j2
@@ -190,7 +196,6 @@
   type: room
   description: "Endless and endless jungle. Maybe cutting the whole jungle and make it into a parking garage look more and more like a good idea"
   look:
-  moveable_objects:
   junctions:
     north:
       goes_to: j8
@@ -222,9 +227,9 @@
 
 - name: j9
   type: room
-  description: "description"
+  description: "Oh, no. More jungle. When will this torture end?"
   look:
-    west: "You see in the west the entrance of a old palace"
+    west: "You see in the east the entrance of a old palace"
   moveable_objects:
     - name: "cdrom"
       description: "A cdrom that contains an installation of OS/2 warp 4.0"
@@ -233,6 +238,7 @@
       goes_to: j9
     east:
       goes_to: palace
+      description: "You enter the entrance of the palace. Two guards, wearing black glasses, with a big blue logo on there shields look very angry to you"
     south:
       goes_to: j8
     west:
@@ -242,15 +248,25 @@
   type: room
   description: |
     You are in the palace of the Queen of the jungle.
-    On an throne sits the most beautifull woman you have ever seen.
-    However see looks very sad.
   look:
-  talk:
+    queen: "The queen is a beautyfull woman with golden hair."
+  persons:
     - name: "queen"
+      description: "On an throne sits the most beautifull woman you have ever seen. However see looks very sad. "
       response: |
         My little cute puppy. It has runned away!
         Please help me to find it.
         I will reward you with the first two spells to defeat the Messaging Monster
-  moveable_objects:
+      give:
+        object: puppy
+        response: |
+          Oh, you find my cute puppy! I'm so happy!
+          Then she jump of her throne and runs towards you.
+          You place the puppy on the ground to hold her in your arms forever.
+          She stops just in front of you, quickly picks up the puppy, turns around and walks back.
+        receive:
+          - name: "golden key"
+            description: "On the floor lies the golden key of the jungle queen."
+            look: "Just an ordinary golden key"
   junctions:
     west: j9

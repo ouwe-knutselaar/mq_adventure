@@ -2,22 +2,46 @@ import init
 import game_play
 
 
-def voer_uit(zin):
+def ex(zin):
     print(">>> "+zin)
     game_play.execute(zin)
     print(" ")
 
 print("MQ Adventure")
 init.init()
+# ERRORS AND INVALID THINGS
+ex('   look    ')
+ex('rgfekrgcn &*^*&^(* %(*&^% 9875 (8759& h8tthcie7rgc 7344             egcergcercer')
+ex('   look    north    ')
+ex('   look    door    ')
+ex('adgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgdsadgdgdsfgsdgdsgdgdgdsfgds')
 
-voer_uit('look')
-voer_uit('look paperclip')
-voer_uit('look skull')
-voer_uit('read scroll')
-voer_uit('inventory')
-voer_uit('pick skull')
-voer_uit('inventory')
-voer_uit('look')
+# LOOK TESTS
+ex('look')
+ex('look paperclip')
+ex('look skull')
+ex('look old skull')
+ex('read scroll')
 
-voer_uit('talk old man')
-voer_uit('give gray skull to old man')
+# PICK AND DROP TESTS
+ex('inventory')
+ex('pick skull')
+ex('look')
+ex('inventory')
+ex('drop skull')
+ex('inventory')
+ex('look')
+
+# COMMUNICATE TEST
+ex('talk old man')
+ex('pick skull')
+ex('give skull to old man')
+ex('inventory')
+
+# MOVE TEST
+ex('go north')
+ex('pick paperclip')
+ex('use bottle on door')
+ex('use paperclip on door')
+ex('go north')
+ex('look plate')
