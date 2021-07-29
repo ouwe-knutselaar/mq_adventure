@@ -35,13 +35,18 @@ ex('look')
 # COMMUNICATE TEST
 ex('talk old man')
 ex('pick skull')
+ex('give skull')
+ex('give skull to')
+ex('give skull to bastard')
 ex('give skull to old man')
 ex('inventory')
 
 # MOVE TEST
+ex('go east')
 ex('go north')
 ex('pick paperclip')
 ex('use bottle on door')
 ex('use paperclip on door')
 ex('go north')
 ex('look plate')
+ex('read plate')

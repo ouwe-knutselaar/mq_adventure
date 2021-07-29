@@ -31,3 +31,23 @@ ex('talk queen')
 ex('go west')
 ex('go west')
 ex('go west')
+
+ex('open old basket')
+ex('inventory')
+
+ex('go east')
+ex('go east')
+ex('go east')
+
+ex('give puppy to queen')
+ex('inventory')
+
+ex('go west')
+ex('go west')
+ex('go west')
+ex('go south')
+ex('go south')
+ex('go south')
+ex('go east')
+ex('use incident ticket on golden door')
+ex('go east')

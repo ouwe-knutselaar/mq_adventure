@@ -56,11 +56,15 @@
   type: room
   description: |
     You are in a great Hall. The roof is made of glass en you can see the blue sky. In the middle is a statue of a big lion.
-    In on the statue is a plate with something written on it.
+    On the statue is a plate with something written on it.
+    The is a door in the south side of the wall
+    In the north you see an opening in the wall that leads to a jungle
+    In the east you see an golden door
   look:
     south: "The is a door in the south side of the wall"
     north: "In the north you see an opening in the wall that leads to a jungle"
     east: "In the east you see an golden door"
+    plate: "A plate with letters on it"
   read:
     plate: |
       Go to the jungle in the to the north east corner to meet the queen on the jungle
@@ -74,7 +78,7 @@
       name: "door"
       description: "You go the this door, you really want to go back?"
       goes_to: startingpoint
-    west:
+    east:
       name: "golden door"
       description: "Go, mortal. Pass this golden gate! And... well thats all."
       blocked: yes
@@ -181,7 +185,7 @@
   look:
   moveable_objects:
     - name: banana
-      desription: "A normal banana"
+      description: "A normal banana"
   junctions:
     north:
       goes_to: j6
@@ -253,7 +257,7 @@
   persons:
     - name: "queen"
       description: "On an throne sits the most beautifull woman you have ever seen. However see looks very sad. "
-      response: |
+      talk: |
         My little cute puppy. It has runned away!
         Please help me to find it.
         I will reward you with the first two spells to defeat the Messaging Monster
@@ -265,8 +269,9 @@
           You place the puppy on the ground to hold her in your arms forever.
           She stops just in front of you, quickly picks up the puppy, turns around and walks back.
         receive:
-          - name: "golden key"
-            description: "On the floor lies the golden key of the jungle queen."
-            look: "Just an ordinary golden key"
+          - name: "incident ticket"
+            description: "On the floor lies the incident ticket of the jungle queen."
+            look: "Just an ordinary incident ticket, please solve this incident"
   junctions:
-    west: j9
+    west:
+      goes_to: j9
