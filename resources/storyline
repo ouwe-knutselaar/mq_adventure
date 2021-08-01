@@ -15,6 +15,17 @@ She gives a golden key to unlock the door
 
 Then go to the Master of Islands. He has lost the key to his beautifull house on the green cape by the see
 The key is in a bottle. When he enters the house he gives you the second spell
+
+master_island - entrance_appartment - appartment - gate to the mine - railroad
+                       |
+                    road1
+                       |
+          beach1 -   beach2   -  beach 3
+            |          |            |
+          seeline1 - seeline2 - seeline3
+
+
+
 DEFINE QLOCAL(MONSTER.XMIT) USAGE(XMITQ)
 
 Then go to the Builing master who lives in the old coal mine. He needs a gear wheel set to automate his latets invention

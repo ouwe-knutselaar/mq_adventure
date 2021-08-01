@@ -286,12 +286,95 @@
   description: |
     You enter the island. It is a tropical island with beautifull beaches.
   look:
-    south: "In the south you a nice appartment that has a look over the bay."
-    north: "North is a beautiful beach"
+    east: "In the south you a nice appartment that has a look over the bay."
+    south: "In the south is a beautiful beach"
+    west: "you see the bridge that you just crossed"
   junctions:
     west:
       goes_to: bridge
       description: "You walk back over the bridge. The clouds are much colder the the beach."
 
 
+- name: beach2
+  description: "You are on a nice beach."
+  look:
+    east: "in the east you see more beautifull beaches"
+    west: "in the east you see more beautifull beaches"
+    south: "in the south in de thin line between see and land"
+  junctions:
+    east:
+      goes_to: beach3
+    west:
+      goes_to: beach1
+    south:
+      goes_to: seashore2
 
+- name: beach1
+  description: "You are on a nice beach"
+  look:
+    east: "in the east you see more beautifull beaches"
+    west: "in the east you see more beautifull beaches"
+    south: "in the south in de thin line between see and land"
+  junctions:
+    east:
+      goes_to: beach2
+    west:
+      goes_to: beach1
+    south:
+      goes_to: seashore1
+
+- name: beach3
+  description: "you are on a nice beach"
+  look:
+    east: "in the east you see more beautifull beaches"
+    west: "in the east you see more beautifull beaches"
+    south: "in the south in de thin line between see and land"
+  junctions:
+    east:
+      goes_to: beach3
+    west:
+      goes_to: beach2
+    south:
+      goes_to: seashore3
+
+- name: seashore1
+  description: "you are on a nice beach by the sea shore"
+  look:
+    east: "in the east you see more beautifull beaches and waves"
+    west: "in the east you see more beautifull beaches and waves"
+    north: "in the north you see the beach"
+  junctions:
+    east:
+      goes_to: seashore2
+    west:
+      goes_to: seashore1
+    north:
+      goes_to: beach1
+
+- name: seashore2
+  description: "you are on a nice beach by the sea shore"
+  look:
+    east: "in the east you see more beautifull beaches and waves"
+    west: "in the east you see more beautifull beaches and waves"
+    north: "in the north you see the beach"
+  junctions:
+    east:
+      goes_to: seashore3
+    west:
+      goes_to: seashore1
+    north:
+      goes_to: beach2
+
+- name: seashore3
+  description: "you are on a nice beach by the sea shore"
+  look:
+    east: "in the east you see more beautifull beaches and waves"
+    west: "in the east you see more beautifull beaches and waves"
+    north: "in the north you see the beach"
+  junctions:
+    east:
+      goes_to: seashore3
+    west:
+      goes_to: seashore2
+    north:
+      goes_to: beach3
