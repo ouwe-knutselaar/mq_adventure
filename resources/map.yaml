@@ -2,14 +2,16 @@
   type: room
   description: "description"
   look:
+    north: "look north"
   persons:
+    - name: person
   moveable_objects:
+    - name: room
   fixed_objects:
   junctions:
 
 
 - name: startingpoint
-  type: room
   description: "you are in a cold dark room. There is an old table in the corner. In the north is a door"
   look:
     door: "You see a door on the north side of this room."
@@ -80,16 +82,15 @@
       goes_to: startingpoint
     east:
       name: "golden door"
-      description: "Go, mortal. Pass this golden gate! And... well thats all."
+      description: "Go, mortal. Pass this golden gate and enter the bridge! And... well thats all."
       blocked: yes
       unblock: "incident ticket"
+      goes_to: bridge
 
 # Enter the realm of the queeen of the jungle
 
 - name: j1
-  type: room
   description: "You enter the jungle, it is warm and wet. You have the feeling that behind every leaf something is watching you"
-  look:
   junctions:
     north:
       goes_to: j2
@@ -101,9 +102,7 @@
       goes_to: j1
 
 - name: j2
-  type: room
   description: "This jungle is hot and moisty."
-  look:
   moveable_objects:
     - name: coconut
       description: "On the floor lies a coconut"
@@ -122,9 +121,7 @@
       goes_to: j2
 
 - name: j3
-  type: room
   description: "It look like a jungle from the Tarzan books."
-  look:
   moveable_objects:
     - name: "old basket"
       description: "Under some leaves you see an old basket"
@@ -145,9 +142,7 @@
       goes_to: j3
 
 - name: j4
-  type: room
   description: "Still in the jungle and beautifull nature. But all you want is a good glass of cold beer"
-  look:
   moveable_objects:
     - name: beerpull
       description: "On the ground lies a beerpull"
@@ -163,9 +158,7 @@
       goes_to: j1
 
 - name: j5
-  type: room
   description: "The green hell goes on for ever"
-  look:
   moveable_objects:
     - name: "pile of bones"
       description: "A pile of old with bones"
@@ -180,9 +173,7 @@
       goes_to: j2
 
 - name: j6
-  type: room
   description: "Leafs, leafs, everywhere leafs. You are beginning to hate this jungle"
-  look:
   moveable_objects:
     - name: banana
       description: "A normal banana"
@@ -197,9 +188,7 @@
       goes_to: j3
 
 - name: j7
-  type: room
   description: "Endless and endless jungle. Maybe cutting the whole jungle and make it into a parking garage look more and more like a good idea"
-  look:
   junctions:
     north:
       goes_to: j8
@@ -211,9 +200,7 @@
       goes_to: j4
 
 - name: j8
-  type: room
   description: "Jungle, al this green starts to irritate you. Some monkeys are trying to hit you with sticks"
-  look:
   moveable_objects:
     - name: "computer"
       description: "Covered with sand there is an old SX486 PC"
@@ -230,7 +217,6 @@
       goes_to: j5
 
 - name: j9
-  type: room
   description: "Oh, no. More jungle. When will this torture end?"
   look:
     west: "You see in the east the entrance of a old palace"
@@ -249,7 +235,6 @@
       goes_to: j6
 
 - name: palace
-  type: room
   description: |
     You are in the palace of the Queen of the jungle.
   look:
@@ -268,6 +253,13 @@
           Then she jump of her throne and runs towards you.
           You place the puppy on the ground to hold her in your arms forever.
           She stops just in front of you, quickly picks up the puppy, turns around and walks back.
+          Just before she enters her private rooms behind the throne she seems to remember something.
+          'Oh yes, you brought my puppy back.
+          I will give you the first to spells
+          DEFINE
+          DEFINE
+          And here is the incident ticket to open the golden door. You cannot enter that place without
+          a proper change or incident ticket.'
         receive:
           - name: "incident ticket"
             description: "On the floor lies the incident ticket of the jungle queen."
@@ -275,3 +267,114 @@
   junctions:
     west:
       goes_to: j9
+
+# You enter realm of the master of the islands
+- name: bridge
+  description: "A large bridge that goes east trough the clouds over the sea"
+  look:
+    bridge: "You see a large bridge that goes trough the cloud."
+    east: "You see east a large bridge that goes trough the cloud."
+    west: "In the west...  That's strange, you do not see the golden door anymore. There is no way back"
+  junctions:
+    east:
+      goes_to: master_island
+      description: |
+        You walk over the bridge trough the cloud. The bridge seems to go on forever.
+        Just at the moment you want to give you can see an island on the end of the bridge.
+
+- name: master_island
+  description: |
+    You enter the island. It is a tropical island with beautifull beaches.
+  look:
+    east: "In the south you a nice appartment that has a look over the bay."
+    south: "In the south is a beautiful beach"
+    west: "you see the bridge that you just crossed"
+  junctions:
+    west:
+      goes_to: bridge
+      description: "You walk back over the bridge. The clouds are much colder the the beach."
+
+
+- name: beach2
+  description: "You are on a nice beach."
+  look:
+    east: "in the east you see more beautifull beaches"
+    west: "in the east you see more beautifull beaches"
+    south: "in the south in de thin line between see and land"
+  junctions:
+    east:
+      goes_to: beach3
+    west:
+      goes_to: beach1
+    south:
+      goes_to: seashore2
+
+- name: beach1
+  description: "You are on a nice beach"
+  look:
+    east: "in the east you see more beautifull beaches"
+    west: "in the east you see more beautifull beaches"
+    south: "in the south in de thin line between see and land"
+  junctions:
+    east:
+      goes_to: beach2
+    west:
+      goes_to: beach1
+    south:
+      goes_to: seashore1
+
+- name: beach3
+  description: "you are on a nice beach"
+  look:
+    east: "in the east you see more beautifull beaches"
+    west: "in the east you see more beautifull beaches"
+    south: "in the south in de thin line between see and land"
+  junctions:
+    east:
+      goes_to: beach3
+    west:
+      goes_to: beach2
+    south:
+      goes_to: seashore3
+
+- name: seashore1
+  description: "you are on a nice beach by the sea shore"
+  look:
+    east: "in the east you see more beautifull beaches and waves"
+    west: "in the east you see more beautifull beaches and waves"
+    north: "in the north you see the beach"
+  junctions:
+    east:
+      goes_to: seashore2
+    west:
+      goes_to: seashore1
+    north:
+      goes_to: beach1
+
+- name: seashore2
+  description: "you are on a nice beach by the sea shore"
+  look:
+    east: "in the east you see more beautifull beaches and waves"
+    west: "in the east you see more beautifull beaches and waves"
+    north: "in the north you see the beach"
+  junctions:
+    east:
+      goes_to: seashore3
+    west:
+      goes_to: seashore1
+    north:
+      goes_to: beach2
+
+- name: seashore3
+  description: "you are on a nice beach by the sea shore"
+  look:
+    east: "in the east you see more beautifull beaches and waves"
+    west: "in the east you see more beautifull beaches and waves"
+    north: "in the north you see the beach"
+  junctions:
+    east:
+      goes_to: seashore3
+    west:
+      goes_to: seashore2
+    north:
+      goes_to: beach3

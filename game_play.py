@@ -5,20 +5,23 @@ import re
 
 loop = True
 
+
 def get_location(location_name):
     for objs in globals.map_file:
         if objs['name'] == location_name:
             return objs
 
-def get_record_in_group_by_name(location,group,name):
+
+def get_record_in_group_by_name(location, group,name):
     if group not in location:
         return False, None
     for item in location[group]:
         if item['name'] == name:
-            return True,item
-    return False,None
+            return True, item
+    return False, None
 
-def get_look(location,look_to):
+
+def get_look(location, look_to):
     if look_to == 'nill':
         print(get_description(location))
         return
@@ -26,17 +29,21 @@ def get_look(location,look_to):
         print(location['look'][look_to])
         return
 
-    have_it,item = get_record_in_group_by_name(location,'moveable_objects',look_to)
+    have_it,item = get_record_in_group_by_name(location, 'moveable_objects', look_to)
     if not have_it:
         print("I see no " + look_to)
         return
     if 'look' in item:
         print(item['look'])
         return
-    print('I see no '+look_to)
+    print('I see no ' + look_to)
+
 
 def get_description(location):
-    description=location['description']+"\n"
+    description=location['description'] + "\n"
+    if 'look' in location:
+        for obj in location['look'].values():
+            description += obj + "\n"
     if 'persons' in location:
         for obj in location['persons']:
             description += obj['description']+"\n"
@@ -45,26 +52,29 @@ def get_description(location):
             description += obj['description']+"\n"
     return description
 
+
 def pick_object(location, object_name):
-    arraypos = 0;
+    arraypos = 0
     for obj in location['moveable_objects']:
         if obj['name'] == object_name:
             print("you picked up the " + object_name)
             player.put_in_inventory(obj)
             del location['moveable_objects'][arraypos]
             return
-        arraypos = arraypos +1
+        arraypos = arraypos + 1
     print("there is no " + object_name + " to pick up")
 
-def drop_object(location,object_name):
+
+def drop_object(location, object_name):
     if 'moveable_objects' not in location:
-        location.insert(0,key='moveable_objects',value=[])
+        location.insert(0, key='moveable_objects', value=[])
 
     if player.has_item(object_name):
-        have_it,item = player.get_from_inventory(object_name)
+        have_it, item = player.get_from_inventory(object_name)
         location['moveable_objects'].append(item)
         return
-    print("You don't have a "+object_name)
+    print("You don't have a " +object_name)
+
 
 def get_inventory():
     print("you have:")
@@ -124,7 +134,8 @@ def use_object_on(location, t_array):
             return
     print("that didn't work")
 
-def give_object_to_person(location,t_array):
+
+def give_object_to_person(location, t_array):
     t_array.pop(0)
 
     if 'to' not in t_array:
@@ -134,7 +145,7 @@ def give_object_to_person(location,t_array):
     on_index = t_array.index('to')
     object_to_give = ' '.join(map(str, t_array[:on_index]))
     if not player.has_item(object_to_give):
-        print("you don't have a "+object_to_give)
+        print("you don't have a " + object_to_give)
         return
 
     on_index = t_array.index('to') + 1
@@ -146,11 +157,11 @@ def give_object_to_person(location,t_array):
 
     have_it, person = get_record_in_group_by_name(location, 'persons', person_name)
     if not have_it:
-        print("There is no '"+person_name+"'")
+        print("There is no '" + person_name + "'")
         return
 
     if 'give' not in person:
-        print("The "+person_name+" does not wants the "+object_to_give)
+        print("The " + person_name+" does not wants the " + object_to_give)
         return
     if object_to_give != person['give']['object']:
         print("The " + person_name + " does not wants the " + object_to_give)
@@ -168,9 +179,8 @@ def give_object_to_person(location,t_array):
     person['give']['receive'] = []
 
 
-
 def read_object(location,object_to_read):
-    have_it,item = get_record_in_group_by_name(location,'moveable_objects',object_to_read)
+    have_it, item = get_record_in_group_by_name(location, 'moveable_objects', object_to_read)
     if have_it:
         print(item['read'])
         return
@@ -203,6 +213,7 @@ def talk_person(location, person_to_talk):
             except:
                 print("Nothing to read on " + person_to_talk)
 
+
 def get_help():
     print(
 """
@@ -218,9 +229,11 @@ open ...      open something
 """
     )
 
+
 def concat_array(t_array):
     t_array.pop(0)
     return ' '.join(map(str, t_array))
+
 
 def execute(user_input):
     location = get_location(player.current_place)
@@ -236,11 +249,13 @@ def execute(user_input):
         user_input_array.append("nill")
 
     if user_input_array[0] == "look":
-        get_look(location,concat_array(user_input_array))
+        get_look(location,
+                 concat_array(user_input_array))
         return
 
     if user_input_array[0] == "pick":
-        pick_object(location,concat_array(user_input_array))
+        pick_object(location,
+                    concat_array(user_input_array))
         return
 
     if user_input_array[0] == "drop":
@@ -256,23 +271,23 @@ def execute(user_input):
         return
 
     if  user_input_array[0] == "use":
-        use_object_on(location,user_input_array)
+        use_object_on(location, user_input_array)
         return
 
     if  user_input_array[0] == "give":
-        give_object_to_person(location,user_input_array)
+        give_object_to_person(location, user_input_array)
         return
 
     if  user_input_array[0] == "read":
-        read_object(location,concat_array(user_input_array))
+        read_object(location, concat_array(user_input_array))
         return
 
     if  user_input_array[0] == "talk":
-        talk_person(location,concat_array(user_input_array))
+        talk_person(location, concat_array(user_input_array))
         return
 
     if  user_input_array[0] == "open":
-        open_object(location,concat_array(user_input_array))
+        open_object(location, concat_array(user_input_array))
         return
 
     if user_input_array[0] == "help":
