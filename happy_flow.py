@@ -10,6 +10,7 @@ def ex(zin):
 print("MQ Adventure")
 init.init()
 
+# The start
 ex('look')
 ex('pick paperclip')
 ex('read scroll')
@@ -18,12 +19,14 @@ ex('use paperclip on door')
 ex('go north')
 ex('read plate')
 
+# go to the queen
 ex('go north')
 ex('go east')
 ex('go north')
 ex('go east')
 ex('go north')
 ex('go east')
+ex('go north')
 
 ex('look queen')
 ex('talk queen')
@@ -42,6 +45,7 @@ ex('go east')
 ex('give puppy to queen')
 ex('inventory')
 
+# go the the Island master
 ex('go west')
 ex('go west')
 ex('go west')
@@ -53,3 +57,8 @@ ex('use incident ticket on golden door')
 ex('go east')
 ex('go east')
 ex('look')
+ex('talk master')
+ex('go south')
+ex('go west')
+ex('read plate')
+ex('go south')

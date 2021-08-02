@@ -21,4 +21,5 @@ def init():
     __validity_check_empty_fields('persons')
     __validity_check_empty_fields('moveable_objects')
     __validity_check_empty_fields('look')
+    __validity_check_empty_fields('junctions')
     return

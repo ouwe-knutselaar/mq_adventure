@@ -40,14 +40,22 @@ class Matrix:
     def dump(self):
         print("range " + str(self.__min_x) + ": " + str(self.__max_x) + ": " + str(self.__min_y) + ": " + str(self.__max_y))
 
+        print("y\\x\t  ",end='')
+        for x in range(self.__min_x, self.__max_x + 1):
+
+            print(str(x) + " " * (2+ self.__max_val_len), end='')
+        print("")
         for y in range(self.__min_y,self.__max_y+1):
+            print("\t", end='')
             for x in range(self.__min_x, self.__max_x + 1):
                 print("+" + "-" * (2 + self.__max_val_len),end='')
             print("+")
+            print(str(y) + "\t",end='')
             for x in range(self.__min_x, self.__max_x + 1):
                 # print("" + str(self.get(x,y) ) + "("+str(x) + "," + str(y) + ") ",end='')
                 print("| "+ str(self.get(x, y)) + " ", end='')
             print("|")
+        print("\t", end='')
         for x in range(self.__min_x, self.__max_x + 1):
             print("+" + "-" * (2 + self.__max_val_len), end='')
         print("+")

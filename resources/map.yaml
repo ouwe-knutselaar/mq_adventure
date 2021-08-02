@@ -1,14 +1,15 @@
-- name: template
-  type: room
-  description: "description"
-  look:
-    north: "look north"
-  persons:
-    - name: person
-  moveable_objects:
-    - name: room
-  fixed_objects:
-  junctions:
+#- name: template
+#  type: room
+#  description: "description"
+#  look:
+#    north: "look north"
+#  persons:
+#    - name: person
+#  moveable_objects:
+#    - name: room
+#  fixed_objects:
+#  junctions:
+
 
 
 - name: startingpoint
@@ -282,11 +283,24 @@
         You walk over the bridge trough the cloud. The bridge seems to go on forever.
         Just at the moment you want to give you can see an island on the end of the bridge.
 
+
 - name: master_island
   description: |
     You enter the island. It is a tropical island with beautifull beaches.
+  persons:
+    - name: "master"
+      description: |
+        There stands the master of the Island. He is busy with some kind of fighting training
+        On his laptop is a youtube video about the fighting skills used by police officers
+      talk: |
+        I was practicing on the beach when a sudden wave washed away the key code of my house.
+        So it is lost and I'm afraid that I can never enter my house again.
+        Please can you help me find the code?
+        I cold call the fireman to put me on the balcony, but what if my neighbors see that?
+        So emberrasing!
+        You see, that is no option for me.
   look:
-    east: "In the south you a nice appartment that has a look over the bay."
+    east: "In the east you a nice appartment that has a look over the bay."
     south: "In the south is a beautiful beach"
     west: "you see the bridge that you just crossed"
   junctions:
@@ -295,14 +309,18 @@
       description: "You walk back over the bridge. The clouds are much colder the the beach."
     south:
       goes_to: beach2
-
+    east:
+      goes_to: appartment
+      description:
+      blocked: yes
+      unblock: "code"
 
 - name: beach2
-  description: "You are on a nice beach."
+  description: "You are on a nice beach just next to the apppartment"
   look:
     east: "in the east you see more beautifull beaches"
     west: "in the east you see more beautifull beaches"
-    south: "in the south in de thin line between see and land"
+    south: "in the south are the waves between see and land"
   junctions:
     north:
       goes_to: master_island
@@ -315,11 +333,16 @@
 
 
 - name: beach1
-  description: "You are on a nice beach"
+  description: "You are on a nice beach. There is a pole with a plate on it"
   look:
     east: "in the east you see more beautifull beaches"
     west: "in the east you see more beautifull beaches"
     south: "in the south in de thin line between see and land"
+    plate: "It is a warning text"
+  read:
+    plate: |
+      The plays says: After this sign starts the nudist area.
+      You start looking immediatly. To bad, nothing to see..
   junctions:
     east:
       goes_to: beach2
@@ -332,7 +355,7 @@
   description: "you are on a nice beach"
   look:
     east: "in the east you see more beautifull beaches"
-    west: "in the east you see more beautifull beaches"
+    west: "in the west you see more beautifull beaches"
     south: "in the south in de thin line between see and land"
   junctions:
     east:
@@ -346,7 +369,7 @@
   description: "you are on a nice beach by the sea shore"
   look:
     east: "in the east you see more beautifull beaches and waves"
-    west: "in the east you see more beautifull beaches and waves"
+    west: "in the west you see more beautifull beaches and waves"
     north: "in the north you see the beach"
   junctions:
     east:
@@ -383,3 +406,85 @@
       goes_to: seashore2
     north:
       goes_to: beach3
+
+- name: appartment
+  description: "You are in a beautifull appartment"
+  junctions:
+    west:
+      goes_to: master_island
+    east:
+      goes_to: elevator
+
+
+# enter the realm of the builder
+
+- name: elevator
+  description: "You are in a beautifull appartment"
+  junctions:
+    west:
+      goes_to: appartment
+    south:
+      goes_to: coal_mine
+
+- name: coal_mine
+  description: "You enter the coal mine. It is very dark"
+  junctions:
+    north:
+      goes_to: elevator
+    south:
+      goes_to: waitingroom
+
+- name: waitingroom
+  description: "You are in a waiting room"
+  junctions:
+    north:
+      goes_to: coal_mine
+    east:
+      goes_to: dm1
+    south:
+      goes_to: long_hall
+
+- name: dm1
+  description: "You are in the deep mines"
+  junctions:
+    west:
+      goes_to: waitingroom
+    east:
+      goes_to: dm2
+
+- name: dm2
+  description: "You are in the deep mines"
+  junctions:
+    west:
+      goes_to: dm1
+    east:
+      goes_to: dm3
+    north:
+      goes_to: dm5
+
+
+- name: dm3
+  description: "You are in the deep mines"
+  junctions:
+    west:
+      goes_to: dm2
+    east:
+      goes_to: dm4
+
+- name: dm4
+  description: "You are in the deep mines"
+  junctions:
+    west:
+      goes_to: dm3
+
+- name: dm5
+  description: "You are in the deep mines"
+  junctions:
+    south:
+      goes_to: dm2
+
+- name: long_hall
+  description: "You enter the long hall that goes up"
+  junctions:
+    north:
+      goes_to: waitingroom

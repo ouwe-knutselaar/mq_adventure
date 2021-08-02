@@ -4,6 +4,7 @@ import re
 
 
 loop = True
+debug = True
 
 
 def get_location(location_name):
@@ -25,9 +26,15 @@ def get_look(location, look_to):
     if look_to == 'nill':
         print(get_description(location))
         return
-    if look_to in location['look']:
-        print(location['look'][look_to])
+
+    if 'look' not in location:
+        print('I see no ' + look_to)
         return
+
+    if look_to in location['look']:
+        if look_to in location['look']:
+          print(location['look'][look_to])
+          return
 
     have_it,item = get_record_in_group_by_name(location, 'moveable_objects', look_to)
     if not have_it:
@@ -40,6 +47,8 @@ def get_look(location, look_to):
 
 
 def get_description(location):
+    if debug:
+        print("loc_name=" + location['name'])
     description=location['description'] + "\n"
     if 'look' in location:
         for obj in location['look'].values():
@@ -206,12 +215,16 @@ def open_object(location, object_to_open):
 
 
 def talk_person(location, person_to_talk):
-    for item in location['persons']:
-        if person_to_talk == item['name']:
-            try:
-                print(item['talk'])
-            except:
-                print("Nothing to read on " + person_to_talk)
+    if 'persons' not in location:
+        print("There is no "+ person_to_talk)
+        return
+
+    for person in  location['persons']:
+        if person['name'] == person_to_talk:
+            print(person['talk'])
+            return
+    print("There is no " + person_to_talk)
+
 
 
 def get_help():
