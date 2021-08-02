@@ -1,6 +1,6 @@
 import init
 import globals
-from objects.adv_matrix import matrix
+from objects.adv_matrix import Matrix
 
 
 class room_class:
@@ -48,7 +48,7 @@ def add_object(obj, x, y):
     for room in room_array:
         if room.get_name() == obj['name']:
             return
-    print('add room ' + obj['name'] + 'x=' + str(x) + ' y=' + str(y))
+    print('add room ' + obj['name'] + ' x=' + str(x) + ' y=' + str(y))
     t_room= room_class(obj['name'],x,y)
     room_array.append(t_room)
 
@@ -56,12 +56,16 @@ def add_object(obj, x, y):
         # print("junction "+ junction)
         j_room = get_room_by_name(obj['junctions'][junction]['goes_to'])
         if junction == 'north':
-            add_object(j_room, x, y+1)
-        if junction == 'south':
+            print(" - north")
             add_object(j_room, x, y-1)
+        if junction == 'south':
+            print(" - south")
+            add_object(j_room, x, y+1)
         if junction == 'east':
+            print(" - east")
             add_object(j_room, x+1, y)
         if junction == 'west':
+            print(" - west")
             add_object(j_room, x-1, y)
 
 
@@ -78,26 +82,11 @@ for obj in globals.map_file:
 
 print("max name len = "+str(max_name_len))
 
-for room in room_array:
-    print(str(room))
-    if room.get_x() < min_x:
-        min_x = room.get_x()
-    if room.get_x() > max_x:
-        max_x = room.get_x()
-    if room.get_y() < min_y:
-        min_y = room.get_y()
-    if room.get_y() > max_y:
-        max_y = room.get_y()
-
-print("max_x = " + str(max_x))
-print("min_x = " + str(min_x))
-print("max_y = " + str(max_y))
-print("min_y = " + str(min_y))
-
-
-map = matrix(max_x,max_y)
+map = Matrix()
 
 for room in room_array:
-    map.set(room.get_x(), room.get_y(), 1)
+    map.update(room.get_x(), room.get_y(), room.get_name())
+
+map.dump()
 
 

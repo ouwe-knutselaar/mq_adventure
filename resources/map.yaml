@@ -46,7 +46,7 @@
             look: "A bottle with a green substance, it looks as if it is alive"
             read: "DO NOT DRINK, unless you really want to die"
   junctions:
-    north:
+    east:
       name: "door"
       goes_to: great_hall
       description: "You open the door"
@@ -76,7 +76,7 @@
       name: "jungle entrance"
       description: "You enter the deep green jungle"
       goes_to: j1
-    south:
+    west:
       name: "door"
       description: "You go the this door, you really want to go back?"
       goes_to: startingpoint
@@ -293,6 +293,8 @@
     west:
       goes_to: bridge
       description: "You walk back over the bridge. The clouds are much colder the the beach."
+    south:
+      goes_to: beach2
 
 
 - name: beach2
@@ -302,12 +304,15 @@
     west: "in the east you see more beautifull beaches"
     south: "in the south in de thin line between see and land"
   junctions:
+    north:
+      goes_to: master_island
     east:
       goes_to: beach3
     west:
       goes_to: beach1
     south:
       goes_to: seashore2
+
 
 - name: beach1
   description: "You are on a nice beach"
