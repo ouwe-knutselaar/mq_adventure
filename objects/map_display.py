@@ -27,15 +27,12 @@ class room_class:
     def get_y(self):
         return self.__pos_y
 
-init.init()
-
-max_name_len=0
-min_x = 0
-min_y = 0
-max_x = 0
-max_y = 0
-
+#min_x = 0
+#min_y = 0
+#max_x = 0
+#max_y = 0
 room_array = []
+
 
 def get_room_by_name(name):
     for room in globals.map_file:
@@ -43,18 +40,18 @@ def get_room_by_name(name):
             return room
 
 
-def add_object(obj, x, y):
+def add_object(room_obj, x, y):
 
     for room in room_array:
-        if room.get_name() == obj['name']:
+        if room.get_name()['name'] == room_obj['name']:
             return
-    print('add room ' + obj['name'] + ' x=' + str(x) + ' y=' + str(y))
-    t_room= room_class(obj['name'],x,y)
+    print('add room ' + room_obj['name'] + ' x=' + str(x) + ' y=' + str(y))
+    t_room= room_class(room_obj, x, y)
     room_array.append(t_room)
 
-    for junction in obj['junctions']:
+    for junction in room_obj['junctions']:
         # print("junction "+ junction)
-        j_room = get_room_by_name(obj['junctions'][junction]['goes_to'])
+        j_room = get_room_by_name(room_obj['junctions'][junction]['goes_to'])
         if junction == 'north':
             print(" - north")
             add_object(j_room, x, y-1)
@@ -69,24 +66,22 @@ def add_object(obj, x, y):
             add_object(j_room, x-1, y)
 
 
-for obj in globals.map_file:
-    # print(str(obj['name']))
-    if len(obj['name']) > max_name_len:
-        max_name_len = len(obj['name'])
+def print_map():
+    max_name_len = 0
+    init.init()
+    for obj in globals.map_file:
+        # print(str(obj['name']))
+        if len(obj['name']) > max_name_len:
+            max_name_len = len(obj['name'])
 
-for obj in globals.map_file:
-    if obj['name'] == 'startingpoint':
-        add_object(obj,0,0)
+    for obj in globals.map_file:
+        if obj['name'] == 'startingpoint':
+            add_object(obj,0,0)
 
-
-
-print("max name len = "+str(max_name_len))
-
-map = Matrix()
-
-for room in room_array:
-    map.update(room.get_x(), room.get_y(), room.get_name())
-
-map.dump()
+    print("max name len = "+str(max_name_len))
+    map = Matrix()
+    for room in room_array:
+        map.update(room.get_x(), room.get_y(), room.get_name())
+    map.dump()
 
 
