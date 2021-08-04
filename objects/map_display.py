@@ -68,7 +68,6 @@ def add_object(room_obj, x, y):
 
 def print_map():
     max_name_len = 0
-    init.init()
     for obj in globals.map_file:
         # print(str(obj['name']))
         if len(obj['name']) > max_name_len:

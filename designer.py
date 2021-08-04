@@ -2,6 +2,7 @@ import re
 import init
 from objects import map_display
 import objects.view_object as view_object
+import objects.edit
 
 
 
@@ -16,9 +17,23 @@ def design_loop():
         user_input_array = user_input.split(" ")
         if user_input_array[0] =='map':
             map_display.print_map()
+            continue
+
+        if len(user_input_array) <2:
+            print("command needs 1 argument")
+            continue
         if user_input_array[0] == 'view':
             view_object.view_object(user_input_array[1])
             current_object = user_input_array[1]
+            continue
+        if user_input_array[0] == 'add':
+            objects.edit.add_room(user_input_array[1])
+            current_object = user_input_array[1]
+            continue
+
+        print("unknown command")
+
+
 
 
 

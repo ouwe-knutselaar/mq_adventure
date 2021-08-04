@@ -2,6 +2,7 @@ import globals
 import ruamel.yaml
 from pathlib import Path
 
+map_yaml_file = Path("resources/map.yaml")
 
 def __validity_check_empty_fields(keyword):
     for spaces in globals.map_file:
@@ -23,3 +24,7 @@ def init():
     __validity_check_empty_fields('look')
     __validity_check_empty_fields('junctions')
     return
+
+def save():
+    with open(map_yaml_file, 'w', encoding='utf-8') as f:
+        ruamel.yaml.dump(globals.map_file, f, Dumper=ruamel.yaml.RoundTripDumper)

@@ -1,60 +1,70 @@
-#- name: template
-#  type: room
-#  description: "description"
-#  look:
-#    north: "look north"
-#  persons:
-#    - name: person
-#  moveable_objects:
-#    - name: room
-#  fixed_objects:
-#  junctions:
+#- name: template
+
+#  type: room
+
+#  description: "description"
+
+#  look:
+
+#    north: "look north"
+
+#  persons:
+
+#    - name: person
+
+#  moveable_objects:
+
+#    - name: room
+
+#  fixed_objects:
+
+#  junctions:
+
 
 
 
 - name: startingpoint
-  description: "you are in a cold dark room. There is an old table in the corner. In the north is a door"
+  description: you are in a cold dark room. There is an old table in the corner. In
+    the north is a door
   look:
-    door: "You see a door on the north side of this room."
-    table: "A dirty old table"
+    door: You see a door on the north side of this room.
+    table: A dirty old table
   moveable_objects:
-    - name: scroll
-      description: "On the floor lies an old scroll of perkament"
-      look: "it is an old scroll"
-      read: |
-        Behold stranger, thou shall not leave this place before
-        you have saved the orange lion from the horrible messaging monster
-        Collect the xxx spells to evoke the magical message flow and drain
-        the power form the messaging monster.
-    - name: skull
-      description: "There is an old skull in the corner"
-      look: "The poor fellow is long dead"
-    - name: "yellow stone"
-      description: "In the middle is a yellow stone"
-      look: "A very yellow stone, what else had you expected?"
-    - name: paperclip
-      description: "You can just see a paperclip"
+  - name: scroll
+    description: On the floor lies an old scroll of perkament
+    look: it is an old scroll
+    read: |
+      Behold stranger, thou shall not leave this place before
+      you have saved the orange lion from the horrible messaging monster
+      Collect the xxx spells to evoke the magical message flow and drain
+      the power form the messaging monster.
+  - name: skull
+    description: There is an old skull in the corner
+    look: The poor fellow is long dead
+  - name: yellow stone
+    description: In the middle is a yellow stone
+    look: A very yellow stone, what else had you expected?
+  - name: paperclip
+    description: You can just see a paperclip
   persons:
-    - name: "old man"
-      description: "There stands an old man in the room"
-      talk: "yeah, the weather is bad today. But the lion has an umbrella"
-      give:
-        object: skull
-        response: "Is this my future?, says the old man"
-        receive:
-          - name: "bottle"
-            description: "On the floor lies a bottle with a green liquid"
-            look: "A bottle with a green substance, it looks as if it is alive"
-            read: "DO NOT DRINK, unless you really want to die"
+  - name: old man
+    description: There stands an old man in the room
+    talk: yeah, the weather is bad today. But the lion has an umbrella
+    give:
+      object: skull
+      response: Is this my future?, says the old man
+      receive:
+      - name: bottle
+        description: On the floor lies a bottle with a green liquid
+        look: A bottle with a green substance, it looks as if it is alive
+        read: DO NOT DRINK, unless you really want to die
   junctions:
     east:
-      name: "door"
+      name: door
       goes_to: great_hall
-      description: "You open the door"
-      blocked: "yes"
-      unblock: "paperclip"
-
-
+      description: You open the door
+      blocked: yes
+      unblock: paperclip
 - name: great_hall
   type: room
   description: |
@@ -64,34 +74,33 @@
     In the north you see an opening in the wall that leads to a jungle
     In the east you see an golden door
   look:
-    south: "The is a door in the south side of the wall"
-    north: "In the north you see an opening in the wall that leads to a jungle"
-    east: "In the east you see an golden door"
-    plate: "A plate with letters on it"
+    south: The is a door in the south side of the wall
+    north: In the north you see an opening in the wall that leads to a jungle
+    east: In the east you see an golden door
+    plate: A plate with letters on it
   read:
     plate: |
       Go to the jungle in the to the north east corner to meet the queen on the jungle
       She is the keeper of the first spells. But beware, her beauty will blind your eyes.
   junctions:
     north:
-      name: "jungle entrance"
-      description: "You enter the deep green jungle"
+      name: jungle entrance
+      description: You enter the deep green jungle
       goes_to: j1
     west:
-      name: "door"
-      description: "You go the this door, you really want to go back?"
+      name: door
+      description: You go the this door, you really want to go back?
       goes_to: startingpoint
     east:
-      name: "golden door"
-      description: "Go, mortal. Pass this golden gate and enter the bridge! And... well thats all."
+      name: golden door
+      description: Go, mortal. Pass this golden gate and enter the bridge! And...
+        well thats all.
       blocked: yes
-      unblock: "incident ticket"
+      unblock: incident ticket
       goes_to: bridge
-
-# Enter the realm of the queeen of the jungle
-
 - name: j1
-  description: "You enter the jungle, it is warm and wet. You have the feeling that behind every leaf something is watching you"
+  description: You enter the jungle, it is warm and wet. You have the feeling that
+    behind every leaf something is watching you
   junctions:
     north:
       goes_to: j2
@@ -101,16 +110,15 @@
       goes_to: great_hall
     west:
       goes_to: j1
-
 - name: j2
-  description: "This jungle is hot and moisty."
+  description: This jungle is hot and moisty.
   moveable_objects:
-    - name: coconut
-      description: "On the floor lies a coconut"
-      actions:
-        look: "Just an ordinary coconut"
-    - name: bottle
-      description: "There lies an empty bottle of beer"
+  - name: coconut
+    description: On the floor lies a coconut
+    actions:
+      look: Just an ordinary coconut
+  - name: bottle
+    description: There lies an empty bottle of beer
   junctions:
     north:
       goes_to: j3
@@ -120,18 +128,18 @@
       goes_to: j1
     west:
       goes_to: j2
-
 - name: j3
-  description: "It look like a jungle from the Tarzan books."
+  description: It look like a jungle from the Tarzan books.
   moveable_objects:
-    - name: "old basket"
-      description: "Under some leaves you see an old basket"
-      actions:
-      look: "When you look closer you hear some barking. As if a young puppy is stucked there"
-      open:
-        - name: puppy
-          description: "A little puppy with sad brown eyes is looking at you"
-          look: "It is a cute little puppy"
+  - name: old basket
+    description: Under some leaves you see an old basket
+    actions:
+    look: When you look closer you hear some barking. As if a young puppy is stucked
+      there
+    open:
+    - name: puppy
+      description: A little puppy with sad brown eyes is looking at you
+      look: It is a cute little puppy
   junctions:
     north:
       goes_to: j3
@@ -141,13 +149,13 @@
       goes_to: j2
     west:
       goes_to: j3
-
 - name: j4
-  description: "Still in the jungle and beautifull nature. But all you want is a good glass of cold beer"
+  description: Still in the jungle and beautifull nature. But all you want is a good
+    glass of cold beer
   moveable_objects:
-    - name: beerpull
-      description: "On the ground lies a beerpull"
-      look: "The beerpull is empty. The ants drank everthing"
+  - name: beerpull
+    description: On the ground lies a beerpull
+    look: The beerpull is empty. The ants drank everthing
   junctions:
     north:
       goes_to: j5
@@ -157,12 +165,11 @@
       goes_to: j4
     west:
       goes_to: j1
-
 - name: j5
-  description: "The green hell goes on for ever"
+  description: The green hell goes on for ever
   moveable_objects:
-    - name: "pile of bones"
-      description: "A pile of old with bones"
+  - name: pile of bones
+    description: A pile of old with bones
   junctions:
     north:
       goes_to: j6
@@ -172,12 +179,11 @@
       goes_to: j4
     west:
       goes_to: j2
-
 - name: j6
-  description: "Leafs, leafs, everywhere leafs. You are beginning to hate this jungle"
+  description: Leafs, leafs, everywhere leafs. You are beginning to hate this jungle
   moveable_objects:
-    - name: banana
-      description: "A normal banana"
+  - name: banana
+    description: A normal banana
   junctions:
     north:
       goes_to: j6
@@ -187,9 +193,9 @@
       goes_to: j5
     west:
       goes_to: j3
-
 - name: j7
-  description: "Endless and endless jungle. Maybe cutting the whole jungle and make it into a parking garage look more and more like a good idea"
+  description: Endless and endless jungle. Maybe cutting the whole jungle and make
+    it into a parking garage look more and more like a good idea
   junctions:
     north:
       goes_to: j8
@@ -199,14 +205,14 @@
       goes_to: j7
     west:
       goes_to: j4
-
 - name: j8
-  description: "Jungle, al this green starts to irritate you. Some monkeys are trying to hit you with sticks"
+  description: Jungle, al this green starts to irritate you. Some monkeys are trying
+    to hit you with sticks
   moveable_objects:
-    - name: "computer"
-      description: "Covered with sand there is an old SX486 PC"
-      actions:
-        look: "If it was in a good shape, this could be a collectors item"
+  - name: computer
+    description: Covered with sand there is an old SX486 PC
+    actions:
+      look: If it was in a good shape, this could be a collectors item
   junctions:
     north:
       goes_to: j9
@@ -216,111 +222,108 @@
       goes_to: j7
     west:
       goes_to: j5
-
 - name: j9
-  description: "Oh, no. More jungle. When will this torture end?"
+  description: Oh, no. More jungle. When will this torture end?
   look:
-    west: "You see in the east the entrance of a old palace"
+    west: You see in the east the entrance of a old palace
   moveable_objects:
-    - name: "cdrom"
-      description: "A cdrom that contains an installation of OS/2 warp 4.0"
+  - name: cdrom
+    description: A cdrom that contains an installation of OS/2 warp 4.0
   junctions:
     north:
       goes_to: j9
     east:
       goes_to: palace
-      description: "You enter the entrance of the palace. Two guards, wearing black glasses, with a big blue logo on there shields look very angry to you"
+      description: You enter the entrance of the palace. Two guards, wearing black
+        glasses, with a big blue logo on there shields look very angry to you
     south:
       goes_to: j8
     west:
       goes_to: j6
-
 - name: palace
   description: |
     You are in the palace of the Queen of the jungle.
   look:
-    queen: "The queen is a beautyfull woman with golden hair."
+    queen: The queen is a beautyfull woman with golden hair.
   persons:
-    - name: "queen"
-      description: "On an throne sits the most beautifull woman you have ever seen. However see looks very sad. "
-      talk: |
-        My little cute puppy. It has runned away!
-        Please help me to find it.
-        I will reward you with the first two spells to defeat the Messaging Monster
-      give:
-        object: puppy
-        response: |
-          Oh, you find my cute puppy! I'm so happy!
-          Then she jump of her throne and runs towards you.
-          You place the puppy on the ground to hold her in your arms forever.
-          She stops just in front of you, quickly picks up the puppy, turns around and walks back.
-          Just before she enters her private rooms behind the throne she seems to remember something.
-          'Oh yes, you brought my puppy back.
-          I will give you the first to spells
-          DEFINE
-          DEFINE
-          And here is the incident ticket to open the golden door. You cannot enter that place without
-          a proper change or incident ticket.'
-        receive:
-          - name: "incident ticket"
-            description: "On the floor lies the incident ticket of the jungle queen."
-            look: "Just an ordinary incident ticket, please solve this incident"
+  - name: queen
+    description: 'On an throne sits the most beautifull woman you have ever seen.
+      However see looks very sad. '
+    talk: |
+      My little cute puppy. It has runned away!
+      Please help me to find it.
+      I will reward you with the first two spells to defeat the Messaging Monster
+    give:
+      object: puppy
+      response: |
+        Oh, you find my cute puppy! I'm so happy!
+        Then she jump of her throne and runs towards you.
+        You place the puppy on the ground to hold her in your arms forever.
+        She stops just in front of you, quickly picks up the puppy, turns around and walks back.
+        Just before she enters her private rooms behind the throne she seems to remember something.
+        'Oh yes, you brought my puppy back.
+        I will give you the first to spells
+        DEFINE
+        DEFINE
+        And here is the incident ticket to open the golden door. You cannot enter that place without
+        a proper change or incident ticket.'
+      receive:
+      - name: incident ticket
+        description: On the floor lies the incident ticket of the jungle queen.
+        look: Just an ordinary incident ticket, please solve this incident
   junctions:
     west:
       goes_to: j9
-
-# You enter realm of the master of the islands
 - name: bridge
-  description: "A large bridge that goes east trough the clouds over the sea"
+  description: A large bridge that goes east trough the clouds over the sea
   look:
-    bridge: "You see a large bridge that goes trough the cloud."
-    east: "You see east a large bridge that goes trough the cloud."
-    west: "In the west...  That's strange, you do not see the golden door anymore. There is no way back"
+    bridge: You see a large bridge that goes trough the cloud.
+    east: You see east a large bridge that goes trough the cloud.
+    west: In the west...  That's strange, you do not see the golden door anymore.
+      There is no way back
   junctions:
     east:
       goes_to: master_island
       description: |
         You walk over the bridge trough the cloud. The bridge seems to go on forever.
         Just at the moment you want to give you can see an island on the end of the bridge.
-
-
 - name: master_island
   description: |
     You enter the island. It is a tropical island with beautifull beaches.
   persons:
-    - name: "master"
-      description: |
-        There stands the master of the Island. He is busy with some kind of fighting training
-        On his laptop is a youtube video about the fighting skills used by police officers
-      talk: |
-        I was practicing on the beach when a sudden wave washed away the key code of my house.
-        So it is lost and I'm afraid that I can never enter my house again.
-        Please can you help me find the code?
-        I cold call the fireman to put me on the balcony, but what if my neighbors see that?
-        So emberrasing!
-        You see, that is no option for me.
+  - name: master
+    description: |
+      There stands the master of the Island. He is busy with some kind of fighting training
+      On his laptop is a youtube video about the fighting skills used by police officers
+    talk: |
+      I was practicing on the beach when a sudden wave washed away the key code of my house.
+      So it is lost and I'm afraid that I can never enter my house again.
+      Please can you help me find the code?
+      I cold call the fireman to put me on the balcony, but what if my neighbors see that?
+      So emberrasing!
+      You see, that is no option for me.
   look:
-    east: "In the east you a nice appartment that has a look over the bay."
-    south: "In the south is a beautiful beach"
-    west: "you see the bridge that you just crossed"
+    east: In the east you a nice appartment that has a look over the bay.
+    south: In the south is a beautiful beach
+    west: you see the bridge that you just crossed
   junctions:
     west:
       goes_to: bridge
-      description: "You walk back over the bridge. The clouds are much colder the the beach."
+      description: You walk back over the bridge. The clouds are much colder the the
+        beach.
     south:
       goes_to: beach2
     east:
       goes_to: appartment
       description:
       blocked: yes
-      unblock: "code"
-
+      unblock: code
 - name: beach2
-  description: "You are on a nice beach just next to the apppartment"
+  description: You are on a nice beach just next to the apppartment
   look:
-    east: "in the east you see more beautifull beaches"
-    west: "in the east you see more beautifull beaches"
-    south: "in the south are the waves between see and land"
+    east: in the east you see more beautifull beaches
+    west: in the east you see more beautifull beaches
+    south: in the south are the waves between see and land
   junctions:
     north:
       goes_to: master_island
@@ -330,15 +333,13 @@
       goes_to: beach1
     south:
       goes_to: seashore2
-
-
 - name: beach1
-  description: "You are on a nice beach. There is a pole with a plate on it"
+  description: You are on a nice beach. There is a pole with a plate on it
   look:
-    east: "in the east you see more beautifull beaches"
-    west: "in the east you see more beautifull beaches"
-    south: "in the south in de thin line between see and land"
-    plate: "It is a warning text"
+    east: in the east you see more beautifull beaches
+    west: in the east you see more beautifull beaches
+    south: in the south in de thin line between see and land
+    plate: It is a warning text
   read:
     plate: |
       The plays says: After this sign starts the nudist area.
@@ -350,13 +351,12 @@
       goes_to: beach1
     south:
       goes_to: seashore1
-
 - name: beach3
-  description: "you are on a nice beach"
+  description: you are on a nice beach
   look:
-    east: "in the east you see more beautifull beaches"
-    west: "in the west you see more beautifull beaches"
-    south: "in the south in de thin line between see and land"
+    east: in the east you see more beautifull beaches
+    west: in the west you see more beautifull beaches
+    south: in the south in de thin line between see and land
   junctions:
     east:
       goes_to: beach3
@@ -364,13 +364,12 @@
       goes_to: beach2
     south:
       goes_to: seashore3
-
 - name: seashore1
-  description: "you are on a nice beach by the sea shore"
+  description: you are on a nice beach by the sea shore
   look:
-    east: "in the east you see more beautifull beaches and waves"
-    west: "in the west you see more beautifull beaches and waves"
-    north: "in the north you see the beach"
+    east: in the east you see more beautifull beaches and waves
+    west: in the west you see more beautifull beaches and waves
+    north: in the north you see the beach
   junctions:
     east:
       goes_to: seashore2
@@ -378,13 +377,14 @@
       goes_to: seashore1
     north:
       goes_to: beach1
-
+    south:
+      goes_to: bagger
 - name: seashore2
-  description: "you are on a nice beach by the sea shore"
+  description: you are on a nice beach by the sea shore
   look:
-    east: "in the east you see more beautifull beaches and waves"
-    west: "in the east you see more beautifull beaches and waves"
-    north: "in the north you see the beach"
+    east: in the east you see more beautifull beaches and waves
+    west: in the east you see more beautifull beaches and waves
+    north: in the north you see the beach
   junctions:
     east:
       goes_to: seashore3
@@ -392,13 +392,12 @@
       goes_to: seashore1
     north:
       goes_to: beach2
-
 - name: seashore3
-  description: "you are on a nice beach by the sea shore"
+  description: you are on a nice beach by the sea shore
   look:
-    east: "in the east you see more beautifull beaches and waves"
-    west: "in the east you see more beautifull beaches and waves"
-    north: "in the north you see the beach"
+    east: in the east you see more beautifull beaches and waves
+    west: in the east you see more beautifull beaches and waves
+    north: in the north you see the beach
   junctions:
     east:
       goes_to: seashore3
@@ -406,36 +405,29 @@
       goes_to: seashore2
     north:
       goes_to: beach3
-
 - name: appartment
-  description: "You are in a beautifull appartment"
+  description: You are in a beautifull appartment
   junctions:
     west:
       goes_to: master_island
     east:
       goes_to: elevator
-
-
-# enter the realm of the builder
-
 - name: elevator
-  description: "You are in a beautifull appartment"
+  description: You are in a beautifull appartment
   junctions:
     west:
       goes_to: appartment
     south:
       goes_to: coal_mine
-
 - name: coal_mine
-  description: "You enter the coal mine. It is very dark"
+  description: You enter the coal mine. It is very dark
   junctions:
     north:
       goes_to: elevator
     south:
       goes_to: waitingroom
-
 - name: waitingroom
-  description: "You are in a waiting room"
+  description: You are in a waiting room
   junctions:
     north:
       goes_to: coal_mine
@@ -443,17 +435,15 @@
       goes_to: dm1
     south:
       goes_to: long_hall
-
 - name: dm1
-  description: "You are in the deep mines"
+  description: You are in the deep mines
   junctions:
     west:
       goes_to: waitingroom
     east:
       goes_to: dm2
-
 - name: dm2
-  description: "You are in the deep mines"
+  description: You are in the deep mines
   junctions:
     west:
       goes_to: dm1
@@ -461,30 +451,30 @@
       goes_to: dm3
     north:
       goes_to: dm5
-
-
 - name: dm3
-  description: "You are in the deep mines"
+  description: You are in the deep mines
   junctions:
     west:
       goes_to: dm2
     east:
       goes_to: dm4
-
 - name: dm4
-  description: "You are in the deep mines"
+  description: You are in the deep mines
   junctions:
     west:
       goes_to: dm3
-
 - name: dm5
-  description: "You are in the deep mines"
+  description: You are in the deep mines
   junctions:
     south:
       goes_to: dm2
-
 - name: long_hall
-  description: "You enter the long hall that goes up"
+  description: You enter the long hall that goes up
   junctions:
     north:
       goes_to: waitingroom
+- name: bagger
+  description: test
+  junctions:
+    north:
+      goes_to: seashore1
