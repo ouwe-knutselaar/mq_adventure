@@ -1,6 +1,7 @@
 import globals
 import re
 import init
+import objects.view_object as view_object
 
 
 def __user_input(msg):
@@ -78,6 +79,41 @@ def __add_junction(direction, room_name, this_room):
     print('from room' + room_name + 'created a junction ' + opposite + " " + this_room['name'])
 
 
+def __add_room_arrtibute(attribute,user_input, room):
+    if attribute not in room:
+        room[attribute] = {}
+
+    name = user_input[1]
+    if name not in room[attribute]:
+        room[attribute][name] = ""
+
+    # strip the 'l' and the 'name'
+    user_input.pop(0)
+    user_input.pop(0)
+    room[attribute][name] = ' '.join(map(str, user_input))
+
+
+def __add_person(user_input, room):
+    if 'persons' not in room:
+        room['persons'] = []
+
+    user_input.pop(0)   # remove the 'p'
+    name = ' '.join(map(str, user_input))
+    for person in room['persons']:
+        if person == name:
+            print(name + " already exists")
+            return
+    description = __user_input("give person description?")
+    talk = __user_input("what is his response?")
+
+    person_dict = {}
+    person_dict['name'] = name
+    person_dict['description'] = description
+    person_dict['talk'] = talk
+    room['persons'].append(person_dict)
+
+
+
 def add_room(name):
     print("add room " + name)
     if __room_exists(name):
@@ -93,19 +129,31 @@ def add_room(name):
     init.init()
 
 
+def edit_room(name):
+    if not __room_exists(name):
+        print("A room with name " + name + " does not exist")
+        return
+    room = __get_room(name)
+    __edit_menu(room)
+
+
 def __edit_menu(room):
     loop = True
 
     while loop:
         print("edit room")
         print("n e s w <name>: set junction")
-        print("l             : set look or view")
+        print("l name text   : set look or view")
         print("m             : set movable object")
-        print("p             : set person")
+        print("p name text   : set person")
+        print("v             : view room")
         print("q             : quit and save")
         user_input = __user_input("choice").split(" ")
         if user_input[0] == 'q':
             loop = False
+        if user_input[0] == 'v':
+            view_object.objprint(room,0)
+            continue
 
         if len(user_input) < 2:
             print("error")
@@ -118,3 +166,17 @@ def __edit_menu(room):
             __add_junction('south', user_input[1], room)
         if user_input[0] == 'w':
             __add_junction('west', user_input[1], room)
+
+        if user_input[0] == 'p':
+            __add_person(user_input, room)
+            continue
+
+        if len(user_input) < 3:
+            print("error")
+            continue
+        if user_input[0] == 'l':
+            __add_room_arrtibute('look',user_input, room)
+        if user_input[0] == 'm':
+            __add_room_arrtibute('moveable_object',user_input, room)
+    init.save()
+    init.init()

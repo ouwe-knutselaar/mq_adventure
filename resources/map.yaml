@@ -1,24 +1,37 @@
 #- name: template
 
+
 #  type: room
+
 
 #  description: "description"
 
+
 #  look:
+
 
 #    north: "look north"
 
+
 #  persons:
+
 
 #    - name: person
 
+
 #  moveable_objects:
+
 
 #    - name: room
 
+
 #  fixed_objects:
 
+
 #  junctions:
+
+
+
 
 
 
@@ -46,18 +59,6 @@
     look: A very yellow stone, what else had you expected?
   - name: paperclip
     description: You can just see a paperclip
-  persons:
-  - name: old man
-    description: There stands an old man in the room
-    talk: yeah, the weather is bad today. But the lion has an umbrella
-    give:
-      object: skull
-      response: Is this my future?, says the old man
-      receive:
-      - name: bottle
-        description: On the floor lies a bottle with a green liquid
-        look: A bottle with a green substance, it looks as if it is alive
-        read: DO NOT DRINK, unless you really want to die
   junctions:
     east:
       name: door
@@ -461,6 +462,12 @@
   junctions:
     west:
       goes_to: dm3
+  look:
+    troep: Wat een zooitje
+  persons:
+  - name: hondje
+    description: view beest
+    talk: woef
 - name: dm5
   description: You are in the deep mines
   junctions:

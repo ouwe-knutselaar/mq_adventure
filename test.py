@@ -4,7 +4,7 @@ import game_play
 
 def ex(zin):
     print(">>> "+zin)
-    game_play.execute(zin)
+    game_play.parse_user_input(zin)
     print(" ")
 
 print("MQ Adventure")
