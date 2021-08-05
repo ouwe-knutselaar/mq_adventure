@@ -15,6 +15,7 @@ def __validity_check_empty_fields(keyword):
 
 
 def init():
+    print("init map file")
     ruamel_yml_obj = ruamel.yaml.YAML()
 
     map_yaml_file = Path("resources/map.yaml")
@@ -26,5 +27,6 @@ def init():
     return
 
 def save():
+    print("save map file")
     with open(map_yaml_file, 'w', encoding='utf-8') as f:
         ruamel.yaml.dump(globals.map_file, f, Dumper=ruamel.yaml.RoundTripDumper)

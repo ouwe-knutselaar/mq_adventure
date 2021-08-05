@@ -377,8 +377,6 @@
       goes_to: seashore1
     north:
       goes_to: beach1
-    south:
-      goes_to: bagger
 - name: seashore2
   description: you are on a nice beach by the sea shore
   look:
@@ -473,8 +471,3 @@
   junctions:
     north:
       goes_to: waitingroom
-- name: bagger
-  description: test
-  junctions:
-    north:
-      goes_to: seashore1

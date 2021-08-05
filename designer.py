@@ -30,6 +30,10 @@ def design_loop():
             objects.edit.add_room(user_input_array[1])
             current_object = user_input_array[1]
             continue
+        if user_input_array[0] == 'del':
+            objects.edit.delete_room(user_input_array[1])
+            current_object = user_input_array[1]
+            continue
 
         print("unknown command")
 

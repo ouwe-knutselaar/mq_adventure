@@ -9,6 +9,9 @@ class Matrix:
     __min_y = 0
     __max_val_len = 0
 
+    def __init__(self):
+        self.__matrix={}
+
     def __setmax(self,x,y,name):
         if x > self.__max_x:
             self.__max_x = x
@@ -28,28 +31,28 @@ class Matrix:
         self.__setmax(x ,y, value['name'])
         return True
 
-    def update(self,x,y,value):
+    def update(self, x, y, value):
         self.__matrix[(x, y)] = value
         self.__setmax(x, y, value['name'])
 
     def get_obj_name(self, x, y):
         if (x, y) in self.__matrix:
-            name = self.__matrix[(x,y)]['name']
-            return name+ " " * (self.__max_val_len - len(name))
-        return " "*self.__max_val_len
+            name = self.__matrix[(x, y)]['name']
+            return name + " " * (self.__max_val_len - len(name))
+        return " " * self.__max_val_len
 
     def get_obj_junctions(self, x, y):
-        dirstr=""
+        dirstr = ""
         if (x, y) in self.__matrix:
-            if 'junctions' in self.__matrix[(x,y)]:
-                if 'north' in self.__matrix[(x,y)]['junctions']:
-                    dirstr = dirstr +"N"
-                if 'east' in self.__matrix[(x,y)]['junctions']:
-                    dirstr = dirstr +"E"
-                if 'south' in self.__matrix[(x,y)]['junctions']:
-                    dirstr = dirstr +"S"
-                if 'west' in self.__matrix[(x,y)]['junctions']:
-                    dirstr = dirstr +"W"
+            if 'junctions' in self.__matrix[(x, y)]:
+                if 'north' in self.__matrix[(x, y)]['junctions']:
+                    dirstr = dirstr + "N"
+                if 'east' in self.__matrix[(x, y)]['junctions']:
+                    dirstr = dirstr + "E"
+                if 'south' in self.__matrix[(x, y)]['junctions']:
+                    dirstr = dirstr + "S"
+                if 'west' in self.__matrix[(x, y)]['junctions']:
+                    dirstr = dirstr + "W"
         return dirstr+ " " * (self.__max_val_len - len(dirstr))
 
     def get_obj_objects(self, x, y):

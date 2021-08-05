@@ -31,7 +31,7 @@ class room_class:
 #min_y = 0
 #max_x = 0
 #max_y = 0
-room_array = []
+
 
 
 def get_room_by_name(name):
@@ -40,12 +40,12 @@ def get_room_by_name(name):
             return room
 
 
-def add_object(room_obj, x, y):
+def add_object(room_obj, x, y,room_array):
 
     for room in room_array:
         if room.get_name()['name'] == room_obj['name']:
             return
-    print('add room ' + room_obj['name'] + ' x=' + str(x) + ' y=' + str(y))
+    #print('add room ' + room_obj['name'] + ' x=' + str(x) + ' y=' + str(y))
     t_room= room_class(room_obj, x, y)
     room_array.append(t_room)
 
@@ -53,20 +53,21 @@ def add_object(room_obj, x, y):
         # print("junction "+ junction)
         j_room = get_room_by_name(room_obj['junctions'][junction]['goes_to'])
         if junction == 'north':
-            print(" - north")
-            add_object(j_room, x, y-1)
+            #print(" - north")
+            add_object(j_room, x, y-1, room_array)
         if junction == 'south':
-            print(" - south")
-            add_object(j_room, x, y+1)
+            #print(" - south")
+            add_object(j_room, x, y+1, room_array)
         if junction == 'east':
-            print(" - east")
-            add_object(j_room, x+1, y)
+            #print(" - east")
+            add_object(j_room, x+1, y, room_array)
         if junction == 'west':
-            print(" - west")
-            add_object(j_room, x-1, y)
+            #print(" - west")
+            add_object(j_room, x-1, y, room_array)
 
 
 def print_map():
+    room_array = []
     max_name_len = 0
     for obj in globals.map_file:
         # print(str(obj['name']))
@@ -75,12 +76,12 @@ def print_map():
 
     for obj in globals.map_file:
         if obj['name'] == 'startingpoint':
-            add_object(obj,0,0)
+            add_object(obj,0,0,room_array)
+            break
 
-    print("max name len = "+str(max_name_len))
+    #print("max name len = "+str(max_name_len))
     map = Matrix()
     for room in room_array:
         map.update(room.get_x(), room.get_y(), room.get_name())
     map.dump()
-
 
