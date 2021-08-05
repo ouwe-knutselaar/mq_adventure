@@ -63,6 +63,14 @@ class Matrix:
                 return objstr + " " * (self.__max_val_len - len(objstr))
         return " "*self.__max_val_len
 
+    def get_obj_persons(self, x, y):
+        if (x, y) in self.__matrix:
+            if 'persons' in self.__matrix[(x,y)]:
+                persons = len(self.__matrix[(x,y)]['persons'])
+                objstr = "PRS:" + str(persons)
+                return objstr + " " * (self.__max_val_len - len(objstr))
+        return " "*self.__max_val_len
+
     # Dump the whole map of the adventure
     def dump(self):
         print("range " + str(self.__min_x) + ": " + str(self.__max_x) + ": " + str(self.__min_y) + ": " + str(self.__max_y))
@@ -96,6 +104,12 @@ class Matrix:
             print("\t", end='')
             for x in range(self.__min_x, self.__max_x + 1):
                 print("| " + str(self.get_obj_objects(x, y)) + " ", end='')
+            print("|")
+
+            # print persons
+            print("\t", end='')
+            for x in range(self.__min_x, self.__max_x + 1):
+                print("| " + str(self.get_obj_persons(x, y)) + " ", end='')
             print("|")
 
         print("\t", end='')

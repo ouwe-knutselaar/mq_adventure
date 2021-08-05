@@ -1,4 +1,3 @@
-import init
 import globals
 from objects.adv_matrix import Matrix
 
@@ -80,8 +79,8 @@ def print_map():
             break
 
     #print("max name len = "+str(max_name_len))
-    map = Matrix()
+    adv_map = Matrix()
     for room in room_array:
-        map.update(room.get_x(), room.get_y(), room.get_name())
-    map.dump()
+        adv_map.update(room.get_x(), room.get_y(), room.get_name())
+    adv_map.dump()
 

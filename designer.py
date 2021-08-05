@@ -5,21 +5,19 @@ import objects.view_object as view_object
 import objects.edit
 
 
-
-
 def design_loop():
     current_object = "startingpoint"
     loop = True
 
     while loop:
-        user_input = input( current_object+" > ")
+        user_input = input(current_object+" > ")
         user_input = re.sub("\s\s+", " ", user_input)
         user_input_array = user_input.split(" ")
-        if user_input_array[0] =='map':
+        if user_input_array[0] == 'map':
             map_display.print_map()
             continue
 
-        if len(user_input_array) <2:
+        if len(user_input_array) < 2:
             print("command needs 1 argument")
             continue
         if user_input_array[0] == 'view':
@@ -34,19 +32,14 @@ def design_loop():
             objects.edit.delete_room(user_input_array[1])
             current_object = user_input_array[1]
             continue
-
         print("unknown command")
-
-
-
-
-
 
 
 def main():
     print("MQ Adventure Designer")
     init.init()
     design_loop()
+
 
 if __name__ == "__main__":
     main()

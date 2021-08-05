@@ -1,10 +1,11 @@
 import globals
 import player
 import re
+import os
 
 
 loop = True
-debug = True
+debug = False
 
 
 def get_location(location_name):
@@ -13,7 +14,7 @@ def get_location(location_name):
             return objs
 
 
-def get_record_in_group_by_name(location, group,name):
+def get_record_in_group_by_name(location, group, name):
     if group not in location:
         return False, None
     for item in location[group]:
@@ -33,10 +34,10 @@ def get_look(location, look_to):
 
     if look_to in location['look']:
         if look_to in location['look']:
-          print(location['look'][look_to])
-          return
+            print(location['look'][look_to])
+            return
 
-    have_it,item = get_record_in_group_by_name(location, 'moveable_objects', look_to)
+    have_it, item = get_record_in_group_by_name(location, 'moveable_objects', look_to)
     if not have_it:
         print("I see no " + look_to)
         return
@@ -49,7 +50,7 @@ def get_look(location, look_to):
 def get_description(location):
     if debug:
         print("loc_name=" + location['name'])
-    description=location['description'] + "\n"
+    description = location['description'] + "\n"
     if 'look' in location:
         for obj in location['look'].values():
             description += obj + "\n"
@@ -82,7 +83,7 @@ def drop_object(location, object_name):
         have_it, item = player.get_from_inventory(object_name)
         location['moveable_objects'].append(item)
         return
-    print("You don't have a " +object_name)
+    print("You don't have a " + object_name)
 
 
 def get_inventory():
@@ -90,8 +91,8 @@ def get_inventory():
     if len(player.inventory) == 0:
         print("Nothing")
         return
-    for object in player.inventory:
-        print("- "+str(object['name']))
+    for item in player.inventory:
+        print("- "+str(item['name']))
 
 
 def go_direction(location, direction):
@@ -131,7 +132,7 @@ def use_object_on(location, t_array):
     on_index = t_array.index('on') + 1
     aplay_action_to = ' '.join(map(str, t_array[on_index:]))
 
-    have_it, item  = player.get_from_inventory(object_to_use)
+    have_it, item = player.get_from_inventory(object_to_use)
     if not have_it:
         print("You don't have a " + object_to_use)
         return
@@ -188,7 +189,7 @@ def give_object_to_person(location, t_array):
     person['give']['receive'] = []
 
 
-def read_object(location,object_to_read):
+def read_object(location, object_to_read):
     have_it, item = get_record_in_group_by_name(location, 'moveable_objects', object_to_read)
     if have_it:
         print(item['read'])
@@ -216,20 +217,18 @@ def open_object(location, object_to_open):
 
 def talk_person(location, person_to_talk):
     if 'persons' not in location:
-        print("There is no "+ person_to_talk)
+        print("There is no " + person_to_talk)
         return
 
-    for person in  location['persons']:
+    for person in location['persons']:
         if person['name'] == person_to_talk:
             print(person['talk'])
             return
     print("There is no " + person_to_talk)
 
 
-
 def get_help():
-    print(
-"""
+    print("""
 look .....    look around, direction or object
 pick .....    pick up an object
 drop ....     drop an object
@@ -240,7 +239,7 @@ read ...      read something
 talk ...      try to start a conversation
 open ...      open something
 """
-    )
+)
 
 
 def concat_array(t_array):
@@ -248,15 +247,15 @@ def concat_array(t_array):
     return ' '.join(map(str, t_array))
 
 
-def execute(user_input):
-    location = get_location(player.current_place)
-    #print(user_input)
-    user_input = user_input.strip()
-    user_input=re.sub('\s+', ' ', user_input)
-    if len(user_input) > 256:
-        print("Did is hurt to write "+str(len(user_input))+" letters? Get to the point!")
-        return
+def screen_clear():
+    if os.name == 'posix':
+        os.system('clear')
+    else:
+        os.system('cls')
 
+
+def parse_user_input(user_input):
+    location = get_location(player.current_place)
     user_input_array = user_input.split(" ")
     if len(user_input_array) == 1:
         user_input_array.append("nill")
@@ -283,23 +282,23 @@ def execute(user_input):
         go_direction(location, concat_array(user_input_array))
         return
 
-    if  user_input_array[0] == "use":
+    if user_input_array[0] == "use":
         use_object_on(location, user_input_array)
         return
 
-    if  user_input_array[0] == "give":
+    if user_input_array[0] == "give":
         give_object_to_person(location, user_input_array)
         return
 
-    if  user_input_array[0] == "read":
+    if user_input_array[0] == "read":
         read_object(location, concat_array(user_input_array))
         return
 
-    if  user_input_array[0] == "talk":
+    if user_input_array[0] == "talk":
         talk_person(location, concat_array(user_input_array))
         return
 
-    if  user_input_array[0] == "open":
+    if user_input_array[0] == "open":
         open_object(location, concat_array(user_input_array))
         return
 
@@ -308,5 +307,23 @@ def execute(user_input):
         return
 
     print("what?")
-
     return
+
+
+def execute():
+    screen_clear()
+    print("MQ Adventure")
+    while loop:
+
+        user_input = input(">>> ")
+        user_input = re.sub("\s\s+", " ", user_input)
+        user_input = user_input.strip()
+        user_input=re.sub('\s+', ' ', user_input)
+        if len(user_input) > 256:
+            print("Did is hurt to write "+str(len(user_input))+" letters? Get to the point!")
+            return
+        if user_input == 'exit':
+            print("Exit the MQ adventure")
+            return
+        screen_clear()
+        parse_user_input(user_input)
