@@ -1,47 +1,11 @@
-#- name: template
-
-
-#  type: room
-
-
-#  description: "description"
-
-
-#  look:
-
-
-#    north: "look north"
-
-
-#  persons:
-
-
-#    - name: person
-
-
-#  moveable_objects:
-
-
-#    - name: room
-
-
-#  fixed_objects:
-
-
-#  junctions:
-
-
-
-
-
-
-
 - name: startingpoint
   description: you are in a cold dark room. There is an old table in the corner. In
-    the north is a door
+    the east is a door. In the middle is an old table
   look:
-    door: You see a door on the north side of this room.
-    table: A dirty old table
+    - name: door
+      description: You see a door on the north side of this room.
+    - name: table
+      description: A dirty old table
   moveable_objects:
   - name: scroll
     description: On the floor lies an old scroll of perkament
@@ -59,15 +23,16 @@
     look: A very yellow stone, what else had you expected?
   - name: paperclip
     description: You can just see a paperclip
+    look: You look at a very ordinary paperclip
   junctions:
-    east:
-      name: door
+    - name: east
+      object_name: door
       goes_to: great_hall
-      description: You open the door
+      description: You open the door to the east
       blocked: yes
       unblock: paperclip
+
 - name: great_hall
-  type: room
   description: |
     You are in a great Hall. The roof is made of glass en you can see the blue sky. In the middle is a statue of a big lion.
     On the statue is a plate with something written on it.
@@ -75,42 +40,49 @@
     In the north you see an opening in the wall that leads to a jungle
     In the east you see an golden door
   look:
-    south: The is a door in the south side of the wall
-    north: In the north you see an opening in the wall that leads to a jungle
-    east: In the east you see an golden door
-    plate: A plate with letters on it
+    - name: south
+      description: The is a door in the south side of the wall
+    - name: north
+      description: In the north you see an opening in the wall that leads to a jungle
+    - name: east
+      description: In the east you see an golden door
+    - name: plate
+      description: A plate with letters on it
   read:
-    plate: |
-      Go to the jungle in the to the north east corner to meet the queen on the jungle
-      She is the keeper of the first spells. But beware, her beauty will blind your eyes.
+    - name: plate
+      description: |
+        Go to the jungle in the to the north east corner to meet the queen on the jungle
+        She is the keeper of the first spells. But beware, her beauty will blind your eyes.
   junctions:
-    north:
-      name: jungle entrance
+    - name: north
       description: You enter the deep green jungle
       goes_to: j1
-    west:
-      name: door
+    - name: west
       description: You go the this door, you really want to go back?
       goes_to: startingpoint
-    east:
-      name: golden door
-      description: Go, mortal. Pass this golden gate and enter the bridge! And...
-        well thats all.
+    - name: east
+      description: Go, mortal. Pass this golden gate and enter the bridge! And...  well thats all.
+      object_name: golden door
       blocked: yes
       unblock: incident ticket
       goes_to: bridge
+
 - name: j1
-  description: You enter the jungle, it is warm and wet. You have the feeling that
-    behind every leaf something is watching you
+  description: You enter the jungle, it is warm and wet. You have the feeling that behind every leaf something is watching you
   junctions:
-    north:
+    - name: north
       goes_to: j2
-    east:
+      description: Go deeper between the leaves
+    - name: east
       goes_to: j4
-    south:
+      description: Go deeper in the jungle
+    - name: south
       goes_to: great_hall
-    west:
+      description: You enter the great hall
+    - name: west
       goes_to: j1
+      description: Go deeper in the jungle
+
 - name: j2
   description: This jungle is hot and moisty.
   moveable_objects:
@@ -121,14 +93,18 @@
   - name: bottle
     description: There lies an empty bottle of beer
   junctions:
-    north:
+    - name: north
       goes_to: j3
-    east:
+      description: Go north in the jungle
+    - name: east
       goes_to: j5
-    south:
+      description: Go east in the jungle
+    - name: south
       goes_to: j1
-    west:
+      description: Go south in the jungle
+    - name: west
       goes_to: j2
+      description: Go west in the jungle
 - name: j3
   description: It look like a jungle from the Tarzan books.
   moveable_objects:
@@ -142,110 +118,136 @@
       description: A little puppy with sad brown eyes is looking at you
       look: It is a cute little puppy
   junctions:
-    north:
+    - name: north
       goes_to: j3
-    east:
+      description: Go deeper in the green hell
+    - name: east
       goes_to: j6
-    south:
+      description: Tarzan was fake, the jungle is horrib;e
+    - name: south
       goes_to: j2
-    west:
+      description: Going on, does this ever ends
+    - name: west
       goes_to: j3
+      description: Go west, does it matters? Everything is green
 - name: j4
-  description: Still in the jungle and beautifull nature. But all you want is a good
-    glass of cold beer
+  description: Still in the jungle and beautifull nature. But all you want is a good glass of cold beer
   moveable_objects:
   - name: beerpull
     description: On the ground lies a beerpull
     look: The beerpull is empty. The ants drank everthing
   junctions:
-    north:
+    - name: north
       goes_to: j5
-    east:
+      description: Go north, maybe there is a cafe
+    - name: east
       goes_to: j7
-    south:
+      description: Green, green green. Wherever you go
+    - name: south
       goes_to: j4
-    west:
+      description: South, en then...?
+    - name: west
       goes_to: j1
+      description: West, maybe it is a little cooler there
 - name: j5
   description: The green hell goes on for ever
   moveable_objects:
   - name: pile of bones
     description: A pile of old with bones
   junctions:
-    north:
+    - name: north
       goes_to: j6
-    east:
+      description: North, but do I survive this?
+    - name: east
       goes_to: j8
-    south:
+      description: It is green there, what else did you expect?
+    - name: south
       goes_to: j4
-    west:
+      description: In the south it is green.
+    - name: west
       goes_to: j2
+      description: Go west go green
 - name: j6
   description: Leafs, leafs, everywhere leafs. You are beginning to hate this jungle
   moveable_objects:
   - name: banana
-    description: A normal banana
+    description: On the ground liefs a very normal banana
   junctions:
-    north:
+    - name: north
       goes_to: j6
-    east:
+      description: Go! Go! North.
+    - name: east
       goes_to: j9
-    south:
+      description: Let's go east. Why not?
+    - name: south
       goes_to: j5
-    west:
+      description: nill
+    - name: west
       goes_to: j3
+      description: nill
 - name: j7
-  description: Endless and endless jungle. Maybe cutting the whole jungle and make
-    it into a parking garage look more and more like a good idea
+  description: Endless and endless jungle. Maybe cutting the whole jungle and make it into a parking garage look more and more like a good idea
   junctions:
-    north:
+    - name: north
       goes_to: j8
-    east:
+      description: nill
+    - name: east
       goes_to: j7
-    south:
+      description: nill
+    - name: south
       goes_to: j7
-    west:
+      description: nill
+    - name: west
       goes_to: j4
+      description: nill
 - name: j8
-  description: Jungle, al this green starts to irritate you. Some monkeys are trying
-    to hit you with sticks
+  description: Jungle, al this green starts to irritate you. Some monkeys are trying to hit you with sticks
   moveable_objects:
   - name: computer
     description: Covered with sand there is an old SX486 PC
     actions:
       look: If it was in a good shape, this could be a collectors item
   junctions:
-    north:
+    - name: north
       goes_to: j9
-    east:
+      description: nill
+    - name: east
       goes_to: j8
-    south:
+      description: nill
+    - name: south
       goes_to: j7
-    west:
+      description: nill
+    - name: west
       goes_to: j5
+      description: nill
 - name: j9
   description: Oh, no. More jungle. When will this torture end?
   look:
-    west: You see in the east the entrance of a old palace
+    - name: west
+      description: "You see in the east the entrance of a old palace"
   moveable_objects:
   - name: cdrom
     description: A cdrom that contains an installation of OS/2 warp 4.0
   junctions:
-    north:
+    - name: north
       goes_to: j9
-    east:
+      description: nill
+    - name: east
       goes_to: palace
-      description: You enter the entrance of the palace. Two guards, wearing black
-        glasses, with a big blue logo on there shields look very angry to you
-    south:
+      description: You enter the entrance of the palace. Two guards, wearing black glasses, with a big blue logo on there shields look very angry to you
+    - name: south
       goes_to: j8
-    west:
+      description: nill
+    - name: west
       goes_to: j6
+      description: nill
+
 - name: palace
   description: |
-    You are in the palace of the Queen of the jungle.
+    You are in the palace of the Queen of the jungle. It is a nice place.
   look:
-    queen: The queen is a beautyfull woman with golden hair.
+    - name: queen
+      description: The queen is a beautyfull woman with golden hair.
   persons:
   - name: queen
     description: 'On an throne sits the most beautifull woman you have ever seen.
@@ -273,17 +275,20 @@
         description: On the floor lies the incident ticket of the jungle queen.
         look: Just an ordinary incident ticket, please solve this incident
   junctions:
-    west:
+    - name: west
       goes_to: j9
+      description: You leave the palace and enters again the jungle
 - name: bridge
   description: A large bridge that goes east trough the clouds over the sea
   look:
-    bridge: You see a large bridge that goes trough the cloud.
-    east: You see east a large bridge that goes trough the cloud.
-    west: In the west...  That's strange, you do not see the golden door anymore.
-      There is no way back
+    - name: bridge
+      description: You see a large bridge that goes trough the cloud.
+    - name: east
+      description: You see east a large bridge that goes trough the cloud.
+    - name: west
+      description: In the west...  That's strange, you do not see the golden door anymore. There is no way back
   junctions:
-    east:
+    - name: east
       goes_to: master_island
       description: |
         You walk over the bridge trough the cloud. The bridge seems to go on forever.
@@ -303,178 +308,357 @@
       I cold call the fireman to put me on the balcony, but what if my neighbors see that?
       So emberrasing!
       You see, that is no option for me.
+    give:
+      object: badge
+      response: |
+        My badge, finally I've the key code for my house. You see, it was 'abcd'. I always keep my
+        key codes very simple so that I do not forget them. Thanks man, now I can enter my house.
+        Can you do it for me? Here is the code of the door of my appartment
+      receive:
+        - name: code
+          description: the code of the appartment
   look:
-    east: In the east you a nice appartment that has a look over the bay.
-    south: In the south is a beautiful beach
-    west: you see the bridge that you just crossed
+    - name: east
+      description: In the east you a nice appartment that has a look over the bay.
+    - name: south
+      description: In the south is a beautiful beach
+    - name: west
+      description: you see the bridge that you just crossed
   junctions:
-    west:
+    - name: west
       goes_to: bridge
       description: You walk back over the bridge. The clouds are much colder the the
         beach.
-    south:
+    - name: south
       goes_to: beach2
-    east:
+      description: nill
+    - name: east
       goes_to: appartment
-      description:
+      description: nill
       blocked: yes
+      object_name: door
       unblock: code
 - name: beach2
   description: You are on a nice beach just next to the apppartment
   look:
-    east: in the east you see more beautifull beaches
-    west: in the east you see more beautifull beaches
-    south: in the south are the waves between see and land
+    - name: east
+      description: in the east you see more beautifull beaches
+    - name: west
+      description: "in the east you see more beautifull beaches"
+    - name: south
+      description: "in the south are the waves between see and land"
   junctions:
-    north:
+    - name: north
       goes_to: master_island
-    east:
+      description: nill
+    - name: east
       goes_to: beach3
-    west:
+      description: nill
+    - name: west
       goes_to: beach1
-    south:
+      description: nill
+    - name: south
       goes_to: seashore2
+      description: nill
 - name: beach1
   description: You are on a nice beach. There is a pole with a plate on it
   look:
-    east: in the east you see more beautifull beaches
-    west: in the east you see more beautifull beaches
-    south: in the south in de thin line between see and land
-    plate: It is a warning text
+    - name: east
+      description: in the east you see more beautifull beaches
+    - name: west
+      description: in
+    - name: south
+      description: in the east you see more beautifull beaches
+    - name: plate
+      description: It is a warning text
   read:
-    plate: |
-      The plays says: After this sign starts the nudist area.
-      You start looking immediatly. To bad, nothing to see..
+    - name: plate
+      description: |
+        The plays says: After this sign starts the nudist area.
+        You start looking immediatly. To bad, nothing to see..
   junctions:
-    east:
+    - name: east
       goes_to: beach2
-    west:
+      description: nill
+    - name: west
       goes_to: beach1
-    south:
+      description: nill
+    - name: south
       goes_to: seashore1
+      description: nill
 - name: beach3
   description: you are on a nice beach
   look:
-    east: in the east you see more beautifull beaches
-    west: in the west you see more beautifull beaches
-    south: in the south in de thin line between see and land
+    - name: east
+      description: in the east you see more beautifull beaches
+    - name: west
+      description: in the west you see more beautifull beaches
+    - name: south
+      description: in the south in de thin line between see and land
   junctions:
-    east:
+    - name: east
       goes_to: beach3
-    west:
+      description: nill
+    - name: west
       goes_to: beach2
-    south:
+      description: nill
+    - name: south
       goes_to: seashore3
+      description: You walk to the waves
+
 - name: seashore1
   description: you are on a nice beach by the sea shore
   look:
-    east: in the east you see more beautifull beaches and waves
-    west: in the west you see more beautifull beaches and waves
-    north: in the north you see the beach
+    - name: east
+      description: in the east you see more beautifull beaches and waves
+    - name: west
+      description: in the west you see more beautifull beaches and waves
+    - name: north
+      description: in the north you see the beach
   junctions:
-    east:
+    - name: east
       goes_to: seashore2
-    west:
+      description: nill
+    - name: west
       goes_to: seashore1
-    north:
+      description: nill
+    - name: north
       goes_to: beach1
+      description: nill
+  moveable_objects:
+    - name: paper
+      description: You see a piece of paper with the code 1234 on it
+
 - name: seashore2
   description: you are on a nice beach by the sea shore
   look:
-    east: in the east you see more beautifull beaches and waves
-    west: in the east you see more beautifull beaches and waves
-    north: in the north you see the beach
+    - name: east
+      description: in the east you see more beautifull beaches and waves
+    - name: west
+      description: in the east you see more beautifull beaches and waves
+    - name: north
+      description: in the north you see the beach
+  moveable_objects:
+    - name: creditcard
+      description: You a creditcard with the code 0000 on it
   junctions:
-    east:
+    - name: east
       goes_to: seashore3
-    west:
+      description: nill
+    - name: west
       goes_to: seashore1
-    north:
+      description: nill
+    - name: north
       goes_to: beach2
+      description: nill
 - name: seashore3
   description: you are on a nice beach by the sea shore
   look:
-    east: in the east you see more beautifull beaches and waves
-    west: in the east you see more beautifull beaches and waves
-    north: in the north you see the beach
+    - name: east
+      description: in the east you see more beautifull beaches and waves
+    - name: west
+      description: in the east you see more beautifull beaches and waves
+    - name: north
+      description: in the north you see the beach
+  moveable_objects:
+    - name: badge
+      description: You see a badge with the code abdc on it
   junctions:
-    east:
+    - name: east
       goes_to: seashore3
-    west:
+      description: nill
+    - name: west
       goes_to: seashore2
-    north:
+      description: nill
+    - name: north
       goes_to: beach3
+      description: nill
 - name: appartment
   description: You are in a beautifull appartment
   junctions:
-    west:
+    - name: west
       goes_to: master_island
-    east:
+      description: nill
+    - name: east
       goes_to: elevator
+      description: nill
+
 - name: elevator
   description: You are in a beautifull appartment
   junctions:
-    west:
+    - name: west
       goes_to: appartment
-    south:
+      description: nill
+    - name: south
       goes_to: coal_mine
+      description: nill
+
 - name: coal_mine
-  description: You enter the coal mine. It is very dark
+  description: You enter the coal mine. It is very dark.
+  look:
+    - name: south
+      description: "In the south you see a door. It has a plate on it that says 'mancave'"
   junctions:
-    north:
+    - name: north
       goes_to: elevator
-    south:
-      goes_to: waitingroom
-- name: waitingroom
-  description: You are in a waiting room
+      description: nill
+    - name: south
+      goes_to: mancave
+      description: nill
+
+- name: mancave
+  description: |
+    You are in a real man cave. It is a complete mess with all kind of computers, automates and other electronic stuff.
+    In
   junctions:
-    north:
+    - name: north
       goes_to: coal_mine
-    east:
+      description: nill
+    - name: east
       goes_to: dm1
-    south:
+      description: You enter the deep mines.
+    - name: south
       goes_to: long_hall
+      description: nill
+  persons:
+    - name: builder
+      description: In the conrner behind a desk sits a bald man with glasses. He is busy with something strange to build
+      talk: |
+        Dammed I try to automate my automatic automate builder but I dropped the transistor somewhere in the mines to the east.
+        Can you help me find it?
+        Take the flashlight
+      give:
+        object: transistor
+  moveable_objects:
+    - name: flashlight
+      description: A decent flashlight, probably running some kind of Linux distribution.
 - name: dm1
-  description: You are in the deep mines
+  description: |
+    You are in the deep mines. Fortunaly you have the flashlight else you wouldn't see a thing.
+    Oh no, you Linux distribution of your flashlight crashes. And you are plunged in total darkness.
+  look:
+    - name: north
+      description: You see nothing but darkness
+    - name: east
+      description: You see nothing but darkness
+    - name: southt
+      description: You see nothing but darkness
+    - name: west
+      description: You see nothing but darkness
   junctions:
-    west:
-      goes_to: waitingroom
-    east:
+    - name: west
+      goes_to: mancave
+      description: nill
+    - name: east
       goes_to: dm2
+      description: nill
+
 - name: dm2
   description: You are in the deep mines
   junctions:
-    west:
+    - name: west
       goes_to: dm1
-    east:
+      description: nill
+    - name: east
       goes_to: dm3
-    north:
+      description: nill
+    - name: north
       goes_to: dm5
+      description: nill
+  look:
+    - name: north
+      description: You see nothing but darkness
+    - name: east
+      description: You see nothing but darkness
+    - name: southt
+      description: You see nothing but darkness
+    - name: west
+      description: You see nothing but darkness
+
 - name: dm3
   description: You are in the deep mines
   junctions:
-    west:
+    - name: west
       goes_to: dm2
-    east:
+      description: nill
+    - name: east
       goes_to: dm4
+      description: nill
+  look:
+    - name: north
+      description: You see nothing but darkness
+    - name: east
+      description: You see nothing but darkness
+    - name: southt
+      description: You see nothing but darkness
+    - name: west
+      description: You see nothing but darkness
+
 - name: dm4
   description: You are in the deep mines
   junctions:
-    west:
+    - name: west
       goes_to: dm3
+      description: nill
   look:
-    troep: Wat een zooitje
-  persons:
-  - name: hondje
-    description: view beest
-    talk: woef
+    - name: north
+      description: You see nothing but darkness
+    - name: east
+      description: You see nothing but darkness
+    - name: southt
+      description: You see nothing but darkness
+    - name: west
+      description: You see nothing but darkness
+
 - name: dm5
   description: You are in the deep mines
   junctions:
-    south:
+    - name: south
       goes_to: dm2
+      description: nill
+  look:
+    - name: north
+      description: You see nothing but darkness
+    - name: east
+      description: You see nothing but darkness
+    - name: southt
+      description: You see nothing but darkness
+    - name: west
+      description: You see nothing but darkness
+  moveable_objects:
+    - name: transistor
+      description: It feels like a NPN transistor type BC547C
+
 - name: long_hall
   description: You enter the long hall that goes up
   junctions:
-    north:
-      goes_to: waitingroom
+    - name: north
+      goes_to: mancave
+      description: nill
+    - name: south
+      goes_to: crossroad
+      description: nill
+- name: crossroad
+  description: ''
+  junctions:
+    - name: north
+      goes_to: long_hall
+      description: nill
+    - name: east
+      goes_to: route_a6
+      description: nill
+- name: route_a6
+  description: You are the the famouse route A6 to the east
+  junctions:
+    - name: west
+      goes_to: crossroad
+      description: nill
+    - name: east
+      goes_to: motortemple
+      description: nill
+- name: motortemple
+  description: temple
+  junctions:
+    - name: west
+      goes_to: route_a6
+      description: nill

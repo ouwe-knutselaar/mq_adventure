@@ -37,6 +37,9 @@ def design_loop():
             current_object = user_input_array[1]
             continue
 
+        if user_input_array[0] == 'quit':
+            init.save()
+            return
         print("unknown command")
 
 

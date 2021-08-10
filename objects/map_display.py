@@ -40,28 +40,26 @@ def get_room_by_name(name):
 
 
 def add_object(room_obj, x, y,room_array):
-
+    if room_obj is None:
+        print("error point to a nonexisting object, name is unknows room")
+        exit(1)
     for room in room_array:
         if room.get_name()['name'] == room_obj['name']:
             return
-    #print('add room ' + room_obj['name'] + ' x=' + str(x) + ' y=' + str(y))
+    print('add room ' + room_obj['name'] + ' x=' + str(x) + ' y=' + str(y))
     t_room= room_class(room_obj, x, y)
     room_array.append(t_room)
 
     for junction in room_obj['junctions']:
         # print("junction "+ junction)
-        j_room = get_room_by_name(room_obj['junctions'][junction]['goes_to'])
-        if junction == 'north':
-            #print(" - north")
+        j_room = get_room_by_name(junction['goes_to'])
+        if junction['name'] == 'north':
             add_object(j_room, x, y-1, room_array)
-        if junction == 'south':
-            #print(" - south")
+        if junction['name'] == 'south':
             add_object(j_room, x, y+1, room_array)
-        if junction == 'east':
-            #print(" - east")
+        if junction['name'] == 'east':
             add_object(j_room, x+1, y, room_array)
-        if junction == 'west':
-            #print(" - west")
+        if junction['name'] == 'west':
             add_object(j_room, x-1, y, room_array)
 
 

@@ -151,6 +151,7 @@ def __edit_menu(room):
         user_input = __user_input("choice").split(" ")
         if user_input[0] == 'q':
             loop = False
+            continue
         if user_input[0] == 'v':
             view_object.objprint(room,0)
             continue
@@ -160,12 +161,16 @@ def __edit_menu(room):
             continue
         if user_input[0] == 'n':
             __add_junction('north', user_input[1], room)
+            continue
         if user_input[0] == 'e':
             __add_junction('east', user_input[1], room)
+            continue
         if user_input[0] == 's':
             __add_junction('south', user_input[1], room)
+            continue
         if user_input[0] == 'w':
             __add_junction('west', user_input[1], room)
+            continue
 
         if user_input[0] == 'p':
             __add_person(user_input, room)
@@ -176,7 +181,9 @@ def __edit_menu(room):
             continue
         if user_input[0] == 'l':
             __add_room_arrtibute('look',user_input, room)
+            continue
         if user_input[0] == 'm':
             __add_room_arrtibute('moveable_object',user_input, room)
+            continue
     init.save()
     init.init()

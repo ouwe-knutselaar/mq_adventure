@@ -13,7 +13,14 @@ def __validity_check_empty_fields(keyword):
                 print(spaces)
                 print("The part:" + keyword + " is empty")
                 exit(1)
-
+            for item in spaces[keyword]:
+                if 'name' not in item:
+                    print("name missing in " + str(spaces))
+                    exit(1)
+                if 'description' not in item:
+                    print("description missing in " + keyword+ "\n"+ str(item))
+                    print(str(spaces))
+                    exit(1)
 
 def init():
     ruamel_yml_obj = ruamel.yaml.YAML()

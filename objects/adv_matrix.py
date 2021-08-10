@@ -44,14 +44,14 @@ class Matrix:
     def get_obj_junctions(self, x, y):
         dirstr = ""
         if (x, y) in self.__matrix:
-            if 'junctions' in self.__matrix[(x, y)]:
-                if 'north' in self.__matrix[(x, y)]['junctions']:
+            for junctions in self.__matrix[(x, y)]['junctions']:
+                if 'north' == junctions['name']:
                     dirstr = dirstr + "N"
-                if 'east' in self.__matrix[(x, y)]['junctions']:
+                if 'east' == junctions['name']:
                     dirstr = dirstr + "E"
-                if 'south' in self.__matrix[(x, y)]['junctions']:
+                if 'south' == junctions['name']:
                     dirstr = dirstr + "S"
-                if 'west' in self.__matrix[(x, y)]['junctions']:
+                if 'west' == junctions['name']:
                     dirstr = dirstr + "W"
         return dirstr+ " " * (self.__max_val_len - len(dirstr))
 
