@@ -196,6 +196,13 @@ def talk_person(location, person_to_talk):
             return person['talk']
     return "There is no " + person_to_talk
 
+def cast_spell(location, spell):
+    has_it,item=__has_item_named(location,'cast',spell)
+    if not has_it:
+        return "That did.....   absolutely nothing!"
+    return item['response']
+
+
 
 def get_help():
     return """
@@ -208,6 +215,7 @@ use ... on .. try to use
 read ...      read something
 talk ...      try to start a conversation
 open ...      open something
+cast ....     cast a spell
 """
 
 
@@ -260,6 +268,9 @@ def parse_user_input(user_input):
 
     if user_input_array[0] == "open":
         return open_object(location, concat_array(user_input_array))
+
+    if user_input_array[0] == "cast":
+        return cast_spell(location, concat_array(user_input_array))
 
     if user_input_array[0] == "help":
         return get_help()

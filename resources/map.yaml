@@ -509,7 +509,6 @@
 - name: mancave
   description: |
     You are in a real man cave. It is a complete mess with all kind of computers, automates and other electronic stuff.
-    In
   junctions:
     - name: north
       goes_to: coal_mine
@@ -519,9 +518,9 @@
       description: You enter the deep mines.
     - name: south
       goes_to: long_hall
-      description: nill
+      description: You are going to the long hall
   persons:
-    - name: builder
+    - name: bald man
       description: In the conrner behind a desk sits a bald man with glasses. He is busy with something strange to build
       talk: |
         Dammed I try to automate my automatic automate builder but I dropped the transistor somewhere in the mines to the east.
@@ -529,9 +528,16 @@
         Take the flashlight
       give:
         object: transistor
+        response: |
+          You found my transistor!
+          I will give you the next magic phases to defeat the Messaging Monster.
+          But listen carefully, I only says this once!
+          DEFINE CHANNEL
+          DEFINE QLOCAL
+          Use them wise, these are very powerfull spells. One mistake and you will be changed in to a cucumber!
   moveable_objects:
     - name: flashlight
-      description: A decent flashlight, probably running some kind of Linux distribution.
+      description: On the ground stands a decent flashlight, probably running some kind of Linux distribution.
 - name: dm1
   description: |
     You are in the deep mines. Fortunaly you have the flashlight else you wouldn't see a thing.
@@ -548,23 +554,23 @@
   junctions:
     - name: west
       goes_to: mancave
-      description: nill
+      description: You see nothing but darkness
     - name: east
       goes_to: dm2
-      description: nill
+      description: You see nothing but darkness
 
 - name: dm2
   description: You are in the deep mines
   junctions:
     - name: west
       goes_to: dm1
-      description: nill
+      description: You see nothing but darkness
     - name: east
       goes_to: dm3
-      description: nill
+      description: You see nothing but darkness
     - name: north
       goes_to: dm5
-      description: nill
+      description: You see nothing but darkness
   look:
     - name: north
       description: You see nothing but darkness
@@ -580,10 +586,10 @@
   junctions:
     - name: west
       goes_to: dm2
-      description: nill
+      description: You see nothing but darkness
     - name: east
       goes_to: dm4
-      description: nill
+      description: You see nothing but darkness
   look:
     - name: north
       description: You see nothing but darkness
@@ -599,7 +605,7 @@
   junctions:
     - name: west
       goes_to: dm3
-      description: nill
+      description: You see nothing but darkness
   look:
     - name: north
       description: You see nothing but darkness
@@ -615,7 +621,7 @@
   junctions:
     - name: south
       goes_to: dm2
-      description: nill
+      description: You see nothing but darkness
   look:
     - name: north
       description: You see nothing but darkness
@@ -630,23 +636,26 @@
       description: It feels like a NPN transistor type BC547C
 
 - name: long_hall
-  description: You enter the long hall that goes up
+  description: You enter the long hall that goes up highways
   junctions:
     - name: north
       goes_to: mancave
-      description: nill
+      description: Go back in to the mancave
     - name: south
       goes_to: crossroad
-      description: nill
+      description: You are walking over a long highway you see a crossroad
 - name: crossroad
   description: ''
   junctions:
     - name: north
       goes_to: long_hall
-      description: nill
+      description: Ouy are walking over the highway back to the long hall
     - name: east
       goes_to: route_a6
-      description: nill
+      description: You enter famouse route A6 to Almeria
+    - name: west
+      goes_to: route_a10
+      description: You enter the highway to Amsterdam
 - name: route_a6
   description: You are the the famouse route A6 to the east
   junctions:
@@ -654,11 +663,111 @@
       goes_to: crossroad
       description: nill
     - name: east
-      goes_to: motortemple
+      goes_to: almeria
       description: nill
-- name: motortemple
-  description: temple
+- name: almeria
+  description: |
+    You enter the Almeria. The holy place for monks and motors in fast east at the and of the route A6.
+    Above the holy place is a skull that carries a german helmet.
   junctions:
     - name: west
       goes_to: route_a6
-      description: nill
+      description: You enter famouse route A6 to Almeria
+  persons:
+    - name: monk
+      description: And there sits the wise monk. He is meditating on his roaring motor.
+      talk: |
+        The monk pushes the gas handle a couple of times to let the engine roar and then closes his eyes and says:
+        As pinguin once said, if you can't cast the spells to defeat the dragon then switch
+        to the one who has the all the rights to do it.
+        Tell me my novice, what is phrase?
+  cast:
+    - name: sudo su - root
+      description: spell
+      response: |
+        A flash of light blinds your eyes. Dark clouds fill the room and a deep voice from the smoke says:
+
+        SECURITY MONITORING OBSERVED ALERT: ALMERIA_APP_MOTOR: CRITICAL OBJECT MODIFICATION ON 06-06-1666 06:06:06 CEST.
+        ACTIVITY WAS PERFORMED ON HOST ALMERIA (6.66.6.66) FROM ACCOUNT 'MOTOR' TO ACCOUNT ROOT.
+        THE ACTIVITY WAS:
+        DEFINE QREMOTE
+        DEFINE QLOCAL
+        COULD YOU PLEASE VERIFY AND SHARE YOUR CONCLUSION WITH US?
+        THANK YOU IN ADVANCE FOR COOPERATION.
+
+        The smoke clears slowly and the monk smiles at you and says, now you have found the wisdom to defeat the messaging monster
+        Go deeper south and remember:
+        Every 1000 mile journey starts with a kick on the accelerator of your motor
+
+- name: route_a10
+  description: This is the road to Amsterdam
+  junctions:
+    - name: east
+      description: You go to the crossroad
+      goes_to: crossroad
+    - name: west
+      goes_to: vondelpark
+      description: You enter Amsterdam, and the first place you enter is the Vondelpark
+
+- name: vondelpark
+  description: |
+    You and in the Vondelpark. There in the middle of the park is a theater.
+    It seems that there is a guru from India who gives a Satsang today in the open air. A whole bunch
+    of dreadlocks, old hippies and spiritual eco warriers.
+    A girl in a typical spiritual dress has probably asked a very stupid question because you
+    see the poor man roling with his eyes. He mumbels some spiritual phrases to get rid of her.
+    Then the stage is empty, if you go north you might have a hange to sit on the chair besides
+    his throne.
+  junctions:
+    - name: east
+      description: You go to the route A10
+      goes_to: route_a10
+    - name: north
+      description: Swinging among a crowd of meditating people you enter en seat besides the throne of the guru
+      goes_to: throne
+    - name: west
+      description: After a small walk in western direction you enter the Kinkerstraat. A well known street in Amsterdam
+      goes_to: kinkerstraat
+
+- name: throne
+  description: |
+    You site on the throne next to the guru. The smell of flowers mixed with incense makes your head a
+    little lighter then normal. The guru looks friendly to you.
+  persons:
+    - name: guru
+      description: It seems that the guru wants to says something to you
+      talk: |
+        He bends over to you and wispers in your ear:
+        Please, help me. You look like a normal guy to me. I only do this for the money but all those
+        followers are only serving me curries in all kind of tastes. And I don't like curries at all.
+        And the worst is, it is all vegeterian. They are convinced that I only eat vegeterian curries
+        as a soll called enlightend guru.
+        Please, can you bring me a decent ductch meal with a good piece of meat?
+  junctions:
+    - name: south
+      description: Swinging among a crowd of meditating people you leave the seat besides the throne of the guru
+      goes_to: vondelpark
+
+- name: kinkerstraat
+  description: You enter the Kinkerstraat. It is a noisy street.
+  persons:
+    - name: old lady
+      description: An old lady with a shopping bag is walking by
+      talk: |
+        She starts talking and withing a minute she is telling you her about her life and starts complaining
+        about the cats of het neighbors. The kids from the family three house aways. About a guy on his racing bike
+        that doesn't take care of his plants in the window. etc...
+        After one and a half hour you she stops to breathe and before she continues you say goodby and you walk away.
+        You just hear her complaning that people don't talk to each other anymore like before.
+    - name: black guy
+      description: On the corner of the street stands a black guy listening to raggea music
+    - name: hipster
+      description: A hipster on a 'bakfiets' is trying his brand new 8mm film camera
+    - name: yuppie
+      description: A yuppie in his 'Tip de Bruin' suite is talking a little to loud over his iPhone 20 version B about his successes on the stock market
+    - name: jogging girl
+      description: You can just avoid a collision with a blond jogging girl. She looked pissed of and shows her middlefinger
+  junctions:
+    - name: east
+      description: After a small walk in eastern direction you enter the Vondelpark.
+      goes_to: vondelpark

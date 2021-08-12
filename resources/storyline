@@ -34,12 +34,14 @@ go in the dark mines to find the gear wheel.
 Search the gear wheel and then he organizes a magic MOB ritual where he explains the third spell
 DEFINE CHANNLE() Type is send
 
-Search for the wise monk who lives in the east in the land under the sea.
+Search for the wise monk who lives in the east in Almeria
 
 DEFINE CHANNEL TYPE IS SDR
 
 Then search for the Ashram for Guru Swami Nasi Bami. You can only access him via the
-He has a very strick diet and eats only green curry
+He has a lot of followers and when you sit besides him on the throne he wispers in your ear
+They serve me curry, the whole fucking time curry. Because I'm form India the always serve me curry because they think I like it
+And I bloody hate curry! Please give me a decent dutch meal
 DEFINE CHANNEL9 TYPE is RECV
 
 Go Guardian of the Hills.
