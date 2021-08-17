@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="63addf25-95ca-44f7-8960-c488a8c2bc30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_play.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_play.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/happy_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/happy_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/edit.py" beforeDir="false" afterPath="$PROJECT_DIR$/objects/edit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/map.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/storyline" beforeDir="false" afterPath="$PROJECT_DIR$/resources/storyline" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map_org.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map_org.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,29 +42,35 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/storyline">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" column="59" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
+            <state relative-caret-position="356">
+              <caret line="49" column="7" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/map.yaml">
+        <entry file="file://$PROJECT_DIR$/objects/edit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="763" column="9" selection-start-line="763" selection-start-column="9" selection-end-line="763" selection-end-column="9" />
+            <state relative-caret-position="192">
+              <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/map">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/designer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="42" column="165" selection-start-line="42" selection-start-column="165" selection-end-line="42" selection-end-column="165" />
+            <state relative-caret-position="124">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,7 +107,6 @@
         <option value="$PROJECT_DIR$/mq_adventure.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/designer.py" />
-        <option value="$PROJECT_DIR$/objects/edit.py" />
         <option value="$PROJECT_DIR$/init.py" />
         <option value="$PROJECT_DIR$/objects/adv_matrix.py" />
         <option value="$PROJECT_DIR$/objects/map_display.py" />
@@ -111,23 +114,22 @@
         <option value="$PROJECT_DIR$/game_play.py" />
         <option value="$PROJECT_DIR$/happy_flow.py" />
         <option value="$PROJECT_DIR$/resources/storyline" />
-        <option value="$PROJECT_DIR$/resources/map.yaml" />
         <option value="$PROJECT_DIR$/resources/map" />
+        <option value="$PROJECT_DIR$/objects/edit.py" />
+        <option value="$PROJECT_DIR$/resources/map.yaml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="-8" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -149,20 +151,21 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\erwin\pythondev\mq_adventure\resources" />
+      <recent name="C:\erwin\pythondev\mq_adventure" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\erwin\pythondev\mq_adventure\objects" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\erwin\pythondev\mq_adventure" />
-      <recent name="C:\erwin\pythondev\mq_adventure\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -315,15 +318,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18163805" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32964823" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41584158" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5346535" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.54314005" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -359,9 +361,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/happy_flow.py</url>
-          <line>80</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/objects/edit.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -381,9 +383,6 @@
           <caret line="216" selection-start-line="216" selection-end-line="216" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/map_org.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/globals.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -407,16 +406,6 @@
           <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/objects/edit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="186" column="20" selection-start-line="186" selection-start-column="20" selection-end-line="186" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -445,16 +434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/designer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/objects/map_display.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
@@ -476,24 +455,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="1740" selection-start-line="1740" selection-end-line="1740" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../python/Python38/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="309" selection-start-line="309" selection-end-line="309" />
         </state>
       </provider>
     </entry>
@@ -524,24 +489,63 @@
     <entry file="file://$PROJECT_DIR$/player.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/storyline">
+    <entry file="file://$PROJECT_DIR$/../../python/Python38/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="59" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
+        <state relative-caret-position="132">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/map_org.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="42" column="165" selection-start-line="42" selection-start-column="165" selection-end-line="42" selection-end-column="165" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objects/edit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/designer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/map.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="763" column="9" selection-start-line="763" selection-start-column="9" selection-end-line="763" selection-end-column="9" />
+        <state relative-caret-position="68">
+          <caret line="782" column="4" selection-start-line="782" selection-start-column="4" selection-end-line="782" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/map">
+    <entry file="file://$PROJECT_DIR$/resources/storyline">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="42" column="165" selection-start-line="42" selection-start-column="165" selection-end-line="42" selection-end-column="165" />
+        <state relative-caret-position="356">
+          <caret line="49" column="7" lean-forward="true" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
         </state>
       </provider>
     </entry>

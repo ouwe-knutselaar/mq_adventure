@@ -53,30 +53,36 @@ def delete_room(room_name):
     init.init()
 
 
-def __add_junction(direction, room_name, this_room):
-    if not __room_exists(room_name):
-        print(room_name + " does not exists")
+def __add_junction(direction, connecting_room_name, this_room):
+    if not __room_exists(connecting_room_name):
+        print(connecting_room_name + " does not exists")
         return
 
     opposite_tnl = {'north': 'south', 'east': 'west', 'south': 'north', 'west': 'east'}
     opposite = opposite_tnl[direction]
 
-    room = __get_room(room_name)
-    if opposite in room['junctions']:
-        print(room['name'] + " has already a connection in this direction")
+    connecting_room = __get_room(connecting_room_name)
+    for junctions in connecting_room['junctions']:
+        if junctions['name'] == opposite:
+            print(connecting_room['name'] + " has already a connection in this direction")
+            return
 
-    this_room['junctions'] = {}
-    this_room['junctions'][direction] = {}
-    this_room['junctions'][direction]['goes_to'] = room_name
+    new_direction = {}
+    new_direction['name'] = direction
+    new_direction['goes_to'] = connecting_room_name
+    new_direction['description'] = 'nill'
+    this_room['junctions']=[]
+    this_room['junctions'].append(new_direction)
     globals.map_file.append(this_room)
 
-    if 'junctions' not in room:
-        room['junctions'] = {}
-    room['junctions'][opposite] = {}
-    room['junctions'][opposite]['goes_to'] = this_room['name']
+    opposite_direction = {}
+    opposite_direction['name'] = opposite
+    opposite_direction['goes_to'] = this_room['name']
+    opposite_direction['description'] = 'nill'
+    connecting_room['junctions'].append(opposite_direction)
 
-    print('from room' + this_room['name'] + ' created a junction ' + direction + " to " + room_name)
-    print('from room' + room_name + 'created a junction ' + opposite + " " + this_room['name'])
+    print('from room' + this_room['name'] + ' created a junction ' + direction + " to " + connecting_room_name)
+    print('from room' + connecting_room_name + 'created a junction ' + opposite + " " + this_room['name'])
 
 
 def __add_room_arrtibute(attribute,user_input, room):
