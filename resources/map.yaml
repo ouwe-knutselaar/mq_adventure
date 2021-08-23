@@ -732,10 +732,11 @@
     description: It seems that the guru wants to says something to you
     talk: |
       He bends over to you and wispers in your ear:
-      Please, help me. You look like a normal guy to me. I only do this for the money but all those
-      followers are only serving me curries in all kind of tastes. And I don't like curries at all.
-      And the worst is, it is all vegeterian. They are convinced that I only eat vegeterian curries
-      as a soll called enlightend guru.
+      Please, help me. You look like a normal guy to me. To be honest I only do this for the money but
+      everywhere I go now they see me as an spiritual enlightend master. They give me all kinds of meals.
+      But the worst of all is, they are all vegeterians and because I'm from India they serve me the
+      whole time vegetarian curries!
+      I hate these bloody vegetarian curries with all these tasteless lumps of tofu!
       Please, can you bring me a decent ductch meal with a good piece of meat?
   junctions:
   - name: south
@@ -754,16 +755,39 @@
       After one and a half hour you she stops to breathe and before she continues you say goodby and you walk away.
       You just hear her complaning that people don't talk to each other anymore like before.
   - name: black guy
-    description: On the corner of the street stands a black guy listening to raggea
-      music
+    description: On the corner of the street stands a black guy listening to reggea music
+    talk: |
+      You look like a UB40 listener. That's no reggea music. Here listen to this.
+      He takes of his headphone and dumps it on your head. As the deep psychedelic music goes to
+      your brain he sticks a big joint in your mouth.
+      Oke, you are really in Amsterdam now.
   - name: hipster
-    description: A hipster on a 'bakfiets' is trying his brand new 8mm film camera
+    description: A hipster on a cargo bike is trying his brand new 8mm film camera.
+    talk: |
+      I don't have time for you now. I'm really in a hurry. My vegaterian goatmilk container barista bar
+      must be opened. My delivery of goi berries and japanese peanut butter seeds were to late.
+      Man, those suppliers do not know what normal food is?
   - name: yuppie
-    description: A yuppie in his 'Tip de Bruin' suite is talking a little to loud
+    description: A yuppie in his Armani suite is talking a little to loud
       over his iPhone 20 version B about his successes on the stock market
+    talk: |
+      He seems to ignore you, waits a moment and then continues the conversation on his phone.
+      'Floris-Karel listen man, I have a normal guy who tries to talk to mee, can you imagine?
+      ....
+      Yeh, these locals here always try to get our attention...
+      ....
+      I know, funny isn't it? YOu know I will give him 5 euro's. See how he will respond...
+
+      Then he gives you 5 euro's
+    receive:
+      - name: 5 euro
+        description: A billet of 5 euro
   - name: jogging girl
-    description: You can just avoid a collision with a blond jogging girl. She looked
-      pissed of and shows her middlefinger
+    description: You can just avoid a collision with a blond jogging girl. She looked pissed of and shows her middlefinger
+    talk: |
+      Go away,pervert! Or I scan your image, find you on facebook and put you on #metoo.
+      I'll make sure that you are fully canceled and banned from every social media site!
+      You will hear from my lawyer!
   junctions:
   - name: east
     description: After a small walk in eastern direction you enter the Vondelpark.
@@ -771,6 +795,31 @@
   - name: west
     goes_to: tramstop
     description: nill
+  - name: north
+    goes_to: supermarket
+    description: You enter the supermarktet
+
+- name: supermarket
+  description: |
+    You are in de supermarket. It is very busy with a lot of shopping people.
+    Right besides the entry stands a lady who is selling a new product.
+  persons:
+    - name: lady
+      description: A lady who is promoting a new product
+      talk: |
+        Hellooooo! Do you like to buy our newst product! We sell ' Lunox Boerenkool met Worst™'. You know
+        these days there are a lot of additions added to our food, which are véééry unhealthy!
+        And in our laboratory we have develloped a very special and methode to remove all the
+        additions from our 'Lunox Boerenkool met Worst™' so that we only keep the potatoes, boerenkool and worst.
+        Wonderfull isn't it!!
+        A test package for one meal is 5 euro. The price is a little higher then the ordinary
+        'Lunox Boerenkool met Worst classic™' we sell. But you know, your health is priceless!
+
+  junctions:
+    - name: south
+      goes_to: kinkerstraat
+      description: You leave the supermartket en enters the kinkerstraat
+
 - name: tramstop
   description: tramstop
   junctions:

@@ -193,6 +193,11 @@ def talk_person(location, person_to_talk):
 
     for person in location['persons']:
         if person['name'] == person_to_talk:
+            if 'receive' in person:
+                for item in person['receive']:
+                    player.put_in_inventory(item)
+                    person['receive'] = []
+                    return "The " + person_to_talk + " gives you a " + item['name']
             return person['talk']
     return "There is no " + person_to_talk
 
