@@ -134,6 +134,9 @@ def use_object_on(location, t_array):
 
 def give_object_to_person(location, t_array):
     t_array.pop(0)
+
+
+
     if 'to' not in t_array:
         return "Give to who?"
     on_index = t_array.index('to')
@@ -155,14 +158,14 @@ def give_object_to_person(location, t_array):
     if object_to_give != person['give']['object']:
         return "The " + person_name + " does not wants the " + object_to_give
 
-    has_it, item = player.get_from_inventory(object_to_give)
-
+    to_receive = ""
     if 'receive' in person['give']:
         for item in person['give']['receive']:
             player.put_in_inventory(item)
             person['give']['receive'] = []
-            return "The "+person_name+" gives you a "+item['name']
-    return person['give']['response']
+            to_receive = "The "+person_name+" gives you a "+item['name']
+    respone =  person['give']['response'] + "\n" + to_receive
+    return respone
 
 def read_object(location, object_to_read):
     #have_it, item = get_record_in_group_by_name(location, 'moveable_objects', object_to_read)

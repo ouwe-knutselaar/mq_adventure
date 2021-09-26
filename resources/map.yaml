@@ -252,8 +252,9 @@
     description: The queen is a beautyfull woman with golden hair.
   persons:
   - name: queen
-    description: 'On an throne sits the most beautifull woman you have ever seen.
-      However see looks very sad. '
+    description: |
+      On an throne sits the most beautifull woman you have ever seen.
+      However see looks very sad.
     talk: |
       My little cute puppy. It has runned away!
       Please help me to find it.
@@ -275,7 +276,7 @@
       receive:
       - name: incident ticket
         description: On the floor lies the incident ticket of the jungle queen.
-        look: Just an ordinary incident ticket, please solve this incident
+        look: Just an ordinary incident ticket, please solve this incident.
   junctions:
   - name: west
     goes_to: j9
@@ -630,6 +631,7 @@
   moveable_objects:
   - name: transistor
     description: It feels like a NPN transistor type BC547C
+
 - name: long_hall
   description: You enter the long hall that goes up highways
   junctions:
@@ -639,6 +641,7 @@
   - name: south
     goes_to: crossroad
     description: You are walking over a long highway you see a crossroad
+
 - name: crossroad
   description: ''
   junctions:
@@ -651,6 +654,7 @@
   - name: west
     goes_to: route_a10
     description: You enter the highway to Amsterdam
+
 - name: route_a6
   description: You are the the famouse route A6 to the east
   junctions:
@@ -660,6 +664,7 @@
   - name: east
     goes_to: almeria
     description: nill
+
 - name: almeria
   description: |
     You enter the Almeria. The holy place for monks and motors in fast east at the and of the route A6.
@@ -693,6 +698,7 @@
       The smoke clears slowly and the monk smiles at you and says, now you have found the wisdom to defeat the messaging monster
       Go deeper south and remember:
       Every 1000 mile journey starts with a kick on the accelerator of your motor
+
 - name: route_a10
   description: This is the road to Amsterdam
   junctions:
@@ -723,6 +729,7 @@
     description: After a small walk in western direction you enter the Kinkerstraat.
       A well known street in Amsterdam
     goes_to: kinkerstraat
+
 - name: throne
   description: |
     You site on the throne next to the guru. The smell of flowers mixed with incense makes your head a
@@ -738,6 +745,23 @@
       whole time vegetarian curries!
       I hate these bloody vegetarian curries with all these tasteless lumps of tofu!
       Please, can you bring me a decent ductch meal with a good piece of meat?
+    give:
+      object: boerenkool met worst
+      response: |
+        Oh my god, real 'boerenkool met worst'. I love it!
+        Het rips the bag open an starts to eat. A couple of his spiritual followers do look not
+        very happy to you.
+        But the guru doesn't care and with a full mouth he said:
+        I will give you the two extra spells that you need to defeat the messaging monster
+        DEFINE .....
+        DEFINE .....
+        For the other parts of the spell go south and seek the master of the hills and give him this document. He waits
+        for years on this document to approve hat he is safe and secure.
+      receive:
+        - name: document
+          description: You see a document with the seal of the security master. Take care because it is worth a fortune
+          look: You see a document with the seal of the security master. Take care because it is worth a fortune
+
   junctions:
   - name: south
     description: Swinging among a crowd of meditating people you leave the seat besides
@@ -814,7 +838,15 @@
         Wonderfull isn't it!!
         A test package for one meal is 5 euro. The price is a little higher then the ordinary
         'Lunox Boerenkool met Worst classic™' we sell. But you know, your health is priceless!
-
+      give:
+        object: 5 euro
+        response: |
+          Thank you and here is your 'Boerenkool met Worst™. I will really like it!
+          And she hands you over a sealed bag with 'Boerenkool met Worst™'
+        receive:
+          - name: boerenkool met worst
+            description: A sealed bag with 'Boerenkool met Worst™'
+            look: Yeah, this is a sealed bag with normal 'boerenkool met worst', easy to make it yourself.
   junctions:
     - name: south
       goes_to: kinkerstraat
@@ -825,162 +857,203 @@
   junctions:
   - name: east
     goes_to: kinkerstraat
-    description: nill
+    description: You enter the kinkerstraat
   - name: south
     goes_to: station
-    description: nill
+    description: You go to a small station just outside Amsterdam. 
 
 - name: station
-  description: station
+  description: You enter at a small station. Is it called Haarlemmermeer station and it had one rail called perron 4 7/8.
   junctions:
   - name: north
     goes_to: tramstop
-    description: tramstop
+    description: Yoo go to a tramstop in Amsterdam
   - name: south
     goes_to: h1
-    description: you go to the hills
+    description: If you go south you will take the train to the the hill.
 
 - name: h1
-  descritopn: You are at the hills
+  description: You are at the hills
   junctions:
   - name: north
     goes_to: station
     description: you go to the station
   - name: east
     goes_to: h4
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: south
     goes_to: h2
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: west
     goes_to: h1
-    description: you go to the hills
+    description: You go deeper in to the hills.
 
 - name: h2
-  descritopn: You are at the hills
+  description: You are at the hills
   junctions:
   - name: north
     goes_to: h1
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: east
     goes_to: h5
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: south
     goes_to: h3
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: west
     goes_to: h2
-    description: you go to the hills
+    description: You go deeper in to the hills.
 
 - name: h3
-  descritopn: You are at the hills
+  description: You are at the hills
   junctions:
   - name: north
     goes_to: h2
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: east
     goes_to: h6
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: south
     goes_to: h3
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: west
-    goes_to: h3
-    description: you go to the hills
+    goes_to: hilltop
+    description: You go deeper in to the hills.
 
 - name: h4
-  descritopn: You are at the hills
+  description: You are at the hills
   junctions:
   - name: north
     goes_to: h4
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: east
     goes_to: h7
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: south
     goes_to: h5
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: west
     goes_to: h1
-    description: you go to the hills
+    description: You go deeper in to the hills.
 
 - name: h5
-  descritopn: You are at the hills
+  description: You are at the hills
   junctions:
   - name: north
     goes_to: h4
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: east
     goes_to: h8
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: south
     goes_to: h6
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: west
     goes_to: h2
-    description: you go to the hills
+    description: You go deeper in to the hills.
 
 - name: h6
-  descritopn: You are at the hills
+  description: You are at the hills
   junctions:
   - name: north
     goes_to: h5
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: east
     goes_to: h9
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: south
     goes_to: h6
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: west
     goes_to: h3
-    description: you go to the hills
+    description: You go deeper in to the hills.
 
 - name: h7
-  descritopn: You are at the hills
+  description: You are at the hills
   junctions:
   - name: north
     goes_to: h7
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: east
     goes_to: h7
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: south
     goes_to: h8
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: west
     goes_to: h4
-    description: you go to the hills
+    description: You go deeper in to the hills.
 
 - name: h8
-  descritopn: You are at the hills
+  description: You are at the hills
   junctions:
   - name: north
     goes_to: h7
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: east
-    goes_to: h8
-    description: you go to the hills
+    goes_to: bicycle_hill
+    description: You go deeper in to the hills.
   - name: south
     goes_to: h9
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: west
     goes_to: h5
-    description: you go to the hills
+    description: You go deeper in to the hills.
 
 - name: h9
-  descritopn: You are at the hills
+  description: You are at the hills
   junctions:
   - name: north
     goes_to: h8
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: east
     goes_to: h9
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: south
     goes_to: h9
-    description: you go to the hills
+    description: You go deeper in to the hills.
   - name: west
     goes_to: h6
-    description: you go to the hills
+    description: You go deeper in to the hills.
+    
+- name: hilltop
+  description: You enter the top of the hills. There stands the master of the hills.
+  junctions:
+    - name: east
+      goes_to: h3
+      description: You go back deeper in to the hills.
+  persons:
+    - name: master of the hills
+      description: |
+        There stands the master of hills. But then you see a pile of daipers, used daipers. You wonders why the master
+        of the hills stands beneath a pile of used daipers.
+      talk: |
+        QUIT!!! My little baby needs to sleep!
+        Without my security statement I cannot guarantee the the safety that he needs to get asleep. I'm waiting now
+        for two years on this stupid document!
+      give:
+        object: document
+        response: |
+          You have the security document! Thank you very very much. I've waited so long on this document:
+          As a thank I will give you the secrit part of the spell to defeat the messaging monster:
+          SET AUTHREC .....
+          SET AUTHREC ......
+          And now you must go east to the old iron wizard. He and he alone is the most wise man of all. He can give you
+          the final spell that you need to defeat the messaing monster, because he know the messaging monster for more
+          than 60 years!
+          But leave mortal, leave now and go east ...... cause my little baby needs a clean daiper.
+
+- name: bicycle_hill
+  description: |
+    You see an large hill that exists of all kind of old iron bicycle parts. A path leads west to the top of the hill.
+    And there on the top you see the castle of the old iron wizard. The gate of his mighty castle is guarded but two
+    cats.
+  junctions:
+    - name: west
+      goes_to: h8
+      description: You go back deeper in to the hills.
+
+
+
+
 
