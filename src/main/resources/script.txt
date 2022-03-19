@@ -1,0 +1,126 @@
+erwin
+password
+look
+look door
+look skull
+talk product owner
+pick paperclip
+use paperclip on door
+east
+look plate
+read plate
+North
+north
+north
+open old basket
+inventory
+East
+east
+east
+talk queen
+give puppy to queen
+inventory
+west
+west
+south
+west
+south
+south
+use incident ticket on golden door
+east
+east
+read plate
+talk master
+south
+south
+east
+pick badge
+inventory
+west
+north
+north
+give badge to master
+use key on door
+east
+east
+south
+south
+talk bald man
+pick flashlight
+east
+east
+north
+pick transistor
+south
+west
+west
+give transistor to bald man
+south
+south
+read sign
+east
+east
+talk monk
+say sudo su - root
+west
+west
+west
+say ajax forever
+west
+west
+north
+talk guru
+south
+west
+talk yuppie
+inventory
+north
+talk lady
+give 5 euro to lady
+inventory
+south
+east
+north
+give boerenkool met worst to guru
+inventory
+south
+west
+west
+south
+south
+south
+south
+west
+talk master of the hills
+give document to master of the hills
+east
+east
+east
+north
+pick carton box
+east
+east
+talk cats
+give carton box to cats
+pick bicycle wheel
+inventory
+use bicycle wheel on gate
+east
+talk old iron wizard
+say Joop Zoetemelk
+east
+say open sesame
+east
+east
+cast DEFINE QLOCAL
+cast DEFINE QLOCAL
+cast DEFINE QALIAS
+cast DEFINE CHANNEL
+cast DEFINE XMITQ
+cast DEFINE AUTHREC QALIAS
+cast DEFINE AUTHREC QMGR
+cast REFRESH QMGR
+east
+xxx
+xxx
+xxx

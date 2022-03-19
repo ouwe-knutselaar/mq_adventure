@@ -1,600 +1,226 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="63addf25-95ca-44f7-8960-c488a8c2bc30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_play.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_play.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/happy_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/happy_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map.yaml" afterDir="false" />
-    </list>
-    <ignored path="$PROJECT_DIR$/venv/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="f560aed1-59c2-4355-8fac-257085f8318f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/happy_flow.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/map.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="1052" column="17" selection-start-line="1052" selection-start-column="17" selection-end-line="1052" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/map">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="165" lean-forward="true" selection-start-line="38" selection-start-column="165" selection-end-line="38" selection-end-column="165" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game_play.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="166" column="61" selection-start-line="166" selection-start-column="61" selection-end-line="166" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/storyline">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/objects/edit.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1326">
-              <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/designer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/objects/view_object.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>pop</find>
-      <find>name: south</find>
-      <find>Description</find>
-      <find>waitingroom</find>
-      <find>you go to the hills</find>
-      <find>descritopn</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>- name: south</replace>
-      <replace>You go deeper in to the hills.</replace>
-      <replace>description</replace>
-    </replaceStrings>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/map_display.py" />
-        <option value="$PROJECT_DIR$/objects/view_object.py" />
-        <option value="$PROJECT_DIR$/mq_adventure.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/init.py" />
-        <option value="$PROJECT_DIR$/objects/adv_matrix.py" />
-        <option value="$PROJECT_DIR$/objects/map_display.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/idea.properties" />
-        <option value="$PROJECT_DIR$/resources/storyline" />
-        <option value="$PROJECT_DIR$/objects/edit.py" />
-        <option value="$PROJECT_DIR$/designer.py" />
-        <option value="$PROJECT_DIR$/game_play.py" />
-        <option value="$PROJECT_DIR$/resources/map.yaml" />
-        <option value="$PROJECT_DIR$/happy_flow.py" />
-        <option value="$PROJECT_DIR$/resources/map" />
-      </list>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="mq_adventure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mq_adventure" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mq_adventure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mq_adventure" type="462c0819:PsiDirectoryNode" />
-              <item name="objects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mq_adventure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mq_adventure" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectId" id="21m3Z3OW73dTUkzcc1LMSVunZGS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\erwin\pythondev\mq_adventure\resources" />
-      <recent name="C:\erwin\pythondev\mq_adventure" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\erwin\pythondev\mq_adventure\objects" />
+      <recent name="D:\onze_projecten\MqAdventure" />
+      <recent name="D:\onze_projecten\MqAdventure\src\main\resources" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.designer">
-    <configuration name="designer" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="mq_adventure" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/designer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
+  <component name="RunManager" selected="Application.TestLoop">
+    <configuration name="Design" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mqadventure.Design" />
+      <module name="MqAdventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mqadventure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="happy_flow" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="mq_adventure" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/happy_flow.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
+    <configuration name="MqAdventure" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mqadventure.MqAdventure" />
+      <module name="MqAdventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mqadventure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="map_display" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="mq_adventure" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\erwin\pythondev\mq_adventure\objects\map_display.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
+    <configuration name="MqAdventureLoop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mqadventure.MqAdventureLoop" />
+      <module name="MqAdventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mqadventure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="mq_adventure" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="mq_adventure" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mq_adventure.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
+    <configuration name="TestLoop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mqadventure.TestLoop" />
+      <module name="MqAdventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mqadventure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="mq_adventure" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.designer" />
-      <item itemvalue="Python.happy_flow" />
-      <item itemvalue="Python.map_display" />
-      <item itemvalue="Python.mq_adventure" />
-      <item itemvalue="Python.test" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.designer" />
-        <item itemvalue="Python.happy_flow" />
-        <item itemvalue="Python.map_display" />
-        <item itemvalue="Python.mq_adventure" />
-        <item itemvalue="Python.test" />
+        <item itemvalue="Application.TestLoop" />
+        <item itemvalue="Application.MqAdventure" />
+        <item itemvalue="Application.Design" />
+        <item itemvalue="Application.MqAdventureLoop" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="63addf25-95ca-44f7-8960-c488a8c2bc30" name="Default Changelist" comment="" />
-      <created>1627874908598</created>
+      <changelist id="f560aed1-59c2-4355-8fac-257085f8318f" name="Default Changelist" comment="" />
+      <created>1638532491629</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1627874908598</updated>
+      <updated>1638532491629</updated>
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2766" height="1126" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Project Explorer" />
-      <window_info id="DB Browser" />
-      <window_info id="Job Explorer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18131869" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="DB Execution Console" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32964823" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4763819" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5427136" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.28542712" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18163805" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32964823" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4540311" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.58981615" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.28542712" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
+  <component name="WindowStateProjectService">
+    <state x="712" y="343" key="#Notifications" timestamp="1647166595407">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="712" y="343" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1647166595407" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1647371019721">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1647371019721" />
+    <state x="740" y="224" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1647371003356">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="224" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1647371003356" />
+    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser" timestamp="1647371758675">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1647371758675" />
+    <state x="636" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1646853672486">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="636" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1646853672486" />
+    <state x="743" y="388" width="433" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1647114571291">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="743" y="388" width="433" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1647114571291" />
+    <state x="485" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1647167007790">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="485" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1647167007790" />
+    <state x="729" y="349" key="#com.intellij.tools.ToolEditorDialog" timestamp="1647371010384">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="729" y="349" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1647371010384" />
+    <state x="400" y="260" width="1113" height="484" key="#toString()_Generation_Settings" timestamp="1638995482928">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="400" y="260" width="1113" height="484" key="#toString()_Generation_Settings/0.0.1920.1040@0.0.1920.1040" timestamp="1638995482928" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1640941600759">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1640941600759" />
+    <state width="1877" height="489" key="GridCell.Tab.0.bottom" timestamp="1647631028943">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="489" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1647631028943" />
+    <state width="1877" height="489" key="GridCell.Tab.0.center" timestamp="1647631028943">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="489" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1647631028943" />
+    <state width="1877" height="489" key="GridCell.Tab.0.left" timestamp="1647631028943">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="489" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1647631028943" />
+    <state width="1877" height="489" key="GridCell.Tab.0.right" timestamp="1647631028943">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="489" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1647631028943" />
+    <state width="1877" height="489" key="GridCell.Tab.1.bottom" timestamp="1647631028943">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="489" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1647631028943" />
+    <state width="1877" height="489" key="GridCell.Tab.1.center" timestamp="1647631028943">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="489" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1647631028943" />
+    <state width="1877" height="489" key="GridCell.Tab.1.left" timestamp="1647631028943">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="489" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1647631028943" />
+    <state width="1877" height="489" key="GridCell.Tab.1.right" timestamp="1647631028943">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="489" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1647631028943" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1647623899937">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1647623899937" />
+    <state x="855" y="254" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1647371011212">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="855" y="254" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.0.1920.1040@0.0.1920.1040" timestamp="1647371011212" />
+    <state x="505" y="255" width="910" height="630" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1647627111315">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="505" y="255" width="910" height="630" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1647627111315" />
+    <state x="551" y="180" key="new project wizard" timestamp="1640941665581">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="551" y="180" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1640941665581" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1640620262615">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1640620262615" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/objects/edit.py</url>
-          <line>56</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/game_play.py</url>
-          <line>162</line>
-          <option name="timeStamp" value="10" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/mqadventure/MqAdventure.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/PycharmProjects/mq_adventure/venv/Lib/site-packages/ruamel/yaml/comments.py" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_breakpoints.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="108" selection-start-line="108" selection-end-line="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/ruamel/yaml/compat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="216" selection-start-line="216" selection-end-line="216" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/globals.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mq_adventure_net.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mq_adventure.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/objects/adv_matrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="44" column="19" lean-forward="true" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/init.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/objects/map_display.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1853809837/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="5169" column="8" selection-start-line="5169" selection-start-column="8" selection-end-line="5169" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/ruamel/yaml/comments.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="922" selection-start-line="922" selection-end-line="922" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="1740" selection-start-line="1740" selection-end-line="1740" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../python/Python38/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="309" selection-start-line="309" selection-end-line="309" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/map_org.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/storyline">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/objects/edit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/designer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/objects/view_object.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game_play.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="166" column="61" selection-start-line="166" selection-start-column="61" selection-end-line="166" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/happy_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/map.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="1052" column="17" selection-start-line="1052" selection-start-column="17" selection-end-line="1052" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/map">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="165" lean-forward="true" selection-start-line="38" selection-start-column="165" selection-end-line="38" selection-end-column="165" />
-        </state>
-      </provider>
-    </entry>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="adventureMap.adventureMap" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

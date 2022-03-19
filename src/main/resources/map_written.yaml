@@ -1,0 +1,968 @@
+---
+rooms:
+- name: "startingpoint"
+  description: "you are in a cold dark room. There is an old table in the corner.\
+    \ In the east is a door. In the middle is an old table"
+  junctions:
+  - name: "east"
+    description: "You open the door to the east"
+    goes_to: "great_hall"
+    blocked: "yes"
+    unblock: "paperclip"
+  look:
+  - name: "door"
+    description: "You see a door on the north side of this room."
+  - name: "table"
+    description: "A dirty old table"
+  moveable_objects:
+  - name: "scroll"
+    description: "On the floor lies an old scroll of perkament"
+    look: "it is an old scroll"
+    read: "Behold stranger, thou shall not leave this place before\nyou have saved\
+      \ the orange lion from the horrible messaging monster\nCollect the xxx spells\
+      \ to evoke the magical message flow and drain\nthe power form the messaging\
+      \ monster.\n"
+  - name: "skull"
+    description: "There is an old skull in the corner"
+    look: "The poor fellow is long dead"
+  - name: "yellow stone"
+    description: "In the middle is a yellow stone"
+    look: "A very yellow stone, what else had you expected?"
+  - name: "paperclip"
+    description: "You can just see a paperclip"
+    look: "You look at a very ordinary paperclip"
+- name: "great_hall"
+  description: "You are in a great Hall. The roof is made of glass en you can see\
+    \ the blue sky. In the middle is a statue of a big lion.\nOn the statue is a plate\
+    \ with something written on it.\nThe is a door in the south side of the wall\n\
+    In the north you see an opening in the wall that leads to a jungle\nIn the east\
+    \ you see an golden door\n"
+  junctions:
+  - name: "north"
+    description: "You enter the deep green jungle"
+    goes_to: "j1"
+  - name: "west"
+    description: "You go the this door, you really want to go back?"
+    goes_to: "startingpoint"
+  - name: "east"
+    description: "Go, mortal. Pass this golden gate and enter the bridge! And... \
+      \ well thats all."
+    goes_to: "bridge"
+    blocked: "yes"
+    unblock: "incident ticket"
+  look:
+  - name: "south"
+    description: "The is a door in the south side of the wall"
+  - name: "north"
+    description: "In the north you see an opening in the wall that leads to a jungle"
+  - name: "east"
+    description: "In the east you see an golden door"
+  - name: "plate"
+    description: "A plate with letters on it"
+- name: "j1"
+  description: "You enter the jungle, it is warm and wet. You have the feeling that\
+    \ behind every leaf something is watching you"
+  junctions:
+  - name: "north"
+    description: "Go deeper between the leaves"
+    goes_to: "j2"
+  - name: "east"
+    description: "Go deeper in the jungle"
+    goes_to: "j4"
+  - name: "south"
+    description: "You enter the great hall"
+    goes_to: "great_hall"
+  - name: "west"
+    description: "Go deeper in the jungle"
+    goes_to: "j1"
+- name: "j2"
+  description: "This jungle is hot and moisty."
+  junctions:
+  - name: "north"
+    description: "Go north in the jungle"
+    goes_to: "j3"
+  - name: "east"
+    description: "Go east in the jungle"
+    goes_to: "j5"
+  - name: "south"
+    description: "Go south in the jungle"
+    goes_to: "j1"
+  - name: "west"
+    description: "Go west in the jungle"
+    goes_to: "j2"
+  moveable_objects:
+  - name: "coconut"
+    description: "On the floor lies a coconut"
+  - name: "bottle"
+    description: "There lies an empty bottle of beer"
+- name: "j3"
+  description: "It look like a jungle from the Tarzan books."
+  junctions:
+  - name: "north"
+    description: "Go deeper in the green hell"
+    goes_to: "j3"
+  - name: "east"
+    description: "Tarzan was fake, the jungle is horrib;e"
+    goes_to: "j6"
+  - name: "south"
+    description: "Going on, does this ever ends"
+    goes_to: "j2"
+  - name: "west"
+    description: "Go west, does it matters? Everything is green"
+    goes_to: "j3"
+  moveable_objects:
+  - name: "old basket"
+    description: "Under some leaves you see an old basket"
+    look: "When you look closer you hear some barking. As if a young puppy is stucked\
+      \ there"
+- name: "j4"
+  description: "Still in the jungle and beautifull nature. But all you want is a good\
+    \ glass of cold beer"
+  junctions:
+  - name: "north"
+    description: "Go north, maybe there is a cafe"
+    goes_to: "j5"
+  - name: "east"
+    description: "Green, green green. Wherever you go"
+    goes_to: "j7"
+  - name: "south"
+    description: "South, en then...?"
+    goes_to: "j4"
+  - name: "west"
+    description: "West, maybe it is a little cooler there"
+    goes_to: "j1"
+  moveable_objects:
+  - name: "beerpull"
+    description: "On the ground lies a beerpull"
+    look: "The beerpull is empty. The ants drank everthing"
+- name: "j5"
+  description: "The green hell goes on for ever"
+  junctions:
+  - name: "north"
+    description: "North, but do I survive this?"
+    goes_to: "j6"
+  - name: "east"
+    description: "It is green there, what else did you expect?"
+    goes_to: "j8"
+  - name: "south"
+    description: "In the south it is green."
+    goes_to: "j4"
+  - name: "west"
+    description: "Go west go green"
+    goes_to: "j2"
+  moveable_objects:
+  - name: "pile of bones"
+    description: "A pile of old with bones"
+- name: "j6"
+  description: "Leafs, leafs, everywhere leafs. You are beginning to hate this jungle"
+  junctions:
+  - name: "north"
+    description: "Go! Go! North."
+    goes_to: "j6"
+  - name: "east"
+    description: "Let's go east. Why not?"
+    goes_to: "j9"
+  - name: "south"
+    description: "nill"
+    goes_to: "j5"
+  - name: "west"
+    description: "nill"
+    goes_to: "j3"
+  moveable_objects:
+  - name: "banana"
+    description: "On the ground liefs a very normal banana"
+- name: "j7"
+  description: "Endless and endless jungle. Maybe cutting the whole jungle and make\
+    \ it into a parking garage look more and more like a good idea"
+  junctions:
+  - name: "north"
+    description: "nill"
+    goes_to: "j8"
+  - name: "east"
+    description: "nill"
+    goes_to: "j7"
+  - name: "south"
+    description: "nill"
+    goes_to: "j7"
+  - name: "west"
+    description: "nill"
+    goes_to: "j4"
+- name: "j8"
+  description: "Jungle, al this green starts to irritate you. Some monkeys are trying\
+    \ to hit you with sticks"
+  junctions:
+  - name: "north"
+    description: "nill"
+    goes_to: "j9"
+  - name: "east"
+    description: "nill"
+    goes_to: "j8"
+  - name: "south"
+    description: "nill"
+    goes_to: "j7"
+  - name: "west"
+    description: "nill"
+    goes_to: "j5"
+  moveable_objects:
+  - name: "computer"
+    description: "Covered with sand there is an old SX486 PC"
+- name: "j9"
+  description: "Oh, no. More jungle. When will this torture end?"
+  junctions:
+  - name: "north"
+    description: "nill"
+    goes_to: "j9"
+  - name: "east"
+    description: "You enter the entrance of the palace. Two guards, wearing black\
+      \ glasses, with a big blue logo on there shields look very angry to you"
+    goes_to: "palace"
+  - name: "south"
+    description: "nill"
+    goes_to: "j8"
+  - name: "west"
+    description: "nill"
+    goes_to: "j6"
+  look:
+  - name: "west"
+    description: "You see in the east the entrance of a old palace"
+  moveable_objects:
+  - name: "cdrom"
+    description: "A cdrom that contains an installation of OS/2 warp 4.0"
+- name: "palace"
+  description: "You are in the palace of the Queen of the jungle. It is a nice place.\n"
+  junctions:
+  - name: "west"
+    description: "You leave the palace and enters again the jungle"
+    goes_to: "j9"
+  look:
+  - name: "queen"
+    description: "The queen is a beautyfull woman with golden hair."
+  persons:
+  - name: "queen"
+    description: "On an throne sits the most beautifull woman you have ever seen.\n\
+      However see looks very sad.\n"
+    talk: "My little cute puppy. It has runned away!\nPlease help me to find it.\n\
+      I will reward you with the first two spells to defeat the Messaging Monster\n"
+    give:
+      object: "puppy"
+      response: "Oh, you find my cute puppy! I'm so happy!\nThen she jump of her throne\
+        \ and runs towards you.\nYou place the puppy on the ground to hold her in\
+        \ your arms forever.\nShe stops just in front of you, quickly picks up the\
+        \ puppy, turns around and walks back.\nJust before she enters her private\
+        \ rooms behind the throne she seems to remember something.\n'Oh yes, you brought\
+        \ my puppy back.\nI will give you the first to spells\nDEFINE\nDEFINE\nAnd\
+        \ here is the incident ticket to open the golden door. You cannot enter that\
+        \ place without\na proper change or incident ticket.'\n"
+      receive:
+      - name: "incident ticket"
+        description: "On the floor lies the incident ticket of the jungle queen."
+        look: "Just an ordinary incident ticket, please solve this incident."
+- name: "bridge"
+  description: "A large bridge that goes east trough the clouds over the sea"
+  junctions:
+  - name: "east"
+    description: "You walk over the bridge trough the cloud. The bridge seems to go\
+      \ on forever.\nJust at the moment you want to give you can see an island on\
+      \ the end of the bridge.\n"
+    goes_to: "master_island"
+  look:
+  - name: "bridge"
+    description: "You see a large bridge that goes trough the cloud."
+  - name: "east"
+    description: "You see east a large bridge that goes trough the cloud."
+  - name: "west"
+    description: "In the west...  That's strange, you do not see the golden door anymore.\
+      \ There is no way back"
+- name: "master_island"
+  description: "You enter the island. It is a tropical island with beautifull beaches.\n"
+  junctions:
+  - name: "west"
+    description: "You walk back over the bridge. The clouds are much colder the the\
+      \ beach."
+    goes_to: "bridge"
+  - name: "south"
+    description: "nill"
+    goes_to: "beach2"
+  - name: "east"
+    description: "nill"
+    goes_to: "appartment"
+    blocked: "yes"
+    unblock: "code"
+  look:
+  - name: "east"
+    description: "In the east you a nice appartment that has a look over the bay."
+  - name: "south"
+    description: "In the south is a beautiful beach"
+  - name: "west"
+    description: "you see the bridge that you just crossed"
+  persons:
+  - name: "master"
+    description: "There stands the master of the Island. He is busy with some kind\
+      \ of fighting training\nOn his laptop is a youtube video about the fighting\
+      \ skills used by police officers\n"
+    talk: "I was practicing on the beach when a sudden wave washed away the key code\
+      \ of my house.\nSo it is lost and I'm afraid that I can never enter my house\
+      \ again.\nPlease can you help me find the code?\nI cold call the fireman to\
+      \ put me on the balcony, but what if my neighbors see that?\nSo emberrasing!\n\
+      You see, that is no option for me.\n"
+    give:
+      object: "badge"
+      response: "My badge, finally I've the key code for my house. You see, it was\
+        \ 'abcd'. I always keep my\nkey codes very simple so that I do not forget\
+        \ them. Thanks man, now I can enter my house.\nCan you do it for me? Here\
+        \ is the code of the door of my appartment\n"
+      receive:
+      - name: "code"
+        description: "the code of the appartment"
+- name: "beach2"
+  description: "You are on a nice beach just next to the apppartment"
+  junctions:
+  - name: "north"
+    description: "nill"
+    goes_to: "master_island"
+  - name: "east"
+    description: "nill"
+    goes_to: "beach3"
+  - name: "west"
+    description: "nill"
+    goes_to: "beach1"
+  - name: "south"
+    description: "nill"
+    goes_to: "seashore2"
+  look:
+  - name: "east"
+    description: "in the east you see more beautifull beaches"
+  - name: "west"
+    description: "in the east you see more beautifull beaches"
+  - name: "south"
+    description: "in the south are the waves between see and land"
+- name: "beach1"
+  description: "You are on a nice beach. There is a pole with a plate on it"
+  junctions:
+  - name: "east"
+    description: "nill"
+    goes_to: "beach2"
+  - name: "west"
+    description: "nill"
+    goes_to: "beach1"
+  - name: "south"
+    description: "nill"
+    goes_to: "seashore1"
+  look:
+  - name: "east"
+    description: "in the east you see more beautifull beaches"
+  - name: "west"
+    description: "in"
+  - name: "south"
+    description: "in the east you see more beautifull beaches"
+  - name: "plate"
+    description: "It is a warning text"
+- name: "beach3"
+  description: "you are on a nice beach"
+  junctions:
+  - name: "east"
+    description: "nill"
+    goes_to: "beach3"
+  - name: "west"
+    description: "nill"
+    goes_to: "beach2"
+  - name: "south"
+    description: "You walk to the waves"
+    goes_to: "seashore3"
+  look:
+  - name: "east"
+    description: "in the east you see more beautifull beaches"
+  - name: "west"
+    description: "in the west you see more beautifull beaches"
+  - name: "south"
+    description: "in the south in de thin line between see and land"
+- name: "seashore1"
+  description: "you are on a nice beach by the sea shore"
+  junctions:
+  - name: "east"
+    description: "nill"
+    goes_to: "seashore2"
+  - name: "west"
+    description: "nill"
+    goes_to: "seashore1"
+  - name: "north"
+    description: "nill"
+    goes_to: "beach1"
+  look:
+  - name: "east"
+    description: "in the east you see more beautifull beaches and waves"
+  - name: "west"
+    description: "in the west you see more beautifull beaches and waves"
+  - name: "north"
+    description: "in the north you see the beach"
+  moveable_objects:
+  - name: "paper"
+    description: "You see a piece of paper with the code 1234 on it"
+- name: "seashore2"
+  description: "you are on a nice beach by the sea shore"
+  junctions:
+  - name: "east"
+    description: "nill"
+    goes_to: "seashore3"
+  - name: "west"
+    description: "nill"
+    goes_to: "seashore1"
+  - name: "north"
+    description: "nill"
+    goes_to: "beach2"
+  look:
+  - name: "east"
+    description: "in the east you see more beautifull beaches and waves"
+  - name: "west"
+    description: "in the east you see more beautifull beaches and waves"
+  - name: "north"
+    description: "in the north you see the beach"
+  moveable_objects:
+  - name: "creditcard"
+    description: "You a creditcard with the code 0000 on it"
+- name: "seashore3"
+  description: "you are on a nice beach by the sea shore"
+  junctions:
+  - name: "east"
+    description: "nill"
+    goes_to: "seashore3"
+  - name: "west"
+    description: "nill"
+    goes_to: "seashore2"
+  - name: "north"
+    description: "nill"
+    goes_to: "beach3"
+  look:
+  - name: "east"
+    description: "in the east you see more beautifull beaches and waves"
+  - name: "west"
+    description: "in the east you see more beautifull beaches and waves"
+  - name: "north"
+    description: "in the north you see the beach"
+  moveable_objects:
+  - name: "badge"
+    description: "You see a badge with the code abdc on it"
+- name: "appartment"
+  description: "You are in a beautifull appartment"
+  junctions:
+  - name: "west"
+    description: "nill"
+    goes_to: "master_island"
+  - name: "east"
+    description: "nill"
+    goes_to: "elevator"
+- name: "elevator"
+  description: "You are in a beautifull appartment"
+  junctions:
+  - name: "west"
+    description: "nill"
+    goes_to: "appartment"
+  - name: "south"
+    description: "nill"
+    goes_to: "coal_mine"
+- name: "coal_mine"
+  description: "You enter the coal mine. It is very dark."
+  junctions:
+  - name: "north"
+    description: "nill"
+    goes_to: "elevator"
+  - name: "south"
+    description: "nill"
+    goes_to: "mancave"
+  look:
+  - name: "south"
+    description: "In the south you see a door. It has a plate on it that says 'mancave'"
+- name: "mancave"
+  description: "You are in a real man cave. It is a complete mess with all kind of\
+    \ computers, automates and other electronic stuff.\n"
+  junctions:
+  - name: "north"
+    description: "nill"
+    goes_to: "coal_mine"
+  - name: "east"
+    description: "You enter the deep mines."
+    goes_to: "dm1"
+  - name: "south"
+    description: "You are going to the long hall"
+    goes_to: "long_hall"
+  moveable_objects:
+  - name: "flashlight"
+    description: "On the ground stands a decent flashlight, probably running some\
+      \ kind of Linux distribution."
+  persons:
+  - name: "bald man"
+    description: "In the conrner behind a desk sits a bald man with glasses. He is\
+      \ busy with something strange to build"
+    talk: "Dammed I try to automate my automatic automate builder but I dropped the\
+      \ transistor somewhere in the mines to the east.\nCan you help me find it?\n\
+      Take the flashlight\n"
+    give:
+      object: "transistor"
+      response: "You found my transistor!\nI will give you the next magic phases to\
+        \ defeat the Messaging Monster.\nBut listen carefully, I only says this once!\n\
+        DEFINE CHANNEL\nDEFINE QLOCAL\nUse them wise, these are very powerfull spells.\
+        \ One mistake and you will be changed in to a cucumber!\n"
+- name: "dm1"
+  description: "You are in the deep mines. Fortunaly you have the flashlight else\
+    \ you wouldn't see a thing.\nOh no, you Linux distribution of your flashlight\
+    \ crashes. And you are plunged in total darkness.\n"
+  junctions:
+  - name: "west"
+    description: "You see nothing but darkness"
+    goes_to: "mancave"
+  - name: "east"
+    description: "You see nothing but darkness"
+    goes_to: "dm2"
+  look:
+  - name: "north"
+    description: "You see nothing but darkness"
+  - name: "east"
+    description: "You see nothing but darkness"
+  - name: "southt"
+    description: "You see nothing but darkness"
+  - name: "west"
+    description: "You see nothing but darkness"
+- name: "dm2"
+  description: "You are in the deep mines"
+  junctions:
+  - name: "west"
+    description: "You see nothing but darkness"
+    goes_to: "dm1"
+  - name: "east"
+    description: "You see nothing but darkness"
+    goes_to: "dm3"
+  - name: "north"
+    description: "You see nothing but darkness"
+    goes_to: "dm5"
+  look:
+  - name: "north"
+    description: "You see nothing but darkness"
+  - name: "east"
+    description: "You see nothing but darkness"
+  - name: "southt"
+    description: "You see nothing but darkness"
+  - name: "west"
+    description: "You see nothing but darkness"
+- name: "dm3"
+  description: "You are in the deep mines"
+  junctions:
+  - name: "west"
+    description: "You see nothing but darkness"
+    goes_to: "dm2"
+  - name: "east"
+    description: "You see nothing but darkness"
+    goes_to: "dm4"
+  look:
+  - name: "north"
+    description: "You see nothing but darkness"
+  - name: "east"
+    description: "You see nothing but darkness"
+  - name: "southt"
+    description: "You see nothing but darkness"
+  - name: "west"
+    description: "You see nothing but darkness"
+- name: "dm4"
+  description: "You are in the deep mines"
+  junctions:
+  - name: "west"
+    description: "You see nothing but darkness"
+    goes_to: "dm3"
+  look:
+  - name: "north"
+    description: "You see nothing but darkness"
+  - name: "east"
+    description: "You see nothing but darkness"
+  - name: "southt"
+    description: "You see nothing but darkness"
+  - name: "west"
+    description: "You see nothing but darkness"
+- name: "dm5"
+  description: "You are in the deep mines"
+  junctions:
+  - name: "south"
+    description: "You see nothing but darkness"
+    goes_to: "dm2"
+  look:
+  - name: "north"
+    description: "You see nothing but darkness"
+  - name: "east"
+    description: "You see nothing but darkness"
+  - name: "southt"
+    description: "You see nothing but darkness"
+  - name: "west"
+    description: "You see nothing but darkness"
+  moveable_objects:
+  - name: "transistor"
+    description: "It feels like a NPN transistor type BC547C"
+- name: "long_hall"
+  description: "You enter the long hall that goes up highways"
+  junctions:
+  - name: "north"
+    description: "Go back in to the mancave"
+    goes_to: "mancave"
+  - name: "south"
+    description: "You are walking over a long highway you see a crossroad"
+    goes_to: "crossroad"
+- name: "crossroad"
+  description: ""
+  junctions:
+  - name: "north"
+    description: "Ouy are walking over the highway back to the long hall"
+    goes_to: "long_hall"
+  - name: "east"
+    description: "You enter famouse route A6 to Almeria"
+    goes_to: "route_a6"
+  - name: "west"
+    description: "You enter the highway to Amsterdam"
+    goes_to: "route_a10"
+- name: "route_a6"
+  description: "You are the the famouse route A6 to the east"
+  junctions:
+  - name: "west"
+    description: "nill"
+    goes_to: "crossroad"
+  - name: "east"
+    description: "nill"
+    goes_to: "almeria"
+- name: "almeria"
+  description: "You enter the Almeria. The holy place for monks and motors in fast\
+    \ east at the and of the route A6.\nAbove the holy place is a skull that carries\
+    \ a german helmet.\n"
+  junctions:
+  - name: "west"
+    description: "You enter famouse route A6 to Almeria"
+    goes_to: "route_a6"
+  persons:
+  - name: "monk"
+    description: "And there sits the wise monk. He is meditating on his roaring motor."
+    talk: "The monk pushes the gas handle a couple of times to let the engine roar\
+      \ and then closes his eyes and says:\nAs pinguin once said, if you can't cast\
+      \ the spells to defeat the dragon then switch\nto the one who has the all the\
+      \ rights to do it.\nTell me my novice, what is phrase?\n"
+- name: "route_a10"
+  description: "This is the road to Amsterdam"
+  junctions:
+  - name: "east"
+    description: "You go to the crossroad"
+    goes_to: "crossroad"
+  - name: "west"
+    description: "You enter Amsterdam, and the first place you enter is the Vondelpark"
+    goes_to: "vondelpark"
+- name: "vondelpark"
+  description: "You and in the Vondelpark. There in the middle of the park is a theater.\n\
+    It seems that there is a guru from India who gives a Satsang today in the open\
+    \ air. A whole bunch\nof dreadlocks, old hippies and spiritual eco warriers.\n\
+    A girl in a typical spiritual dress has probably asked a very stupid question\
+    \ because you\nsee the poor man roling with his eyes. He mumbels some spiritual\
+    \ phrases to get rid of her.\nThen the stage is empty, if you go north you might\
+    \ have a hange to sit on the chair besides\nhis throne.\n"
+  junctions:
+  - name: "east"
+    description: "You go to the route A10"
+    goes_to: "route_a10"
+  - name: "north"
+    description: "Swinging among a crowd of meditating people you enter en seat besides\
+      \ the throne of the guru"
+    goes_to: "throne"
+  - name: "west"
+    description: "After a small walk in western direction you enter the Kinkerstraat.\
+      \ A well known street in Amsterdam"
+    goes_to: "kinkerstraat"
+- name: "throne"
+  description: "You site on the throne next to the guru. The smell of flowers mixed\
+    \ with incense makes your head a\nlittle lighter then normal. The guru looks friendly\
+    \ to you.\n"
+  junctions:
+  - name: "south"
+    description: "Swinging among a crowd of meditating people you leave the seat besides\
+      \ the throne of the guru"
+    goes_to: "vondelpark"
+  persons:
+  - name: "guru"
+    description: "It seems that the guru wants to says something to you"
+    talk: "He bends over to you and wispers in your ear:\nPlease, help me. You look\
+      \ like a normal guy to me. To be honest I only do this for the money but\neverywhere\
+      \ I go now they see me as an spiritual enlightend master. They give me all kinds\
+      \ of meals.\nBut the worst of all is, they are all vegeterians and because I'm\
+      \ from India they serve me the\nwhole time vegetarian curries!\nI hate these\
+      \ bloody vegetarian curries with all these tasteless lumps of tofu!\nPlease,\
+      \ can you bring me a decent ductch meal with a good piece of meat?\n"
+    give:
+      object: "boerenkool met worst"
+      response: "Oh my god, real 'boerenkool met worst'. I love it!\nHet rips the\
+        \ bag open an starts to eat. A couple of his spiritual followers do look not\n\
+        very happy to you.\nBut the guru doesn't care and with a full mouth he said:\n\
+        I will give you the two extra spells that you need to defeat the messaging\
+        \ monster\nDEFINE .....\nDEFINE .....\nFor the other parts of the spell go\
+        \ south and seek the master of the hills and give him this document. He waits\n\
+        for years on this document to approve hat he is safe and secure.\n"
+      receive:
+      - name: "document"
+        description: "You see a document with the seal of the security master. Take\
+          \ care because it is worth a fortune"
+        look: "You see a document with the seal of the security master. Take care\
+          \ because it is worth a fortune"
+- name: "kinkerstraat"
+  description: "You enter the Kinkerstraat. It is a noisy street."
+  junctions:
+  - name: "east"
+    description: "After a small walk in eastern direction you enter the Vondelpark."
+    goes_to: "vondelpark"
+  - name: "west"
+    description: "nill"
+    goes_to: "tramstop"
+  - name: "north"
+    description: "You enter the supermarktet"
+    goes_to: "supermarket"
+  persons:
+  - name: "old lady"
+    description: "An old lady with a shopping bag is walking by"
+    talk: "She starts talking and withing a minute she is telling you her about her\
+      \ life and starts complaining\nabout the cats of het neighbors. The kids from\
+      \ the family three house aways. About a guy on his racing bike\nthat doesn't\
+      \ take care of his plants in the window. etc...\nAfter one and a half hour you\
+      \ she stops to breathe and before she continues you say goodby and you walk\
+      \ away.\nYou just hear her complaning that people don't talk to each other anymore\
+      \ like before.\n"
+  - name: "black guy"
+    description: "On the corner of the street stands a black guy listening to reggea\
+      \ music"
+    talk: "You look like a UB40 listener. That's no reggea music. Here listen to this.\n\
+      He takes of his headphone and dumps it on your head. As the deep psychedelic\
+      \ music goes to\nyour brain he sticks a big joint in your mouth.\nOke, you are\
+      \ really in Amsterdam now.\n"
+  - name: "hipster"
+    description: "A hipster on a cargo bike is trying his brand new 8mm film camera."
+    talk: "I don't have time for you now. I'm really in a hurry. My vegaterian goatmilk\
+      \ container barista bar\nmust be opened. My delivery of goi berries and japanese\
+      \ peanut butter seeds were to late.\nMan, those suppliers do not know what normal\
+      \ food is?\n"
+  - name: "yuppie"
+    description: "A yuppie in his Armani suite is talking a little to loud over his\
+      \ iPhone 20 version B about his successes on the stock market"
+    talk: "He seems to ignore you, waits a moment and then continues the conversation\
+      \ on his phone.\n'Floris-Karel listen man, I have a normal guy who tries to\
+      \ talk to mee, can you imagine?\n....\nYeh, these locals here always try to\
+      \ get our attention...\n....\nI know, funny isn't it? YOu know I will give him\
+      \ 5 euro's. See how he will respond...\n\nThen he gives you 5 euro's\n"
+  - name: "jogging girl"
+    description: "You can just avoid a collision with a blond jogging girl. She looked\
+      \ pissed of and shows her middlefinger"
+    talk: "Go away,pervert! Or I scan your image, find you on facebook and put you\
+      \ on #metoo.\nI'll make sure that you are fully canceled and banned from every\
+      \ social media site!\nYou will hear from my lawyer!\n"
+- name: "supermarket"
+  description: "You are in de supermarket. It is very busy with a lot of shopping\
+    \ people.\nRight besides the entry stands a lady who is selling a new product.\n"
+  junctions:
+  - name: "south"
+    description: "You leave the supermartket en enters the kinkerstraat"
+    goes_to: "kinkerstraat"
+  persons:
+  - name: "lady"
+    description: "A lady who is promoting a new product"
+    talk: "Hellooooo! Do you like to buy our newst product! We sell ' Lunox Boerenkool\
+      \ met Worst�'. You know\nthese days there are a lot of additions added to our\
+      \ food, which are v���ry unhealthy!\nAnd in our laboratory we have develloped\
+      \ a very special and methode to remove all the\nadditions from our 'Lunox Boerenkool\
+      \ met Worst�' so that we only keep the potatoes, boerenkool and worst.\nWonderfull\
+      \ isn't it!!\nA test package for one meal is 5 euro. The price is a little higher\
+      \ then the ordinary\n'Lunox Boerenkool met Worst classic�' we sell. But you\
+      \ know, your health is priceless!\n"
+    give:
+      object: "5 euro"
+      response: "Thank you and here is your 'Boerenkool met Worst�. I will really\
+        \ like it!\nAnd she hands you over a sealed bag with 'Boerenkool met Worst�\
+        '\n"
+      receive:
+      - name: "boerenkool met worst"
+        description: "A sealed bag with 'Boerenkool met Worst�'"
+        look: "Yeah, this is a sealed bag with normal 'boerenkool met worst', easy\
+          \ to make it yourself."
+- name: "tramstop"
+  description: "tramstop"
+  junctions:
+  - name: "east"
+    description: "You enter the kinkerstraat"
+    goes_to: "kinkerstraat"
+  - name: "south"
+    description: "You go to a small station just outside Amsterdam."
+    goes_to: "station"
+- name: "station"
+  description: "You enter at a small station. Is it called Haarlemmermeer station\
+    \ and it had one rail called perron 4 7/8."
+  junctions:
+  - name: "north"
+    description: "Yoo go to a tramstop in Amsterdam"
+    goes_to: "tramstop"
+  - name: "south"
+    description: "If you go south you will take the train to the the hill."
+    goes_to: "h1"
+- name: "h1"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "you go to the station"
+    goes_to: "station"
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h4"
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h2"
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h1"
+- name: "h2"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h1"
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h5"
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h3"
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h2"
+- name: "h3"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h2"
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h6"
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h3"
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "hilltop"
+- name: "h4"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h4"
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h7"
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h5"
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h1"
+- name: "h5"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h4"
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h8"
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h6"
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h2"
+- name: "h6"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h5"
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h9"
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h6"
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h3"
+- name: "h7"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h7"
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h7"
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h8"
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h4"
+- name: "h8"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h7"
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "bicycle_hill"
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h9"
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h5"
+- name: "h9"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h8"
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h9"
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h9"
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h6"
+- name: "hilltop"
+  description: "You enter the top of the hills. There stands the master of the hills."
+  junctions:
+  - name: "east"
+    description: "You go back deeper in to the hills."
+    goes_to: "h3"
+  persons:
+  - name: "master of the hills"
+    description: "There stands the master of hills. But then you see a pile of daipers,\
+      \ used daipers. You wonders why the master\nof the hills stands beneath a pile\
+      \ of used daipers.\n"
+    talk: "QUIT!!! My little baby needs to sleep!\nWithout my security statement I\
+      \ cannot guarantee the the safety that he needs to get asleep. I'm waiting now\n\
+      for two years on this stupid document!\n"
+    give:
+      object: "document"
+      response: "You have the security document! Thank you very very much. I've waited\
+        \ so long on this document:\nAs a thank I will give you the secrit part of\
+        \ the spell to defeat the messaging monster:\nSET AUTHREC .....\nSET AUTHREC\
+        \ ......\nAnd now you must go east to the old iron wizard. He and he alone\
+        \ is the most wise man of all. He can give you\nthe final spell that you need\
+        \ to defeat the messaing monster, because he know the messaging monster for\
+        \ more\nthan 60 years!\nBut leave mortal, leave now and go east ...... cause\
+        \ my little baby needs a clean daiper.\n"
+- name: "bicycle_hill"
+  description: "You see an large hill that exists of all kind of old iron bicycle\
+    \ parts. A path leads west to the top of the hill.\nAnd there on the top you see\
+    \ the castle of the old iron wizard. The gate of his mighty castle is guarded\
+    \ but two\ncats.\n"
+  junctions:
+  - name: "west"
+    description: "You go back deeper in to the hills."
+    goes_to: "h8"

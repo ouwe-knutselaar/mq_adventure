@@ -1,0 +1,1163 @@
+---
+
+startMessage: |
+  MQ Adventure
+  Mortal, give me thou name......
+
+helpMessage: |
+  help  This help tesxt
+  look  Look around
+  look <object>  look a little closer
+
+endMessage: you have won
+
+rooms:
+- name: startingpoint
+  description: You are in a cold dark room. There is an old table in the corner. In
+    the east is a door. In the middle is an old table
+  look:
+  - name: door
+    description: You see a door on the east side of this room.
+  - name: table
+    description: A dirty old table
+  moveable_objects:
+  - name: scroll
+    description: On the floor lies an old scroll of perkament
+    look: it is an old scroll
+    read: |
+      Behold stranger, thou shall not leave this place before
+      you have saved the orange lion from the horrible messaging monster
+      Collect the xxx spells to evoke the magical message flow and drain
+      the power form the messaging monster.
+  - name: skull
+    description: There is an old skull in the corner
+    look: The poor fellow is long dead
+  - name: stone
+    description: In the middle is a yellow stone
+    look: A very yellow stone, what else had you expected?
+  - name: paperclip
+    description: You can just see a paperclip
+    look: You look at a very ordinary paperclip
+  junctions:
+  - name: east
+    object_name: door
+    goes_to: great_hall
+    description: There is in the east a wooden door
+    blocked: yes
+    unblock: paperclip
+- name: great_hall
+  description: |
+    You are in a great Hall. The roof is made of glass en you can see the blue sky. In the middle is a statue of a big lion.
+    On the statue is a plate with something written on it.
+  look:
+  - name: plate
+    description: A plate with letters on it
+  read:
+  - name: plate
+    description: |
+      Go to the jungle in the to the north east corner to meet the queen on the jungle
+      She is the keeper of the first spells. But beware, her beauty will blind your eyes.
+  junctions:
+  - name: north
+    description: In the north there is a hole in the wall that leads to a jungle
+    goes_to: j1
+  - name: west
+    description: Is the west a door.
+    goes_to: startingpoint
+  - name: east
+    description: In the east is a golden door.
+    object_name: golden door
+    blocked: yes
+    unblock: incident ticket
+    goes_to: bridge
+- name: j1
+  description: |
+    You are in the jungle, it is warm and wet. You have the feeling that
+    behind every leaf something is watching you
+  junctions:
+  - name: north
+    goes_to: j2
+    description: In the north you go deeper between the leaves
+  - name: east
+    goes_to: j4
+    description: In the east, you go also deeper between the leaves
+  - name: south
+    goes_to: great_hall
+    description: In the south there is a wall with a big hole in it
+  - name: west
+    goes_to: j1
+    description: Go west and go deeper in the jungle
+- name: j2
+  description: This jungle is hot and moisty.
+  moveable_objects:
+  - name: coconut
+    description: On the floor lies a coconut
+    actions:
+      look: Just an ordinary coconut
+  - name: bottle
+    description: There lies an empty bottle of beer
+    actions:
+      look: Yes the bottle is really emtpy.
+  junctions:
+  - name: north
+    goes_to: j3
+    description: Go north if you want to walk in the jungle
+  - name: east
+    goes_to: j5
+    description: Go east in the jungle, for walk
+  - name: south
+    goes_to: j1
+    description: Walk south and there is also the jungle
+  - name: west
+    goes_to: j2
+    description: Go west and to your suprise, the is the jungle.
+- name: j3
+  description: It look likes a jungle from the Tarzan books.
+  moveable_objects:
+  - name: old basket
+    description: Under some leaves you see an old basket
+    actions:
+    look: When you look closer you hear some barking. As if a young puppy is stucked
+      there
+    open:
+      name: puppy
+      description: A little puppy with sad brown eyes is looking at you
+      look: It is a cute little puppy
+  junctions:
+  - name: north
+    goes_to: j3
+    description: Go deeper in the green hell
+  - name: east
+    goes_to: j6
+    description: Tarzan was fake, the jungle is horrib;e
+  - name: south
+    goes_to: j2
+    description: Going on, does this ever ends
+  - name: west
+    goes_to: j3
+    description: Go west, does it matters? Everything is green
+- name: j4
+  description: Still in the jungle and beautifull nature. But all you want is a good
+    glass of cold beer
+  moveable_objects:
+  - name: beerpull
+    description: On the ground lies a beerpull
+    look: The beerpull is empty. The ants drank everthing
+  junctions:
+  - name: north
+    goes_to: j5
+    description: Go north, maybe there is a cafe
+  - name: east
+    goes_to: j7
+    description: Green, green green. Wherever you go
+  - name: south
+    goes_to: j4
+    description: South, en then...?
+  - name: west
+    goes_to: j1
+    description: West, maybe it is a little cooler there
+- name: j5
+  description: The green hell goes on for ever
+  moveable_objects:
+  - name: pile of bones
+    description: A pile of old with bones
+  junctions:
+  - name: north
+    goes_to: j6
+    description: North, but do I survive this?
+  - name: east
+    goes_to: j8
+    description: It is green there, what else did you expect?
+  - name: south
+    goes_to: j4
+    description: In the south it is green.
+  - name: west
+    goes_to: j2
+    description: Go west go green
+- name: j6
+  description: Leafs, leafs, everywhere leafs. You are beginning to hate this jungle
+  moveable_objects:
+  - name: banana
+    description: On the ground liefs a very normal banana
+  junctions:
+  - name: north
+    goes_to: j6
+    description: Go! Go! North.
+  - name: east
+    goes_to: j9
+    description: Let's go east. Why not?
+  - name: south
+    goes_to: j5
+    description: nill
+  - name: west
+    goes_to: j3
+    description: nill
+- name: j7
+  description: Endless and endless jungle. Maybe cutting the whole jungle and make
+    it into a parking garage look more and more like a good idea
+  junctions:
+  - name: north
+    goes_to: j8
+    description: nill
+  - name: east
+    goes_to: j7
+    description: nill
+  - name: south
+    goes_to: j7
+    description: nill
+  - name: west
+    goes_to: j4
+    description: nill
+- name: j8
+  description: Jungle, al this green starts to irritate you. Some monkeys are trying
+    to hit you with sticks
+  moveable_objects:
+  - name: computer
+    description: Covered with sand there is an old SX486 PC
+    actions:
+      look: If it was in a good shape, this could be a collectors item
+  junctions:
+  - name: north
+    goes_to: j9
+    description: nill
+  - name: east
+    goes_to: j8
+    description: nill
+  - name: south
+    goes_to: j7
+    description: nill
+  - name: west
+    goes_to: j5
+    description: nill
+- name: j9
+  description: Oh, no. More jungle. When will this torture end?
+  look:
+  - name: west
+    description: You see in the east the entrance of a old palace
+  moveable_objects:
+  - name: cdrom
+    description: A cdrom that contains an installation of OS/2 warp 4.0
+  junctions:
+  - name: north
+    goes_to: j9
+    description: nill
+  - name: east
+    goes_to: palace
+    description: You enter the entrance of the palace. Two guards, wearing black glasses,
+      with a big blue logo on there shields look very angry to you
+  - name: south
+    goes_to: j8
+    description: nill
+  - name: west
+    goes_to: j6
+    description: nill
+- name: palace
+  description: |
+    You are in the palace of the Queen of the jungle. It is a nice place.
+  look:
+  - name: queen
+    description: The queen is a beautyfull woman with golden hair.
+  persons:
+  - name: queen
+    description: |
+      On an throne sits the most beautifull woman you have ever seen.
+      However see looks very sad.
+    talk: |
+      My little cute puppy. It has runned away!
+      Please help me to find it.
+      I will reward you with the first two spells to defeat the Messaging Monster
+    give:
+      object: puppy
+      response: |
+        Oh, you find my cute puppy! I'm so happy!
+        Then she jump of her throne, opens her arms and runs towards you.
+        You place the puppy on the ground to hold her in your arms forever.
+        She stops just in front of you, quickly picks up the puppy, turns around and walks back.
+        Just before she enters her private rooms behind the throne she seems to remember something.
+        'Oh yes, you brought my puppy back.
+        I will give you the first two spells
+        DEFINE
+        DEFINE
+        And here is the incident ticket to open the golden door. You cannot enter that place without
+        a proper change or incident ticket.'
+      receive:
+      - name: incident ticket
+        description: On the floor lies the incident ticket of the jungle queen.
+        look: Just an ordinary incident ticket, please solve this incident.
+  junctions:
+  - name: west
+    goes_to: j9
+    description: You leave the palace and enters again the jungle
+- name: bridge
+  description: A large bridge that goes east trough the clouds over the sea
+  look:
+  - name: bridge
+    description: You see a large bridge that goes trough the cloud.
+  - name: east
+    description: You see east a large bridge that goes trough the cloud.
+  - name: west
+    description: In the west...  That's strange, you do not see the golden door anymore.
+      There is no way back
+  junctions:
+  - name: east
+    goes_to: master_island
+    description: |
+      You walk over the bridge trough the cloud. The bridge seems to go on forever.
+      Just at the moment you want to give you can see an island on the end of the bridge.
+- name: master_island
+  description: |
+    You enter the island. It is a tropical island with beautifull beaches.
+  persons:
+  - name: master
+    description: |
+      There stands the master of the Island. He is busy with some kind of fighting training
+      On his laptop is a youtube video about the fighting skills used by police officers
+    talk: |
+      I was practicing on the beach when a sudden wave washed away the key code of my house.
+      So it is lost and I'm afraid that I can never enter my house again.
+      Please can you help me find the code?
+      I cold call the fireman to put me on the balcony, but what if my neighbors see that?
+      So emberrasing!
+      You see, that is no option for me.
+    give:
+      object: badge
+      response: |
+        My badge, finally I've the key code for my house. You see, it was 'abcd'. I always keep my
+        key codes very simple so that I do not forget them. Thanks man, now I can enter my house.
+        Can you do it for me? Here is the code of the door of my appartment
+      receive:
+      - name: code
+        description: the code of the appartment
+  look:
+  - name: east
+    description: In the east you a nice appartment that has a look over the bay.
+  - name: south
+    description: In the south is a beautiful beach
+  - name: west
+    description: you see the bridge that you just crossed
+  junctions:
+  - name: west
+    goes_to: bridge
+    description: You walk back over the bridge. The clouds are much colder the the
+      beach.
+  - name: south
+    goes_to: beach2
+    description: nill
+  - name: east
+    goes_to: appartment
+    description: the door of the appartment
+    blocked: yes
+    object_name: door
+    unblock: code
+- name: beach2
+  description: You are on a nice beach just next to the apppartment
+  look:
+  - name: east
+    description: in the east you see more beautifull beaches
+  - name: west
+    description: in the west you see more beautifull beaches
+  - name: south
+    description: in the south are the waves between see and land
+  junctions:
+  - name: north
+    goes_to: master_island
+    description: nill
+  - name: east
+    goes_to: beach3
+    description: nill
+  - name: west
+    goes_to: beach1
+    description: nill
+  - name: south
+    goes_to: seashore2
+    description: nill
+- name: beach1
+  description: You are on a nice beach. There is a pole with a plate on it
+  look:
+  - name: east
+    description: in the east you see more beautifull beaches
+  - name: west
+    description: in
+  - name: south
+    description: in the east you see more beautifull beaches
+  - name: plate
+    description: It is a warning text
+  read:
+  - name: plate
+    description: |
+      The plays says: After this sign starts the nudist area.
+      You start looking immediatly. To bad, nothing to see..
+  junctions:
+  - name: east
+    goes_to: beach2
+    description: nill
+  - name: west
+    goes_to: beach1
+    description: nill
+  - name: south
+    goes_to: seashore1
+    description: nill
+- name: beach3
+  description: you are on a nice beach
+  look:
+  - name: east
+    description: in the east you see more beautifull beaches
+  - name: west
+    description: in the west you see more beautifull beaches
+  - name: south
+    description: in the south in de thin line between see and land
+  junctions:
+  - name: east
+    goes_to: beach3
+    description: nill
+  - name: west
+    goes_to: beach2
+    description: nill
+  - name: south
+    goes_to: seashore3
+    description: You walk to the waves
+- name: seashore1
+  description: you are on a nice beach by the sea shore
+  look:
+  - name: east
+    description: in the east you see more beautifull beaches and waves
+  - name: west
+    description: in the west you see more beautifull beaches and waves
+  - name: north
+    description: in the north you see the beach
+  junctions:
+  - name: east
+    goes_to: seashore2
+    description: nill
+  - name: west
+    goes_to: seashore1
+    description: nill
+  - name: north
+    goes_to: beach1
+    description: nill
+  moveable_objects:
+  - name: paper
+    description: You see a piece of paper with the code 1234 on it
+- name: seashore2
+  description: you are on a nice beach by the sea shore
+  look:
+  - name: east
+    description: in the east you see more beautifull beaches and waves
+  - name: west
+    description: in the east you see more beautifull beaches and waves
+  - name: north
+    description: in the north you see the beach
+  moveable_objects:
+  - name: creditcard
+    description: You a creditcard with the code 0000 on it
+  junctions:
+  - name: east
+    goes_to: seashore3
+    description: nill
+  - name: west
+    goes_to: seashore1
+    description: nill
+  - name: north
+    goes_to: beach2
+    description: nill
+- name: seashore3
+  description: you are on a nice beach by the sea shore
+  look:
+  - name: east
+    description: in the east you see more beautifull beaches and waves
+  - name: west
+    description: in the east you see more beautifull beaches and waves
+  - name: north
+    description: in the north you see the beach
+  moveable_objects:
+  - name: badge
+    description: You see a badge with the code abdc on it
+  junctions:
+  - name: east
+    goes_to: seashore3
+    description: nill
+  - name: west
+    goes_to: seashore2
+    description: nill
+  - name: north
+    goes_to: beach3
+    description: nill
+- name: appartment
+  description: You are in a beautifull appartment
+  junctions:
+  - name: west
+    goes_to: master_island
+    description: nill
+  - name: east
+    goes_to: elevator
+    description: nill
+- name: elevator
+  description: You are in the elevator of the appatment
+  junctions:
+  - name: west
+    goes_to: appartment
+    description: nill
+  - name: south
+    goes_to: coal_mine
+    description: nill
+- name: coal_mine
+  description: You enter the coal mine. It is very dark.
+  look:
+  - name: south
+    description: In the south you see a door. It has a plate on it that says 'mancave'
+  junctions:
+  - name: north
+    goes_to: elevator
+    description: nill
+  - name: south
+    goes_to: mancave
+    description: nill
+- name: mancave
+  description: |
+    You are in a real man cave. It is a complete mess with all kind of computers, automates and other electronic stuff.
+  junctions:
+  - name: north
+    goes_to: coal_mine
+    description: nill
+  - name: east
+    goes_to: dm1
+    description: You enter the deep mines.
+  - name: south
+    goes_to: long_hall
+    description: You are going to the long hall
+  persons:
+  - name: bald man
+    description: In the conrner behind a desk sits a bald man with glasses. He is
+      busy with something strange to build
+    talk: |
+      Dammed I try to automate my automatic automate builder but I dropped the transistor somewhere in the mines to the east.
+      Can you help me find it?
+      Take the flashlight
+    give:
+      object: transistor
+      response: |
+        You found my transistor!
+        I will give you the next magic phases to defeat the Messaging Monster.
+        But listen carefully, I only says this once!
+        DEFINE CHANNEL
+        DEFINE QLOCAL
+        Use them wise, these are very powerfull spells. One mistake and you will be changed in to a cucumber!
+  moveable_objects:
+  - name: flashlight
+    description: On the ground stands a decent flashlight, probably running some kind
+      of Linux distribution.
+- name: dm1
+  description: |
+    You are in the deep mines. Fortunaly you have the flashlight else you wouldn't see a thing.
+    Oh no, you Linux distribution of your flashlight crashes. And you are plunged in total darkness.
+  look:
+  - name: north
+    description: You see nothing but darkness
+  - name: east
+    description: You see nothing but darkness
+  - name: southt
+    description: You see nothing but darkness
+  - name: west
+    description: You see nothing but darkness
+  junctions:
+  - name: west
+    goes_to: mancave
+    description: You see nothing but darkness
+  - name: east
+    goes_to: dm2
+    description: You see nothing but darkness
+- name: dm2
+  description: You are in the deep mines
+  junctions:
+  - name: west
+    goes_to: dm1
+    description: You see nothing but darkness
+  - name: east
+    goes_to: dm3
+    description: You see nothing but darkness
+  - name: north
+    goes_to: dm5
+    description: You see nothing but darkness
+  look:
+  - name: north
+    description: You see nothing but darkness
+  - name: east
+    description: You see nothing but darkness
+  - name: southt
+    description: You see nothing but darkness
+  - name: west
+    description: You see nothing but darkness
+- name: dm3
+  description: You are in the deep mines
+  junctions:
+  - name: west
+    goes_to: dm2
+    description: You see nothing but darkness
+  - name: east
+    goes_to: dm4
+    description: You see nothing but darkness
+  look:
+  - name: north
+    description: You see nothing but darkness
+  - name: east
+    description: You see nothing but darkness
+  - name: southt
+    description: You see nothing but darkness
+  - name: west
+    description: You see nothing but darkness
+- name: dm4
+  description: You are in the deep mines
+  junctions:
+  - name: west
+    goes_to: dm3
+    description: You see nothing but darkness
+  look:
+  - name: north
+    description: You see nothing but darkness
+  - name: east
+    description: You see nothing but darkness
+  - name: southt
+    description: You see nothing but darkness
+  - name: west
+    description: You see nothing but darkness
+- name: dm5
+  description: You are in the deep mines
+  junctions:
+  - name: south
+    goes_to: dm2
+    description: You see nothing but darkness
+  look:
+  - name: north
+    description: You see nothing but darkness
+  - name: east
+    description: You see nothing but darkness
+  - name: southt
+    description: You see nothing but darkness
+  - name: west
+    description: You see nothing but darkness
+  moveable_objects:
+  - name: transistor
+    description: It feels like a NPN transistor type BC547C
+
+- name: long_hall
+  description: You enter the long hall that goes up highways
+  junctions:
+  - name: north
+    goes_to: mancave
+    description: Go back in to the mancave
+  - name: south
+    goes_to: crossroad
+    description: You are walking over a long highway you see a crossroad
+
+- name: crossroad
+  description: You are at the crossroads. North is the entry to the long hall. East is the famouse root A6 to Almeria. West is the A10 to Amsterdam
+  junctions:
+  - name: north
+    goes_to: long_hall
+    description: Ouy are walking over the highway back to the long hall
+  - name: east
+    goes_to: route_a6
+    description: You enter famouse route A6 to Almeria
+  - name: west
+    goes_to: route_a10
+    description: You enter the highway to Amsterdam
+
+- name: route_a6
+  description: You are the the famouse route A6 to the east.
+  junctions:
+  - name: west
+    goes_to: crossroad
+    description: nill
+  - name: east
+    goes_to: almeria
+    description: nill
+
+- name: almeria
+  description: |
+    You enter the Almeria. The holy place for monks and motors in fast east at the and of the route A6.
+    Above the holy place is a skull that carries a german helmet.
+  junctions:
+  - name: west
+    goes_to: route_a6
+    description: You enter famouse route A6 to Almeria
+  persons:
+  - name: monk
+    description: And there sits the wise monk. He is meditating on his roaring motor.
+    talk: |
+      The monk pushes the gas handle a couple of times to let the engine roar and then closes his eyes and says:
+      As pinguin once said, if you can't cast the spells to defeat the dragon then switch
+      to the one who has the all the rights to do it.
+      Tell me my novice, what is phrase?
+  spell:
+  - name: sudo su - root
+    description: spell
+    response: |
+      A flash of light blinds your eyes. Dark clouds fill the room and a deep voice from the smoke says:
+
+      SECURITY MONITORING OBSERVED ALERT: ALMERIA_APP_MOTOR: CRITICAL OBJECT MODIFICATION ON 06-06-1666 06:06:06 CEST.
+      ACTIVITY WAS PERFORMED ON HOST ALMERIA (6.66.6.66) FROM ACCOUNT 'MOTOR' TO ACCOUNT ROOT.
+      THE ACTIVITY WAS:
+      DEFINE QREMOTE
+      DEFINE QLOCAL
+      COULD YOU PLEASE VERIFY AND SHARE YOUR CONCLUSION WITH US?
+      THANK YOU IN ADVANCE FOR COOPERATION.
+
+      The smoke clears slowly and the monk smiles at you and says, now you have found the wisdom to defeat the messaging monster
+      Go west tot Amsterdam, find the Guru and remember:
+      Every 1000 mile journey starts with a kick on the accelerator of your motor
+
+- name: route_a10
+  description: This is the road to Amsterdam
+  junctions:
+  - name: east
+    description: You go to the crossroad
+    goes_to: crossroad
+  - name: west
+    goes_to: vondelpark
+    description: You enter Amsterdam, and the first place you enter is the Vondelpark
+- name: vondelpark
+  description: |
+    You are in the Vondelpark in the heart of Amsterdam. There in the middle of the park is a theater.
+    It seems that there is a guru from India who gives a Satsang today in the open air. A whole bunch
+    of dreadlocks, old hippies and spiritual eco warriers.
+    A girl in a typical spiritual dress has probably asked a very stupid question because you
+    see the poor guru roling with his eyes. He mumbels some spiritual phrases to get rid of her.
+    Then the stage is empty, if you go north you might have a hange to sit on the chair besides
+    his throne.
+  junctions:
+  - name: east
+    description: You go to the route A10
+    goes_to: route_a10
+  - name: north
+    description: Swinging among a crowd of meditating people you enter en seat besides
+      the throne of the guru
+    goes_to: throne
+  - name: west
+    description: After a small walk in western direction you enter the Kinkerstraat.
+      A well known street in Amsterdam
+    goes_to: kinkerstraat
+
+- name: throne
+  description: |
+    You site on the throne next to the guru. The smell of flowers mixed with incense makes your head a
+    little lighter then normal. The guru looks friendly to you.
+  persons:
+  - name: guru
+    description: It seems that the guru wants to says something to you
+    talk: |
+      He bends over to you and wispers in your ear:
+      Please, help me. You look like a normal guy to me. To be honest I only do this for the money but
+      everywhere I go now they see me as an spiritual enlightend master. They give me all kinds of meals.
+      But the worst of all is, they are all vegeterians and because I'm from India they serve me the
+      whole time vegetarian curries!
+      I hate these bloody vegetarian curries with all these tasteless lumps of tofu!
+      Please, can you bring me a decent ductch meal with a good piece of meat?
+    give:
+      object: boerenkool met worst
+      response: |
+        Oh my god, real 'boerenkool met worst'. I love it!
+        Het rips the bag open an starts to eat. A couple of his spiritual followers do look not
+        very happy to you.
+        But the guru doesn't care and with a full mouth he said:
+        I will give you the two extra spells that you need to defeat the messaging monster
+        DEFINE .....
+        DEFINE .....
+        For the other parts of the spell go west to the tramstop and then south and seek the master of the hills and give him this document. He waits
+        for years on this document to approve hat he is safe and secure.
+      receive:
+      - name: document
+        description: You see a document with the seal of the security master. Take
+          care because it is worth a fortune
+        look: You see a document with the seal of the security master. Take care because
+          it is worth a fortune
+
+  junctions:
+  - name: south
+    description: Swinging among a crowd of meditating people you leave the seat besides
+      the throne of the guru
+    goes_to: vondelpark
+- name: kinkerstraat
+  description: You enter the Kinkerstraat. It is a noisy street.
+  persons:
+  - name: old lady
+    description: An old lady with a shopping bag is walking by
+    talk: |
+      She starts talking and withing a minute she is telling you her about her life and starts complaining
+      about the cats of het neighbors. The kids from the family three house aways. About a guy on his racing bike
+      that doesn't take care of his plants in the window. etc...
+      After one and a half hour you she stops to breathe and before she continues you say goodby and you walk away.
+      You just hear her complaning that people don't talk to each other anymore like before.
+  - name: black guy
+    description: On the corner of the street stands a black guy listening to reggea
+      music
+    talk: |
+      You look like a UB40 listener. That's no reggea music. Here listen to this.
+      He takes of his headphone and dumps it on your head. As the deep psychedelic music goes to
+      your brain he sticks a big joint in your mouth.
+      Oke, you are really in Amsterdam now.
+  - name: hipster
+    description: A hipster on a cargo bike is trying his brand new 8mm film camera.
+    talk: |
+      I don't have time for you now. I'm really in a hurry. My vegaterian goatmilk container barista bar
+      must be opened. My delivery of goi berries and japanese peanut butter seeds were to late.
+      Man, those suppliers do not know what normal food is?
+  - name: yuppie
+    description: A yuppie in his Armani suite is talking a little to loud over his
+      iPhone 20 version B about his successes on the stock market
+    talk: |
+      He seems to ignore you, waits a moment and then continues the conversation on his phone.
+      'Floris-Karel listen man, I have a normal guy who tries to talk to mee, can you imagine?
+      ....
+      Yeh, these locals here always try to get our attention...
+      ....
+      I know, funny isn't it? YOu know I will give him 5 euro's. See how he will respond...
+
+      Then he gives you 5 euro's
+    receive:
+    - name: 5 euro
+      description: A billet of 5 euro
+      look: A billet of 5 euro
+  - name: jogging girl
+    description: You can just avoid a collision with a blond jogging girl. She looked
+      pissed of and shows her middlefinger
+    talk: |
+      Go away,pervert! Or I scan your image, find you on facebook and put you on #metoo.
+      I'll make sure that you are fully canceled and banned from every social media site!
+      You will hear from my lawyer!
+  junctions:
+  - name: east
+    description: After a small walk in eastern direction you enter the Vondelpark.
+    goes_to: vondelpark
+  - name: west
+    goes_to: tramstop
+    description: nill
+  - name: north
+    goes_to: supermarket
+    description: You enter the supermarktet
+
+- name: supermarket
+  description: |
+    You are in de supermarket. It is very busy with a lot of shopping people.
+    Right besides the entry stands a lady who is selling a new product.
+  persons:
+  - name: lady
+    description: A lady who is promoting a new product
+    talk: |
+      Hellooooo! Do you like to buy our newst product! We sell ' Lunox Boerenkool met Worst�'. You know
+      these days there are a lot of additions added to our food, which are v���ry unhealthy!
+      And in our laboratory we have develloped a very special and methode to remove all the
+      additions from our 'Lunox Boerenkool met Worst�' so that we only keep the potatoes, boerenkool and worst.
+      Wonderfull isn't it!!
+      A test package for one meal is 5 euro. The price is a little higher then the ordinary
+      'Lunox Boerenkool met Worst classic�' we sell. But you know, your health is priceless!
+    give:
+      object: 5 euro
+      response: |
+        Thank you and here is your 'Boerenkool met Worst�. I will really like it!
+        And she hands you over a sealed bag with 'Boerenkool met Worst�'
+      receive:
+      - name: boerenkool met worst
+        description: A sealed bag with 'Boerenkool met Worst�'
+        look: Yeah, this is a sealed bag with normal 'boerenkool met worst', easy
+          to make it yourself.
+  junctions:
+  - name: south
+    goes_to: kinkerstraat
+    description: You leave the supermartket en enters the kinkerstraat
+
+- name: tramstop
+  description: tramstop. Tot east is the kinkerstraat. South is the station
+  junctions:
+  - name: east
+    goes_to: kinkerstraat
+    description: You enter the kinkerstraat
+  - name: south
+    goes_to: station
+    description: You go to a small station just outside Amsterdam.
+
+- name: station
+  description: You enter at a small station. Is it called Haarlemmermeer station and
+    it had one rail called perron 4 7/8.
+  junctions:
+  - name: north
+    goes_to: tramstop
+    description: Yoo go to a tramstop in Amsterdam
+  - name: south
+    goes_to: h1
+    description: If you go south you will take the train to the the hill.
+
+- name: h1
+  description: You are at the hills
+  junctions:
+  - name: north
+    goes_to: station
+    description: you go to the station
+  - name: east
+    goes_to: h4
+    description: You go deeper in to the hills.
+  - name: south
+    goes_to: h2
+    description: You go deeper in to the hills.
+  - name: west
+    goes_to: h1
+    description: You go deeper in to the hills.
+
+- name: h2
+  description: You are at the hills
+  junctions:
+  - name: north
+    goes_to: h1
+    description: You go deeper in to the hills.
+  - name: east
+    goes_to: h5
+    description: You go deeper in to the hills.
+  - name: south
+    goes_to: h3
+    description: You go deeper in to the hills.
+  - name: west
+    goes_to: h2
+    description: You go deeper in to the hills.
+
+- name: h3
+  description: You are at the hills
+  junctions:
+  - name: north
+    goes_to: h2
+    description: You go deeper in to the hills.
+  - name: east
+    goes_to: h6
+    description: You go deeper in to the hills.
+  - name: south
+    goes_to: h3
+    description: You go deeper in to the hills.
+  - name: west
+    goes_to: hilltop
+    description: You go deeper in to the hills.
+
+- name: h4
+  description: You are at the hills
+  junctions:
+  - name: north
+    goes_to: h4
+    description: You go deeper in to the hills.
+  - name: east
+    goes_to: h7
+    description: You go deeper in to the hills.
+  - name: south
+    goes_to: h5
+    description: You go deeper in to the hills.
+  - name: west
+    goes_to: h1
+    description: You go deeper in to the hills.
+
+- name: h5
+  description: You are at the hills
+  junctions:
+  - name: north
+    goes_to: h4
+    description: You go deeper in to the hills.
+  - name: east
+    goes_to: h8
+    description: You go deeper in to the hills.
+  - name: south
+    goes_to: h6
+    description: You go deeper in to the hills.
+  - name: west
+    goes_to: h2
+    description: You go deeper in to the hills.
+
+- name: h6
+  description: You are at the hills
+  junctions:
+  - name: north
+    goes_to: h5
+    description: You go deeper in to the hills.
+  - name: east
+    goes_to: h9
+    description: You go deeper in to the hills.
+  - name: south
+    goes_to: h6
+    description: You go deeper in to the hills.
+  - name: west
+    goes_to: h3
+    description: You go deeper in to the hills.
+
+- name: h7
+  description: You are at the hills
+  junctions:
+  - name: north
+    goes_to: h7
+    description: You go deeper in to the hills.
+  - name: east
+    goes_to: h7
+    description: You go deeper in to the hills.
+  - name: south
+    goes_to: h8
+    description: You go deeper in to the hills.
+  - name: west
+    goes_to: h4
+    description: You go deeper in to the hills.
+
+- name: h8
+  description: You are at the hills
+  junctions:
+  - name: north
+    goes_to: h7
+    description: You go deeper in to the hills.
+  - name: east
+    goes_to: bicycle_hill
+    description: You go deeper in to the hills.
+  - name: south
+    goes_to: h9
+    description: You go deeper in to the hills.
+  - name: west
+    goes_to: h5
+    description: You go deeper in to the hills.
+  moveable_objects:
+    - name: carton box
+      description: A carton box lies on the ground
+
+
+- name: h9
+  description: You are at the hills
+  junctions:
+  - name: north
+    goes_to: h8
+    description: You go deeper in to the hills.
+  - name: east
+    goes_to: h9
+    description: You go deeper in to the hills.
+  - name: south
+    goes_to: h9
+    description: You go deeper in to the hills.
+  - name: west
+    goes_to: h6
+    description: You go deeper in to the hills.
+
+- name: hilltop
+  description: You enter the top of the hills. There stands the master of the hills.
+  junctions:
+  - name: east
+    goes_to: h3
+    description: You go back deeper in to the hills.
+  persons:
+  - name: master of the hills
+    description: |
+      There stands the master of hills. But then you see a pile of daipers, used daipers. You wonders why the master
+      of the hills stands beneath a pile of used daipers.
+    talk: |
+      QUIUT!!! My little baby needs to sleep!
+      Without my security statement I cannot guarantee the the safety that he needs to get asleep. I'm waiting now
+      for two years on this stupid document!
+    give:
+      object: document
+      response: |
+        You have the security document! Thank you very very much. I've waited so long on this document:
+        As a thank I will give you the secrit part of the spell to defeat the messaging monster:
+        SET AUTHREC .....
+        SET AUTHREC ......
+        And now you must go east to the old iron wizard. He and he alone is the most wise man of all. He can give you
+        the final spell that you need to defeat the messaing monster, because he know the messaging monster for more
+        than 60 years!
+        But leave mortal, leave now and go east ...... cause my little baby needs a clean daiper.
+
+- name: bicycle_hill
+  description: |
+    You see an large hill that exists of all kind of old iron bicycle parts. A path leads west to the top of the hill.
+    And there on the top you see the castle of the old iron wizard. The gate of his mighty castle is guarded but two
+    cats.
+  junctions:
+  - name: west
+    goes_to: h8
+    description: You go back deeper in to the hills.
+  - name: east
+    goes_to: castle
+    blocked: yes
+    unblock: bicycle wheel
+    object_name: gate
+  persons:
+    - name: cats
+      description: Two mean looking cats with sharp nails. They will not let you pass
+      talk: grrrrrrrrr!
+      give:
+        object: carton box
+        respone: mieuw!
+        receive:
+          - name: bicycle wheel
+            description: Under on of the cats is a bicycle wheel.
+            look: This is a real carbon fiber lightweigth wheel.
+
+- name: castle
+  description: The castle on the bicycle hill. In the corner you see a switched off mainframe
+  junctions:
+    - name: west
+      goes_to: bicycle_hill
+    - name: east
+      goes_to: entrance_cave
+      blocked: yes
+      spell: open sesame
+  persons:
+    - name: old iron wizard
+      description: There stands the old Iron wizard. He is busy upgrading his tandem.
+      talk: |
+        Hello, you want to defeat the Messaing Monster? I will give you the spells. But the spells are in the safe and I do not know the password.
+        But I thought is was the name of this guy who won the Tour de France in 1980.
+  spell:
+    - name: Joop Zoetemelk
+      description: spell
+      response: |
+        Yes, that was his name!
+        He opens the safe, picks up a paper and says:
+        DEFINE QREMOTE
+        DEFINE QLOCAL
+        If you want to open the door to the cave of the messaging monster say 'open sesame'
+    - name: open sesame
+      description: spell
+      response: The old big door in the east crack and opens the lock
+
+- name: entrance_cave
+  description: you are in the cave of the messaging monster
+  junctions:
+    - name: west
+      goes_to: bicycle_hill
+    - name: east
+      goes_to: messaging_monster
+
+- name: messaging_monster
+  description: There is the messaging monster.
+  junctions:
+    - name: west
+      goes_to: entrance_cave
+    - name: east
+      goes_to: endpoint
+      blocked: yes
+      spell: REFRESH QMGR
+  monster:
+    - name: Messaging monster
+      description: A horrible messaging monster
+      life: 6
+      when_dead_phrase: The monster is dead. And with it last breath is screams "REFRESH QMGR"
+      damaging_spells:
+        - DEFINE QLOCAL
+        - DEFINE QALIAS
+        - DEFINE CHANNEL
+        - DEFINE XMITQ
+        - DEFINE AUTHREC QALIAS
+        - DEFINE AUTHREC QMGR
+  spell:
+    - name: REFRESH QMGR
+      description: spell
+      response: The rocks tumble down behind the corps of the messaging monster and you see the clear blue sky
+
+- name: endpoint
+  description: You finally leave this world, that is now free of the messaging monster
+  junction:
+    - name: west
+      goes_to: messaging_monster
+
+
+
+
+
+
+
