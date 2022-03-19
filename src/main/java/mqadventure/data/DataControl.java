@@ -5,9 +5,9 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,22 +17,22 @@ public class DataControl {
     private Adventure adventure;
     private ObjectMapper mapper;
     private String sourceDir;
-
     private Room currentRoom;
-
-
 
     public DataControl(){
         sourceDir = Paths.get(".").toAbsolutePath().normalize().toString();
-        System.out.println(sourceDir);
-
         mapper = new ObjectMapper(new YAMLFactory());
         mapper.configure(JsonParser.Feature.IGNORE_UNDEFINED,true);
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false);
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT,false);
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         try {
-            adventure = mapper.readValue(new File(getClass().getClassLoader().getResource("map_original.yaml").getPath()),Adventure.class);
+            //adventure = mapper.readValue(new File(getClass().getClassLoader().getResource("map_original.yaml").getPath()),Adventure.class);
+
+            InputStream is = this.getClass().getClassLoader().getResourceAsStream("map_original.yaml");
+
+            adventure = mapper.readValue(this.getClass().getClassLoader().getResourceAsStream("map_original.yaml"),Adventure.class);
+            //adventure = mapper.readValue(new File(getClass().getClassLoader().getResource("map_original.yaml").getPath()),Adventure.class);
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
@@ -100,7 +100,6 @@ public class DataControl {
         return adventure.getCurrentRoomName();
     }
 
-
     public String getStartMessage(){return adventure.getStartMessage();}
     public String getHelpMessage() {return adventure.getHelpMessage();}
 
@@ -117,7 +116,6 @@ public class DataControl {
     public void setPassword(String password) {
         adventure.setPassword(password);
     }
-
 
     public void addToInventoryList(MoveableObjects moveableObjects){
         adventure.getInventory().add(moveableObjects);

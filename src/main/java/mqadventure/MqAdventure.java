@@ -18,7 +18,7 @@ public class MqAdventure {
         while(loop){
             System.out.println(mqAdventure.getResponse());
             mqAdventure.sendInput(scanner.nextLine());
-            if(mqAdventure.hasPlayerWon()){
+            if(mqAdventure.hasPlayerWon() || mqAdventure.hasPlayerStopped()){
                 loop=false;
             }
 

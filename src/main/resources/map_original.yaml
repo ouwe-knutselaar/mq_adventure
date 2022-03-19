@@ -5,19 +5,22 @@ startMessage: |
   Mortal, give me thou name......
 
 helpMessage: |
-  help  This help tesxt
-  look  Look around
-  look <object>  look a little closer
-  pick <object>  pick up an object
-  drop <object>  drop an object
+  help   This help text
+  look   Look around
+  look <object>   look a little closer
+  pick <object>   pick up an object
+  drop <object>   drop an object
   use <object> on <object>   see if it works
-  north, east, south, west  Go in that direction
+  north, east, south, west   Go in that direction
   inventory   Show what you got
-  read <object>  Read a paper of plate
-  talk <person>  try to talk to someone
-  cast <spell>  Cast a spell
-  say <something>  Say something
-  open <object>  Open something
+  read <object>   Read a paper of plate
+  talk <person>   try to talk to someone
+  give <object> to <person>   Give something to someone
+  cast <spell>   Cast a spell
+  say <something>   Say something
+  open <object>   Open something
+  save   Save you legacy
+  exit   Exit this world and go back to your miserable life.
 
   To open a door of gate you can use an object on it, but sometimes you have to cast a spell.
 
@@ -32,13 +35,13 @@ rooms:
   persons:
   - name: product owner
     description: By the old table sits a Product Owner.
-    look: it is an old scroll
+    look: It is a very ordinary product owner
     talk: |
-      Behold stranger, thou shall not leave this world before
-      you have defeated the horrible Messaging Monster. It keeps all the messages for himself.
-      You must collect the 6 spells to evoke the magical message flow and drain
-      the power from the messaging monster and free the waiting messages.
-      To get the spells you must find the queen of the jungle, the master of the green cape islands, the bald automater,
+      Behold stranger, thou shall not leave this world before you have defeated the horrible Messaging Monster.
+      It keeps all the messages for himself.
+      You must collect the 6 spells to evoke the magical message flow and drain the power from the messaging monster
+      and free the waiting messages.
+      To get the spells you must find the Queen of the jungle, the Master of the green cape islands, the bald automater,
       the motor monk from the far east, a holy guru from India, the guardian of the hills and the old iron wizard.
       Please, you are our last hope....
       Then the poor product owner hides his face behind his hands and starts crying out of sheer desperation

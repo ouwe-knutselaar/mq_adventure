@@ -14,12 +14,12 @@ public class MqAdventureLoop {
 
     private DataControl dataControl;
     private Map<String, Action> actionList = new HashMap<String, Action>();
-    //Room currentRoom;
     private StringBuilder outputCollector;
     private enum GAMESTATES {BEGIN,GIVE_PASSWORD,PLAYING,END};
     private GAMESTATES currentGameState = GAMESTATES.BEGIN;
     private StringBuilder response = new StringBuilder();
     private boolean hasWon = false;
+    private boolean hasStopped = false;
     private String userName;
     private MessageDigest digest;
 
@@ -67,6 +67,10 @@ public class MqAdventureLoop {
 
     public boolean hasPlayerWon(){
         return hasWon;
+    }
+
+    public boolean hasPlayerStopped(){
+        return hasStopped;
     }
 
     public void sendInput(String input){
@@ -168,13 +172,8 @@ public class MqAdventureLoop {
         actionList.put("give",new GiveObject(callBackFunctions));
         actionList.put("cast",new CastSpell(callBackFunctions));
         actionList.put("say",new CastSpell(callBackFunctions));
-        //actionList.put("exit",saveAndExitGame());
-        actionList.put("save", new Action() {
-            @Override
-            public void execute(List<String> parameters) {
-                saveGame();
-            }
-        });
+        actionList.put("exit",parameters -> saveAndExitGame());
+        actionList.put("save",parameters -> saveGame());
 
     }
 
@@ -187,6 +186,7 @@ public class MqAdventureLoop {
     private Action saveAndExitGame() {
         dataControl.writeYamlFile(userName);
         response.append("Thou lecagy is saved for eternity and thou can leave this world behind");
+        hasStopped = true;
         return null;
     }
 

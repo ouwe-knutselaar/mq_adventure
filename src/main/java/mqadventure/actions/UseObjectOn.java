@@ -33,7 +33,7 @@ public class UseObjectOn extends Callback implements Action {
                         filter(junction -> junction.getObject_name().equals(subjectToUseOn)).
                         forEach(junction -> {
                             junction.setBlocked("no");
-                            callBackFunctions.toOutput("You unlocked " + subjectToUseOn + "\n");
+                            callBackFunctions.toOutput("You unlocked the " + subjectToUseOn + "\n");
                         }));
     }
 

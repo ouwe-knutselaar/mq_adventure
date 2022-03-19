@@ -1,0 +1,2101 @@
+---
+rooms:
+- name: "startingpoint"
+  description: "you are in a cold dark room. There is an old table in the corner.\
+    \ In the east is a door. In the middle is an old table"
+  junctions:
+  - name: "east"
+    description: "In the east is an old wooden door"
+    goes_to: "great_hall"
+    blocked: "yes"
+    unblock: "paperclip"
+    object_name: "door"
+    spell: ""
+  look:
+  - name: "table"
+    description: "A dirty old table"
+  moveable_objects:
+  - name: "skull"
+    description: "There is an old skull in the corner"
+    look: "The poor fellow is long dead"
+  - name: "stone"
+    description: "In the middle is a yellow stone"
+    look: "A very yellow stone, what else had you expected?"
+  - name: "paperclip"
+    description: "You can just see a paperclip"
+    look: "You look at a very ordinary paperclip"
+  persons:
+  - name: "product owner"
+    description: "By the old table sits a Product Owner."
+    talk: "behold stranger, thou shall not leave this world before\nyou have defeated\
+      \ the horrible messaging monster. it keeps all the messages for himself.\nyou\
+      \ must collect the 6 spells to evoke the magical message flow and drain\nthe\
+      \ power from the messaging monster and free the waiting messages.\nto get the\
+      \ spells you must find the queen of the jungle, the master of the green cape\
+      \ islands, the bald automater,\nthe motor monk from the far east, a holy guru\
+      \ from india, the guardian of the hills and the old iron wizard.\nplease, you\
+      \ are our last hope....\nthen the poor product owner hides his face behind his\
+      \ hands and starts crying out of sheer desperation\n"
+    receive: []
+  spell: []
+  read: []
+  monster: []
+- name: "great_hall"
+  description: "You are in a great Hall. The roof is made of glass en you can see\
+    \ the blue sky. In the middle is a statue of a\nbig lion.\nOn the statue is a\
+    \ plate with something written on it. The is a door in the south side of the wall.\n\
+    In the north you see an opening in the wall that leads to a jungle\nIn the east\
+    \ you see an golden door\n"
+  junctions:
+  - name: "north"
+    description: "You enter the deep green jungle if you go norh"
+    goes_to: "j1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "You go the this door, you really want to go back?"
+    goes_to: "startingpoint"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "In the east there is a golden door."
+    goes_to: "bridge"
+    blocked: "yes"
+    unblock: "incident ticket"
+    object_name: "golden door"
+    spell: ""
+  look:
+  - name: "plate"
+    description: "A plate with letters on it"
+  moveable_objects: []
+  persons: []
+  spell: []
+  read:
+  - name: "plate"
+    description: "Go to the jungle in the to the north east corner to meet the queen\
+      \ on the jungle\nShe is the keeper of the first spells. But beware, her beauty\
+      \ will blind your eyes.\n"
+  monster: []
+- name: "j1"
+  description: "You enter the jungle, it is warm and wet. You have the feeling that\
+    \ behind every leaf something is watching you"
+  junctions:
+  - name: "north"
+    description: "Go deeper between the leaves"
+    goes_to: "j2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "Go deeper in the jungle"
+    goes_to: "j4"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "You enter the great hall"
+    goes_to: "great_hall"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "Go deeper in the jungle"
+    goes_to: "j1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "j2"
+  description: "This jungle is hot and moisty."
+  junctions:
+  - name: "north"
+    description: "Go north in the jungle"
+    goes_to: "j3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "Go east in the jungle"
+    goes_to: "j5"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "Go south in the jungle"
+    goes_to: "j1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "Go west in the jungle"
+    goes_to: "j2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "coconut"
+    description: "On the floor lies a coconut"
+    look: "Just an ordinary coconut"
+  - name: "bottle"
+    description: "There lies an empty bottle of beer"
+    look: "Is it Dommelsh beer, you can better leave it there"
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "j3"
+  description: "It look like a jungle from the Tarzan books."
+  junctions:
+  - name: "north"
+    description: "Go deeper in the green hell"
+    goes_to: "j3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "Tarzan was fake, the jungle is horrible in the east"
+    goes_to: "j6"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "Going on south, does this ever ends?"
+    goes_to: "j2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "Go west, does it matters? Everything is green"
+    goes_to: "j3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "old basket"
+    description: "Under some leaves you see an old basket"
+    look: "When you look closer you hear some barking. As if a young puppy is stucked\
+      \ there."
+    open:
+      name: "puppy"
+      description: "A little puppy with sad brown eyes is looking at you"
+      look: "It is a cute little puppy"
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "j4"
+  description: "Still in the jungle and beautifull nature. But all you want is a good\
+    \ glass of cold beer"
+  junctions:
+  - name: "north"
+    description: "Go north, maybe there is a cafe"
+    goes_to: "j5"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "And east is green, green green. Wherever you go"
+    goes_to: "j7"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "There is a way south, en then...? Jungle of course"
+    goes_to: "j4"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "The way west, maybe it is a little cooler there"
+    goes_to: "j1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "beerpull"
+    description: "On the ground lies a beerpull"
+    look: "The beerpull is empty. The ants drank everthing"
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "j5"
+  description: "The green hell goes on for ever"
+  junctions:
+  - name: "north"
+    description: "North, but do I survive this?"
+    goes_to: "j6"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "In the east, it is green there, what else did you expect?"
+    goes_to: "j8"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "In the south it is green."
+    goes_to: "j4"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "Go west go green"
+    goes_to: "j2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "pile of bones"
+    description: "A pile of old with bones"
+    look: "It seems that there are more people who tried to defeat the messaging monster"
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "j6"
+  description: "Leafs, leafs, everywhere leafs. You are beginning to hate this jungle"
+  junctions:
+  - name: "north"
+    description: "You can go north"
+    goes_to: "j6"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "East, well. Why not? Ttry it"
+    goes_to: "j9"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "In the south is more jungle. really"
+    goes_to: "j5"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "But the same in the west"
+    goes_to: "j3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "banana"
+    description: "On the ground liefs a very normal banana"
+    look: "Just a banana"
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "j7"
+  description: "Endless and endless jungle. Maybe cutting the whole jungle and make\n\
+    it into a parking garage looks more and more like a good idea\n"
+  junctions:
+  - name: "north"
+    description: "In the north you see jungle"
+    goes_to: "j8"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "There is also a jungle in the east"
+    goes_to: "j7"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "South you..... (this is getting boring) see jungle)"
+    goes_to: "j7"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "And in the west.... well, I think you know it already"
+    goes_to: "j4"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "j8"
+  description: "Jungle, al this green starts to irritate you. Some monkeys are trying\
+    \ to hit you with sticks"
+  junctions:
+  - name: "north"
+    description: "In the north is just jungle."
+    goes_to: "j9"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "And east, well jungle"
+    goes_to: "j8"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "South, still jungle"
+    goes_to: "j7"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "In the west? You hoped for something else. But no, jungle."
+    goes_to: "j5"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "computer"
+    description: "Covered with sand there is an old SX486 PC"
+    look: "If it was in a good shape, this could be a collectors item."
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "j9"
+  description: "Oh, no. More jungle. When will this torture end?"
+  junctions:
+  - name: "north"
+    description: "If you go north, you go deeper in the jungle"
+    goes_to: "j9"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "In the east is the entrance to a palace. Two guards, wearing black\
+      \ glasses,\nwith a big blue logo on there shields look very angry to you.\n"
+    goes_to: "palace"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "If you go south, you go also deeper in the jungle."
+    goes_to: "j8"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "West, go west. But there is the jungle"
+    goes_to: "j6"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "cdrom"
+    description: "A cdrom that contains an installation of OS/2 warp 4.0"
+    look: "Oke, this OS/2 Warp had also fixpak 16 delivered."
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "palace"
+  description: "You are in the palace of the Queen of the jungle. It is a nice place.\n"
+  junctions:
+  - name: "west"
+    description: "If you go west you leave the palace and go back to the jungle"
+    goes_to: "j9"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look:
+  - name: "queen"
+    description: "The queen is a beautyfull woman with golden hair. You heart beats\
+      \ suddenly a little faster."
+  moveable_objects: []
+  persons:
+  - name: "queen"
+    description: "On an throne sits the most beautifull woman you have ever seen.\n\
+      You see that she reads a book called: \"Using Azure pipelines with Ansible to\
+      \ create Python scripts that could\ndefeat the Messaging Monster\"\nA beautifull\
+      \ woman that is also handy with computers, your heart missed a beat when you\
+      \ realize that.\n"
+    talk: "she looks and sees you, her face turns sad and she says:\nmy little cute\
+      \ puppy. he saw the messaging monster an runned away in to the jungle.\nplease\
+      \ help me to find it.\ni will reward you with everything you wish and the first\
+      \ spell to defeat the messaging monster.\n"
+    give:
+      object: "puppy"
+      response: "Oh, my cute puppy! I'm so happy!\nThen she jump of her throne, opens\
+        \ her arms and runs towards you.\nYou place the puppy on the ground and open\
+        \ you arms. All your dreams will come true just by holding her in your\narms\
+        \ for ever and ever......\n\nShe stops just in front of you, quickly picks\
+        \ up the puppy, turns around and walks back.\nJust before she enters her private\
+        \ rooms behind the throne she seems to remember something.\n'Oh yes, you brought\
+        \ my puppy back.\nI will give you the first spell:\nDEFINE QREMOTE(DRAIN.THE.MONSTER.MSG.RQ)\
+        \ QMGR(OTHERSIDE) QR(THE.VAULT.MSG.LQ)\nAnd here is the incident ticket to\
+        \ open the golden door in the great hall. You cannot enter that place without\n\
+        a proper change or incident ticket.'\n"
+      receive:
+      - name: "incident ticket"
+        description: "On the floor lies the incident ticket of the jungle queen."
+        look: "Just an ordinary incident ticket, please solve this incident."
+    receive: []
+  spell: []
+  read: []
+  monster: []
+- name: "bridge"
+  description: "A large bridge that goes east trough the clouds over the sea. You\
+    \ cannot see whats on the other side."
+  junctions:
+  - name: "east"
+    description: "If you go east you will cross this large bridge. A big walk."
+    goes_to: "master_island"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look:
+  - name: "bridge"
+    description: "You see a large bridge that goes trough the clouds. You cannot see\
+      \ the other side."
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "master_island"
+  description: "You enter the island. It is a tropical island with beautifull beaches\
+    \ and houses. Palm trees wave in the wind.\nAnd in there stand a wooden plate\
+    \ with something written on it.\n"
+  junctions:
+  - name: "west"
+    description: "The is in the west a large bridge. You cannot see what is on the\
+      \ other side."
+    goes_to: "bridge"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "In the south is a beautifull beach."
+    goes_to: "beach2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "Is the east look see the door to a nice appartment"
+    goes_to: "appartment"
+    blocked: "yes"
+    unblock: "key"
+    object_name: "door"
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons:
+  - name: "master"
+    description: "There stands the Master of the Island. He is busy with some kind\
+      \ of fighting training\nOn his laptop is a youtube video about the fighting\
+      \ skills used by police officers\n"
+    talk: "a cluster of messaging monsters? no that is fake. there is only one.\n\
+      i was practicing on the beach when a sudden wave washed away the key code of\
+      \ my house.\nso it is lost and i'm afraid that i can never enter my house again.\n\
+      please can you help me find the code?\ni cold call the fireman to put me on\
+      \ the balcony, but what if my neighbors see that?\nso emberrasing!\nyou see,\
+      \ that is no option for me.\n"
+    give:
+      object: "badge"
+      response: "My badge, finally I've the key code for my house. You see, it was\
+        \ 'abcd'. I always keep my\nkey codes very simple so that I do not forget\
+        \ them. Thanks man, now I can enter my house.\nI will give you the second\
+        \ spell to defeat the messaging monster:\nDEFINE QALIAS(DRAIN.THE.MONSTER.PUT.MSG.AQ)\
+        \ TAGRET(DRAIN.THE.MONSTER.MSG.LQ)\n\nOh yeah, and here is the key to my appartment.\
+        \ Please open it, you're welcome.\n"
+      receive:
+      - name: "key"
+        description: "the key of the appartment"
+    receive: []
+  spell: []
+  read:
+  - name: "plate"
+    description: "Welcome to the islands of the geen cape.\nYou want to hear a tail\
+      \ about a cluster of messaging monsters? Talk to the Master of the island\n"
+  monster: []
+- name: "beach2"
+  description: "You are on a nice beach just next to the apppartment"
+  junctions:
+  - name: "north"
+    description: "In the north is the appartment of the Master of the island"
+    goes_to: "master_island"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "In the east is more beautifull beach"
+    goes_to: "beach3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "Also in the west you see a beautifull beach"
+    goes_to: "beach1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "South leads to the shore of a blue sea"
+    goes_to: "seashore2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look:
+  - name: "east"
+    description: "in the east you see more beautifull beaches"
+  - name: "west"
+    description: "in the west you see more beautifull beaches"
+  - name: "south"
+    description: "in the south are the waves between see and land"
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "beach1"
+  description: "You are on a nice beach. There is a pole with a plate on it"
+  junctions:
+  - name: "east"
+    description: "In the east is a beautifull beach"
+    goes_to: "beach2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "Same in the west"
+    goes_to: "beach1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "In the south there is a sea shore."
+    goes_to: "seashore1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look:
+  - name: "plate"
+    description: "A plate with text on it."
+  moveable_objects: []
+  persons: []
+  spell: []
+  read:
+  - name: "plate"
+    description: "The plays says: After this sign starts the nudist area.\nYou start\
+      \ looking immediatly to the beach. To bad, it is empty..\n"
+  monster: []
+- name: "beach3"
+  description: "you are on a nice beach"
+  junctions:
+  - name: "east"
+    description: "in the east you see more beautifull beaches"
+    goes_to: "beach3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "in the west you see more beautifull beaches"
+    goes_to: "beach2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "in the south in de thin line between see and land, called a shore."
+    goes_to: "seashore3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "seashore1"
+  description: "you are on a nice beach by the sea shore"
+  junctions:
+  - name: "east"
+    description: "In the east is a sea shore"
+    goes_to: "seashore2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "In the west is also a sea shore."
+    goes_to: "seashore1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "north"
+    description: "In the north are those beautifull beaches again"
+    goes_to: "beach1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "paper"
+    description: "You see a piece of paper"
+    look: "It is a piece of paper with 1234 written on it."
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "seashore2"
+  description: "you are on a nice beach by the sea shore"
+  junctions:
+  - name: "east"
+    description: "In the east is more seashore"
+    goes_to: "seashore3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "In the east is also more seashore"
+    goes_to: "seashore1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "north"
+    description: "North you go back to the beach"
+    goes_to: "beach2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look:
+  - name: "east"
+    description: "in the east you see more beautifull beaches and waves"
+  - name: "west"
+    description: "in the east you see more beautifull beaches and waves"
+  - name: "north"
+    description: "in the north you see the beach"
+  moveable_objects:
+  - name: "creditcard"
+    description: "You see a creditcard"
+    look: "Is has the code 0000 on it"
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "seashore3"
+  description: "you are on a nice beach by the sea shore"
+  junctions:
+  - name: "east"
+    description: "in the east you see more beautifull beaches and waves"
+    goes_to: "seashore3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "in the east you see more beautifull beaches and waves"
+    goes_to: "seashore2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "north"
+    description: "in the north you see the beach"
+    goes_to: "beach3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "badge"
+    description: "You see a badge"
+    look: "A batch with the code 'abcd' on it"
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "appartment"
+  description: "You are in a beautifull appartment. But you notice one thing. A lot\
+    \ of things have a logo of the footbal club\nFeyenoord. He has probaly a crush\
+    \ for footbal\n"
+  junctions:
+  - name: "west"
+    description: "In the west is a door where you can leave this appartement"
+    goes_to: "master_island"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "In the east is an elevator. Why is there an elevator?"
+    goes_to: "elevator"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "elevator"
+  description: "You are in the elevator of the appatment."
+  junctions:
+  - name: "west"
+    description: "In the west is the appartment"
+    goes_to: "appartment"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "In the south is the button to go down."
+    goes_to: "coal_mine"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "coal_mine"
+  description: "You enter the coal mine. It is very dark."
+  junctions:
+  - name: "north"
+    description: "In the north is the button to go up."
+    goes_to: "elevator"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "In the south you see a cave."
+    goes_to: "mancave"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look:
+  - name: "south"
+    description: "In the south you see a door. It has a plate on it that says 'mancave'"
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "mancave"
+  description: "You are in a real man cave. It is a complete mess with all kind of\
+    \ computers, automates and other electronic stuff.\n"
+  junctions:
+  - name: "north"
+    description: "In the north is the entrance"
+    goes_to: "coal_mine"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "In the east are the dark coal mines."
+    goes_to: "dm1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "South there is a long hall"
+    goes_to: "long_hall"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "flashlight"
+    description: "There is a decent flashlight, probably running some kind of Linux\
+      \ distribution.\n"
+  persons:
+  - name: "bald man"
+    description: "In the conrner behind a desk sits a bald man with glasses. He is\
+      \ busy building something strange. The speaker on\nhis desk plays some music\
+      \ that sounds like Edith Piaf srceaming death metal.\n"
+    talk: "what... what.... do you say?..\nsorry i will turn the music softer.\nnow\
+      \ get to the point, what do you want andno bullshit?\ncuase i try to automate\
+      \ my automatic automate builder but i dropped a transistor that i realy need\
+      \ somewhere in\nthe mines to the east. i need that to automate my automatic\
+      \ automate builder so that i can automatically try to\ndefeat the messaging\
+      \ monster.\ncan you help me find it?\nhere, take the flashlight.\nand that's.\
+      \ he turns around and continues with it work.\n"
+    give:
+      object: "transistor"
+      response: "You found my transistor!\nI will give you the next magic phases to\
+        \ defeat the Messaging Monster.\nBut listen carefully, I only says this once!\n\
+        DEFINE CHANNEL\nUse it wise, it is a very powerfull spell. One mistake and\
+        \ you will be changed in to a cucumber!\n"
+      receive: []
+    receive: []
+  spell: []
+  read: []
+  monster: []
+- name: "dm1"
+  description: "You are in the deep mines. Fortunaly you have the flashlight else\
+    \ you wouldn't see a thing.\nOh no, you Linux distribution of your flashlight\
+    \ crashes. And you are automatically plunged in total darkness.\n"
+  junctions:
+  - name: "west"
+    description: "You see a light in the west"
+    goes_to: "mancave"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "You see nothing but darkness in the east"
+    goes_to: "dm2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look:
+  - name: "north"
+    description: "You see nothing but darkness in the north"
+  - name: "southt"
+    description: "You see nothing but darkness in the south"
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "dm2"
+  description: "You are in the deep mines"
+  junctions:
+  - name: "west"
+    description: "You see nothing but darkness in the west"
+    goes_to: "dm1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "You see nothing but darkness in the east"
+    goes_to: "dm3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "north"
+    description: "You see nothing but darkness in the north"
+    goes_to: "dm5"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look:
+  - name: "southt"
+    description: "You see nothing but darkness in the south"
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "dm3"
+  description: "You are in the deep mines"
+  junctions:
+  - name: "west"
+    description: "You see nothing but darkness in the west"
+    goes_to: "dm2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "You see nothing but darkness in the east"
+    goes_to: "dm4"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look:
+  - name: "north"
+    description: "You see nothing but darkness in the north"
+  - name: "south"
+    description: "You see nothing but darkness in the south"
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "dm4"
+  description: "You are in the deep mines"
+  junctions:
+  - name: "west"
+    description: "You see nothing but darkness in the west"
+    goes_to: "dm3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look:
+  - name: "north"
+    description: "You see nothing but darkness in the north"
+  - name: "south"
+    description: "You see nothing but darkness in the south"
+  - name: "east"
+    description: "You see nothing but darkness in the east"
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "dm5"
+  description: "You are in the deep mines"
+  junctions:
+  - name: "south"
+    description: "You see nothing but darkness in the south"
+    goes_to: "dm2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look:
+  - name: "north"
+    description: "You see nothing but darkness in the north"
+  - name: "east"
+    description: "You see nothing but darkness in the east"
+  - name: "west"
+    description: "You see nothing but darkness in the west"
+  moveable_objects:
+  - name: "transistor"
+    description: "It feels like a NPN transistor type BC547C under your feet"
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "long_hall"
+  description: "You enter the long hall that goes up highways"
+  junctions:
+  - name: "north"
+    description: "Go back in to the mancave if you decide to go north"
+    goes_to: "mancave"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "In the south you see a crossroad"
+    goes_to: "crossroad"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "crossroad"
+  description: "You are at the crossroads. There is a sign in the middle of the crossroad.\n"
+  junctions:
+  - name: "north"
+    description: "In the north you go back to the long hall"
+    goes_to: "long_hall"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "East goes to route A6 to almeria"
+    goes_to: "route_a6"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "In the west you can go the Amsterdam, if you know the magic words."
+    goes_to: "route_a10"
+    blocked: "yes"
+    unblock: "none"
+    object_name: ""
+    spell: "ajax forever"
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read:
+  - name: "sign"
+    description: "On the sign is written. Go east to seek wisdom, go west to enter\
+      \ Pyongyang at the Amstel."
+  monster: []
+- name: "route_a6"
+  description: "You are the the famouse route A6 to the east."
+  junctions:
+  - name: "west"
+    description: "In the west is the crossroad"
+    goes_to: "crossroad"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "East leads to the famouse city of Almeria"
+    goes_to: "almeria"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "almeria"
+  description: "You enter the Almeria. The holy place for monks and motors in fast\
+    \ east at the and of the route A6.\nAbove the holy place is a skull that carries\
+    \ a german helmet of the WW2.\n"
+  junctions:
+  - name: "west"
+    description: "In the west is the route A6."
+    goes_to: "route_a6"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons:
+  - name: "monk"
+    description: "And there sits the wise monk. He is meditating on his roaring motor."
+    talk: "the monk pushes the gas handle a couple of times to let the engine roar\
+      \ and then closes his eyes and say,\nin the system that runs on the penguin\
+      \ is a manual that states, if you can't cast the spells to defeat the dragon\n\
+      then switch to the carrot who has the all the rights to do it.\ntell me my novice,\
+      \ what is the phrase?\n"
+    receive: []
+  spell:
+  - name: "sudo su - root"
+    description: "spell"
+    response: "A flash of light blinds your eyes. Dark clouds fill the room and a\
+      \ deep voice from the smoke says:\n\nSECURITY EVENT MONITORING OBSERVED A VIOLATION\
+      \ OF THE RULES AT:\nALMERIA_APP_MOTOR: CRITICAL OBJECT MODIFICATION ON 06-06-1666\
+      \ 06:06:06 CEST.\n\nACTIVITY WAS PERFORMED ON HOST ALMERIA (6.66.6.66) FROM\
+      \ ACCOUNT 'MOTOR' TO ACCOUNT ROOT.\n\nTHE ACTIVITY WAS:\n'DEFINE CHANNEL(fasdfasfsafsadfadsf)'\n\
+      \nCOULD YOU PLEASE VERIFY AND SHARE YOUR CONCLUSION WITH US?\nTHANK YOU IN ADVANCE\
+      \ FOR COOPERATION.\n\nThe smoke clears slowly and the monk smiles at you and\
+      \ says, now you have found the wisdom to defeat the\nmessaging monster.\nGo\
+      \ west to amsterdam and to be able to enter the road to amsterdam you must say\
+      \ the words:\n'ajax forever'\nNow go and remember, every 1000 mile journey starts\
+      \ with a kick on the accelerator of your motor.\n"
+  read: []
+  monster: []
+- name: "route_a10"
+  description: "This is the road to Amsterdam, the A10"
+  junctions:
+  - name: "east"
+    description: "In the east is the crossroad"
+    goes_to: "crossroad"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "West goes straigth in to Amsterdams famouse Vondelpark"
+    goes_to: "vondelpark"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "vondelpark"
+  description: "You are in the Vondelpark in the heart of Amsterdam. There in the\
+    \ middle of the park is a theater.\nIt seems that there is a guru from India who\
+    \ gives a Satsang today in the open air. A whole bunch\nof dreadlocks, old hippies\
+    \ and spiritual eco warriers.\nA girl in a typical spiritual dress has probably\
+    \ asked a very stupid question because you\nsee the poor guru roling with his\
+    \ eyes. He mumbels some spiritual phrases to get rid of her.\nThen the stage is\
+    \ empty, if you go north you might have a hange to sit on the chair besides\n\
+    his throne.\n"
+  junctions:
+  - name: "east"
+    description: "In the east, you go to the route A10"
+    goes_to: "route_a10"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "north"
+    description: "If you go north you will go between a whole bunch of hippies and\n\
+      other people not from this world to the throne besides the guru.\n"
+    goes_to: "throne"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "A small walk in western direction, and you will enter the Kinkerstraat.\
+      \ A well known street in Amsterdam"
+    goes_to: "kinkerstraat"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "throne"
+  description: "You site on the throne next to the guru. The smell of flowers mixed\
+    \ with incense makes your head a\nlittle lighter then normal.\n"
+  junctions:
+  - name: "south"
+    description: "Swinging among a crowd of meditating people you leave the seat besides\
+      \ the throne of the guru"
+    goes_to: "vondelpark"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons:
+  - name: "guru"
+    description: "The guru seems like a friendly guy on his throne."
+    talk: "he bends over to you and wispers in your ear:\nplease, help me. you look\
+      \ like a normal guy to me. to be honest i only do this for the money but\neverywhere\
+      \ i go now they see me as an spiritual enlightend master. they give me all kinds\
+      \ of meals.\nbut the worst of all is, they are all vegeterians and because i'm\
+      \ from india they serve me the\nwhole time vegetarian curries!\ni hate these\
+      \ bloody vegetarian curries with all these tasteless lumps of tofu!\nplease,\
+      \ can you bring me a decent ductch meal with a good piece of meat?\n"
+    give:
+      object: "boerenkool met worst"
+      response: "Oh my god, real 'boerenkool met worst'. I love it!\nHet rips the\
+        \ bag open an starts to eat. A couple of his spiritual followers do look not\n\
+        very happy to you.\nBut the guru doesn't care and with a full mouth he said:\n\
+        I will give you the two extra spells that you need to defeat the messaging\
+        \ monster\nDEFINE .....\nDEFINE .....\nFor the other parts of the spell go\
+        \ west to the tramstop and then south and seek the master of the hills and\n\
+        give him this document. He waits for years on this document to approve that\
+        \ all is safe and secure.\nTo find him, follow the diapers.....\n"
+      receive:
+      - name: "document"
+        description: "You see a document with the seal of the security master. Take\
+          \ care because it is worth a fortune"
+        look: "You see a document with the seal of the security master and singed\
+          \ by the holy order of the orange lion.\nTake care because it is worth a\
+          \ fortune\n"
+    receive: []
+  spell: []
+  read: []
+  monster: []
+- name: "kinkerstraat"
+  description: "You enter the Kinkerstraat. It is a noisy street."
+  junctions:
+  - name: "east"
+    description: "With a small walk in eastern direction you enter the Vondelpark."
+    goes_to: "vondelpark"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "In the west you see the tramstop."
+    goes_to: "tramstop"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "north"
+    description: "If you go north you enter the supermarket."
+    goes_to: "supermarket"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons:
+  - name: "old lady"
+    description: "An old lady with a shopping bag is walking by"
+    talk: "she starts talking and withing a minute she is telling you her about her\
+      \ life and starts complaining\nabout the cats of het neighbors. the kids from\
+      \ the family three house aways. about a guy on his racing bike\nthat doesn't\
+      \ take care of his plants in the window. etc...\nafter one and a half hour you\
+      \ she stops to breathe and before she continues you say goodby and you walk\
+      \ away.\nyou just hear her complaning that people don't talk to each other anymore\
+      \ like before.\n"
+    receive: []
+  - name: "black guy"
+    description: "On the corner of the street stands a black guy listening to reggea\
+      \ music music"
+    talk: "you look like a ub40 listener. that's no reggea music. here listen to this.\n\
+      he takes of his headphone and dumps it on your head. as the deep psychedelic\
+      \ music goes to\nyour brain he sticks a big joint in your mouth.\noke, you are\
+      \ really in amsterdam now.\n"
+    receive: []
+  - name: "hipster"
+    description: "A hipster on a cargo bike is trying his brand new 8mm film camera."
+    talk: "i don't have time for you now. i'm really in a hurry. my vegaterian goatmilk\
+      \ container barista bar\nmust be opened. my delivery of goi berries and japanese\
+      \ peanut butter seeds were to late.\nman, those suppliers do not know what normal\
+      \ food is?\n"
+    receive: []
+  - name: "yuppie"
+    description: "A yuppie in his Armani suite is talking a little to loud over his\
+      \ iPhone 20 version B about his successes on the stock market"
+    talk: "he seems to ignore you, waits a moment and then continues the conversation\
+      \ on his phone.\n'floris-karel listen man, i have a normal guy who tries to\
+      \ talk to mee, can you imagine?\n....\nyeh, these locals here always try to\
+      \ get our attention...\n....\ni know, funny isn't it? you know i will give him\
+      \ 5 euro's. see how he will respond...\n\nthen he gives you 5 euro's\n"
+    receive:
+    - name: "5 euro"
+      description: "A billet of 5 euro"
+      look: "A billet of 5 euro"
+  - name: "jogging girl"
+    description: "You can just avoid a collision with a blond jogging girl. She looked\
+      \ pissed off and shows her middlefinger to you"
+    talk: "go away,pervert! or i scan your image, find you on facebook and put you\
+      \ on #metoo.\ni'll make sure that you are fully canceled and banned from every\
+      \ social media site!\nyou will hear from my lawyer!\nmy god, she must be living\
+      \ here.\n"
+    receive: []
+  spell: []
+  read: []
+  monster: []
+- name: "supermarket"
+  description: "You are in de supermarket. It is very busy with a lot of shopping\
+    \ people.\nRight besides the entry stands a lady who is selling a new product.\n"
+  junctions:
+  - name: "south"
+    description: "When you go south you will leave the supermarket and enter the Kinkerstraat"
+    goes_to: "kinkerstraat"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons:
+  - name: "lady"
+    description: "A lady who is promoting a new product"
+    talk: "hellooooo! do you like to buy our newst product! we sell ' lunox boerenkool\
+      \ met worst�'. you know\nthese days there are a lot of additions added to our\
+      \ food, which are v���ry unhealthy!\nand in our laboratory we have develloped\
+      \ a very special and methode to remove all the\nadditions from our 'lunox boerenkool\
+      \ met worst�' so that we only keep the potatoes, boerenkool and worst.\nwonderfull\
+      \ isn't it!!\na test package for one meal is 5 euro. the price is a little higher\
+      \ then the ordinary\n'lunox boerenkool met worst classic�' we sell. but you\
+      \ know, your health is priceless!\n"
+    give:
+      object: "5 euro"
+      response: "Thank you and here is your 'Boerenkool met Worst�. I will really\
+        \ like it!\nAnd she hands you over a sealed bag with 'Boerenkool met Worst�\
+        '\n"
+      receive:
+      - name: "boerenkool met worst"
+        description: "A sealed bag with 'Boerenkool met Worst�'"
+        look: "Yeah, this is a sealed bag with normal 'boerenkool met worst', easy\
+          \ to make it yourself."
+    receive: []
+  spell: []
+  read: []
+  monster: []
+- name: "tramstop"
+  description: "tramstop. Tot east is the kinkerstraat. South is the station"
+  junctions:
+  - name: "east"
+    description: "In the east is the Kinkerstraat"
+    goes_to: "kinkerstraat"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "If you go you south you will take the tram to a small station."
+    goes_to: "station"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "station"
+  description: "You enter at a small station. Is it called Haarlemmermeer station\
+    \ and\nit had one rail called perron 4 7/8.\n"
+  junctions:
+  - name: "north"
+    description: "If you go you north you will take the tram to a tramstop near the\
+      \ kinkerstraat."
+    goes_to: "tramstop"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "In the south you see the hills"
+    goes_to: "h1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "h1"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "In the north is a tram station"
+    goes_to: "station"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h4"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "dirty diaper"
+    description: "on the ground lies a dirty diaper"
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "h2"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h5"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "h3"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h6"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "hilltop"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "cotton diaper"
+    description: "There lies a cotton diaper. Someone tries to be retro.map"
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "h4"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h4"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h7"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h5"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h1"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "green diaper"
+    description: "On the ground lies a green diaper. You do not want to know why it\
+      \ is green"
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "h5"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h4"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h8"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h6"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h2"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "diaper"
+    description: "On the ground lies an unused diaper."
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "h6"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h5"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h9"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h6"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "stinking diaper"
+    description: "You smell a stiking diaper. From now on, you will never eat french\
+      \ cheese again."
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "h7"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h7"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h7"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h8"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h4"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "h8"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h7"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "bicycle_hill"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h9"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h5"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects:
+  - name: "carton box"
+    description: "A carton box lies on the ground"
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "h9"
+  description: "You are at the hills"
+  junctions:
+  - name: "north"
+    description: "You go deeper in to the hills."
+    goes_to: "h8"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "You go deeper in to the hills."
+    goes_to: "h9"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "south"
+    description: "You go deeper in to the hills."
+    goes_to: "h9"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "west"
+    description: "You go deeper in to the hills."
+    goes_to: "h6"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "hilltop"
+  description: "You enter the top of the hills."
+  junctions:
+  - name: "east"
+    description: "In the east are the hills"
+    goes_to: "h3"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons:
+  - name: "master of the hills"
+    description: "There stands the master of hills. But then you see a pile of daipers,\
+      \ used daipers. You wonders why the master\nof the hills stands beneath a pile\
+      \ of used daipers.\n"
+    talk: "quiet!!! he screeams. my little baby needs to sleep!\nwithout my security\
+      \ statement i cannot guarantee the the safety that he needs to get asleep. i'm\
+      \ waiting now\nfor two years on this stupid document!\n"
+    give:
+      object: "document"
+      response: "You have the security document! Thank you very very much. I've waited\
+        \ so long on this document:\nAs a thank I will give you the secrit part of\
+        \ the spell to defeat the messaging monster:\nSET AUTHREC .....\nAnd now you\
+        \ must go east to the old iron wizard. He and he alone is the most wise man\
+        \ of all. He can give you\nthe final spell that you need to defeat the messaing\
+        \ monster, because he knows the messaging monster for more\nthan 60 years!\n\
+        But leave mortal, leave now and go east ...... cause my little baby needs\
+        \ a clean daiper.\n\nNow that was a good advice, you start to smmell something\n"
+      receive: []
+    receive: []
+  spell: []
+  read: []
+  monster: []
+- name: "bicycle_hill"
+  description: "You see an large hill that exists of all kind of old iron bicycle\
+    \ parts. A path leads west to the top of the hill.\nAnd there on the top you see\
+    \ the castle of the old iron wizard. The gate of his mighty castle is guarded\
+    \ but two\ncats.\n"
+  junctions:
+  - name: "west"
+    description: ""
+    goes_to: "in the west you see the hills"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: ""
+    goes_to: "castle"
+    blocked: "yes"
+    unblock: "bicycle wheel"
+    object_name: "gate"
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons:
+  - name: "cats"
+    description: "Two mean looking cats with sharp nails. They will not let you pass"
+    talk: "grrrrrrrrr!"
+    give:
+      object: "carton box"
+      receive:
+      - name: "bicycle wheel"
+        description: "Under on of the cats is a bicycle wheel."
+        look: "This is a real carbon fiber lightweigth wheel."
+    receive: []
+  spell: []
+  read: []
+  monster: []
+- name: "castle"
+  description: "You are in the castle of the old iron wizard on the bicycle hill.\
+    \ Every wall has some bicycle like trofees on the\nwall. In the corner you see\
+    \ a switched off mainframe\n"
+  junctions:
+  - name: "west"
+    description: "In the west is the bicycle hill."
+    goes_to: "bicycle_hill"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "In the east is a big door."
+    goes_to: "entrance_cave"
+    blocked: "yes"
+    unblock: "none"
+    object_name: ""
+    spell: "open sesame"
+  look: []
+  moveable_objects: []
+  persons:
+  - name: "old iron wizard"
+    description: "There stands the old Iron wizard. He is busy upgrading his High\
+      \ Power Not Stop tandem."
+    talk: "he looks up and sees you.\nhello young novice, you came to defeat the messaing\
+      \ monster?\nlet me tell you short about it's origins\nwebsphere mq is the market-leading\
+      \ messaging integration middleware product. originally introduced in\n1993 (under\
+      \ the mqseries name), it always focused on providing an available, reliable,\
+      \ scalable, secure, and\nhigh-performance transport mechanism to address the\
+      \ requirements that we discussed in the previous chapter.\nwebsphere mq always\
+      \ connected systems and applications, regardless of the platform or environment.\
+      \ it is\nessential to be able to communicate between a gui desktop applicationthat\
+      \ is running on microsoft windows and\nan ibm cics® transaction that is running\
+      \ on ibm z/os®. that value of universality is core to the product, and\nthis\
+      \ value has not changed in all the time that it has been available. what has\
+      \ changed is the range of\nenvironments in which websphere mq can or must live.\
+      \ there are newer platforms, environments, requirements for\nqualities of service\
+      \ (qos), and newer messaging patterns. security has become more important as\
+      \ systems are made\naccessible to more users across an enterprise and beyond\
+      \ it. performance and scalability requirements have\nincreased. regulators and\
+      \ auditors have imposed more controls on what can or must be done. systems,\
+      \ which\nneed access to enterprise data, have become bothmore powerful (faster,\
+      \ more processors, and so on) and much\nless powerful (sensors, tablets,and\
+      \ mobile phones).therefore, websphere mq has evolved.there are now more\nways\
+      \ for applications to reach a websphere mq queue manager and toaccess any existing\
+      \ applications that were\nalready websphere mq enabled. newapplications can\
+      \ be written that use alternative interfaces and still maximize\nthe reliability\
+      \ andperformance of websphere mq. those new applications do not need a completereplacement\
+      \ of\nexisting infrastructure. the applications work with what you already have\
+      \ andwhat you know how to manage.at the\nsame time as adding new interfaces,\
+      \ protocols, and environments, a large amount ofthe websphere mq workload\n\
+      continues to be executed in mainframe-based data centers.the efficient use of,\
+      \ and integration with, the\ncapabilities of the ibm z hardware and operatingsystems\
+      \ is critical. as this book shows, websphere mq v7.1\nfor z/os significantly\
+      \ improvesthe performance, capacity, and availability that can be achieved when\
+      \ running\nin a sysplexwebsphere mq v7.0, in 2008, was a major release with\
+      \ significantly enhanced applicationprogramming\ninterfaces (apis) and a fully\
+      \ integrated publish/subscribe component. theseenhancements made that messaging\n\
+      pattern a first-class way of working. websphere mqv7.0.1, in 2009, was primarily\
+      \ an update to improve\navailability and performance.even though there was nearly\
+      \ a 2 ½ year gap before v7.1 in 2011, there were\nstillincremental improvements.\
+      \ the improvements were to both the core websphere mq productand new products.\n\
+      websphere mq file transfer edition is a solution for the integration of applications\
+      \ that arefile-based,\nmaking it possible to reliably transfer files between\
+      \ systems. websphere mq filetransfer edition provides\nmanagement, monitoring,\
+      \ and security of those transfers.websphere mq file transfer edition uses existing\n\
+      skills and infrastructure as it useswebsphere mq as its backbone transfer medium.advanced\
+      \ message security (ams)\nis a solution to the problem of securing messagecontents,\
+      \ even when those messages are at rest in queues or logs.\nseveral regulatoryframeworks\
+      \ require data to be protected from viewing, changing, or being stored on disks\
+      \ inthe\nclear even during processing. one example of these regulations is the\
+      \ payment cardindustry (pci) for dealing\nwith credit card data. there are other\
+      \ regulatory bodies for othertypes of data, for example, healthcare, that\n\
+      have similar requirements.both websphere mq file transfer edition and websphere\
+      \ mq advanced message securityhave\nbeen integrated into the websphere mq v7.5\
+      \ package. websphere mq file transferfunctionally identical but that\nhave different\
+      \ licensing terms. the websphere mq advancedoffering can be ordered under a\
+      \ single part number\nand price and it includes licenses to usethe managed file\
+      \ transfer and ams features. the original v7.5 offering\nhas these features\
+      \ asseparately orderable and priced components.data is transferred between applications\
+      \ in\nmessages. a message is a container that consistsof three parts: websphere\
+      \ mq message descriptor (mqmd):\nidentifies the message and containsadditional\
+      \ control information. examples of additional information are the\ntype of messageand\
+      \ the priority that is assigned to the message by the sending application. message\
+      \ properties:\nan optional set of user-definable elements that describes themessage\
+      \ without being part of the payload.\napplications that receive messages canchoose\
+      \ whether to inspect these properties. message data: contains the\napplication\
+      \ data. the structure of the data is defined by theapplication programs that\
+      \ use it, and\nwebsphere mq is largely unconcerned with itsformat or content.the\
+      \ nodes, within a websphere mq message queuing\ninfrastructure, are called queuemanagers.\
+      \ the queue manager is responsible for accepting and delivering\nmessages.multiple\
+      \ queue managers can run on a single physical server or on a wide network of\
+      \ serversacross a\nlarge variety of different hardware and operating system\
+      \ platforms.each queue manager provides facilities for\nreliable messaging.the\
+      \ queue manager maintains queues of all messages that are waiting to be processed\
+      \ orrouted.\nqueue managers are tolerant of failures and maintain the integrity\
+      \ of business-criticaldata that flows through\nthe message queuing infrastructure.\
+      \ in the event of failures, such as afailure of the queue manager, machine\n\
+      failures, or a power loss, messages can be recovered.recovery occurs when the\
+      \ queue manager is restarted and\nany transactions are brought to aconsistent\
+      \ state.the queue managers, within the infrastructure, are connected\nby logical\
+      \ channels over acommunications network. messages automatically flow across\
+      \ these channels from the\ninitialproducer of a message to the eventual consumer\
+      \ of that message based on the configurationof the queue\nmanagers in the infrastructure.\
+      \ changes can be made to the configuration ofqueues and channels transparently\n\
+      for the applications. for example, a receiving applicationcan be moved to a\
+      \ new machine, and a route to that\nmachine can be defined without needingany\
+      \ changes to sending applications.two applications that must\ncommunicate, whether\
+      \ hosted on the same machine or separatemachines, might have originally been\
+      \ designed to do\nso directly and synchronously. this wasa common messaging\
+      \ technique that was used before the introduction of\nwebsphere mqand is still\
+      \ used often. for example, using http as a communications protocol is asynchronous\n\
+      operation.in the synchronous model, the two applications exchange information\
+      \ by waiting for thepartner\napplication to become available and then sending\
+      \ the information. if the partnerapplication is unavailable for\nany reason,\
+      \ including if it is busy communicating with otherapplications, the information\
+      \ cannot be sent.all\nintercommunication failures that can occur between the\
+      \ two applications must beconsidered individually by the\napplications. this\
+      \ consideration happens whether theapplications are on the same machine or on\
+      \ different\nmachines that are connected by anetwork. the process requires a\
+      \ protocol for sending the information,\nconfirming receipt ofthe information,\
+      \ and sending any subsequent reply.placing a websphere mq infrastructure\nbetween\
+      \ the two applications allows thiscommunication to become asynchronous. one\
+      \ application places\ninformation for the partnerin a message on a queue, and\
+      \ the partner application processes this information\nwhen it isavailable to\
+      \ do so. if required, it can then send a reply message back to the originator.\n\
+      theapplications do not need to be concerned with communication failures or recovery.\
+      \ a websphere mq client is\na lightweight component of websphere mq that does\
+      \ not requirethe queue manager runtime code to reside on the\nclient system.\
+      \ it enables an application,running on a machine where only the client runtime\
+      \ code is installed,\nto connect to a queuemanager that is running on another\
+      \ machine and perform messaging operations with thatqueue\nmanager. such an\
+      \ application is called a client and the queue manager is referred toas a server.using\
+      \ a\nwebsphere mq client is an effective way of implementing websphere mqmessaging\
+      \ and queuing. the following\nbenefits are available by using a websphere mqclient:\
+      \ there is no need for a licensed websphere mq server\ninstallation on the client\
+      \ machine. hardware requirements on the client system are reduced. system\n\
+      administration requirements on the client system are reduced. an application\
+      \ that uses a websphere mq client\ncan connect to multiple queue managerson\
+      \ different machines.there are several implementations of the\nwebsphere mq\
+      \ client that allow work in differentlanguage environments, including java and\
+      \ .net classes. there\nis no client for z/os. on the z/os platform, applications\
+      \ can only connect to queue managers within the same\nlogicalpartition (lpar).\n\
+      i want to give you the final spell. but the spells is in the safe and i not\
+      \ know the password anymore.\nnot many people pass by these days who survived\
+      \ the road to my castle.\nbut i thought is was the name of this guy who won\
+      \ the tour de france in 1980.\n"
+    receive: []
+  spell:
+  - name: "joop zoetemelk"
+    description: "spell"
+    response: "Yes, that was his name!\nHe opens the safe, picks up a paper and says:\n\
+      DEFINE QLOCAL\nIf you want to open the door to the cave of the messaging monster\
+      \ say 'open sesame'\n"
+  - name: "open sesame"
+    description: "spell"
+    response: "The old big door in the east crack and opens the lock"
+  read: []
+  monster: []
+- name: "entrance_cave"
+  description: "You are in the cave of the messaging monster. It is dark here. The\
+    \ smell of sulpher and rotten bodies fill the air.\n"
+  junctions:
+  - name: "west"
+    description: "In the west is the entrance to the castle of the old iron wizard"
+    goes_to: "castle"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "In the east must be the messaging monster"
+    goes_to: "messaging_monster"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+- name: "messaging_monster"
+  description: "You enter the main cave of the messaging monster.\n"
+  junctions:
+  - name: "west"
+    description: "In the west is a cave. Go there if you do not dare to fight the\
+      \ messaging monster"
+    goes_to: "entrance_cave"
+    blocked: "no"
+    unblock: "none"
+    object_name: ""
+    spell: ""
+  - name: "east"
+    description: "In the east is a big pile of rocks"
+    goes_to: "endpoint"
+    blocked: "yes"
+    unblock: "none"
+    object_name: ""
+    spell: "refresh qmgr"
+  look: []
+  moveable_objects: []
+  persons: []
+  spell:
+  - name: "refresh qmgr"
+    description: "spell"
+    response: "The rocks tumble down behind the corps of the messaging monster and\
+      \ you see the clear blue sky."
+  read: []
+  monster:
+  - name: "messaging monster"
+    description: "There is the messaging monster. A huge beast sitting on a pile of\
+      \ all kind of strange things. You see books of\nFranz Kafka. CD-Rom's with a\
+      \ Big Blue logo. Some flashlights that pulsate like a pulsar. All crushed under\n\
+      it's enormouse weigth.\nQuick, cast the six spell to defeat this horrible beast!\n"
+    life: 6
+    damaging_spells:
+    - "define qremote(drain.the.monster.msg.rq) qmgr(otherside) qr(the.vault.msg.lq)"
+    - "define qalias(drain.the.monster.put.msg.aq) tagret(drain.the.monster.msg.r\
+      \ q)"
+    - "define channel("
+    - "define xmitq"
+    - "define authrec qalias"
+    - "define authrec qmgr"
+    when_dead_phrase: "The monster screams and cries. All the captured messages that\
+      \ it had kept for so many years finally have a\nchannel to escape.\nAnd with\
+      \ it last breath is screams \"REFRESH QMGR\"\n"
+- name: "endpoint"
+  description: "You finally leave this world, that is now free of the messaging monster.\n\
+    Congratulations, you have won.\n"
+  junctions: []
+  look: []
+  moveable_objects: []
+  persons: []
+  spell: []
+  read: []
+  monster: []
+inventory: []
+startMessage: "MQ Adventure\nMortal, give me thou name......\n"
+helpMessage: "help  This help tesxt\nlook  Look around\nlook <object>  look a little\
+  \ closer\npick <object>  pick up an object\ndrop <object>  drop an object\nuse <object>\
+  \ on <object>   see if it works\nnorth, east, south, west  Go in that direction\n\
+  inventory   Show what you got\nread <object>  Read a paper of plate\ntalk <person>\
+  \  try to talk to someone\ncast <spell>  Cast a spell\nsay <something>  Say something\n\
+  open <object>  Open something\n\nTo open a door of gate you can use an object on\
+  \ it, but sometimes you have to cast a spell.\n"
+name: "erwin"
+password: "^�H��(\x04qQ��o��)'s`=\rj���*\x11�r\x1d\x15B�"
+currentRoomName: "startingpoint"
