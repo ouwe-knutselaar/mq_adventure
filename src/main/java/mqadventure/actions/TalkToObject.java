@@ -13,6 +13,10 @@ public class TalkToObject extends Callback implements Action{
 
     @Override
     public void execute(List<String> parameters) {
+        if(parameters.size() == 1){
+            callBackFunctions.toOutput("Say to who??");
+            return;
+        }
         String personToTalkTo = StringTools.stringArrayToString(parameters,1);
 
         callBackFunctions.

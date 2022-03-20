@@ -15,7 +15,7 @@ public class MqAdventureLoop {
     private DataControl dataControl;
     private Map<String, Action> actionList = new HashMap<String, Action>();
     private StringBuilder outputCollector;
-    private enum GAMESTATES {BEGIN,GIVE_PASSWORD,PLAYING,END};
+    private enum GAMESTATES {BEGIN,GIVE_PASSWORD,PLAYING,END}
     private GAMESTATES currentGameState = GAMESTATES.BEGIN;
     private StringBuilder response = new StringBuilder();
     private boolean hasWon = false;
@@ -57,6 +57,11 @@ public class MqAdventureLoop {
         @Override
         public void showHelp() {
             outputCollector.append(dataControl.getHelpMessage()).append(System.lineSeparator());
+        }
+
+        @Override
+        public boolean isTheOutputEmpty() {
+            return outputCollector.toString().length() >0;
         }
     };
 
@@ -137,12 +142,6 @@ public class MqAdventureLoop {
     }
 
 
-    private boolean validateUser(String password){
-        dataControl.loadYamlFile(userName);
-        return dataControl.getPassword().equals(password);
-    }
-
-
     private void end(String input){
         response.setLength(0);
         response.append("Hail ").append(dataControl.getName()).append(", thou have defeated the messaging monster");
@@ -150,31 +149,35 @@ public class MqAdventureLoop {
     }
 
 
-    public void init() throws NoSuchAlgorithmException {
-        digest = MessageDigest.getInstance("SHA-256");
-        dataControl=new DataControl();
-        dataControl.setCurrentRoomByName(dataControl.getCurrentRoomName());
-        response = response.append(dataControl.getStartMessage());
+    public void init()  {
+        try {
+            digest = MessageDigest.getInstance("SHA-256");
+            dataControl=new DataControl();
+            dataControl.setCurrentRoomByName(dataControl.getCurrentRoomName());
+            response = response.append(dataControl.getStartMessage());
 
-        actionList.put("north",new MovePlayer(callBackFunctions));
-        actionList.put("east",new MovePlayer(callBackFunctions));
-        actionList.put("south",new MovePlayer(callBackFunctions));
-        actionList.put("west",new MovePlayer(callBackFunctions));
-        actionList.put("look",new LookAtObject(callBackFunctions));
-        actionList.put("pick",new PickUpObject(callBackFunctions));
-        actionList.put("help",new Help(callBackFunctions));
-        actionList.put("inventory",new Inventory(callBackFunctions));
-        actionList.put("drop",new DropObject(callBackFunctions));
-        actionList.put("use",new UseObjectOn(callBackFunctions));
-        actionList.put("read",new ReadObject(callBackFunctions));
-        actionList.put("open",new OpenObject(callBackFunctions));
-        actionList.put("talk",new TalkToObject(callBackFunctions));
-        actionList.put("give",new GiveObject(callBackFunctions));
-        actionList.put("cast",new CastSpell(callBackFunctions));
-        actionList.put("say",new CastSpell(callBackFunctions));
-        actionList.put("exit",parameters -> saveAndExitGame());
-        actionList.put("save",parameters -> saveGame());
-
+            actionList.put("north",new MovePlayer(callBackFunctions));
+            actionList.put("east",new MovePlayer(callBackFunctions));
+            actionList.put("south",new MovePlayer(callBackFunctions));
+            actionList.put("west",new MovePlayer(callBackFunctions));
+            actionList.put("look",new LookAtObject(callBackFunctions));
+            actionList.put("pick",new PickUpObject(callBackFunctions));
+            actionList.put("help",new Help(callBackFunctions));
+            actionList.put("inventory",new Inventory(callBackFunctions));
+            actionList.put("drop",new DropObject(callBackFunctions));
+            actionList.put("use",new UseObjectOn(callBackFunctions));
+            actionList.put("read",new ReadObject(callBackFunctions));
+            actionList.put("open",new OpenObject(callBackFunctions));
+            actionList.put("talk",new TalkToObject(callBackFunctions));
+            actionList.put("give",new GiveObject(callBackFunctions));
+            actionList.put("cast",new CastSpell(callBackFunctions));
+            actionList.put("say",new CastSpell(callBackFunctions));
+            actionList.put("exit",parameters -> saveAndExitGame());
+            actionList.put("save",parameters -> saveGame());
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
     }
 
     private Action saveGame() {
@@ -190,12 +193,10 @@ public class MqAdventureLoop {
         return null;
     }
 
-
     private void play(String input) {
         input = input.toLowerCase();
 
         response.setLength(0);
-        //response.append(">"+input).append(System.lineSeparator());
         List<String> inputArray = new LinkedList<>(Arrays.asList(input.split("\\s")));
         if(inputArray.isEmpty())return;
         outputCollector=new StringBuilder();
@@ -217,7 +218,6 @@ public class MqAdventureLoop {
         dataControl.getCurrentRoom().getJunctions().forEach(junction -> response.append(junction.getDescription()).append(System.lineSeparator()));
         dataControl.getCurrentRoom().getMonster().stream().filter(monster -> monster.getLife()>0).forEach(monster -> response.append(monster.getDescription()).append(System.lineSeparator()));
     }
-
 
     public void changeToNewRoom(String direction){
         Room tempRoom = dataControl.getCurrentRoom();

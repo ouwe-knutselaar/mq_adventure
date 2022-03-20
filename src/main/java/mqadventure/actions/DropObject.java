@@ -13,7 +13,7 @@ public class DropObject extends Callback implements Action {
 
     @Override
     public void execute(List<String> objectsToDropNameList) {
-        objectsToDropNameList.forEach(objectToDropName -> dropObject(objectToDropName));
+        objectsToDropNameList.forEach(this::dropObject);
 
     }
 
@@ -33,6 +33,5 @@ public class DropObject extends Callback implements Action {
         callBackFunctions.
                 getInventory().
                 removeIf(object -> object.getName().equals(objectToDropName));
-        System.out.println("");
     }
 }

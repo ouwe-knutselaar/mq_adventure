@@ -7,11 +7,11 @@ public class MqAdventure {
 
     private Boolean loop = true;
 
-    public static void main(String [] argv) throws NoSuchAlgorithmException {
-      new MqAdventure();
+    public static void main(String [] argv) {
+        new MqAdventure();
     }
 
-    public MqAdventure() throws NoSuchAlgorithmException {
+    public MqAdventure() {
         MqAdventureLoop mqAdventure = new MqAdventureLoop();
         mqAdventure.init();
         Scanner scanner = new Scanner(System.in);

@@ -35,7 +35,7 @@ public class Monster extends DefaultObject{
 
     public String castSpellToMonster(String casted_spell){
         if(life == 0)return "You cannot hurt a dead monster anymore";
-        if(!damaging_spells.contains(casted_spell))return "pffftttt  your spell does nothing";
+        if(!damaging_spells.contains(casted_spell))return "pffftttt  your spell does nothing tot the monster";
 
         damaging_spells.removeIf(spell ->spell.equals(casted_spell));
         life--;

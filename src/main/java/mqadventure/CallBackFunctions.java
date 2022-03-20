@@ -14,4 +14,5 @@ public interface CallBackFunctions {
     void finish();
     void showRoom();
     void showHelp();
+    boolean isTheOutputEmpty();
 }

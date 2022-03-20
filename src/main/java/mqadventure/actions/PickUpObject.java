@@ -15,6 +15,11 @@ public class PickUpObject extends Callback implements Action{
 
     @Override
     public void execute(List<String> objectNamesToPickUpList) {
+        if(objectNamesToPickUpList.size()==1){
+            callBackFunctions.toOutput("Pick up what?");
+            return;
+        }
+        objectNamesToPickUpList.remove(0);
         objectNamesToPickUpList.forEach(this::pickUp);
     }
 
@@ -28,13 +33,20 @@ public class PickUpObject extends Callback implements Action{
                         getName().
                         equals(objectToPickUpName)).
                 findFirst();
-        objectToPickUpOpt.
-                ifPresent(objectToPickUp -> {callBackFunctions.getInventory().add(objectToPickUp);
-                                             callBackFunctions.toOutput("You picked up "+objectToPickUpName+"\n");}
-                                              );
+        if(objectToPickUpOpt.isPresent()){
+            callBackFunctions.getInventory().add(objectToPickUpOpt.get());
+            callBackFunctions.toOutput("You picked up a "+objectToPickUpName);
+        }
+        else{
+            callBackFunctions.toOutput("There is no "+objectToPickUpName);
+        }
+
+
         callBackFunctions.
                 getCurrentRoom().
                 getMoveable_objects().
                 removeIf(pickedUpObject -> pickedUpObject.getName().equals(objectToPickUpName));
+
+
     }
 }

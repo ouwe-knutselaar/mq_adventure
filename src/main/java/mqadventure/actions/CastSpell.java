@@ -13,6 +13,10 @@ public class CastSpell extends Callback implements Action{
 
     @Override
     public void execute(List<String> parameters) {
+        if(parameters.size() == 1){
+            callBackFunctions.toOutput("What???");
+            return;
+        }
         String castedSpell = StringTools.stringArrayToString(parameters,1);
 
         callBackFunctions.

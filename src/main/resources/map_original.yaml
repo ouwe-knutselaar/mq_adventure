@@ -17,7 +17,7 @@ helpMessage: |
   talk <person>   try to talk to someone
   give <object> to <person>   Give something to someone
   cast <spell>   Cast a spell
-  say <something>   Say something
+  say <something>   Say something tot he world
   open <object>   Open something
   save   Save you legacy
   exit   Exit this world and go back to your miserable life.
@@ -1260,9 +1260,13 @@ rooms:
         Quick, cast the six spell to defeat this horrible beast!
       life: 6
       when_dead_phrase: |
-        The monster screams and cries. All the captured messages that it had kept for so many years finally have a
-        channel to escape.
-        And with it last breath is screams "REFRESH QMGR"
+        That was the final blow. The monster screams and cries...
+        And with an enormouse bang it hits the floor. Pieces of rock fall from the ceiling. Clouds of dust fills the
+        case. And a red hat flies over your head.
+        And is a stream of beautifull light the messages leave slowly the monster. All the captured messages that it
+        had kept for so many years finally have a channel to escape. Now they can reach their final destination.
+        But suddenly there is a last move from the monster. And with it last breath is screams
+        "REFRESH QMGR"
       damaging_spells:
         - DEFINE QREMOTE(DRAIN.THE.MONSTER.MSG.RQ) QMGR(OTHERSIDE) QR(THE.VAULT.MSG.LQ)
         - DEFINE QALIAS(DRAIN.THE.MONSTER.PUT.MSG.AQ) TAGRET(DRAIN.THE.MONSTER.MSG.R Q)

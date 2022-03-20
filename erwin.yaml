@@ -27,10 +27,10 @@ rooms:
   persons:
   - name: "product owner"
     description: "By the old table sits a Product Owner."
-    talk: "behold stranger, thou shall not leave this world before\nyou have defeated\
-      \ the horrible messaging monster. it keeps all the messages for himself.\nyou\
-      \ must collect the 6 spells to evoke the magical message flow and drain\nthe\
-      \ power from the messaging monster and free the waiting messages.\nto get the\
+    talk: "behold stranger, thou shall not leave this world before you have defeated\
+      \ the horrible messaging monster.\nit keeps all the messages for himself.\n\
+      you must collect the 6 spells to evoke the magical message flow and drain the\
+      \ power from the messaging monster\nand free the waiting messages.\nto get the\
       \ spells you must find the queen of the jungle, the master of the green cape\
       \ islands, the bald automater,\nthe motor monk from the far east, a holy guru\
       \ from india, the guardian of the hills and the old iron wizard.\nplease, you\
@@ -2074,9 +2074,14 @@ rooms:
     - "define xmitq"
     - "define authrec qalias"
     - "define authrec qmgr"
-    when_dead_phrase: "The monster screams and cries. All the captured messages that\
-      \ it had kept for so many years finally have a\nchannel to escape.\nAnd with\
-      \ it last breath is screams \"REFRESH QMGR\"\n"
+    when_dead_phrase: "That was the final blow. The monster screams and cries...\n\
+      And with an enormouse bang it hits the floor. Pieces of rock fall from the ceiling.\
+      \ Clouds of dust fills the\ncase. And a red hat flies over your head.\nAnd is\
+      \ a stream of beautifull light the messages leave slowly the monster. All the\
+      \ captured messages that it\nhad kept for so many years finally have a channel\
+      \ to escape. Now they can reach their final destination.\nBut suddenly there\
+      \ is a last move from the monster. And with it last breath is screams\n\"REFRESH\
+      \ QMGR\"\n"
 - name: "endpoint"
   description: "You finally leave this world, that is now free of the messaging monster.\n\
     Congratulations, you have won.\n"
@@ -2089,13 +2094,15 @@ rooms:
   monster: []
 inventory: []
 startMessage: "MQ Adventure\nMortal, give me thou name......\n"
-helpMessage: "help  This help tesxt\nlook  Look around\nlook <object>  look a little\
-  \ closer\npick <object>  pick up an object\ndrop <object>  drop an object\nuse <object>\
-  \ on <object>   see if it works\nnorth, east, south, west  Go in that direction\n\
-  inventory   Show what you got\nread <object>  Read a paper of plate\ntalk <person>\
-  \  try to talk to someone\ncast <spell>  Cast a spell\nsay <something>  Say something\n\
-  open <object>  Open something\n\nTo open a door of gate you can use an object on\
-  \ it, but sometimes you have to cast a spell.\n"
+helpMessage: "help   This help text\nlook   Look around\nlook <object>   look a little\
+  \ closer\npick <object>   pick up an object\ndrop <object>   drop an object\nuse\
+  \ <object> on <object>   see if it works\nnorth, east, south, west   Go in that\
+  \ direction\ninventory   Show what you got\nread <object>   Read a paper of plate\n\
+  talk <person>   try to talk to someone\ngive <object> to <person>   Give something\
+  \ to someone\ncast <spell>   Cast a spell\nsay <something>   Say something\nopen\
+  \ <object>   Open something\nsave   Save you legacy\nexit   Exit this world and\
+  \ go back to your miserable life.\n\nTo open a door of gate you can use an object\
+  \ on it, but sometimes you have to cast a spell.\n"
 name: "erwin"
 password: "^�H��(\x04qQ��o��)'s`=\rj���*\x11�r\x1d\x15B�"
 currentRoomName: "startingpoint"

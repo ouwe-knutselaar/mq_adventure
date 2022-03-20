@@ -34,27 +34,24 @@ public class GiveObject extends Callback implements Action {
                         getInventory().
                         add(objectToReceive));
         callBackFunctions.getInventory().removeIf(inventoryObject -> inventoryObject.getName().equals(objectNameToGive));
-
     }
 
     private String extractObjectToGive(List<String> parameters){
-        String ObjectToGive = "";
-        int OnLocation = parameters.indexOf("to");
-        for(int tel = 1;tel<OnLocation;tel++){
-            ObjectToGive=ObjectToGive+parameters.get(tel)+" ";
+        StringBuilder objectToGive = new StringBuilder();
+        int onLocation = parameters.indexOf("to");
+        for(int tel = 1;tel<onLocation;tel++){
+            objectToGive.append(parameters.get(tel)).append(" ");
         }
-        ObjectToGive = ObjectToGive.trim();
-        return ObjectToGive;
+        return objectToGive.toString().trim();
     }
 
     private String personToGiveTo(List<String> parameters){
-        String PersonToGiveTo = "";
-        int OnLocation = parameters.indexOf("to")+1;
-        for(int tel = OnLocation;tel<parameters.size();tel++){
-            PersonToGiveTo=PersonToGiveTo+parameters.get(tel)+" ";
+        StringBuilder personToGiveTo = new StringBuilder();
+        int onLocation = parameters.indexOf("to")+1;
+        for(int tel = onLocation;tel<parameters.size();tel++){
+            personToGiveTo.append(parameters.get(tel)).append(" ");
         }
-        PersonToGiveTo = PersonToGiveTo.trim();
-        return PersonToGiveTo;
+        return personToGiveTo.toString().trim();
     }
 
 }
