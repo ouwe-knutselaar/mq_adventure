@@ -1,6 +1,7 @@
 package mqadventure.actions;
 
 import mqadventure.CallBackFunctions;
+import mqadventure.StringTools;
 
 import java.util.List;
 
@@ -16,13 +17,14 @@ public class ReadObject extends Callback implements Action{
             callBackFunctions.toOutput("read what ??");
             return;
         }
-        objectToReadFromList.forEach(objectToReadFrom -> callBackFunctions.
-                getCurrentRoom().
-                getRead().
-                stream().
-                filter(readableObject -> readableObject.getName().equals(objectToReadFrom)).
-                forEach(read -> callBackFunctions.toOutput(read.getDescription())));
 
-        if(callBackFunctions.isTheOutputEmpty())objectToReadFromList.forEach(objectToReadFrom -> callBackFunctions.toOutput("you cannot read a "+objectToReadFrom));
+        String objectToReadFrom = StringTools.stringArrayToString(objectToReadFromList,1);
+
+        if(callBackFunctions.getCurrentRoom().getRead().missingObjectNamed(objectToReadFrom)){
+            callBackFunctions.toOutput("You are not able to read a "+objectToReadFrom);
+            return;
+        }
+
+        callBackFunctions.toOutput(callBackFunctions.getCurrentRoom().getRead().getElementWithName(objectToReadFrom).getDescription());
     }
 }

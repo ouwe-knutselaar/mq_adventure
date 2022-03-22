@@ -222,21 +222,17 @@ public class MqAdventureLoop {
 
     public void changeToNewRoom(String direction){
         Room tempRoom = dataControl.getCurrentRoom();
-        if(!tempRoom.getJunctions().stream().filter(junction -> junction.getName().equals(direction)).findFirst().isPresent()){
+        if(tempRoom.getJunctions().missingObjectNamed(direction)){
             response.append("You cannot go "+direction);
             return;
         }
 
-        dataControl.getCurrentRoom().getJunctions().
-                stream().
-                filter(junction -> junction.getName().equals(direction)).
-                filter(junction -> !junction.getBlocked().equals("yes")).
-                forEach(junction -> dataControl.setCurrentRoomByName(dataControl.getRoomByName(junction.getGoes_to()).getName()));
-        tempRoom.getJunctions().
-                stream().
-                filter(junction -> junction.getName().equals(direction)).
-                filter(junction -> junction.getBlocked().equals("yes")).
-                forEach(junction -> response.append("You cannot go "+direction+", it is blocked."));
+        if(tempRoom.getJunctions().getElementWithName(direction).getBlocked().equals("yes")){
+            response.append("You cannot go "+direction+", it is blocked");
+            return;
+        }
+        dataControl.setCurrentRoomByName(tempRoom.getJunctions().getElementWithName(direction).getGoes_to());
+        showCurrentRoom();
     }
 
 

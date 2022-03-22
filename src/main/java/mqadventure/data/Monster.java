@@ -43,4 +43,5 @@ public class Monster extends DefaultObject{
         if(life==0)return when_dead_phrase;
         return "You hurt the monster badly";
     }
+
 }

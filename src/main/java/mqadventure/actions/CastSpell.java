@@ -2,6 +2,7 @@ package mqadventure.actions;
 
 import mqadventure.CallBackFunctions;
 import mqadventure.StringTools;
+import mqadventure.data.Room;
 
 import java.util.List;
 
@@ -19,17 +20,24 @@ public class CastSpell extends Callback implements Action{
         }
         String castedSpell = StringTools.stringArrayToString(parameters,1);
 
-        callBackFunctions.
-                getCurrentRoom().getSpell().stream().
-                filter(spell -> spell.getName().equals(castedSpell)).
-                forEach(response -> callBackFunctions.toOutput(response.getResponse()));
+        Room currentRoom=callBackFunctions.getCurrentRoom();
 
-        callBackFunctions.
-                getCurrentRoom().
-                getJunctions().stream().
+        if(  ! (currentRoom.getSpell().hasObjectNamed(castedSpell) |
+                currentRoom.getJunctions().stream().filter(junction -> junction.getSpell().equals(castedSpell)).findFirst().isPresent() |
+                currentRoom.getMonster().stream().filter(monster -> monster.getDamaging_spells().contains(castedSpell)).findFirst().isPresent())
+        ){
+            callBackFunctions.toOutput(castedSpell+" is not a spell");
+            return;
+        }
+
+        currentRoom.getSpell().stream().
+                filter(spell -> spell.getName().equals(castedSpell)).
+                forEach(spell -> callBackFunctions.toOutput(spell.getResponse()));
+
+        currentRoom.getJunctions().stream().
                 filter(junction -> junction.getSpell().equals(castedSpell)).
                 forEach(junction -> junction.setBlocked("no"));
 
-        callBackFunctions.getCurrentRoom().getMonster().forEach(monster -> callBackFunctions.toOutput(monster.castSpellToMonster(castedSpell)) );
+        currentRoom.getMonster().forEach(monster -> callBackFunctions.toOutput(monster.castSpellToMonster(castedSpell)) );
     }
 }

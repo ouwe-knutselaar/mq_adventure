@@ -1,5 +1,6 @@
 package mqadventure.data;
 
+import mqadventure.addon.AdvList;
 import mqadventure.data.map.Coordinates;
 
 import java.util.ArrayList;
@@ -7,42 +8,42 @@ import java.util.List;
 import java.util.Optional;
 
 public class Room extends DefaultObject {
-    private List<Junction> junctions = new ArrayList<>();
-    private List<Look> look = new ArrayList<>();
-    private List<MoveableObjects> moveable_objects = new ArrayList<>();
-    private List<Persons> persons = new ArrayList<>();
-    private List<Spell> spell = new ArrayList<>();
-    private List<Read> read = new ArrayList<>();
+    private AdvList<Junction> junctions = new AdvList<>();
+    private AdvList<Look> look = new AdvList<>();
+    private AdvList<MoveableObjects> moveable_objects = new AdvList<>();
+    private AdvList<Persons> persons = new AdvList<>();
+    private AdvList<Spell> spell = new AdvList<>();
+    private AdvList<Read> read = new AdvList<>();
     private List<Monster> monster = new ArrayList<>();
 
     private Coordinates coordinates;
 
 
-    public List<Junction> getJunctions() {
+    public AdvList<Junction> getJunctions() {
         return junctions;
     }
-    public void setJunctions(List<Junction> junctions) {
+    public void setJunctions(AdvList<Junction> junctions) {
         this.junctions = junctions;
     }
 
-    public List<Look> getLook() {
+    public AdvList<Look> getLook() {
         return look;
     }
-    public void setLook(List<Look> look) {
+    public void setLook(AdvList<Look> look) {
         this.look = look;
     }
 
-    public List<MoveableObjects> getMoveable_objects() {
+    public AdvList<MoveableObjects> getMoveable_objects() {
         return moveable_objects;
     }
-    public void setMoveable_objects(List<MoveableObjects> moveable_objects) {
+    public void setMoveable_objects(AdvList<MoveableObjects> moveable_objects) {
         this.moveable_objects = moveable_objects;
     }
 
-    public List<Persons> getPersons() {
+    public AdvList<Persons> getPersons() {
         return persons;
     }
-    public void setPersons(List<Persons> persons) {
+    public void setPersons(AdvList<Persons> persons) {
         this.persons = persons;
     }
 
@@ -57,17 +58,17 @@ public class Room extends DefaultObject {
         this.coordinates = null;
     }
 
-    public List<Read> getRead() {
+    public AdvList<Read> getRead() {
         return read;
     }
-    public void setRead(List<Read> read) {
+    public void setRead(AdvList<Read> read) {
         this.read = read;
     }
 
-    public List<Spell> getSpell() {
+    public AdvList<Spell> getSpell() {
         return spell;
     }
-    public void setSpell(List<Spell> spell) {
+    public void setSpell(AdvList<Spell> spell) {
         this.spell = spell;
     }
 
@@ -104,7 +105,6 @@ public class Room extends DefaultObject {
                 ", coordinates=" + coordinates +
                 '}';
     }
-
 
     public String view(){
         StringBuilder output = new StringBuilder();

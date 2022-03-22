@@ -2,10 +2,8 @@ package mqadventure.actions;
 
 import mqadventure.CallBackFunctions;
 import mqadventure.StringTools;
-import mqadventure.data.MoveableObjects;
-
+import mqadventure.data.Room;
 import java.util.List;
-import java.util.Optional;
 
 public class PickUpObject extends Callback implements Action{
 
@@ -25,27 +23,16 @@ public class PickUpObject extends Callback implements Action{
 
 
     private void pickUp(String objectToPickUpName){
-        Optional<MoveableObjects> objectToPickUpOpt = callBackFunctions.
-                getCurrentRoom().
-                getMoveable_objects().
-                stream().
-                filter(objectToPickUp -> objectToPickUp.
-                        getName().
-                        equals(objectToPickUpName)).
-                findFirst();
-        if(objectToPickUpOpt.isPresent()){
-            callBackFunctions.getInventory().add(objectToPickUpOpt.get());
-            callBackFunctions.toOutput("You picked up a "+objectToPickUpName);
-        }
-        else{
-            callBackFunctions.toOutput("There is no "+objectToPickUpName);
+        Room currentRoom = callBackFunctions.getCurrentRoom();
+
+        if(currentRoom.getMoveable_objects().missingObjectNamed(objectToPickUpName)){
+            callBackFunctions.toOutput("There is no "+objectToPickUpName+" to pick up");
+            return;
         }
 
-
-        callBackFunctions.
-                getCurrentRoom().
-                getMoveable_objects().
-                removeIf(pickedUpObject -> pickedUpObject.getName().equals(objectToPickUpName));
+        callBackFunctions.getInventory().add(currentRoom.getMoveable_objects().getElementWithName(objectToPickUpName));
+        currentRoom.getMoveable_objects().removeIf(pickedUpObject -> pickedUpObject.getName().equals(objectToPickUpName));
+        callBackFunctions.toOutput("You picked up a "+objectToPickUpName);
     }
 
 
