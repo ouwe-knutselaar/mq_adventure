@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Give {
 
-    private String object;
-    private String response;
+    private String object="";
+    private String response="";
     private List<MoveableObjects> receive = new ArrayList<>();
 
     public String getObject() {

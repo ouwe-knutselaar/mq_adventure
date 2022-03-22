@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f560aed1-59c2-4355-8fac-257085f8318f" name="Default Changelist" comment="" />
+    <list default="true" id="f560aed1-59c2-4355-8fac-257085f8318f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/errors.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/erwin.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/null.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/MqAdventureLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/MqAdventureLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/TestLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/TestLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/actions/DropObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/actions/DropObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/actions/GiveObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/actions/GiveObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/actions/LookAtObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/actions/LookAtObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/actions/OpenObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/actions/OpenObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/actions/PickUpObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/actions/PickUpObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/actions/TalkToObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/actions/TalkToObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/actions/UseObjectOn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/actions/UseObjectOn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/data/Give.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/data/Give.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/data/Persons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/data/Persons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/map_original.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/map_original.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/script.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/story.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +41,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -35,7 +58,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -43,7 +70,7 @@
       <recent name="D:\onze_projecten\MqAdventure\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MqAdventure">
+  <component name="RunManager" selected="Application.TestLoop error">
     <configuration name="Design" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mqadventure.Design" />
       <module name="MqAdventure" />
@@ -97,11 +124,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLoop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+    <configuration name="TestLoop error" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../prog/jdk-17.0.2" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="mqadventure.TestLoop" />
       <module name="mq_adventure" />
+      <option name="PROGRAM_PARAMETERS" value="C:\erwin\mq_development\mq_adventure\src\main\resources\errors.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mqadventure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestLoop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../prog/jdk-17.0.2" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="mqadventure.TestLoop" />
+      <module name="mq_adventure" />
+      <option name="PROGRAM_PARAMETERS" value="C:\erwin\mq_development\mq_adventure\src\main\resources\script.txt" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="mqadventure.*" />
@@ -115,6 +159,7 @@
     <list>
       <item itemvalue="Application.MqAdventure" />
       <item itemvalue="Application.MqAdventure http" />
+      <item itemvalue="Application.TestLoop error" />
       <item itemvalue="Application.Design" />
       <item itemvalue="Application.MqAdventureLoop" />
       <item itemvalue="Application.TestLoop" />
@@ -138,95 +183,16 @@
     </task>
     <servers />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="712" y="343" key="#Notifications" timestamp="1647166595407">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="712" y="343" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1647166595407" />
-    <state x="414" y="174" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1647803636059">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="174" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1647803636059" />
-    <state x="740" y="224" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1647371003356">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="224" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1647371003356" />
-    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser" timestamp="1647806449750">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1647806449750" />
-    <state x="636" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1646853672486">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="636" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1646853672486" />
-    <state x="743" y="388" width="433" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1647114571291">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="743" y="388" width="433" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1647114571291" />
-    <state x="485" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1647167007790">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="485" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1647167007790" />
-    <state x="729" y="349" key="#com.intellij.tools.ToolEditorDialog" timestamp="1647371010384">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="729" y="349" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1647371010384" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1640941600759">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1640941600759" />
-    <state width="1877" height="293" key="GridCell.Tab.0.bottom" timestamp="1647806164439">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="293" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1647806164439" />
-    <state width="1877" height="293" key="GridCell.Tab.0.center" timestamp="1647806164439">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="293" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1647806164439" />
-    <state width="1877" height="293" key="GridCell.Tab.0.left" timestamp="1647806164439">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="293" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1647806164439" />
-    <state width="1877" height="293" key="GridCell.Tab.0.right" timestamp="1647806164439">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="293" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1647806164439" />
-    <state width="1877" height="489" key="GridCell.Tab.1.bottom" timestamp="1647805871859">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="489" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1647805871859" />
-    <state width="1877" height="489" key="GridCell.Tab.1.center" timestamp="1647805871859">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="489" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1647805871859" />
-    <state width="1877" height="489" key="GridCell.Tab.1.left" timestamp="1647805871859">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="489" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1647805871859" />
-    <state width="1877" height="489" key="GridCell.Tab.1.right" timestamp="1647805871859">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="489" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1647805871859" />
-    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1647623899937">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1647623899937" />
-    <state x="855" y="254" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1647371011212">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="855" y="254" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.0.1920.1040@0.0.1920.1040" timestamp="1647371011212" />
-    <state x="505" y="255" width="910" height="630" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1647627111315">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="505" y="255" width="910" height="630" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1647627111315" />
-    <state x="551" y="180" key="new project wizard" timestamp="1640941665581">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="551" y="180" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1640941665581" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1640620262615">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1640620262615" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

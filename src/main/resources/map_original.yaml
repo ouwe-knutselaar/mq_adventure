@@ -27,8 +27,8 @@ helpMessage: |
 
 rooms:
 - name: startingpoint
-  description: you are in a cold dark room. There is an old table in the corner. In
-    the east is a door. In the middle is an old table
+  description: |
+    You are in a cold dark room. There is an old table in the corner.
   look:
   - name: table
     description: A dirty old table
@@ -73,6 +73,10 @@ rooms:
   look:
   - name: plate
     description: A plate with letters on it
+  - name: statue
+    description: A big lion, it probalby was once orange
+  - name: lion
+    description: A big lion, it probalby was once orange
   read:
   - name: plate
     description: |
@@ -92,7 +96,8 @@ rooms:
     unblock: incident ticket
     goes_to: bridge
 - name: j1
-  description: You enter the jungle, it is warm and wet. You have the feeling that
+  description: |
+    You enter the jungle, it is warm and wet. You have the feeling that
     behind every leaf something is watching you
   junctions:
   - name: north
@@ -133,13 +138,13 @@ rooms:
   description: It look like a jungle from the Tarzan books.
   moveable_objects:
   - name: old basket
-    description: Under some leaves you see an old basket
+    description: Between some leaves you see an old basket that is closed
     actions:
     look: When you look closer you hear some barking. As if a young puppy is stucked there.
     open:
       name: puppy
       description: A little puppy with sad brown eyes is looking at you
-      look: It is a cute little puppy
+      look: It is a cute little puppy.
   junctions:
   - name: north
     goes_to: j3
@@ -158,7 +163,7 @@ rooms:
   moveable_objects:
   - name: beerpull
     description: On the ground lies a beerpull
-    look: The beerpull is empty. The ants drank everthing
+    look: The beerpull is empty. The ants drank everthing.
   junctions:
   - name: north
     goes_to: j5
@@ -177,7 +182,7 @@ rooms:
   moveable_objects:
   - name: pile of bones
     description: A pile of old with bones
-    look: It seems that there are more people who tried to defeat the messaging monster
+    look: It seems that there where more people who tried to defeat the messaging monster.
   junctions:
   - name: north
     goes_to: j6
@@ -195,7 +200,7 @@ rooms:
   description: Leafs, leafs, everywhere leafs. You are beginning to hate this jungle
   moveable_objects:
   - name: banana
-    description: On the ground liefs a very normal banana
+    description: On the ground lies a very normal banana
     look: Just a banana
   junctions:
   - name: north
@@ -213,7 +218,7 @@ rooms:
 - name: j7
   description: |
     Endless and endless jungle. Maybe cutting the whole jungle and make
-    it into a parking garage looks more and more like a good idea
+    it into a parking garage sounds more and more like a good idea
   junctions:
   - name: north
     goes_to: j8
@@ -223,13 +228,16 @@ rooms:
     description: There is also a jungle in the east
   - name: south
     goes_to: j7
-    description: South you..... (this is getting boring) see jungle)
+    description: South you..... (this is getting boring) see jungle
   - name: west
     goes_to: j4
     description: And in the west.... well, I think you know it already
 - name: j8
   description: Jungle, al this green starts to irritate you. Some monkeys are trying
     to hit you with sticks
+  look:
+  - name: monkeys
+    desription: A bunch of nasty monkeys are laughing at you.
   moveable_objects:
   - name: computer
     description: Covered with sand there is an old SX486 PC
@@ -270,7 +278,8 @@ rooms:
     description: West, go west. But there is the jungle
 - name: palace
   description: |
-    You are in the palace of the Queen of the jungle. It is a nice place.
+    You are in the palace of the Queen of the jungle. Finally somehing else then this bloody jungle. It is a cool place
+    with nice flowers and  litlle fountians.
   look:
   - name: queen
     description: The queen is a beautyfull woman with golden hair. You heart beats suddenly a little faster.
@@ -280,7 +289,7 @@ rooms:
       On an throne sits the most beautifull woman you have ever seen.
       You see that she reads a book called: "Using Azure pipelines with Ansible to create Python scripts that could
       defeat the Messaging Monster"
-      A beautifull woman that is also handy with computers, your heart missed a beat when you realize that.
+      A beautifull woman that is also handy with computers! Your heart misses a beat when you realize that.
     talk: |
       She looks and sees you, her face turns sad and she says:
       My little cute puppy. He saw the Messaging Monster an runned away in to the jungle.
@@ -298,7 +307,7 @@ rooms:
         Just before she enters her private rooms behind the throne she seems to remember something.
         'Oh yes, you brought my puppy back.
         I will give you the first spell:
-        DEFINE QREMOTE(DRAIN.THE.MONSTER.MSG.RQ) QMGR(OTHERSIDE) QR(THE.VAULT.MSG.LQ)
+        DEFINE QALIAS(DRAIN.THE.MONSTER.PUT.MSG.AQ) DEFPSIST(NO) TARGET(DRAIN.THE.MONSTER.MSG.RQ)
         And here is the incident ticket to open the golden door in the great hall. You cannot enter that place without
         a proper change or incident ticket.'
       receive:
@@ -319,6 +328,9 @@ rooms:
   - name: east
     goes_to: master_island
     description: If you go east you will cross this large bridge. A big walk.
+  - name: west
+    goes_to: great_hall
+    description: In the west is the great hall
 
 - name: master_island
   description: |
@@ -328,7 +340,7 @@ rooms:
   - name: plate
     description: |
       Welcome to the islands of the geen cape.
-      You want to hear a tail about a cluster of messaging monsters? Talk to the Master of the island
+      You want to hear a tail about a cluster of messaging monsters? Talk to the Master of the island!
   persons:
   - name: master
     description: |
@@ -348,7 +360,7 @@ rooms:
         My badge, finally I've the key code for my house. You see, it was 'abcd'. I always keep my
         key codes very simple so that I do not forget them. Thanks man, now I can enter my house.
         I will give you the second spell to defeat the messaging monster:
-        DEFINE QALIAS(DRAIN.THE.MONSTER.PUT.MSG.AQ) TAGRET(DRAIN.THE.MONSTER.MSG.LQ)
+        DEFINE QREMOTE(DRAIN.THE.MONSTER.MSG.RQ) DEFPSIST(NO) RNAME('LOCALQ.APP2') RQMNAME('HEAVEN') XMITQ('XMITQU.HEAVEN.F1')
 
         Oh yeah, and here is the key to my appartment. Please open it, you're welcome.
       receive:
@@ -501,16 +513,13 @@ rooms:
     description: In the south is the button to go down.
 - name: coal_mine
   description: You enter the coal mine. It is very dark.
-  look:
-  - name: south
-    description: In the south you see a door. It has a plate on it that says 'mancave'
   junctions:
   - name: north
     goes_to: elevator
     description: In the north is the button to go up.
   - name: south
     goes_to: mancave
-    description: In the south you see a cave.
+    description: In the south you see a cave where you see a little light.
 - name: mancave
   description: |
     You are in a real man cave. It is a complete mess with all kind of computers, automates and other electronic stuff.
@@ -527,25 +536,28 @@ rooms:
   persons:
   - name: bald man
     description: |
-      In the conrner behind a desk sits a bald man with glasses. He is busy building something strange. The speaker on
-      his desk plays some music that sounds like Edith Piaf srceaming death metal.
+      In the conrner behind a desk sits a bald man with glasses. He is busy building something strange.
+      There is a terrible sound in the this. The bald man is probalby busy grinding some piece of scrap metal.
+      But then you discover that is comes from the speaker on his desk that plays some music. It sounds like 
+      Edith Piaf srceaming death metal.
     talk: |
       What... what.... do you say?..
-      Sorry I will turn the music softer.
-      Now get to the point, what do you want andno bullshit?
-      Cuase I try to automate my automatic automate builder but I dropped a transistor that I realy need somewhere in
+      Sorry I will turn the music softer. He goes to a taperecorder and turns the volume down.
+      Now get to the point, what do you want and no bullshit please?
+      Cause I try to automate my automatic automate builder but I dropped a transistor that I realy need somewhere in
       the mines to the east. I need that to automate my automatic automate builder so that I can automatically try to
       defeat the messaging monster.
       Can you help me find it?
       Here, take the flashlight.
-      And that's. He turns around and continues with it work.
+      And that's it. He turns around and continues with it work.
     give:
       object: transistor
       response: |
         You found my transistor!
         I will give you the next magic phases to defeat the Messaging Monster.
         But listen carefully, I only says this once!
-        DEFINE CHANNEL
+        DEFINE QLOCAL(XMITQU.HEAVEN.F1) USAGE(XMITQ) DEFPSIST(NO) TRIGGER TRIGDATA('MONSTER.HEAVEN.F1') TRIGDPTH(1) TRIGTYPE(FIRST) INITQ('SYSTEM.CHANNEL.INITQ')
+        
         Use it wise, it is a very powerfull spell. One mistake and you will be changed in to a cucumber!
   moveable_objects:
   - name: flashlight
@@ -555,11 +567,6 @@ rooms:
   description: |
     You are in the deep mines. Fortunaly you have the flashlight else you wouldn't see a thing.
     Oh no, you Linux distribution of your flashlight crashes. And you are automatically plunged in total darkness.
-  look:
-  - name: north
-    description: You see nothing but darkness in the north
-  - name: southt
-    description: You see nothing but darkness in the south
   junctions:
   - name: west
     goes_to: mancave
@@ -580,7 +587,7 @@ rooms:
     goes_to: dm5
     description: You see nothing but darkness in the north
   look:
-  - name: southt
+  - name: south
     description: You see nothing but darkness in the south
 
 - name: dm3
@@ -630,7 +637,7 @@ rooms:
     description: It feels like a NPN transistor type BC547C under your feet
 
 - name: long_hall
-  description: You enter the long hall that goes up highways
+  description: You enter the long hall that goes up highways.
   junctions:
   - name: north
     goes_to: mancave
@@ -642,9 +649,14 @@ rooms:
 - name: crossroad
   description: |
     You are at the crossroads. There is a sign in the middle of the crossroad.
+  look:
+    - name: sign
+      description: You would expect some legendary to see, but it is a very ordinary ANWB sign.
   read:
   - name: sign
-    description: On the sign is written. Go east to seek wisdom, go west to enter Pyongyang at the Amstel.
+    description: |
+      On the sign is written. Go east to seek wisdom, go west to enter Pyongyang at the Amstel. 
+      Only accessible with the right words.
   junctions:
   - name: north
     goes_to: long_hall
@@ -654,12 +666,12 @@ rooms:
     description: East goes to route A6 to almeria
   - name: west
     goes_to: route_a10
-    description: In the west you can go the Amsterdam, if you know the magic words.
+    description: In the west you can go the Amsterdam.
     blocked: yes
     spell: ajax forever
 
 - name: route_a6
-  description: You are the the famouse route A6 to the east.
+  description: You are the the famouse route A6 to the east. Exiting isn't it?
   junctions:
   - name: west
     goes_to: crossroad
@@ -670,8 +682,12 @@ rooms:
 
 - name: almeria
   description: |
-    You enter the Almeria. The holy place for monks and motors in fast east at the and of the route A6.
+    You enter the Almeria. And quickly you enter a big temple. The holy place for monks and motors of the fast east 
+    at the and of the route A6.
     Above the holy place is a skull that carries a german helmet of the WW2.
+  look:
+  - name: skull
+    description: A skull of someone who had tried to defeat the Messaging Monster en stranded here.
   junctions:
   - name: west
     goes_to: route_a6
@@ -681,8 +697,10 @@ rooms:
     description: And there sits the wise monk. He is meditating on his roaring motor.
     talk: |
       The monk pushes the gas handle a couple of times to let the engine roar and then closes his eyes and say,
+      
       In the system that runs on the penguin is a manual that states, If you can't cast the spells to defeat the dragon
       then switch to the carrot who has the all the rights to do it.
+      
       Tell me my novice, what is the phrase?
   spell:
   - name: sudo su - root
@@ -696,7 +714,7 @@ rooms:
       ACTIVITY WAS PERFORMED ON HOST ALMERIA (6.66.6.66) FROM ACCOUNT 'MOTOR' TO ACCOUNT ROOT.
 
       THE ACTIVITY WAS:
-      'DEFINE CHANNEL(fasdfasfsafsadfadsf)'
+      'DEFINE QLOCAL(XMITQU.HEAVEN.F1) USAGE(XMITQ) DEFPSIST(NO) TRIGGER TRIGDATA('MONSTER.HEAVEN.F1') TRIGDPTH(1) TRIGTYPE(FIRST) INITQ('SYSTEM.CHANNEL.INITQ')'
 
       COULD YOU PLEASE VERIFY AND SHARE YOUR CONCLUSION WITH US?
       THANK YOU IN ADVANCE FOR COOPERATION.
@@ -761,9 +779,9 @@ rooms:
         Het rips the bag open an starts to eat. A couple of his spiritual followers do look not
         very happy to you.
         But the guru doesn't care and with a full mouth he said:
-        I will give you the two extra spells that you need to defeat the messaging monster
-        DEFINE .....
-        DEFINE .....
+        I will give you one of the spells that you need to defeat the messaging monster,        
+        DEFINE CHANNEL(MONSTER.HEAVEN.F1) CHLTYPE(SDR) CONNAME('cradle.of.messages(1414)') XMITQ(XMITQU.HEAVEN.F1) SSLCIPH(TLS_RSA_WITH_AES_128_GCM_SHA256) SSLPEER('CN=HEAVEN,O=ING')
+        
         For the other parts of the spell go west to the tramstop and then south and seek the master of the hills and
         give him this document. He waits for years on this document to approve that all is safe and secure.
         To find him, follow the diapers.....
@@ -1075,7 +1093,8 @@ rooms:
       response: |
         You have the security document! Thank you very very much. I've waited so long on this document:
         As a thank I will give you the secrit part of the spell to defeat the messaging monster:
-        SET AUTHREC .....
+        SET AUTHREC PROFILE(DRAIN.THE.MONSTER.PUT.MSG.AQ) OBJTYPE(QUEUE) PRINCIPAL('monster') AUTHADD(BROWSE, INQ, PUT)
+        
         And now you must go east to the old iron wizard. He and he alone is the most wise man of all. He can give you
         the final spell that you need to defeat the messaing monster, because he knows the messaging monster for more
         than 60 years!
@@ -1099,13 +1118,13 @@ rooms:
   persons:
     - name: cats
       description: Two mean looking cats with sharp nails. They will not let you pass
-      talk: grrrrrrrrr!
+      talk: Grrrrrrrrr! You just can avoid a hit of a claw
       give:
         object: carton box
-        respone: mieuw!
+        response: Mieuw! And two happy cats jumps in to the carton box
         receive:
           - name: bicycle wheel
-            description: Under on of the cats is a bicycle wheel.
+            description: Under on of the cats was a bicycle wheel. You pick it up quickly.
             look: This is a real carbon fiber lightweigth wheel.
 
 - name: castle
@@ -1222,7 +1241,8 @@ rooms:
       response: |
         Yes, that was his name!
         He opens the safe, picks up a paper and says:
-        DEFINE QLOCAL
+        SET AUTHREC OBJTYPE(QMGR) PRINCIPAL('monster') AUTHADD(CONNECT,INQ)
+        
         If you want to open the door to the cave of the messaging monster say 'open sesame'
     - name: open sesame
       description: spell
@@ -1268,12 +1288,12 @@ rooms:
         But suddenly there is a last move from the monster. And with it last breath is screams
         "REFRESH QMGR"
       damaging_spells:
-        - DEFINE QREMOTE(DRAIN.THE.MONSTER.MSG.RQ) QMGR(OTHERSIDE) QR(THE.VAULT.MSG.LQ)
-        - DEFINE QALIAS(DRAIN.THE.MONSTER.PUT.MSG.AQ) TAGRET(DRAIN.THE.MONSTER.MSG.R Q)
-        - DEFINE CHANNEL(
-        - DEFINE XMITQ
-        - DEFINE AUTHREC QALIAS
-        - DEFINE AUTHREC QMGR
+        - DEFINE QALIAS(DRAIN.THE.MONSTER.PUT.MSG.AQ) DEFPSIST(NO) TARGET(DRAIN.THE.MONSTER.MSG.RQ)
+        - DEFINE QREMOTE(DRAIN.THE.MONSTER.MSG.RQ) DEFPSIST(NO) RNAME('LOCALQ.APP2') RQMNAME('HEAVEN') XMITQ('XMITQU.HEAVEN.F1')
+        - DEFINE QLOCAL(XMITQU.HEAVEN.F1) USAGE(XMITQ) DEFPSIST(NO) TRIGGER TRIGDATA('MONSTER.HEAVEN.F1') TRIGDPTH(1) TRIGTYPE(FIRST) INITQ('SYSTEM.CHANNEL.INITQ')
+        - DEFINE CHANNEL(MONSTER.HEAVEN.F1) CHLTYPE(SDR) CONNAME('cradle.of.messages(1414)') XMITQ(XMITQU.HEAVEN.F1) SSLCIPH(TLS_RSA_WITH_AES_128_GCM_SHA256) SSLPEER('CN=HEAVEN,O=ING')
+        - SET AUTHREC PROFILE(DRAIN.THE.MONSTER.PUT.MSG.AQ) OBJTYPE(QUEUE) PRINCIPAL('monster') AUTHADD(BROWSE, INQ, PUT)
+        - SET AUTHREC OBJTYPE(QMGR) PRINCIPAL('monster') AUTHADD(CONNECT,INQ)
   spell:
     - name: REFRESH QMGR
       description: spell
@@ -1286,10 +1306,3 @@ rooms:
   junction:
     - name: west
       goes_to: messaging_monster
-
-
-
-
-
-
-

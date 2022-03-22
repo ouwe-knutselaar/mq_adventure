@@ -26,7 +26,6 @@ public class MqAdventureLoop {
     public CallBackFunctions callBackFunctions = new CallBackFunctions(){
         public void changeRoom(String room) {
             changeToNewRoom(room);
-            showCurrentRoom();
         }
 
         @Override
@@ -125,14 +124,16 @@ public class MqAdventureLoop {
             dataControl.setPassword(new String(digest.digest(password.getBytes(StandardCharsets.UTF_8))));
             dataControl.writeYamlFile(userName);
             response.setLength(0);
-            response.append("We will keep you magic word. Now enter the adventure").append(System.lineSeparator());
+            response.append("We will keep you magic word. Now enter the adventure").append(System.lineSeparator())
+                    .append("Enter 'help' to if you don't know it anymore.").append(System.lineSeparator());
             currentGameState =GAMESTATES.PLAYING;
             return;
         }
 
         if(dataControl.getPassword().equals(new String(digest.digest(password.getBytes(StandardCharsets.UTF_8))))){
             response.setLength(0);
-            response.append("You are allowed to go further with your quest.").append(System.lineSeparator());
+            response.append("You are allowed to go further with your quest.").append(System.lineSeparator())
+                    .append("Enter 'help' to if you don't know it anymore.").append(System.lineSeparator());
             currentGameState =GAMESTATES.PLAYING;
             return;
         }
@@ -221,6 +222,11 @@ public class MqAdventureLoop {
 
     public void changeToNewRoom(String direction){
         Room tempRoom = dataControl.getCurrentRoom();
+        if(!tempRoom.getJunctions().stream().filter(junction -> junction.getName().equals(direction)).findFirst().isPresent()){
+            response.append("You cannot go "+direction);
+            return;
+        }
+
         dataControl.getCurrentRoom().getJunctions().
                 stream().
                 filter(junction -> junction.getName().equals(direction)).
@@ -230,7 +236,7 @@ public class MqAdventureLoop {
                 stream().
                 filter(junction -> junction.getName().equals(direction)).
                 filter(junction -> junction.getBlocked().equals("yes")).
-                forEach(junction -> response.append("You cannot go "+direction+", is blocked").append(System.lineSeparator()));
+                forEach(junction -> response.append("You cannot go "+direction+", it is blocked."));
     }
 
 

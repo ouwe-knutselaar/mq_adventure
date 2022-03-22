@@ -19,6 +19,11 @@ public class TalkToObject extends Callback implements Action{
         }
         String personToTalkTo = StringTools.stringArrayToString(parameters,1);
 
+        if(!callBackFunctions.getCurrentRoom().getPersons().stream().filter(persons -> persons.getName().equals(personToTalkTo)).findFirst().isPresent()){
+            callBackFunctions.toOutput("There is no "+personToTalkTo);
+            return;
+        }
+
         callBackFunctions.
                 getCurrentRoom().getPersons().stream().
                 filter(persons -> persons.getName().equals(personToTalkTo)).

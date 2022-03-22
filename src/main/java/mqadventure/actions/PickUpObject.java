@@ -1,6 +1,7 @@
 package mqadventure.actions;
 
 import mqadventure.CallBackFunctions;
+import mqadventure.StringTools;
 import mqadventure.data.MoveableObjects;
 
 import java.util.List;
@@ -19,8 +20,7 @@ public class PickUpObject extends Callback implements Action{
             callBackFunctions.toOutput("Pick up what?");
             return;
         }
-        objectNamesToPickUpList.remove(0);
-        objectNamesToPickUpList.forEach(this::pickUp);
+        pickUp(StringTools.stringArrayToString(objectNamesToPickUpList,1));
     }
 
 
@@ -46,7 +46,7 @@ public class PickUpObject extends Callback implements Action{
                 getCurrentRoom().
                 getMoveable_objects().
                 removeIf(pickedUpObject -> pickedUpObject.getName().equals(objectToPickUpName));
-
-
     }
+
+
 }

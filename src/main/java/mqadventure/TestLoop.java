@@ -11,7 +11,7 @@ public class TestLoop {
         mqAdventure.init();
         boolean loop = true;
 
-        File script = new File("D:\\onze_projecten\\mq_adventure\\src\\main\\resources\\script.txt");
+        File script = new File(argv[0]);
         Scanner scanner = new Scanner(script);
         while(loop){
             System.out.println(mqAdventure.getResponse());

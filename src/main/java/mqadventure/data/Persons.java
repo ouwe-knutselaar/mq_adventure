@@ -6,14 +6,15 @@ import java.util.List;
 public class Persons extends DefaultObject{
 
     private String talk="Doesn't say much";
-    private Give give;
+    private Give give=new Give();
     private List<MoveableObjects> receive = new ArrayList<>();
 
     public String getTalk() {
         return talk;
     }
     public void setTalk(String talk) {
-        this.talk = talk.toLowerCase();
+        //this.talk = talk.toLowerCase();
+        this.talk = talk;
     }
 
     public Give getGive() {

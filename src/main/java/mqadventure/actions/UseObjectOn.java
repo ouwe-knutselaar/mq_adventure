@@ -12,29 +12,43 @@ public class UseObjectOn extends Callback implements Action {
 
     @Override
     public void execute(List<String> parameters) {
-        try {
-            String objectToUse = extractbjectToUse(parameters);
-            String subjectToUseOn = extractSubjectToUseOn(parameters);
-            useObjectOn(objectToUse, subjectToUseOn);
-        } catch (IndexOutOfBoundsException e) {
-            callBackFunctions.toOutput("what?");
+        if(parameters.size()<4){
+            callBackFunctions.toOutput("What?");
+            return;
         }
+        String objectToUse = extractbjectToUse(parameters);
+        String subjectToUseOn = extractSubjectToUseOn(parameters);
+
+        if(!callBackFunctions.getInventory().stream().filter(object -> object.getName().equals(objectToUse)).findFirst().isPresent()){
+            callBackFunctions.toOutput("You don't have a "+objectToUse);
+            return;
+        }
+
+        if(!callBackFunctions.getCurrentRoom().getJunctions().stream().filter(junction -> junction.getObject_name().equals(subjectToUseOn)).findFirst().isPresent()){
+            callBackFunctions.toOutput("There is no "+subjectToUseOn);
+            return;
+        }
+
+        if(!callBackFunctions.getCurrentRoom().getJunctions().stream().filter(junction -> junction.getUnblock().equals(objectToUse)).findFirst().isPresent()){
+            callBackFunctions.toOutput("That doesn't work");
+            return;
+        }
+
+        useObjectOn(objectToUse, subjectToUseOn);
+
     }
 
     public void useObjectOn(String objectToUSe, String subjectToUseOn) {
-        List<MoveableObjects> objectToUSeList = callBackFunctions.getInventory().stream().filter(object -> object.getName().equals(objectToUSe)).collect(Collectors.toList());
-
-        objectToUSeList.
-                forEach(objectToUse -> callBackFunctions.
-                        getCurrentRoom().
-                        getJunctions().
-                        stream().
-                        filter(junction -> junction.getUnblock().equals(objectToUSe)).
-                        filter(junction -> junction.getObject_name().equals(subjectToUseOn)).
+        callBackFunctions.
+                getCurrentRoom().
+                getJunctions().
+                stream().
+                filter(junction -> junction.getUnblock().equals(objectToUSe)).
+                filter(junction -> junction.getObject_name().equals(subjectToUseOn)).
                         forEach(junction -> {
                             junction.setBlocked("no");
                             callBackFunctions.toOutput("You unlocked the " + subjectToUseOn + "\n");
-                        }));
+                        });
     }
 
     private String extractbjectToUse(List<String> parameters) {

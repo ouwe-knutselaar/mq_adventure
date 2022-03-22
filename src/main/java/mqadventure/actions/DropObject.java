@@ -1,6 +1,7 @@
 package mqadventure.actions;
 
 import mqadventure.CallBackFunctions;
+import mqadventure.StringTools;
 import mqadventure.data.MoveableObjects;
 
 import java.util.List;
@@ -13,25 +14,21 @@ public class DropObject extends Callback implements Action {
 
     @Override
     public void execute(List<String> objectsToDropNameList) {
-        objectsToDropNameList.forEach(this::dropObject);
+        if(objectsToDropNameList.size()==1){
+            callBackFunctions.toOutput("Drop what?");
+            return;
+        }
 
+        dropObject(StringTools.stringArrayToString(objectsToDropNameList,1));
     }
 
     private void dropObject(String objectToDropName){
-        Optional<MoveableObjects> objectToDropOpt = callBackFunctions.
-                getInventory().
-                stream().
-                filter(objectToDrop -> objectToDrop.getName().equals(objectToDropName)).
-                findFirst();
-        objectToDropOpt.
-                ifPresent(objectToDrop -> {callBackFunctions.
-                        getCurrentRoom().
-                        getMoveable_objects().
-                        add(objectToDrop);
-                        callBackFunctions.toOutput("You dropped "+objectToDropName);
-                });
-        callBackFunctions.
-                getInventory().
-                removeIf(object -> object.getName().equals(objectToDropName));
+        if(!callBackFunctions.getInventory().stream().filter(object -> object.getName().equals(objectToDropName)).findFirst().isPresent()){
+            callBackFunctions.toOutput("You do not have a "+objectToDropName);
+            return;
+        }
+        MoveableObjects objectToDrop = callBackFunctions.getInventory().stream().filter(object -> object.getName().equals(objectToDropName)).findFirst().get();
+        callBackFunctions.getCurrentRoom().getMoveable_objects().add(objectToDrop);
+        callBackFunctions.getInventory().removeIf(object -> object.getName().equals(objectToDropName));
     }
 }
