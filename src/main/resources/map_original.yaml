@@ -74,9 +74,9 @@ rooms:
   - name: plate
     description: A plate with letters on it
   - name: statue
-    description: A big lion, it probalby was once orange
+    description: A big lion, it probably  was once orange
   - name: lion
-    description: A big lion, it probalby was once orange
+    description: A big lion, it probably was once orange
   read:
   - name: plate
     description: |
@@ -159,7 +159,7 @@ rooms:
     goes_to: j3
     description: Go west, does it matters? Everything is green
 - name: j4
-  description: Still in the jungle and beautifull nature. But all you want is a good glass of cold beer
+  description: Still in the jungle and beautiful nature. But all you want is a good glass of cold beer
   moveable_objects:
   - name: beerpull
     description: On the ground lies a beerpull
@@ -208,7 +208,7 @@ rooms:
     description:  You can go north
   - name: east
     goes_to: j9
-    description: East, well. Why not? Ttry it
+    description: East, well. Why not? Try it
   - name: south
     goes_to: j5
     description: In the south is more jungle. really
@@ -259,7 +259,7 @@ rooms:
   description: Oh, no. More jungle. When will this torture end?
   moveable_objects:
   - name: cdrom
-    description: A cdrom that contains an installation of OS/2 warp 4.0
+    description: A cdrom that contains an installation of OS/2 warp 4.0 is laying on a coconut
     look: Oke, this OS/2 Warp had also fixpak 16 delivered.
   junctions:
   - name: north
@@ -282,14 +282,14 @@ rooms:
     with nice flowers and  litlle fountians.
   look:
   - name: queen
-    description: The queen is a beautyfull woman with golden hair. You heart beats suddenly a little faster.
+    description: The queen is a beautiful woman with golden hair. You heart beats suddenly a little faster.
   persons:
   - name: queen
     description: |
-      On an throne sits the most beautifull woman you have ever seen.
+      On an throne sits the most beautiful woman you have ever seen.
       You see that she reads a book called: "Using Azure pipelines with Ansible to create Python scripts that could
       defeat the Messaging Monster"
-      A beautifull woman that is also handy with computers! Your heart misses a beat when you realize that.
+      A beautiful woman that is also handy with computers! Your heart misses a beat when you realize that.
     talk: |
       She looks and sees you, her face turns sad and she says:
       My little cute puppy. He saw the Messaging Monster an runned away in to the jungle.
@@ -334,7 +334,7 @@ rooms:
 
 - name: master_island
   description: |
-    You enter the island. It is a tropical island with beautifull beaches and houses. Palm trees wave in the wind.
+    You enter the island. It is a tropical island with beautiful beaches and houses. Palm trees wave in the wind.
     And in there stand a wooden plate with something written on it.
   read:
   - name: plate
@@ -372,7 +372,7 @@ rooms:
     description: The is in the west a large bridge. You cannot see what is on the other side.
   - name: south
     goes_to: beach2
-    description: In the south is a beautifull beach.
+    description: In the south is a beautiful beach.
   - name: east
     goes_to: appartment
     description: Is the east look see the door to a nice appartment
@@ -383,9 +383,9 @@ rooms:
   description: You are on a nice beach just next to the apppartment
   look:
   - name: east
-    description: in the east you see more beautifull beaches
+    description: in the east you see more beautiful beaches
   - name: west
-    description: in the west you see more beautifull beaches
+    description: in the west you see more beautiful beaches
   - name: south
     description: in the south are the waves between see and land
   junctions:
@@ -394,10 +394,10 @@ rooms:
     description: In the north is the appartment of the Master of the island
   - name: east
     goes_to: beach3
-    description: In the east is more beautifull beach
+    description: In the east is more beautiful beach
   - name: west
     goes_to: beach1
-    description: Also in the west you see a beautifull beach
+    description: Also in the west you see a beautiful beach
   - name: south
     goes_to: seashore2
     description: South leads to the shore of a blue sea
@@ -415,7 +415,7 @@ rooms:
   junctions:
   - name: east
     goes_to: beach2
-    description: In the east is a beautifull beach
+    description: In the east is a beautiful beach
   - name: west
     goes_to: beach1
     description: Same in the west
@@ -427,10 +427,10 @@ rooms:
   junctions:
   - name: east
     goes_to: beach3
-    description: in the east you see more beautifull beaches
+    description: in the east you see more beautiful beaches
   - name: west
     goes_to: beach2
-    description: in the west you see more beautifull beaches
+    description: in the west you see more beautiful beaches
   - name: south
     goes_to: seashore3
     description: in the south in de thin line between see and land, called a shore.
@@ -446,7 +446,7 @@ rooms:
     description: In the west is also a sea shore.
   - name: north
     goes_to: beach1
-    description: In the north are those beautifull beaches again
+    description: In the north are those beautiful beaches again
   moveable_objects:
   - name: paper
     description: You see a piece of paper
@@ -455,9 +455,9 @@ rooms:
   description: you are on a nice beach by the sea shore
   look:
   - name: east
-    description: in the east you see more beautifull beaches and waves
+    description: in the east you see more beautiful beaches and waves
   - name: west
-    description: in the east you see more beautifull beaches and waves
+    description: in the east you see more beautiful beaches and waves
   - name: north
     description: in the north you see the beach
   moveable_objects:
@@ -483,18 +483,18 @@ rooms:
   junctions:
   - name: east
     goes_to: seashore3
-    description: in the east you see more beautifull beaches and waves
+    description: in the east you see more beautiful beaches and waves
   - name: west
     goes_to: seashore2
-    description: in the east you see more beautifull beaches and waves
+    description: in the east you see more beautiful beaches and waves
   - name: north
     goes_to: beach3
     description: in the north you see the beach
 
 - name: appartment
   description: |
-    You are in a beautifull appartment. But you notice one thing. A lot of things have a logo of the footbal club
-    Feyenoord. He has probaly a crush for footbal
+    You are in a beautiful appartment. But you notice one thing. A lot of things have a logo of the footbal club
+    Feyenoord. He has probably a crush for footbal
   junctions:
   - name: west
     goes_to: master_island
@@ -537,7 +537,7 @@ rooms:
   - name: bald man
     description: |
       In the conrner behind a desk sits a bald man with glasses. He is busy building something strange.
-      There is a terrible sound in the this. The bald man is probalby busy grinding some piece of scrap metal.
+      There is a terrible sound in the this. The bald man is probably busy grinding some piece of scrap metal.
       But then you discover that is comes from the speaker on his desk that plays some music. It sounds like 
       Edith Piaf srceaming death metal.
     talk: |
@@ -1283,7 +1283,7 @@ rooms:
         That was the final blow. The monster screams and cries...
         And with an enormouse bang it hits the floor. Pieces of rock fall from the ceiling. Clouds of dust fills the
         case. And a red hat flies over your head.
-        And is a stream of beautifull light the messages leave slowly the monster. All the captured messages that it
+        And is a stream of beautiful light the messages leave slowly the monster. All the captured messages that it
         had kept for so many years finally have a channel to escape. Now they can reach their final destination.
         But suddenly there is a last move from the monster. And with it last breath is screams
         "REFRESH QMGR"

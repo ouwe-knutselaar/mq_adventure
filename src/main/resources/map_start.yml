@@ -1,0 +1,1309 @@
+---
+
+startMessage: |
+  MQ Adventure
+  Mortal, give me thou name......
+
+helpMessage: |
+  help   This help text
+  look   Look around
+  look <object>   look a little closer
+  pick <object>   pick up an object
+  drop <object>   drop an object
+  use <object> on <object>   see if it works
+  north, east, south, west   Go in that direction
+  inventory   Show what you got
+  read <object>   Read a paper of plate
+  talk <person>   try to talk to someone
+  give <object> to <person>   Give something to someone
+  cast <spell>   Cast a spell
+  say <something>   Say something tot he world
+  open <object>   Open something
+  save   Save you legacy
+  exit   Exit this world and go back to your miserable life.
+
+  To open a door of gate you can use an object on it, but sometimes you have to cast a spell.
+
+
+rooms:
+  - name: startingpoint
+    description: |
+      You are in a cold dark room. There is an old table in the corner.
+    look:
+      - name: table
+        description: A dirty old table
+    persons:
+      - name: product owner
+        description: By the old table sits a Product Owner.
+        look: It is a very ordinary product owner
+        talk: |
+          Behold stranger, thou shall not leave this world before you have defeated the horrible Messaging Monster.
+          It keeps all the messages for himself.
+          You must collect the 6 spells to evoke the magical message flow and drain the power from the messaging monster
+          and free the waiting messages.
+          To get the spells you must find the Queen of the jungle, the Master of the green cape islands, the bald automater,
+          the motor monk from the far east, a holy guru from India, the guardian of the hills and the old iron wizard.
+          Please, you are our last hope....
+          Then the poor product owner hides his face behind his hands and starts crying out of sheer desperation
+    moveable_objects:
+      - name: skull
+        description: There is an old skull in the corner
+        look: The poor fellow is long dead
+      - name: stone
+        description: In the middle is a yellow stone
+        look: A very yellow stone, what else had you expected?
+      - name: paperclip
+        description: You can just see a paperclip
+        look: You look at a very ordinary paperclip
+    junctions:
+      - name: east
+        object_name: door
+        goes_to: great_hall
+        description: In the east is an old wooden door
+        blocked: yes
+        unblock: paperclip
+
+  - name: great_hall
+    description: |
+      You are in a great Hall. The roof is made of glass and you can see the blue sky. In the middle is a statue of a
+      big lion.
+      On the statue is a plate with something written on it. The is a door in the south side of the wall.
+      In the north you see an opening in the wall that leads to a jungle
+      In the east you see an golden door
+    look:
+      - name: plate
+        description: A plate with letters on it
+      - name: statue
+        description: A big lion, it probably  was once orange
+      - name: lion
+        description: A big lion, it probably was once orange
+    read:
+      - name: plate
+        description: |
+          Go to the jungle in the to the north east corner to meet the queen on the jungle
+          She is the keeper of the first spells. But beware, her beauty will blind your eyes.
+    junctions:
+      - name: north
+        description: You enter the deep green jungle if you go north
+        goes_to: j1
+      - name: west
+        description: You go the this door, you really want to go back?
+        goes_to: startingpoint
+      - name: east
+        description: In the east there is a golden door.
+        object_name: golden door
+        blocked: yes
+        unblock: incident ticket
+        goes_to: bridge
+  - name: j1
+    description: |
+      You enter the jungle, it is warm and wet. You have the feeling that
+      behind every leaf something is watching you
+    junctions:
+      - name: north
+        goes_to: j2
+        description: Go deeper between the leaves
+      - name: east
+        goes_to: j4
+        description: Go deeper in the jungle
+      - name: south
+        goes_to: great_hall
+        description: You enter the great hall
+      - name: west
+        goes_to: j1
+        description: Go deeper in the jungle
+  - name: j2
+    description: This jungle is hot and moisty.
+    moveable_objects:
+      - name: coconut
+        description: On the floor lies a coconut
+        look: Just an ordinary coconut
+      - name: bottle
+        description: There lies an empty bottle of beer
+        look: Is it Dommelsh beer, you can better leave it there
+    junctions:
+      - name: north
+        goes_to: j3
+        description: Go north in the jungle
+      - name: east
+        goes_to: j5
+        description: Go east in the jungle
+      - name: south
+        goes_to: j1
+        description: Go south in the jungle
+      - name: west
+        goes_to: j2
+        description: Go west in the jungle
+  - name: j3
+    description: It look like a jungle from the Tarzan books.
+    moveable_objects:
+      - name: old basket
+        description: Between some leaves you see an old basket that is closed
+        actions:
+        look: When you look closer you hear some barking. As if a young puppy is stucked there.
+        open:
+          name: puppy
+          description: A little puppy with sad brown eyes is looking at you
+          look: It is a cute little puppy.
+    junctions:
+      - name: north
+        goes_to: j3
+        description: Go deeper in the green hell
+      - name: east
+        goes_to: j6
+        description: Tarzan was fake, the jungle is horrible in the east
+      - name: south
+        goes_to: j2
+        description: Going on south, does this ever ends?
+      - name: west
+        goes_to: j3
+        description: Go west, does it matters? Everything is green
+  - name: j4
+    description: Still in the jungle and beautiful nature. But all you want is a good glass of cold beer
+    moveable_objects:
+      - name: beerpull
+        description: On the ground lies a beerpull
+        look: The beerpull is empty. The ants drank everything.
+    junctions:
+      - name: north
+        goes_to: j5
+        description: Go north, maybe there is a cafe
+      - name: east
+        goes_to: j7
+        description: And east is green, green, green. Wherever you go
+      - name: south
+        goes_to: j4
+        description: There is a way south, and then...? Jungle of course
+      - name: west
+        goes_to: j1
+        description: The way west, maybe it is a little cooler there
+  - name: j5
+    description: The green hell goes on for ever
+    moveable_objects:
+      - name: pile of bones
+        description: A pile of old with bones
+        look: It seems that there where more people who tried to defeat the messaging monster.
+    junctions:
+      - name: north
+        goes_to: j6
+        description: North, but do I survive this?
+      - name: east
+        goes_to: j8
+        description: In the east, it is green there, what else did you expect?
+      - name: south
+        goes_to: j4
+        description: In the south it is green.
+      - name: west
+        goes_to: j2
+        description: Go west go green
+  - name: j6
+    description: Leafs, leafs, everywhere leafs. You are beginning to hate this jungle
+    moveable_objects:
+      - name: banana
+        description: On the ground lies a very normal banana
+        look: Just a banana
+    junctions:
+      - name: north
+        goes_to: j6
+        description:  You can go north
+      - name: east
+        goes_to: j9
+        description: East, well. Why not? Try it
+      - name: south
+        goes_to: j5
+        description: In the south is more jungle. really
+      - name: west
+        goes_to: j3
+        description: But the same in the west
+  - name: j7
+    description: |
+      Endless and endless jungle. Maybe cutting the whole jungle and make
+      it into a parking garage sounds more and more like a good idea
+    junctions:
+      - name: north
+        goes_to: j8
+        description: In the north you see jungle
+      - name: east
+        goes_to: j7
+        description: There is also a jungle in the east
+      - name: south
+        goes_to: j7
+        description: South you..... (this is getting boring) see jungle
+      - name: west
+        goes_to: j4
+        description: And in the west.... well, I think you know it already
+  - name: j8
+    description: Jungle, al this green starts to irritate you. Some monkeys are trying
+      to hit you with sticks
+    look:
+      - name: monkeys
+        desription: A bunch of nasty monkeys are laughing at you.
+    moveable_objects:
+      - name: computer
+        description: Covered with sand there is an old SX486 PC
+        look: If it was in a good shape, this could be a collectors item.
+    junctions:
+      - name: north
+        goes_to: j9
+        description: In the north is just jungle.
+      - name: east
+        goes_to: j8
+        description: And east, well jungle
+      - name: south
+        goes_to: j7
+        description: South, still jungle
+      - name: west
+        goes_to: j5
+        description: In the west? You hoped for something else. But no, jungle.
+  - name: j9
+    description: Oh, no. More jungle. When will this torture end?
+    moveable_objects:
+      - name: cdrom
+        description: A cdrom that contains an installation of OS/2 warp 4.0 is laying on a coconut
+        look: Oke, this OS/2 Warp had also fixpak 16 delivered.
+    junctions:
+      - name: north
+        goes_to: j9
+        description: If you go north, you go deeper in the jungle
+      - name: east
+        goes_to: palace
+        description: |
+          In the east is the entrance to a palace. Two guards, wearing black glasses,
+          with a big blue logo on there shields look very angry to you.
+      - name: south
+        goes_to: j8
+        description: If you go south, you go also deeper in the jungle.
+      - name: west
+        goes_to: j6
+        description: West, go west. But there is the jungle
+  - name: palace
+    description: |
+      You are in the palace of the Queen of the jungle. Finally something else then this bloody jungle. It is a cool place
+      with nice flowers and little fountains.
+    look:
+      - name: queen
+        description: The queen is a beautiful woman with golden hair. You heart beats suddenly a little faster.
+    persons:
+      - name: queen
+        description: |
+          On an throne sits the most beautiful woman you have ever seen.
+          You see that she reads a book called: "Using Azure pipelines with Ansible to create Python scripts that could
+          defeat the Messaging Monster"
+          A beautiful woman that is also handy with computers! Your heart misses a beat when you realize that.
+        talk: |
+          She looks and sees you, her face turns sad, and she says:
+          My little cute puppy. He saw the Messaging Monster and runned away into the jungle.
+          Please help me to find it.
+          I will reward you with everything you wish and the first spell to defeat the Messaging Monster.
+        give:
+          object: puppy
+          response: |
+            Oh, my cute puppy! I'm so happy!
+            Then she jumps of her throne, opens her arms and runs towards you.
+            You place the puppy on the ground and open you arms. All your dreams will come true just by holding her in your
+            arms for ever and ever......
+            
+            She stops just in front of you, quickly picks up the puppy, turns around and walks back.
+            Just before she enters her private rooms behind the throne she seems to remember something.
+            'Oh yes, you brought my puppy back.
+            I will give you the first spell:
+            DEFINE QALIAS(DRAIN.THE.MONSTER.PUT.MSG.AQ) DEFPSIST(NO) TARGET(DRAIN.THE.MONSTER.MSG.RQ)
+            And here is the incident ticket to open the golden door in the great hall. You cannot enter that place without
+            a proper change or incident ticket.'
+          receive:
+            - name: incident ticket
+              description: On the floor lies the incident ticket of the jungle queen.
+              look: Just an ordinary incident ticket, please solve this incident.
+    junctions:
+      - name: west
+        goes_to: j9
+        description: If you go west you leave the palace and go back to the jungle
+
+  - name: bridge
+    description: A large bridge that goes east trough the clouds over the sea. You cannot see what’s on the other side.
+    look:
+      - name: bridge
+        description: You see a large bridge that goes trough the clouds. You cannot see the other side.
+    junctions:
+      - name: east
+        goes_to: master_island
+        description: If you go east you will cross this large bridge. A big walk.
+      - name: west
+        goes_to: great_hall
+        description: In the west is the great hall
+
+  - name: master_island
+    description: |
+      You enter the island. It is a tropical island with beautiful beaches and houses. Palm trees wave in the wind.
+      And in there stand a wooden plate with something written on it.
+    read:
+      - name: plate
+        description: |
+          Welcome to the islands of the green cape.
+          You want to hear a tail about a cluster of messaging monsters? Talk to the Master of the island!
+    persons:
+      - name: master
+        description: |
+          There stands the Master of the Island. He is busy with some kind of fighting training
+          On his laptop is a youtube video about the fighting skills used by police officers
+        talk: |
+          A cluster of Messaging Monsters? No that is fake. There is only one.
+          I was practicing on the beach when a sudden wave washed away the key code of my house.
+          So it is lost and I'm afraid that I can never enter my house again.
+          Please can you help me find the code?
+          I cold call the fireman to put me on the balcony, but what if my neighbours see that?
+          So embarrassing!
+          You see, that is no option for me.
+        give:
+          object: badge
+          response: |
+            My badge, finally I've the key code for my house. You see, it was 'abcd'. I always keep my
+            key codes very simple so that I do not forget them. Thanks man, now I can enter my house.
+            I will give you the second spell to defeat the messaging monster:
+            DEFINE QREMOTE(DRAIN.THE.MONSTER.MSG.RQ) DEFPSIST(NO) RNAME('LOCALQ.APP2') RQMNAME('HEAVEN') XMITQ('XMITQU.HEAVEN.F1')
+            
+            Oh yeah, and here is the key to my apartment. Please open it, you're welcome.
+          receive:
+            - name: key
+              description: the key of the apartment
+    junctions:
+      - name: west
+        goes_to: bridge
+        description: The is in the west a large bridge. You cannot see what is on the other side.
+      - name: south
+        goes_to: beach2
+        description: In the south is a beautiful beach.
+      - name: east
+        goes_to: apartment
+        description: Is the east look see the door to a nice apartment
+        blocked: yes
+        object_name: door
+        unblock: key
+  - name: beach2
+    description: You are on a nice beach just next to the apartment
+    look:
+      - name: east
+        description: in the east you see more beautiful beaches
+      - name: west
+        description: in the west you see more beautiful beaches
+      - name: south
+        description: in the south are the waves between see and land
+    junctions:
+      - name: north
+        goes_to: master_island
+        description: In the north is the apartment of the Master of the island
+      - name: east
+        goes_to: beach3
+        description: In the east is more beautiful beach
+      - name: west
+        goes_to: beach1
+        description: Also in the west you see a beautiful beach
+      - name: south
+        goes_to: seashore2
+        description: South leads to the shore of a blue sea
+
+  - name: beach1
+    description: You are on a nice beach. There is a pole with a plate on it
+    look:
+      - name: plate
+        description: A plate with text on it.
+    read:
+      - name: plate
+        description: |
+          The plate says: After this sign starts the nudist area.
+          You start looking immediately to the beach. To bad, it is empty..
+    junctions:
+      - name: east
+        goes_to: beach2
+        description: In the east is a beautiful beach
+      - name: west
+        goes_to: beach1
+        description: Same in the west
+      - name: south
+        goes_to: seashore1
+        description: In the south there is a sea shore.
+  - name: beach3
+    description: you are on a nice beach
+    junctions:
+      - name: east
+        goes_to: beach3
+        description: in the east you see more beautiful beaches
+      - name: west
+        goes_to: beach2
+        description: in the west you see more beautiful beaches
+      - name: south
+        goes_to: seashore3
+        description: in the south in de thin line between see and land, called a shore.
+
+  - name: seashore1
+    description: you are on a nice beach by the sea shore
+    junctions:
+      - name: east
+        goes_to: seashore2
+        description: In the east is a sea shore
+      - name: west
+        goes_to: seashore1
+        description: In the west is also a sea shore.
+      - name: north
+        goes_to: beach1
+        description: In the north are those beautiful beaches again
+    moveable_objects:
+      - name: paper
+        description: You see a piece of paper
+        look: It is a piece of paper with 1234 written on it.
+  - name: seashore2
+    description: you are on a nice beach by the sea shore
+    look:
+      - name: east
+        description: in the east you see more beautiful beaches and waves
+      - name: west
+        description: in the east you see more beautiful beaches and waves
+      - name: north
+        description: in the north you see the beach
+    moveable_objects:
+      - name: creditcard
+        description: You see a credit card
+        look: Is has the code 0000 on it
+    junctions:
+      - name: east
+        goes_to: seashore3
+        description: In the east is more seashore
+      - name: west
+        goes_to: seashore1
+        description: In the east is also more seashore
+      - name: north
+        goes_to: beach2
+        description: North you go back to the beach
+  - name: seashore3
+    description: you are on a nice beach by the sea shore
+    moveable_objects:
+      - name: badge
+        description: You see a badge
+        look: A batch with the code 'abcd' on it
+    junctions:
+      - name: east
+        goes_to: seashore3
+        description: in the east you see more beautiful beaches and waves
+      - name: west
+        goes_to: seashore2
+        description: in the east you see more beautiful beaches and waves
+      - name: north
+        goes_to: beach3
+        description: in the north you see the beach
+
+  - name: apartment
+    description: |
+      You are in a beautiful apartment. But you notice one thing. A lot of things have a logo of the football club
+      Feyenoord. He has probably a crush for football
+    junctions:
+      - name: west
+        goes_to: master_island
+        description: In the west is a door where you can leave this appartement
+      - name: east
+        goes_to: elevator
+        description: In the east is an elevator. Why is there an elevator?
+  - name: elevator
+    description: You are in the elevator of the apartment.
+    junctions:
+      - name: west
+        goes_to: apartment
+        description: In the west is the apartment
+      - name: south
+        goes_to: coal_mine
+        description: In the south is the button to go down.
+  - name: coal_mine
+    description: You enter the coal mine. It is very dark.
+    junctions:
+      - name: north
+        goes_to: elevator
+        description: In the north is the button to go up.
+      - name: south
+        goes_to: mancave
+        description: In the south you see a cave where you see a little light.
+  - name: mancave
+    description: |
+      You are in a real man cave. It is a complete mess with all kind of computers, automates and other electronic stuff.
+    junctions:
+      - name: north
+        goes_to: coal_mine
+        description: In the north is the entrance
+      - name: east
+        goes_to: dm1
+        description: In the east are the dark coal mines.
+      - name: south
+        goes_to: long_hall
+        description: South there is a long hall
+    persons:
+      - name: bald man
+        description: |
+          In the conrner behind a desk sits a bald man with glasses. He is busy building something strange.
+          There is a terrible sound in the this. The bald man is probably busy grinding some piece of scrap metal.
+          But then you discover that is comes from the speaker on his desk that plays some music. It sounds like 
+          Edith Piaf screaming death metal.
+        talk: |
+          What... what.... do you say?..
+          Sorry I will turn the music softer. He goes to a tape recorder and turns the volume down.
+          Now get to the point, what do you want and no bullshit please?
+          Cause I try to automate my automatic automate builder but I dropped a transistor that I really need somewhere in
+          the mines to the east. I need that to automate my automatic automate builder so that I can automatically try to
+          defeat the messaging monster.
+          Can you help me find it?
+          Here, take the flashlight.
+          And that's it. He turns around and continues with it work.
+        give:
+          object: transistor
+          response: |
+            You found my transistor!
+            I will give you the next magic phases to defeat the Messaging Monster.
+            But listen carefully, I only says this once!
+            DEFINE QLOCAL(XMITQU.HEAVEN.F1) USAGE(XMITQ) DEFPSIST(NO) TRIGGER TRIGDATA('MONSTER.HEAVEN.F1') TRIGDPTH(1) TRIGTYPE(FIRST) INITQ('SYSTEM.CHANNEL.INITQ')
+            
+            Use it wise, it is a very powerful spell. One mistake and you will be changed into a cucumber!
+    moveable_objects:
+      - name: flashlight
+        description: |
+          There is a decent flashlight, probably running some kind of Linux distribution.
+  - name: dm1
+    description: |
+      You are in the deep mines. Fortunaly you have the flashlight else you wouldn't see a thing.
+      Oh no, you Linux distribution of your flashlight crashes. And you are automatically plunged in total darkness.
+    junctions:
+      - name: west
+        goes_to: mancave
+        description: You see a light in the west
+      - name: east
+        goes_to: dm2
+        description: You see nothing but darkness in the east
+  - name: dm2
+    description: You are in the deep mines
+    junctions:
+      - name: west
+        goes_to: dm1
+        description: You see nothing but darkness in the west
+      - name: east
+        goes_to: dm3
+        description: You see nothing but darkness in the east
+      - name: north
+        goes_to: dm5
+        description: You see nothing but darkness in the north
+    look:
+      - name: south
+        description: You see nothing but darkness in the south
+
+  - name: dm3
+    description: You are in the deep mines
+    junctions:
+      - name: west
+        goes_to: dm2
+        description: You see nothing but darkness in the west
+      - name: east
+        goes_to: dm4
+        description: You see nothing but darkness in the east
+    look:
+      - name: north
+        description: You see nothing but darkness in the north
+      - name: south
+        description: You see nothing but darkness in the south
+
+  - name: dm4
+    description: You are in the deep mines
+    junctions:
+      - name: west
+        goes_to: dm3
+        description: You see nothing but darkness in the west
+    look:
+      - name: north
+        description: You see nothing but darkness in the north
+      - name: south
+        description: You see nothing but darkness in the south
+      - name: east
+        description: You see nothing but darkness in the east
+
+  - name: dm5
+    description: You are in the deep mines
+    junctions:
+      - name: south
+        goes_to: dm2
+        description: You see nothing but darkness in the south
+    look:
+      - name: north
+        description: You see nothing but darkness in the north
+      - name: east
+        description: You see nothing but darkness in the east
+      - name: west
+        description: You see nothing but darkness in the west
+    moveable_objects:
+      - name: transistor
+        description: It feels like a NPN transistor type BC547C under your feet
+
+  - name: long_hall
+    description: You enter the long hall that goes up highways.
+    junctions:
+      - name: north
+        goes_to: mancave
+        description: Go back in to the mancave if you decide to go north
+      - name: south
+        goes_to: crossroad
+        description: In the south you see a crossroad
+
+  - name: crossroad
+    description: |
+      You are at the crossroads. There is a sign in the middle of the crossroad.
+    look:
+      - name: sign
+        description: You would expect some legendary to see, but it is a very ordinary ANWB sign.
+    read:
+      - name: sign
+        description: |
+          On the sign is written. Go east to seek wisdom, go west to enter Pyongyang at the Amstel. 
+          Only accessible with the right words.
+    junctions:
+      - name: north
+        goes_to: long_hall
+        description: In the north you go back to the long hall
+      - name: east
+        goes_to: route_a6
+        description: East goes to route A6 to Almeria
+      - name: west
+        goes_to: route_a10
+        description: In the west you can go the Amsterdam.
+        blocked: yes
+        spell: ajax forever
+
+  - name: route_a6
+    description: You are the famous route A6 to the east. Exiting isn't it?
+    junctions:
+      - name: west
+        goes_to: crossroad
+        description: In the west is the crossroad
+      - name: east
+        goes_to: almeria
+        description: East leads to the famous city of Almeria
+
+  - name: almeria
+    description: |
+      You enter the Almeria. And quickly you enter a big temple. The holy place for monks and motors of the fast east 
+      at the and of the route A6.
+      Above the holy place is a skull that carries a German helmet of the WW2.
+    look:
+      - name: skull
+        description: A skull of someone who had tried to defeat the Messaging Monster en stranded here.
+    junctions:
+      - name: west
+        goes_to: route_a6
+        description: In the west is the route A6.
+    persons:
+      - name: monk
+        description: And there sits the wise monk. He is meditating on his roaring motor.
+        talk: |
+          The monk pushes the gas handle a couple of times to let the engine roar and then closes his eyes and say,
+          
+          In the system that runs on the penguin is a manual that states, If you can't cast the spells to defeat the dragon
+          then switch to the carrot who has the all the rights to do it.
+          
+          Tell me my novice, what is the phrase?
+    spell:
+      - name: sudo su - root
+        description: spell
+        response: |
+          A flash of light blinds your eyes. Dark clouds fill the room and a deep voice from the smoke says:
+          
+          SECURITY EVENT MONITORING OBSERVED A VIOLATION OF THE RULES AT:
+          ALMERIA_APP_MOTOR: CRITICAL OBJECT MODIFICATION ON 06-06-1666 06:06:06 CEST.
+          
+          ACTIVITY WAS PERFORMED ON HOST ALMERIA (6.66.6.66) FROM ACCOUNT 'MOTOR' TO ACCOUNT ROOT.
+          
+          THE ACTIVITY WAS:
+          'DEFINE QLOCAL(XMITQU.HEAVEN.F1) USAGE(XMITQ) DEFPSIST(NO) TRIGGER TRIGDATA('MONSTER.HEAVEN.F1') TRIGDPTH(1) TRIGTYPE(FIRST) INITQ('SYSTEM.CHANNEL.INITQ')'
+          
+          COULD YOU PLEASE VERIFY AND SHARE YOUR CONCLUSION WITH US?
+          THANK YOU IN ADVANCE FOR COOPERATION.
+          
+          The smoke clears slowly and the monk smiles at you and says, now you have found the wisdom to defeat the
+          messaging monster.
+          Go west to Amsterdam and to be able to enter the road to Amsterdam you must say the words:
+          'ajax forever'
+          Now go and remember, every 1000 mile journey starts with a kick on the accelerator of your motor.
+
+  - name: route_a10
+    description: This is the road to Amsterdam, the A10
+    junctions:
+      - name: east
+        description: In the east is the crossroad
+        goes_to: crossroad
+      - name: west
+        goes_to: vondelpark
+        description: West goes straight in to Amsterdams famous Vondelpark
+  - name: vondelpark
+    description: |
+      You are in the Vondelpark in the heart of Amsterdam. There in the middle of the park is a theatre.
+      It seems that there is a guru from India who gives a Satsang today in the open air. A whole bunch
+      of dreadlocks, old hippies and spiritual eco warriers.
+      A girl in a typical spiritual dress has probably asked a very stupid question because you
+      You see the poor guru rolling with his eyes. He mumbles some spiritual phrases to get rid of her.
+      Then the stage is empty, if you go north you might have a change to sit on the chair besides
+      his throne.
+    junctions:
+      - name: east
+        description: In the east, you go to the route A10
+        goes_to: route_a10
+      - name: north
+        description: |
+          If you go north you will go between a whole bunch of hippies and
+          other people not from this world to the throne besides the guru.
+        goes_to: throne
+      - name: west
+        description: A small walk in western direction, and you will enter the Kinkerstraat.
+          A well known street in Amsterdam
+        goes_to: kinkerstraat
+
+  - name: throne
+    description: |
+      You site on the throne next to the guru. The smell of flowers mixed with incense makes your head a
+      little lighter then normal.
+    persons:
+      - name: guru
+        description: The guru seems like a friendly guy on his throne.
+        talk: |
+          He bends over to you and whispers in your ear:
+          Please, help me. You look like a normal guy to me. To be honest I only do this for the money but
+          everywhere I go now they see me as an spiritual enlightened master. They give me all kinds of meals.
+          But the worst of all is, they are all vegetarians and because I'm from India they serve me the
+          whole time vegetarian curries!
+          I hate these bloody vegetarian curries with all these tasteless lumps of tofu!
+          Please, can you bring me a decent Dutch meal with a good piece of meat?
+        give:
+          object: boerenkool met worst
+          response: |
+            Oh my god, real 'boerenkool met worst'. I love it!
+            Het rips the bag open an starts to eat. A couple of his spiritual followers do look not
+            very happy to you.
+            But the guru doesn't care and with a full mouth he said:
+            I will give you one of the spells that you need to defeat the messaging monster,        
+            DEFINE CHANNEL(MONSTER.HEAVEN.F1) CHLTYPE(SDR) CONNAME('cradle.of.messages(1414)') XMITQ(XMITQU.HEAVEN.F1) SSLCIPH(TLS_RSA_WITH_AES_128_GCM_SHA256) SSLPEER('CN=HEAVEN,O=ING')
+            
+            For the other parts of the spell go west to the tramstop and then south and seek the master of the hills and
+            give him this document. He waits for years on this document to approve that all is safe and secure.
+            To find him, follow the diapers.....
+          receive:
+            - name: document
+              description: You see a document with the seal of the security master. Take
+                care because it is worth a fortune
+              look: |
+                You see a document with the seal of the security master and singed by the holy order of the orange lion.
+                Take care because it is worth a fortune
+
+    junctions:
+      - name: south
+        description: Swinging among a crowd of meditating people you leave the seat besides
+          the throne of the guru
+        goes_to: vondelpark
+  - name: kinkerstraat
+    description: You enter the Kinkerstraat. It is a noisy street.
+    persons:
+      - name: old lady
+        description: An old lady with a shopping bag is walking by
+        talk: |
+          She starts talking and withing a minute she is telling you her about her life and starts complaining
+          about the cats of het neighbours. The kids from the family three house away. About a guy on his racing bike
+          that doesn't take care of his plants in the window. etc...
+          After one and a half hour you she stops to breathe and before she continues you say goodbye and you walk away.
+          You just hear her complaining that people don't talk to each other anymore like before.
+      - name: black guy
+        description: On the corner of the street stands a black guy listening to reggae music
+          music
+        talk: |
+          You look like a UB40 listener. That's no reggae music. Here listen to this.
+          He takes of his headphone and dumps it on your head. As the deep psychedelic music goes to
+          your brain he sticks a big joint in your mouth.
+          Oke, you are really in Amsterdam now.
+      - name: hipster
+        description: A hipster on a cargo bike is trying his brand new 8mm film camera.
+        talk: |
+          I don't have time for you now. I'm really in a hurry. My vegetarian goatmilk container barista bar
+          must be opened. My delivery of goi berries and japanese peanut butter seeds were to late.
+          Man, those suppliers do not know what normal food is?
+      - name: yuppie
+        description: A yuppie in his Armani suite is talking a little to loud over his
+          iPhone 20 version B about his successes on the stock market
+        talk: |
+          He seems to ignore you, waits a moment and then continues the conversation on his phone.
+          'Floris-Karel listen man, I have a normal guy who tries to talk to mee, can you imagine?
+          ....
+          Yeh, these locals here always try to get our attention...
+          ....
+          I know, funny isn't it? You know I will give him 5 euro's. See how he will respond...
+          
+          Then he gives you 5 euro's
+        receive:
+          - name: 5 euro
+            description: A billet of 5 euro
+            look: A billet of 5 euro
+      - name: jogging girl
+        description: You can just avoid a collision with a blond jogging girl. She looked
+          pissed off and shows her middle finger to you
+        talk: |
+          Go away,pervert! Or I scan your image, find you on facebook and put you on #metoo.
+          I'll make sure that you are fully cancelled and banned from every social media site!
+          You will hear from my lawyer!
+          My god, she must be living here.
+    junctions:
+      - name: east
+        description: With a small walk in eastern direction you enter the Vondelpark.
+        goes_to: vondelpark
+      - name: west
+        goes_to: tramstop
+        description: In the west you see the tramstop.
+      - name: north
+        goes_to: supermarket
+        description: If you go north you enter the supermarket.
+
+  - name: supermarket
+    description: |
+      You are in de supermarket. It is very busy with a lot of shopping people.
+      Right besides the entry stands a lady who is selling a new product.
+    persons:
+      - name: lady
+        description: A lady who is promoting a new product
+        talk: |
+          Hellooooo! Do you like to buy our newest product! We sell ' Lunox Boerenkool met Worst�'. You know
+          these days there are a lot of additions added to our food, which are v���ry unhealthy!
+          And in our laboratory we have developed a very special and method to remove all the
+          additions from our 'Lunox Boerenkool met Worst�' so that we only keep the potatoes, boerenkool and worst.
+          Wonderful isn't it!!
+          A test package for one meal is 5 euro. The price is a little higher then the ordinary
+          'Lunox Boerenkool met Worst classic�' we sell. But you know, your health is priceless!
+        give:
+          object: 5 euro
+          response: |
+            Thank you and here is your 'Boerenkool met Worst�. I will really like it!
+            And she hands you over a sealed bag with 'Boerenkool met Worst�'
+          receive:
+            - name: boerenkool met worst
+              description: A sealed bag with 'Boerenkool met Worst�'
+              look: Yeah, this is a sealed bag with normal 'boerenkool met worst', easy
+                to make it yourself.
+    junctions:
+      - name: south
+        goes_to: kinkerstraat
+        description: When you go south you will leave the supermarket and enter the Kinkerstraat
+
+  - name: tramstop
+    description: tramstop. Tot east is the kinkerstraat. South is the station
+    junctions:
+      - name: east
+        goes_to: kinkerstraat
+        description: In the east is the Kinkerstraat
+      - name: south
+        goes_to: station
+        description: If you go you south you will take the tram to a small station.
+
+  - name: station
+    description: |
+      You enter at a small station. Is it called Haarlemmermeer station and
+      it had one rail called perron 4 7/8.
+    junctions:
+      - name: north
+        goes_to: tramstop
+        description: If you go you north you will take the tram to a tramstop near the kinkerstraat.
+      - name: south
+        goes_to: h1
+        description: In the south you see the hills
+
+  - name: h1
+    description: You are at the hills
+    junctions:
+      - name: north
+        goes_to: station
+        description: In the north is a tram station
+      - name: east
+        goes_to: h4
+        description: You go deeper in to the hills.
+      - name: south
+        goes_to: h2
+        description: You go deeper in to the hills.
+      - name: west
+        goes_to: h1
+        description: You go deeper in to the hills.
+    moveable_objects:
+      - name: dirty diaper
+        description: on the ground lies a dirty diaper
+
+  - name: h2
+    description: You are at the hills
+    junctions:
+      - name: north
+        goes_to: h1
+        description: You go deeper in to the hills.
+      - name: east
+        goes_to: h5
+        description: You go deeper in to the hills.
+      - name: south
+        goes_to: h3
+        description: You go deeper in to the hills.
+      - name: west
+        goes_to: h2
+        description: You go deeper in to the hills.
+
+  - name: h3
+    description: You are at the hills
+    junctions:
+      - name: north
+        goes_to: h2
+        description: You go deeper in to the hills.
+      - name: east
+        goes_to: h6
+        description: You go deeper in to the hills.
+      - name: south
+        goes_to: h3
+        description: You go deeper in to the hills.
+      - name: west
+        goes_to: hilltop
+        description: You go deeper in to the hills.
+    moveable_objects:
+      - name: cotton diaper
+        description: There lies a cotton diaper. Someone tries to be retro
+
+  - name: h4
+    description: You are at the hills
+    junctions:
+      - name: north
+        goes_to: h4
+        description: You go deeper in to the hills.
+      - name: east
+        goes_to: h7
+        description: You go deeper in to the hills.
+      - name: south
+        goes_to: h5
+        description: You go deeper in to the hills.
+      - name: west
+        goes_to: h1
+        description: You go deeper in to the hills.
+    moveable_objects:
+      - name: green diaper
+        description: On the ground lies a green diaper. You do not want to know why it is green
+
+  - name: h5
+    description: You are at the hills
+    junctions:
+      - name: north
+        goes_to: h4
+        description: You go deeper in to the hills.
+      - name: east
+        goes_to: h8
+        description: You go deeper in to the hills.
+      - name: south
+        goes_to: h6
+        description: You go deeper in to the hills.
+      - name: west
+        goes_to: h2
+        description: You go deeper in to the hills.
+    moveable_objects:
+      - name: diaper
+        description: On the ground lies an unused diaper.
+
+  - name: h6
+    description: You are at the hills
+    junctions:
+      - name: north
+        goes_to: h5
+        description: You go deeper in to the hills.
+      - name: east
+        goes_to: h9
+        description: You go deeper in to the hills.
+      - name: south
+        goes_to: h6
+        description: You go deeper in to the hills.
+      - name: west
+        goes_to: h3
+        description: You go deeper in to the hills.
+    moveable_objects:
+      - name: stinking diaper
+        description: You smell a sticking diaper. From now on, you will never eat French cheese again.
+
+  - name: h7
+    description: You are at the hills
+    junctions:
+      - name: north
+        goes_to: h7
+        description: You go deeper in to the hills.
+      - name: east
+        goes_to: h7
+        description: You go deeper in to the hills.
+      - name: south
+        goes_to: h8
+        description: You go deeper in to the hills.
+      - name: west
+        goes_to: h4
+        description: You go deeper in to the hills.
+
+  - name: h8
+    description: You are at the hills
+    junctions:
+      - name: north
+        goes_to: h7
+        description: You go deeper in to the hills.
+      - name: east
+        goes_to: bicycle_hill
+        description: You go deeper in to the hills.
+      - name: south
+        goes_to: h9
+        description: You go deeper in to the hills.
+      - name: west
+        goes_to: h5
+        description: You go deeper in to the hills.
+    moveable_objects:
+      - name: carton box
+        description: A carton box lies on the ground
+
+
+  - name: h9
+    description: You are at the hills
+    junctions:
+      - name: north
+        goes_to: h8
+        description: You go deeper in to the hills.
+      - name: east
+        goes_to: h9
+        description: You go deeper in to the hills.
+      - name: south
+        goes_to: h9
+        description: You go deeper in to the hills.
+      - name: west
+        goes_to: h6
+        description: You go deeper in to the hills.
+
+  - name: hilltop
+    description: You enter the top of the hills.
+    junctions:
+      - name: east
+        goes_to: h3
+        description: In the east are the hills
+    persons:
+      - name: master of the hills
+        description: |
+          There stands the master of hills. But then you see a pile of diapers, used diapers. You wonder why the master
+          of the hills stands beneath a pile of used diapers.
+        talk: |
+          QUIET!!! He screams. My little baby needs to sleep!
+          Without my security statement I cannot guarantee the safety that he needs to get asleep. I'm waiting now
+          for two years on this stupid document!
+        give:
+          object: document
+          response: |
+            You have the security document! Thank you very very much. I've waited so long on this document:
+            As a thank I will give you the secret part of the spell to defeat the messaging monster:
+            SET AUTHREC PROFILE(DRAIN.THE.MONSTER.PUT.MSG.AQ) OBJTYPE(QUEUE) PRINCIPAL('monster') AUTHADD(BROWSE, INQ, PUT)
+            
+            And now you must go east to the old iron wizard. He and he alone is the most wise man of all. He can give you
+            the final spell that you need to defeat the messaging monster, because he knows the messaging monster for more
+            than 60 years!
+            But leave mortal, leave now and go east ...... cause my little baby needs a clean diaper.
+            
+            Now that was a good advice, you start to smell something
+
+  - name: bicycle_hill
+    description: |
+      You see an large hill that exists of all kind of old iron bicycle parts. A path leads west to the top of the hill.
+      And there on the top you see the castle of the old iron wizard. The gate of his mighty castle is guarded but two
+      cats.
+    junctions:
+      - name: west
+        goes_to: In the west you see the hills
+      - name: east
+        goes_to: castle
+        blocked: yes
+        unblock: bicycle wheel
+        object_name: gate
+    persons:
+      - name: cats
+        description: Two mean looking cats with sharp nails. They will not let you pass
+        talk: Grrrrrrrrr! You just can avoid a hit of a claw
+        give:
+          object: carton box
+          response: Mieuw! And two happy cats jumps in to the carton box
+          receive:
+            - name: bicycle wheel
+              description: Under on of the cats was a bicycle wheel. You pick it up quickly.
+              look: This is a real carbon fiber lightweight wheel.
+
+  - name: castle
+    description: |
+      You are in the castle of the old iron wizard on the bicycle hill. Every wall has some bicycle like trophees on the
+      wall. In the corner you see a switched off mainframe
+    junctions:
+      - name: west
+        goes_to: bicycle_hill
+        description: In the west is the bicycle hill.
+      - name: east
+        description: In the east is a big door.
+        goes_to: entrance_cave
+        blocked: yes
+        spell: open sesame
+    persons:
+      - name: old iron wizard
+        description: There stands the old Iron wizard. He is busy upgrading his High Power Not Stop tandem.
+        talk: |
+          He looks up and sees you.
+          Hello young novice, you came to defeat the Messaging Monster?
+          Let me tell you short about it's origins
+          WebSphere MQ is the market-leading messaging integration middleware product. Originally introduced in
+          1993 (under the MQSeries name), it always focused on providing an available, reliable, scalable, secure, and
+          high-performance transport mechanism to address the requirements that we discussed in the previous chapter.
+          WebSphere MQ always connected systems and applications, regardless of the platform or environment. It is
+          essential to be able to communicate between a GUI desktop applicationthat is running on Microsoft Windows and
+          an IBM CICS® transaction that is running on IBM z/OS®. That value of universality is core to the product, and
+          this value has not changed in all the time that it has been available. What has changed is the range of
+          environments in which WebSphere MQ can or must live. There are newer platforms, environments, requirements for
+          qualities of service (QoS), and newer messaging patterns. Security has become more important as systems are made
+          accessible to more users across an enterprise and beyond it. Performance and scalability requirements have
+          increased. Regulators and auditors have imposed more controls on what can or must be done. Systems, which
+          need access to enterprise data, have become bothmore powerful (faster, more processors, and so on) and much
+          less powerful (sensors, tablets,and mobile phones).Therefore, WebSphere MQ has evolved.There are now more
+          ways for applications to reach a WebSphere MQ queue manager and toaccess any existing applications that were
+          already WebSphere MQ enabled. Newapplications can be written that use alternative interfaces and still maximize
+          the reliability andperformance of WebSphere MQ. Those new applications do not need a completereplacement of
+          existing infrastructure. The applications work with what you already have andwhat you know how to manage.At the
+          same time as adding new interfaces, protocols, and environments, a large amount ofthe WebSphere MQ workload
+          continues to be executed in mainframe-based data centers.The efficient use of, and integration with, the
+          capabilities of the IBM z hardware and operatingsystems is critical. As this book shows, WebSphere MQ V7.1
+          for z/OS significantly improvesthe performance, capacity, and availability that can be achieved when running
+          in a sysplexWebSphere MQ V7.0, in 2008, was a major release with significantly enhanced applicationprogramming
+          interfaces (APIs) and a fully integrated publish/subscribe component. Theseenhancements made that messaging
+          pattern a first-class way of working. WebSphere MQV7.0.1, in 2009, was primarily an update to improve
+          availability and performance.Even though there was nearly a 2 ½ year gap before V7.1 in 2011, there were
+          stillincremental improvements. The improvements were to both the core WebSphere MQ productand new products.
+          WebSphere MQ File Transfer Edition is a solution for the integration of applications that arefile-based,
+          making it possible to reliably transfer files between systems. WebSphere MQ FileTransfer Edition provides
+          management, monitoring, and security of those transfers.WebSphere MQ File Transfer Edition uses existing
+          skills and infrastructure as it usesWebSphere MQ as its backbone transfer medium.Advanced Message Security (AMS)
+          is a solution to the problem of securing messagecontents, even when those messages are at rest in queues or logs.
+          Several regulatoryframeworks require data to be protected from viewing, changing, or being stored on disks inthe
+          clear even during processing. One example of these regulations is the Payment CardIndustry (PCI) for dealing
+          with credit card data. There are other regulatory bodies for othertypes of data, for example, healthcare, that
+          have similar requirements.Both WebSphere MQ File Transfer Edition and WebSphere MQ Advanced Message Securityhave
+          been integrated into the WebSphere MQ V7.5 package. WebSphere MQ File Transferfunctionally identical but that
+          have different licensing terms. The WebSphere MQ Advancedoffering can be ordered under a single part number
+          and price and it includes licenses to usethe Managed File Transfer and AMS features. The original V7.5 offering
+          has these features asseparately orderable and priced components.Data is transferred between applications in
+          messages. A message is a container that consistsof three parts: WebSphere MQ Message Descriptor (MQMD):
+          Identifies the message and containsadditional control information. Examples of additional information are the
+          type of messageand the priority that is assigned to the message by the sending application. Message properties:
+          An optional set of user-definable elements that describes themessage without being part of the payload.
+          Applications that receive messages canchoose whether to inspect these properties. Message data: Contains the
+          application data. The structure of the data is defined by theapplication programs that use it, and
+          WebSphere MQ is largely unconcerned with itsformat or content.The nodes, within a WebSphere MQ message queuing
+          infrastructure, are called queuemanagers. The queue manager is responsible for accepting and delivering
+          messages.Multiple queue managers can run on a single physical server or on a wide network of serversacross a
+          large variety of different hardware and operating system platforms.Each queue manager provides facilities for
+          reliable messaging.The queue manager maintains queues of all messages that are waiting to be processed orrouted.
+          Queue managers are tolerant of failures and maintain the integrity of business-criticaldata that flows through
+          the message queuing infrastructure. In the event of failures, such as afailure of the queue manager, machine
+          failures, or a power loss, messages can be recovered.Recovery occurs when the queue manager is restarted and
+          any transactions are brought to aconsistent state.The queue managers, within the infrastructure, are connected
+          by logical channels over acommunications network. Messages automatically flow across these channels from the
+          initialproducer of a message to the eventual consumer of that message based on the configurationof the queue
+          managers in the infrastructure. Changes can be made to the configuration ofqueues and channels transparently
+          for the applications. For example, a receiving applicationcan be moved to a new machine, and a route to that
+          machine can be defined without needingany changes to sending applications.Two applications that must
+          communicate, whether hosted on the same machine or separatemachines, might have originally been designed to do
+          so directly and synchronously. This wasa common messaging technique that was used before the introduction of
+          WebSphere MQand is still used often. For example, using HTTP as a communications protocol is asynchronous
+          operation.In the synchronous model, the two applications exchange information by waiting for thepartner
+          application to become available and then sending the information. If the partnerapplication is unavailable for
+          any reason, including if it is busy communicating with otherapplications, the information cannot be sent.All
+          intercommunication failures that can occur between the two applications must beconsidered individually by the
+          applications. This consideration happens whether theapplications are on the same machine or on different
+          machines that are connected by anetwork. The process requires a protocol for sending the information,
+          confirming receipt ofthe information, and sending any subsequent reply.Placing a WebSphere MQ infrastructure
+          between the two applications allows thiscommunication to become asynchronous. One application places
+          information for the partnerin a message on a queue, and the partner application processes this information
+          when it isavailable to do so. If required, it can then send a reply message back to the originator.
+          Theapplications do not need to be concerned with communication failures or recovery. A WebSphere MQ client is
+          a lightweight component of WebSphere MQ that does not requirethe queue manager runtime code to reside on the
+          client system. It enables an application,running on a machine where only the client runtime code is installed,
+          to connect to a queuemanager that is running on another machine and perform messaging operations with thatqueue
+          manager. Such an application is called a client and the queue manager is referred toas a server.Using a
+          WebSphere MQ client is an effective way of implementing WebSphere MQmessaging and queuing. The following
+          benefits are available by using a WebSphere MQclient: There is no need for a licensed WebSphere MQ server
+          installation on the client machine. Hardware requirements on the client system are reduced. System
+          administration requirements on the client system are reduced. An application that uses a WebSphere MQ client
+          can connect to multiple queue managerson different machines.There are several implementations of the
+          WebSphere MQ client that allow work in differentlanguage environments, including Java and .Net classes. There
+          is no client for z/OS. On the z/OS platform, applications can only connect to queue managers within the same
+          logicalpartition (LPAR).
+          I want to give you the final spell. But the spells is in the safe and I not know the password anymore.
+          Not many people pass by these days who survived the road to my castle.
+          But I thought is was the name of this guy who won the Tour de France in 1980.
+    spell:
+      - name: Joop Zoetemelk
+        description: spell
+        response: |
+          Yes, that was his name!
+          He opens the safe, picks up a paper and says:
+          SET AUTHREC OBJTYPE(QMGR) PRINCIPAL('monster') AUTHADD(CONNECT,INQ)
+          
+          If you want to open the door to the cave of the messaging monster say 'open sesame'
+      - name: open sesame
+        description: spell
+        response: The old big door in the east crack and opens the lock
+
+  - name: entrance_cave
+    description: |
+      You are in the cave of the messaging monster. It is dark here. The smell of sulphur and rotten bodies fill the air.
+    junctions:
+      - name: west
+        description: In the west is the entrance to the castle of the old iron wizard
+        goes_to: castle
+      - name: east
+        description: In the east must be the messaging monster
+        goes_to: messaging_monster
+
+  - name: messaging_monster
+    description: |
+      You enter the main cave of the messaging monster.
+    junctions:
+      - name: west
+        goes_to: entrance_cave
+        description: In the west is a cave. Go there if you do not dare to fight the messaging monster
+      - name: east
+        description: In the east is a big pile of rocks
+        goes_to: endpoint
+        blocked: yes
+        spell: REFRESH QMGR
+    monster:
+      - name: Messaging monster
+        description: |
+          There is the messaging monster. A huge beast sitting on a pile of all kind of strange things. You see books of
+          Franz Kafka. CD-Rom's with a Big Blue logo. Some flashlights that pulsate like a pulsar. All crushed under
+          it's enormous weight.
+          Quick, cast the six spell to defeat this horrible beast!
+        life: 6
+        when_dead_phrase: |
+          That was the final blow. The monster screams and cries...
+          And with an enormous bang it hits the floor. Pieces of rock fall from the ceiling. Clouds of dust fills the
+          case. And a red hat flies over your head.
+          And is a stream of beautiful light the messages leave slowly the monster. All the captured messages that it
+          had kept for so many years finally have a channel to escape. Now they can reach their final destination.
+          But suddenly there is a last move from the monster. And with it last breath is screams
+          "REFRESH QMGR"
+        damaging_spells:
+          - DEFINE QALIAS(DRAIN.THE.MONSTER.PUT.MSG.AQ) DEFPSIST(NO) TARGET(DRAIN.THE.MONSTER.MSG.RQ)
+          - DEFINE QREMOTE(DRAIN.THE.MONSTER.MSG.RQ) DEFPSIST(NO) RNAME('LOCALQ.APP2') RQMNAME('HEAVEN') XMITQ('XMITQU.HEAVEN.F1')
+          - DEFINE QLOCAL(XMITQU.HEAVEN.F1) USAGE(XMITQ) DEFPSIST(NO) TRIGGER TRIGDATA('MONSTER.HEAVEN.F1') TRIGDPTH(1) TRIGTYPE(FIRST) INITQ('SYSTEM.CHANNEL.INITQ')
+          - DEFINE CHANNEL(MONSTER.HEAVEN.F1) CHLTYPE(SDR) CONNAME('cradle.of.messages(1414)') XMITQ(XMITQU.HEAVEN.F1) SSLCIPH(TLS_RSA_WITH_AES_128_GCM_SHA256) SSLPEER('CN=HEAVEN,O=ING')
+          - SET AUTHREC PROFILE(DRAIN.THE.MONSTER.PUT.MSG.AQ) OBJTYPE(QUEUE) PRINCIPAL('monster') AUTHADD(BROWSE, INQ, PUT)
+          - SET AUTHREC OBJTYPE(QMGR) PRINCIPAL('monster') AUTHADD(CONNECT,INQ)
+    spell:
+      - name: REFRESH QMGR
+        description: spell
+        response: The rocks tumble down behind the corps of the messaging monster and you see the clear blue sky.
+
+  - name: endpoint
+    description: |
+      You finally leave this world, that is now free of the messaging monster.
+      Congratulations, you have won.
+    junction:
+      - name: west
+        goes_to: messaging_monster
+

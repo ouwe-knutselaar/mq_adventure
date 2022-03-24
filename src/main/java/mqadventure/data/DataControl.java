@@ -7,7 +7,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,12 +26,7 @@ public class DataControl {
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT,false);
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         try {
-            //adventure = mapper.readValue(new File(getClass().getClassLoader().getResource("map_original.yaml").getPath()),Adventure.class);
-
-            InputStream is = this.getClass().getClassLoader().getResourceAsStream("map_original.yaml");
-
-            adventure = mapper.readValue(this.getClass().getClassLoader().getResourceAsStream("map_original.yaml"),Adventure.class);
-            //adventure = mapper.readValue(new File(getClass().getClassLoader().getResource("map_original.yaml").getPath()),Adventure.class);
+            adventure = mapper.readValue(this.getClass().getClassLoader().getResourceAsStream("map_start.yml"),Adventure.class);
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
@@ -42,14 +36,11 @@ public class DataControl {
     public void loadYamlFile(String yamlFile) {
         try {
             adventure = mapper.readValue(new File(sourceDir+"\\"+yamlFile+".yaml"),Adventure.class);
-
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
         }
     }
-
-
 
     public void writeYamlFile(String yamlFile) {
         try {
@@ -85,7 +76,6 @@ public class DataControl {
         for(Room room :adventure.getRooms()) {
             if(room.getName().equals(roomName))return true;
         }
-
         return false;
     }
     public void setCurrentRoomByName(String roomName){
@@ -126,7 +116,6 @@ public class DataControl {
     public List<MoveableObjects> getObjectFromInventory(String objectName){
         return adventure.getInventory().stream().filter(object -> object.getName().equals(objectName)).collect(Collectors.toList());
     }
-
 
 
 }

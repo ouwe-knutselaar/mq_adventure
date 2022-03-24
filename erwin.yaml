@@ -44,14 +44,14 @@ rooms:
   read: []
   monster: []
 - name: "great_hall"
-  description: "You are in a great Hall. The roof is made of glass en you can see\
+  description: "You are in a great Hall. The roof is made of glass and you can see\
     \ the blue sky. In the middle is a statue of a\nbig lion.\nOn the statue is a\
     \ plate with something written on it. The is a door in the south side of the wall.\n\
     In the north you see an opening in the wall that leads to a jungle\nIn the east\
     \ you see an golden door\n"
   junctions:
   - name: "north"
-    description: "You enter the deep green jungle if you go norh"
+    description: "You enter the deep green jungle if you go north"
     goes_to: "j1"
     blocked: "no"
     unblock: "none"
@@ -75,9 +75,9 @@ rooms:
   - name: "plate"
     description: "A plate with letters on it"
   - name: "statue"
-    description: "A big lion, it probalby was once orange"
+    description: "A big lion, it probably  was once orange"
   - name: "lion"
-    description: "A big lion, it probalby was once orange"
+    description: "A big lion, it probably was once orange"
   moveable_objects: []
   persons: []
   spell: []
@@ -214,7 +214,7 @@ rooms:
   read: []
   monster: []
 - name: "j4"
-  description: "Still in the jungle and beautifull nature. But all you want is a good\
+  description: "Still in the jungle and beautiful nature. But all you want is a good\
     \ glass of cold beer"
   junctions:
   - name: "north"
@@ -225,14 +225,14 @@ rooms:
     object_name: ""
     spell: ""
   - name: "east"
-    description: "And east is green, green green. Wherever you go"
+    description: "And east is green, green, green. Wherever you go"
     goes_to: "j7"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "south"
-    description: "There is a way south, en then...? Jungle of course"
+    description: "There is a way south, and then...? Jungle of course"
     goes_to: "j4"
     blocked: "no"
     unblock: "none"
@@ -249,7 +249,7 @@ rooms:
   moveable_objects:
   - name: "beerpull"
     description: "On the ground lies a beerpull"
-    look: "The beerpull is empty. The ants drank everthing."
+    look: "The beerpull is empty. The ants drank everything."
   persons: []
   spell: []
   read: []
@@ -306,7 +306,7 @@ rooms:
     object_name: ""
     spell: ""
   - name: "east"
-    description: "East, well. Why not? Ttry it"
+    description: "East, well. Why not? Try it"
     goes_to: "j9"
     blocked: "no"
     unblock: "none"
@@ -451,16 +451,17 @@ rooms:
   look: []
   moveable_objects:
   - name: "cdrom"
-    description: "A cdrom that contains an installation of OS/2 warp 4.0"
+    description: "A cdrom that contains an installation of OS/2 warp 4.0 is laying\
+      \ on a coconut"
     look: "Oke, this OS/2 Warp had also fixpak 16 delivered."
   persons: []
   spell: []
   read: []
   monster: []
 - name: "palace"
-  description: "You are in the palace of the Queen of the jungle. Finally somehing\
-    \ else then this bloody jungle. It is a cool place\nwith nice flowers and  litlle\
-    \ fountians.\n"
+  description: "You are in the palace of the Queen of the jungle. Finally something\
+    \ else then this bloody jungle. It is a cool place\nwith nice flowers and little\
+    \ fountains.\n"
   junctions:
   - name: "west"
     description: "If you go west you leave the palace and go back to the jungle"
@@ -471,23 +472,23 @@ rooms:
     spell: ""
   look:
   - name: "queen"
-    description: "The queen is a beautyfull woman with golden hair. You heart beats\
+    description: "The queen is a beautiful woman with golden hair. You heart beats\
       \ suddenly a little faster."
   moveable_objects: []
   persons:
   - name: "queen"
-    description: "On an throne sits the most beautifull woman you have ever seen.\n\
+    description: "On an throne sits the most beautiful woman you have ever seen.\n\
       You see that she reads a book called: \"Using Azure pipelines with Ansible to\
-      \ create Python scripts that could\ndefeat the Messaging Monster\"\nA beautifull\
+      \ create Python scripts that could\ndefeat the Messaging Monster\"\nA beautiful\
       \ woman that is also handy with computers! Your heart misses a beat when you\
       \ realize that.\n"
-    talk: "She looks and sees you, her face turns sad and she says:\nMy little cute\
-      \ puppy. He saw the Messaging Monster an runned away in to the jungle.\nPlease\
+    talk: "She looks and sees you, her face turns sad, and she says:\nMy little cute\
+      \ puppy. He saw the Messaging Monster and runned away into the jungle.\nPlease\
       \ help me to find it.\nI will reward you with everything you wish and the first\
       \ spell to defeat the Messaging Monster.\n"
     give:
       object: "puppy"
-      response: "Oh, my cute puppy! I'm so happy!\nThen she jump of her throne, opens\
+      response: "Oh, my cute puppy! I'm so happy!\nThen she jumps of her throne, opens\
         \ her arms and runs towards you.\nYou place the puppy on the ground and open\
         \ you arms. All your dreams will come true just by holding her in your\narms\
         \ for ever and ever......\n\nShe stops just in front of you, quickly picks\
@@ -507,7 +508,7 @@ rooms:
   monster: []
 - name: "bridge"
   description: "A large bridge that goes east trough the clouds over the sea. You\
-    \ cannot see whats on the other side."
+    \ cannot see what’s on the other side."
   junctions:
   - name: "east"
     description: "If you go east you will cross this large bridge. A big walk."
@@ -533,7 +534,7 @@ rooms:
   read: []
   monster: []
 - name: "master_island"
-  description: "You enter the island. It is a tropical island with beautifull beaches\
+  description: "You enter the island. It is a tropical island with beautiful beaches\
     \ and houses. Palm trees wave in the wind.\nAnd in there stand a wooden plate\
     \ with something written on it.\n"
   junctions:
@@ -546,15 +547,15 @@ rooms:
     object_name: ""
     spell: ""
   - name: "south"
-    description: "In the south is a beautifull beach."
+    description: "In the south is a beautiful beach."
     goes_to: "beach2"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "east"
-    description: "Is the east look see the door to a nice appartment"
-    goes_to: "appartment"
+    description: "Is the east look see the door to a nice apartment"
+    goes_to: "apartment"
     blocked: "yes"
     unblock: "key"
     object_name: "door"
@@ -570,7 +571,7 @@ rooms:
       I was practicing on the beach when a sudden wave washed away the key code of\
       \ my house.\nSo it is lost and I'm afraid that I can never enter my house again.\n\
       Please can you help me find the code?\nI cold call the fireman to put me on\
-      \ the balcony, but what if my neighbors see that?\nSo emberrasing!\nYou see,\
+      \ the balcony, but what if my neighbours see that?\nSo embarrassing!\nYou see,\
       \ that is no option for me.\n"
     give:
       object: "badge"
@@ -579,36 +580,36 @@ rooms:
         \ them. Thanks man, now I can enter my house.\nI will give you the second\
         \ spell to defeat the messaging monster:\nDEFINE QREMOTE(DRAIN.THE.MONSTER.MSG.RQ)\
         \ DEFPSIST(NO) RNAME('LOCALQ.APP2') RQMNAME('HEAVEN') XMITQ('XMITQU.HEAVEN.F1')\n\
-        \nOh yeah, and here is the key to my appartment. Please open it, you're welcome.\n"
+        \nOh yeah, and here is the key to my apartment. Please open it, you're welcome.\n"
       receive:
       - name: "key"
-        description: "the key of the appartment"
+        description: "the key of the apartment"
     receive: []
   spell: []
   read:
   - name: "plate"
-    description: "Welcome to the islands of the geen cape.\nYou want to hear a tail\
+    description: "Welcome to the islands of the green cape.\nYou want to hear a tail\
       \ about a cluster of messaging monsters? Talk to the Master of the island!\n"
   monster: []
 - name: "beach2"
-  description: "You are on a nice beach just next to the apppartment"
+  description: "You are on a nice beach just next to the apartment"
   junctions:
   - name: "north"
-    description: "In the north is the appartment of the Master of the island"
+    description: "In the north is the apartment of the Master of the island"
     goes_to: "master_island"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "east"
-    description: "In the east is more beautifull beach"
+    description: "In the east is more beautiful beach"
     goes_to: "beach3"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "Also in the west you see a beautifull beach"
+    description: "Also in the west you see a beautiful beach"
     goes_to: "beach1"
     blocked: "no"
     unblock: "none"
@@ -623,9 +624,9 @@ rooms:
     spell: ""
   look:
   - name: "east"
-    description: "in the east you see more beautifull beaches"
+    description: "in the east you see more beautiful beaches"
   - name: "west"
-    description: "in the west you see more beautifull beaches"
+    description: "in the west you see more beautiful beaches"
   - name: "south"
     description: "in the south are the waves between see and land"
   moveable_objects: []
@@ -637,7 +638,7 @@ rooms:
   description: "You are on a nice beach. There is a pole with a plate on it"
   junctions:
   - name: "east"
-    description: "In the east is a beautifull beach"
+    description: "In the east is a beautiful beach"
     goes_to: "beach2"
     blocked: "no"
     unblock: "none"
@@ -665,21 +666,21 @@ rooms:
   spell: []
   read:
   - name: "plate"
-    description: "The plays says: After this sign starts the nudist area.\nYou start\
-      \ looking immediatly to the beach. To bad, it is empty..\n"
+    description: "The plate says: After this sign starts the nudist area.\nYou start\
+      \ looking immediately to the beach. To bad, it is empty..\n"
   monster: []
 - name: "beach3"
   description: "you are on a nice beach"
   junctions:
   - name: "east"
-    description: "in the east you see more beautifull beaches"
+    description: "in the east you see more beautiful beaches"
     goes_to: "beach3"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "in the west you see more beautifull beaches"
+    description: "in the west you see more beautiful beaches"
     goes_to: "beach2"
     blocked: "no"
     unblock: "none"
@@ -716,7 +717,7 @@ rooms:
     object_name: ""
     spell: ""
   - name: "north"
-    description: "In the north are those beautifull beaches again"
+    description: "In the north are those beautiful beaches again"
     goes_to: "beach1"
     blocked: "no"
     unblock: "none"
@@ -757,14 +758,14 @@ rooms:
     spell: ""
   look:
   - name: "east"
-    description: "in the east you see more beautifull beaches and waves"
+    description: "in the east you see more beautiful beaches and waves"
   - name: "west"
-    description: "in the east you see more beautifull beaches and waves"
+    description: "in the east you see more beautiful beaches and waves"
   - name: "north"
     description: "in the north you see the beach"
   moveable_objects:
   - name: "creditcard"
-    description: "You see a creditcard"
+    description: "You see a credit card"
     look: "Is has the code 0000 on it"
   persons: []
   spell: []
@@ -774,14 +775,14 @@ rooms:
   description: "you are on a nice beach by the sea shore"
   junctions:
   - name: "east"
-    description: "in the east you see more beautifull beaches and waves"
+    description: "in the east you see more beautiful beaches and waves"
     goes_to: "seashore3"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "in the east you see more beautifull beaches and waves"
+    description: "in the east you see more beautiful beaches and waves"
     goes_to: "seashore2"
     blocked: "no"
     unblock: "none"
@@ -803,10 +804,10 @@ rooms:
   spell: []
   read: []
   monster: []
-- name: "appartment"
-  description: "You are in a beautifull appartment. But you notice one thing. A lot\
-    \ of things have a logo of the footbal club\nFeyenoord. He has probaly a crush\
-    \ for footbal\n"
+- name: "apartment"
+  description: "You are in a beautiful apartment. But you notice one thing. A lot\
+    \ of things have a logo of the football club\nFeyenoord. He has probably a crush\
+    \ for football\n"
   junctions:
   - name: "west"
     description: "In the west is a door where you can leave this appartement"
@@ -829,11 +830,11 @@ rooms:
   read: []
   monster: []
 - name: "elevator"
-  description: "You are in the elevator of the appatment."
+  description: "You are in the elevator of the apartment."
   junctions:
   - name: "west"
-    description: "In the west is the appartment"
-    goes_to: "appartment"
+    description: "In the west is the apartment"
+    goes_to: "apartment"
     blocked: "no"
     unblock: "none"
     object_name: ""
@@ -908,13 +909,13 @@ rooms:
   - name: "bald man"
     description: "In the conrner behind a desk sits a bald man with glasses. He is\
       \ busy building something strange.\nThere is a terrible sound in the this. The\
-      \ bald man is probalby busy grinding some piece of scrap metal.\nBut then you\
+      \ bald man is probably busy grinding some piece of scrap metal.\nBut then you\
       \ discover that is comes from the speaker on his desk that plays some music.\
-      \ It sounds like \nEdith Piaf srceaming death metal.\n"
+      \ It sounds like \nEdith Piaf screaming death metal.\n"
     talk: "What... what.... do you say?..\nSorry I will turn the music softer. He\
-      \ goes to a taperecorder and turns the volume down.\nNow get to the point, what\
-      \ do you want and no bullshit please?\nCause I try to automate my automatic\
-      \ automate builder but I dropped a transistor that I realy need somewhere in\n\
+      \ goes to a tape recorder and turns the volume down.\nNow get to the point,\
+      \ what do you want and no bullshit please?\nCause I try to automate my automatic\
+      \ automate builder but I dropped a transistor that I really need somewhere in\n\
       the mines to the east. I need that to automate my automatic automate builder\
       \ so that I can automatically try to\ndefeat the messaging monster.\nCan you\
       \ help me find it?\nHere, take the flashlight.\nAnd that's it. He turns around\
@@ -925,8 +926,8 @@ rooms:
         \ defeat the Messaging Monster.\nBut listen carefully, I only says this once!\n\
         DEFINE QLOCAL(XMITQU.HEAVEN.F1) USAGE(XMITQ) DEFPSIST(NO) TRIGGER TRIGDATA('MONSTER.HEAVEN.F1')\
         \ TRIGDPTH(1) TRIGTYPE(FIRST) INITQ('SYSTEM.CHANNEL.INITQ')\n\nUse it wise,\
-        \ it is a very powerfull spell. One mistake and you will be changed in to\
-        \ a cucumber!\n"
+        \ it is a very powerful spell. One mistake and you will be changed into a\
+        \ cucumber!\n"
       receive: []
     receive: []
   spell: []
@@ -1096,7 +1097,7 @@ rooms:
     object_name: ""
     spell: ""
   - name: "east"
-    description: "East goes to route A6 to almeria"
+    description: "East goes to route A6 to Almeria"
     goes_to: "route_a6"
     blocked: "no"
     unblock: "none"
@@ -1122,7 +1123,7 @@ rooms:
       \ Pyongyang at the Amstel. \nOnly accessible with the right words.\n"
   monster: []
 - name: "route_a6"
-  description: "You are the the famouse route A6 to the east. Exiting isn't it?"
+  description: "You are the famous route A6 to the east. Exiting isn't it?"
   junctions:
   - name: "west"
     description: "In the west is the crossroad"
@@ -1132,7 +1133,7 @@ rooms:
     object_name: ""
     spell: ""
   - name: "east"
-    description: "East leads to the famouse city of Almeria"
+    description: "East leads to the famous city of Almeria"
     goes_to: "almeria"
     blocked: "no"
     unblock: "none"
@@ -1147,7 +1148,7 @@ rooms:
 - name: "almeria"
   description: "You enter the Almeria. And quickly you enter a big temple. The holy\
     \ place for monks and motors of the fast east \nat the and of the route A6.\n\
-    Above the holy place is a skull that carries a german helmet of the WW2.\n"
+    Above the holy place is a skull that carries a German helmet of the WW2.\n"
   junctions:
   - name: "west"
     description: "In the west is the route A6."
@@ -1186,8 +1187,8 @@ rooms:
       \ TRIGTYPE(FIRST) INITQ('SYSTEM.CHANNEL.INITQ')'\n\nCOULD YOU PLEASE VERIFY\
       \ AND SHARE YOUR CONCLUSION WITH US?\nTHANK YOU IN ADVANCE FOR COOPERATION.\n\
       \nThe smoke clears slowly and the monk smiles at you and says, now you have\
-      \ found the wisdom to defeat the\nmessaging monster.\nGo west to amsterdam and\
-      \ to be able to enter the road to amsterdam you must say the words:\n'ajax forever'\n\
+      \ found the wisdom to defeat the\nmessaging monster.\nGo west to Amsterdam and\
+      \ to be able to enter the road to Amsterdam you must say the words:\n'ajax forever'\n\
       Now go and remember, every 1000 mile journey starts with a kick on the accelerator\
       \ of your motor.\n"
   read: []
@@ -1203,7 +1204,7 @@ rooms:
     object_name: ""
     spell: ""
   - name: "west"
-    description: "West goes straigth in to Amsterdams famouse Vondelpark"
+    description: "West goes straight in to Amsterdams famous Vondelpark"
     goes_to: "vondelpark"
     blocked: "no"
     unblock: "none"
@@ -1217,12 +1218,12 @@ rooms:
   monster: []
 - name: "vondelpark"
   description: "You are in the Vondelpark in the heart of Amsterdam. There in the\
-    \ middle of the park is a theater.\nIt seems that there is a guru from India who\
+    \ middle of the park is a theatre.\nIt seems that there is a guru from India who\
     \ gives a Satsang today in the open air. A whole bunch\nof dreadlocks, old hippies\
     \ and spiritual eco warriers.\nA girl in a typical spiritual dress has probably\
-    \ asked a very stupid question because you\nsee the poor guru roling with his\
-    \ eyes. He mumbels some spiritual phrases to get rid of her.\nThen the stage is\
-    \ empty, if you go north you might have a hange to sit on the chair besides\n\
+    \ asked a very stupid question because you\nYou see the poor guru rolling with\
+    \ his eyes. He mumbles some spiritual phrases to get rid of her.\nThen the stage\
+    \ is empty, if you go north you might have a change to sit on the chair besides\n\
     his throne.\n"
   junctions:
   - name: "east"
@@ -1271,13 +1272,13 @@ rooms:
   persons:
   - name: "guru"
     description: "The guru seems like a friendly guy on his throne."
-    talk: "He bends over to you and wispers in your ear:\nPlease, help me. You look\
+    talk: "He bends over to you and whispers in your ear:\nPlease, help me. You look\
       \ like a normal guy to me. To be honest I only do this for the money but\neverywhere\
-      \ I go now they see me as an spiritual enlightend master. They give me all kinds\
-      \ of meals.\nBut the worst of all is, they are all vegeterians and because I'm\
-      \ from India they serve me the\nwhole time vegetarian curries!\nI hate these\
+      \ I go now they see me as an spiritual enlightened master. They give me all\
+      \ kinds of meals.\nBut the worst of all is, they are all vegetarians and because\
+      \ I'm from India they serve me the\nwhole time vegetarian curries!\nI hate these\
       \ bloody vegetarian curries with all these tasteless lumps of tofu!\nPlease,\
-      \ can you bring me a decent ductch meal with a good piece of meat?\n"
+      \ can you bring me a decent Dutch meal with a good piece of meat?\n"
     give:
       object: "boerenkool met worst"
       response: "Oh my god, real 'boerenkool met worst'. I love it!\nHet rips the\
@@ -1331,21 +1332,21 @@ rooms:
   - name: "old lady"
     description: "An old lady with a shopping bag is walking by"
     talk: "She starts talking and withing a minute she is telling you her about her\
-      \ life and starts complaining\nabout the cats of het neighbors. The kids from\
-      \ the family three house aways. About a guy on his racing bike\nthat doesn't\
+      \ life and starts complaining\nabout the cats of het neighbours. The kids from\
+      \ the family three house away. About a guy on his racing bike\nthat doesn't\
       \ take care of his plants in the window. etc...\nAfter one and a half hour you\
-      \ she stops to breathe and before she continues you say goodby and you walk\
-      \ away.\nYou just hear her complaning that people don't talk to each other anymore\
-      \ like before.\n"
+      \ she stops to breathe and before she continues you say goodbye and you walk\
+      \ away.\nYou just hear her complaining that people don't talk to each other\
+      \ anymore like before.\n"
     give:
       object: ""
       response: ""
       receive: []
     receive: []
   - name: "black guy"
-    description: "On the corner of the street stands a black guy listening to reggea\
+    description: "On the corner of the street stands a black guy listening to reggae\
       \ music music"
-    talk: "You look like a UB40 listener. That's no reggea music. Here listen to this.\n\
+    talk: "You look like a UB40 listener. That's no reggae music. Here listen to this.\n\
       He takes of his headphone and dumps it on your head. As the deep psychedelic\
       \ music goes to\nyour brain he sticks a big joint in your mouth.\nOke, you are\
       \ really in Amsterdam now.\n"
@@ -1356,7 +1357,7 @@ rooms:
     receive: []
   - name: "hipster"
     description: "A hipster on a cargo bike is trying his brand new 8mm film camera."
-    talk: "I don't have time for you now. I'm really in a hurry. My vegaterian goatmilk\
+    talk: "I don't have time for you now. I'm really in a hurry. My vegetarian goatmilk\
       \ container barista bar\nmust be opened. My delivery of goi berries and japanese\
       \ peanut butter seeds were to late.\nMan, those suppliers do not know what normal\
       \ food is?\n"
@@ -1371,7 +1372,7 @@ rooms:
     talk: "He seems to ignore you, waits a moment and then continues the conversation\
       \ on his phone.\n'Floris-Karel listen man, I have a normal guy who tries to\
       \ talk to mee, can you imagine?\n....\nYeh, these locals here always try to\
-      \ get our attention...\n....\nI know, funny isn't it? YOu know I will give him\
+      \ get our attention...\n....\nI know, funny isn't it? You know I will give him\
       \ 5 euro's. See how he will respond...\n\nThen he gives you 5 euro's\n"
     give:
       object: ""
@@ -1383,9 +1384,9 @@ rooms:
       look: "A billet of 5 euro"
   - name: "jogging girl"
     description: "You can just avoid a collision with a blond jogging girl. She looked\
-      \ pissed off and shows her middlefinger to you"
+      \ pissed off and shows her middle finger to you"
     talk: "Go away,pervert! Or I scan your image, find you on facebook and put you\
-      \ on #metoo.\nI'll make sure that you are fully canceled and banned from every\
+      \ on #metoo.\nI'll make sure that you are fully cancelled and banned from every\
       \ social media site!\nYou will hear from my lawyer!\nMy god, she must be living\
       \ here.\n"
     give:
@@ -1412,11 +1413,11 @@ rooms:
   persons:
   - name: "lady"
     description: "A lady who is promoting a new product"
-    talk: "Hellooooo! Do you like to buy our newst product! We sell ' Lunox Boerenkool\
+    talk: "Hellooooo! Do you like to buy our newest product! We sell ' Lunox Boerenkool\
       \ met Worst�'. You know\nthese days there are a lot of additions added to our\
-      \ food, which are v���ry unhealthy!\nAnd in our laboratory we have develloped\
-      \ a very special and methode to remove all the\nadditions from our 'Lunox Boerenkool\
-      \ met Worst�' so that we only keep the potatoes, boerenkool and worst.\nWonderfull\
+      \ food, which are v���ry unhealthy!\nAnd in our laboratory we have developed\
+      \ a very special and method to remove all the\nadditions from our 'Lunox Boerenkool\
+      \ met Worst�' so that we only keep the potatoes, boerenkool and worst.\nWonderful\
       \ isn't it!!\nA test package for one meal is 5 euro. The price is a little higher\
       \ then the ordinary\n'Lunox Boerenkool met Worst classic�' we sell. But you\
       \ know, your health is priceless!\n"
@@ -1592,7 +1593,7 @@ rooms:
   look: []
   moveable_objects:
   - name: "cotton diaper"
-    description: "There lies a cotton diaper. Someone tries to be retro.map"
+    description: "There lies a cotton diaper. Someone tries to be retro"
   persons: []
   spell: []
   read: []
@@ -1710,7 +1711,7 @@ rooms:
   look: []
   moveable_objects:
   - name: "stinking diaper"
-    description: "You smell a stiking diaper. From now on, you will never eat french\
+    description: "You smell a sticking diaper. From now on, you will never eat French\
       \ cheese again."
   persons: []
   spell: []
@@ -1843,23 +1844,23 @@ rooms:
   moveable_objects: []
   persons:
   - name: "master of the hills"
-    description: "There stands the master of hills. But then you see a pile of daipers,\
-      \ used daipers. You wonders why the master\nof the hills stands beneath a pile\
-      \ of used daipers.\n"
-    talk: "QUIET!!! He screeams. My little baby needs to sleep!\nWithout my security\
-      \ statement I cannot guarantee the the safety that he needs to get asleep. I'm\
-      \ waiting now\nfor two years on this stupid document!\n"
+    description: "There stands the master of hills. But then you see a pile of diapers,\
+      \ used diapers. You wonder why the master\nof the hills stands beneath a pile\
+      \ of used diapers.\n"
+    talk: "QUIET!!! He screams. My little baby needs to sleep!\nWithout my security\
+      \ statement I cannot guarantee the safety that he needs to get asleep. I'm waiting\
+      \ now\nfor two years on this stupid document!\n"
     give:
       object: "document"
       response: "You have the security document! Thank you very very much. I've waited\
-        \ so long on this document:\nAs a thank I will give you the secrit part of\
+        \ so long on this document:\nAs a thank I will give you the secret part of\
         \ the spell to defeat the messaging monster:\nSET AUTHREC PROFILE(DRAIN.THE.MONSTER.PUT.MSG.AQ)\
         \ OBJTYPE(QUEUE) PRINCIPAL('monster') AUTHADD(BROWSE, INQ, PUT)\n\nAnd now\
         \ you must go east to the old iron wizard. He and he alone is the most wise\
         \ man of all. He can give you\nthe final spell that you need to defeat the\
-        \ messaing monster, because he knows the messaging monster for more\nthan\
+        \ messaging monster, because he knows the messaging monster for more\nthan\
         \ 60 years!\nBut leave mortal, leave now and go east ...... cause my little\
-        \ baby needs a clean daiper.\n\nNow that was a good advice, you start to smmell\
+        \ baby needs a clean diaper.\n\nNow that was a good advice, you start to smell\
         \ something\n"
       receive: []
     receive: []
@@ -1898,14 +1899,14 @@ rooms:
       receive:
       - name: "bicycle wheel"
         description: "Under on of the cats was a bicycle wheel. You pick it up quickly."
-        look: "This is a real carbon fiber lightweigth wheel."
+        look: "This is a real carbon fiber lightweight wheel."
     receive: []
   spell: []
   read: []
   monster: []
 - name: "castle"
   description: "You are in the castle of the old iron wizard on the bicycle hill.\
-    \ Every wall has some bicycle like trofees on the\nwall. In the corner you see\
+    \ Every wall has some bicycle like trophees on the\nwall. In the corner you see\
     \ a switched off mainframe\n"
   junctions:
   - name: "west"
@@ -1928,7 +1929,7 @@ rooms:
   - name: "old iron wizard"
     description: "There stands the old Iron wizard. He is busy upgrading his High\
       \ Power Not Stop tandem."
-    talk: "He looks up and sees you.\nHello young novice, you came to defeat the Messaing\
+    talk: "He looks up and sees you.\nHello young novice, you came to defeat the Messaging\
       \ Monster?\nLet me tell you short about it's origins\nWebSphere MQ is the market-leading\
       \ messaging integration middleware product. Originally introduced in\n1993 (under\
       \ the MQSeries name), it always focused on providing an available, reliable,\
@@ -2069,7 +2070,7 @@ rooms:
   monster: []
 - name: "entrance_cave"
   description: "You are in the cave of the messaging monster. It is dark here. The\
-    \ smell of sulpher and rotten bodies fill the air.\n"
+    \ smell of sulphur and rotten bodies fill the air.\n"
   junctions:
   - name: "west"
     description: "In the west is the entrance to the castle of the old iron wizard"
@@ -2123,7 +2124,7 @@ rooms:
     description: "There is the messaging monster. A huge beast sitting on a pile of\
       \ all kind of strange things. You see books of\nFranz Kafka. CD-Rom's with a\
       \ Big Blue logo. Some flashlights that pulsate like a pulsar. All crushed under\n\
-      it's enormouse weigth.\nQuick, cast the six spell to defeat this horrible beast!\n"
+      it's enormous weight.\nQuick, cast the six spell to defeat this horrible beast!\n"
     life: 6
     damaging_spells:
     - "define qalias(drain.the.monster.put.msg.aq) defpsist(no) target(drain.the.monster.msg.rq)"
@@ -2137,9 +2138,9 @@ rooms:
       \ authadd(browse, inq, put)"
     - "set authrec objtype(qmgr) principal('monster') authadd(connect,inq)"
     when_dead_phrase: "That was the final blow. The monster screams and cries...\n\
-      And with an enormouse bang it hits the floor. Pieces of rock fall from the ceiling.\
+      And with an enormous bang it hits the floor. Pieces of rock fall from the ceiling.\
       \ Clouds of dust fills the\ncase. And a red hat flies over your head.\nAnd is\
-      \ a stream of beautifull light the messages leave slowly the monster. All the\
+      \ a stream of beautiful light the messages leave slowly the monster. All the\
       \ captured messages that it\nhad kept for so many years finally have a channel\
       \ to escape. Now they can reach their final destination.\nBut suddenly there\
       \ is a last move from the monster. And with it last breath is screams\n\"REFRESH\
