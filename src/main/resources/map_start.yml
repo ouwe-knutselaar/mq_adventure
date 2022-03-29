@@ -67,7 +67,7 @@ rooms:
     description: |
       You are in a great Hall. The roof is made of glass and you can see the blue sky. In the middle is a statue of a
       big lion.
-      On the statue is a plate with something written on it. The is a door in the south side of the wall.
+      On the statue is a plate with something written on it. 
       In the north you see an opening in the wall that leads to a jungle
       In the east you see an golden door
     look:
@@ -81,13 +81,13 @@ rooms:
       - name: plate
         description: |
           Go to the jungle in the to the north east corner to meet the queen on the jungle
-          She is the keeper of the first spells. But beware, her beauty will blind your eyes.
+          She is the keeper of the first spell. But beware, her beauty will blind your eyes.
     junctions:
       - name: north
         description: You enter the deep green jungle if you go north
         goes_to: j1
       - name: west
-        description: You go the this door, you really want to go back?
+        description: You go to west trough this door, you really want to go back?
         goes_to: startingpoint
       - name: east
         description: In the east there is a golden door.
@@ -102,16 +102,16 @@ rooms:
     junctions:
       - name: north
         goes_to: j2
-        description: Go deeper between the leaves
+        description: Go north and deeper between the leaves
       - name: east
         goes_to: j4
-        description: Go deeper in the jungle
+        description: Go west and deeper in the jungle
       - name: south
         goes_to: great_hall
-        description: You enter the great hall
+        description: You south to enter the great hall
       - name: west
         goes_to: j1
-        description: Go deeper in the jungle
+        description: Go west and deeper in the jungle
   - name: j2
     description: This jungle is hot and moisty.
     moveable_objects:
@@ -148,7 +148,7 @@ rooms:
     junctions:
       - name: north
         goes_to: j3
-        description: Go deeper in the green hell
+        description: Go deeper in the green hell when you go north
       - name: east
         goes_to: j6
         description: Tarzan was fake, the jungle is horrible in the east
@@ -270,6 +270,7 @@ rooms:
         description: |
           In the east is the entrance to a palace. Two guards, wearing black glasses,
           with a big blue logo on there shields look very angry to you.
+          Be careful, or you will receive an update.
       - name: south
         goes_to: j8
         description: If you go south, you go also deeper in the jungle.
@@ -317,7 +318,9 @@ rooms:
     junctions:
       - name: west
         goes_to: j9
-        description: If you go west you leave the palace and go back to the jungle
+        description: |
+          If you go west you leave the palace and the queen to go back to the jungle.
+          Are you emotionally stable enough to leave her?
 
   - name: bridge
     description: A large bridge that goes east trough the clouds over the sea. You cannot see what’s on the other side.
@@ -470,7 +473,7 @@ rooms:
         description: In the east is more seashore
       - name: west
         goes_to: seashore1
-        description: In the east is also more seashore
+        description: In the west is also more seashore
       - name: north
         goes_to: beach2
         description: North you go back to the beach
@@ -486,7 +489,7 @@ rooms:
         description: in the east you see more beautiful beaches and waves
       - name: west
         goes_to: seashore2
-        description: in the east you see more beautiful beaches and waves
+        description: in the west you see more beautiful beaches and waves
       - name: north
         goes_to: beach3
         description: in the north you see the beach
@@ -651,7 +654,7 @@ rooms:
       You are at the crossroads. There is a sign in the middle of the crossroad.
     look:
       - name: sign
-        description: You would expect some legendary to see, but it is a very ordinary ANWB sign.
+        description: You would expect some legendary sign to see, but it is a very ordinary ANWB plate.
     read:
       - name: sign
         description: |
@@ -795,8 +798,8 @@ rooms:
 
     junctions:
       - name: south
-        description: Swinging among a crowd of meditating people you leave the seat besides
-          the throne of the guru
+        description: |
+          Go south trough a swinging crowd of meditating people .
         goes_to: vondelpark
   - name: kinkerstraat
     description: You enter the Kinkerstraat. It is a noisy street.
@@ -815,7 +818,7 @@ rooms:
         talk: |
           You look like a UB40 listener. That's no reggae music. Here listen to this.
           He takes of his headphone and dumps it on your head. As the deep psychedelic music goes to
-          your brain he sticks a big joint in your mouth.
+          your brain, he sticks a big joint in your mouth.
           Oke, you are really in Amsterdam now.
       - name: hipster
         description: A hipster on a cargo bike is trying his brand new 8mm film camera.
@@ -889,7 +892,7 @@ rooms:
         description: When you go south you will leave the supermarket and enter the Kinkerstraat
 
   - name: tramstop
-    description: tramstop. Tot east is the kinkerstraat. South is the station
+    description: You are at the tramstop at the kinkerstraat
     junctions:
       - name: east
         goes_to: kinkerstraat
@@ -918,13 +921,13 @@ rooms:
         description: In the north is a tram station
       - name: east
         goes_to: h4
-        description: You go deeper in to the hills.
+        description: To the east. You go deeper in to the hills.
       - name: south
         goes_to: h2
-        description: You go deeper in to the hills.
+        description: To the south. You go deeper in to the hills.
       - name: west
         goes_to: h1
-        description: You go deeper in to the hills.
+        description: To the west. You go deeper in to the hills.
     moveable_objects:
       - name: dirty diaper
         description: on the ground lies a dirty diaper
@@ -934,32 +937,32 @@ rooms:
     junctions:
       - name: north
         goes_to: h1
-        description: You go deeper in to the hills.
+        description: To the north. You go deeper in to the hills.
       - name: east
         goes_to: h5
-        description: You go deeper in to the hills.
+        description: To the east. You go deeper in to the hills.
       - name: south
         goes_to: h3
-        description: You go deeper in to the hills.
+        description: To the south. You go deeper in to the hills.
       - name: west
         goes_to: h2
-        description: You go deeper in to the hills.
+        description: To the west. You go deeper in to the hills.
 
   - name: h3
     description: You are at the hills
     junctions:
       - name: north
         goes_to: h2
-        description: You go deeper in to the hills.
+        description: To the north. You go deeper in to the hills.
       - name: east
         goes_to: h6
-        description: You go deeper in to the hills.
+        description: To the east. You go deeper in to the hills.
       - name: south
         goes_to: h3
-        description: You go deeper in to the hills.
+        description: To the south. You go deeper in to the hills.
       - name: west
         goes_to: hilltop
-        description: You go deeper in to the hills.
+        description: To the west. You go deeper in to the hills. It looks like someone stands there
     moveable_objects:
       - name: cotton diaper
         description: There lies a cotton diaper. Someone tries to be retro
@@ -969,16 +972,16 @@ rooms:
     junctions:
       - name: north
         goes_to: h4
-        description: You go deeper in to the hills.
+        description: To the north. You go deeper in to the hills.
       - name: east
         goes_to: h7
-        description: You go deeper in to the hills.
+        description: To the east. You go deeper in to the hills.
       - name: south
         goes_to: h5
-        description: You go deeper in to the hills.
+        description: To the south. You go deeper in to the hills.
       - name: west
         goes_to: h1
-        description: You go deeper in to the hills.
+        description: To the west. You go deeper in to the hills.
     moveable_objects:
       - name: green diaper
         description: On the ground lies a green diaper. You do not want to know why it is green
@@ -988,16 +991,16 @@ rooms:
     junctions:
       - name: north
         goes_to: h4
-        description: You go deeper in to the hills.
+        description: To the north. You go deeper in to the hills.
       - name: east
         goes_to: h8
-        description: You go deeper in to the hills.
+        description: To the east. You go deeper in to the hills.
       - name: south
         goes_to: h6
-        description: You go deeper in to the hills.
+        description: To the south. You go deeper in to the hills.
       - name: west
         goes_to: h2
-        description: You go deeper in to the hills.
+        description: To the west. You go deeper in to the hills.
     moveable_objects:
       - name: diaper
         description: On the ground lies an unused diaper.
@@ -1007,16 +1010,16 @@ rooms:
     junctions:
       - name: north
         goes_to: h5
-        description: You go deeper in to the hills.
+        description: To the north. You go deeper in to the hills.
       - name: east
         goes_to: h9
-        description: You go deeper in to the hills.
+        description: To the east. You go deeper in to the hills.
       - name: south
         goes_to: h6
-        description: You go deeper in to the hills.
+        description: To the south. You go deeper in to the hills.
       - name: west
         goes_to: h3
-        description: You go deeper in to the hills.
+        description: To the west. You go deeper in to the hills.
     moveable_objects:
       - name: stinking diaper
         description: You smell a sticking diaper. From now on, you will never eat French cheese again.
@@ -1026,32 +1029,32 @@ rooms:
     junctions:
       - name: north
         goes_to: h7
-        description: You go deeper in to the hills.
+        description: To the north. You go deeper in to the hills.
       - name: east
         goes_to: h7
-        description: You go deeper in to the hills.
+        description: To the east. You go deeper in to the hills.
       - name: south
         goes_to: h8
-        description: You go deeper in to the hills.
+        description: To the south. You go deeper in to the hills.
       - name: west
         goes_to: h4
-        description: You go deeper in to the hills.
+        description: To the west. You go deeper in to the hills.
 
   - name: h8
     description: You are at the hills
     junctions:
       - name: north
         goes_to: h7
-        description: You go deeper in to the hills.
+        description: To the north. You go deeper in to the hills.
       - name: east
         goes_to: bicycle_hill
-        description: You go deeper in to the hills.
+        description: To the east. In the east is a special hill. Full of bicycles.
       - name: south
         goes_to: h9
-        description: You go deeper in to the hills.
+        description: To the south. You go deeper in to the hills.
       - name: west
         goes_to: h5
-        description: You go deeper in to the hills.
+        description: To the west. You go deeper in to the hills.
     moveable_objects:
       - name: carton box
         description: A carton box lies on the ground
@@ -1062,23 +1065,23 @@ rooms:
     junctions:
       - name: north
         goes_to: h8
-        description: You go deeper in to the hills.
+        description: To the north. You go deeper in to the hills.
       - name: east
         goes_to: h9
-        description: You go deeper in to the hills.
+        description: To the east. You go deeper in to the hills.
       - name: south
         goes_to: h9
-        description: You go deeper in to the hills.
+        description: To the south. You go deeper in to the hills.
       - name: west
         goes_to: h6
-        description: You go deeper in to the hills.
+        description: To the west. You go deeper in to the hills.
 
   - name: hilltop
     description: You enter the top of the hills.
     junctions:
       - name: east
         goes_to: h3
-        description: In the east are the hills
+        description: To the east. In the east are the hills
     persons:
       - name: master of the hills
         description: |
@@ -1130,7 +1133,7 @@ rooms:
   - name: castle
     description: |
       You are in the castle of the old iron wizard on the bicycle hill. Every wall has some bicycle like trophees on the
-      wall. In the corner you see a switched off mainframe
+      wall. In the corner you see a switched off mainframe iwth P001 written on it.
     junctions:
       - name: west
         goes_to: bicycle_hill
@@ -1145,8 +1148,9 @@ rooms:
         description: There stands the old Iron wizard. He is busy upgrading his High Power Not Stop tandem.
         talk: |
           He looks up and sees you.
-          Hello young novice, you came to defeat the Messaging Monster?
-          Let me tell you short about it's origins
+          Hello young novice, you came to defeat the Messaging Monster? Not many people pass by these days who 
+          survived the road to my castle.
+          Let me tell you short about the origin of the Messaging Monster
           WebSphere MQ is the market-leading messaging integration middleware product. Originally introduced in
           1993 (under the MQSeries name), it always focused on providing an available, reliable, scalable, secure, and
           high-performance transport mechanism to address the requirements that we discussed in the previous chapter.
@@ -1233,7 +1237,7 @@ rooms:
           is no client for z/OS. On the z/OS platform, applications can only connect to queue managers within the same
           logicalpartition (LPAR).
           I want to give you the final spell. But the spells is in the safe and I not know the password anymore.
-          Not many people pass by these days who survived the road to my castle.
+          
           But I thought is was the name of this guy who won the Tour de France in 1980.
     spell:
       - name: Joop Zoetemelk
@@ -1246,11 +1250,11 @@ rooms:
           If you want to open the door to the cave of the messaging monster say 'open sesame'
       - name: open sesame
         description: spell
-        response: The old big door in the east crack and opens the lock
+        response: The old big door in the east cracks and opens the lock
 
   - name: entrance_cave
     description: |
-      You are in the cave of the messaging monster. It is dark here. The smell of sulphur and rotten bodies fill the air.
+      You are in the cave of the messaging monster. It is dark here. The smell of sulphur and rotten bodies fills the air.
     junctions:
       - name: west
         description: In the west is the entrance to the castle of the old iron wizard
@@ -1285,7 +1289,7 @@ rooms:
           case. And a red hat flies over your head.
           And is a stream of beautiful light the messages leave slowly the monster. All the captured messages that it
           had kept for so many years finally have a channel to escape. Now they can reach their final destination.
-          But suddenly there is a last move from the monster. And with it last breath is screams
+          But suddenly there is a last move from the monster. And with it last breath it screams
           "REFRESH QMGR"
         damaging_spells:
           - DEFINE QALIAS(DRAIN.THE.MONSTER.PUT.MSG.AQ) DEFPSIST(NO) TARGET(DRAIN.THE.MONSTER.MSG.RQ)

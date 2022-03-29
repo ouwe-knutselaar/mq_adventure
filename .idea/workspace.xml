@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f560aed1-59c2-4355-8fac-257085f8318f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/map_start.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erwin.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/data/DataControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/data/DataControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/map_original.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/map_original.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/map_test.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/map_written.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/map_start.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/map_start.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,13 +27,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="D:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="21m3Z3OW73dTUkzcc1LMSVunZGS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -51,6 +39,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
