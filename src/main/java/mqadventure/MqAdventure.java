@@ -1,6 +1,5 @@
 package mqadventure;
 
-import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
 public class MqAdventure {
@@ -25,4 +24,5 @@ public class MqAdventure {
         }
         System.out.println(mqAdventure.getResponse());
     }
+
 }

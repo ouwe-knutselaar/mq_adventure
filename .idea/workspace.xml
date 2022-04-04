@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f560aed1-59c2-4355-8fac-257085f8318f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mqadventure/MqAdventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mqadventure/MqAdventure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/map_start.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/map_start.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MqTestApp" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -47,7 +49,7 @@
       <recent name="D:\onze_projecten\MqAdventure\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestLoop">
+  <component name="RunManager" selected="Application.MqAdventure">
     <configuration name="Design" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mqadventure.Design" />
       <module name="MqAdventure" />

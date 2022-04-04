@@ -11,7 +11,7 @@ helpMessage: |
   pick <object>   pick up an object
   drop <object>   drop an object
   use <object> on <object>   see if it works
-  north, east, south, west   Go in that direction
+  north, east, south, west   Go in that direction, trough a door or gate
   inventory   Show what you got
   read <object>   Read a paper of plate
   talk <person>   try to talk to someone
@@ -22,7 +22,8 @@ helpMessage: |
   save   Save you legacy
   exit   Exit this world and go back to your miserable life.
 
-  To open a door of gate you can use an object on it, but sometimes you have to cast a spell.
+  To open a door of gate you can use an object on it, but sometimes you have to say or cast a spell.
+  If for example 'talk man' doesn't do anything then try 'talk old man' 
 
 
 rooms:
@@ -68,8 +69,6 @@ rooms:
       You are in a great Hall. The roof is made of glass and you can see the blue sky. In the middle is a statue of a
       big lion.
       On the statue is a plate with something written on it. 
-      In the north you see an opening in the wall that leads to a jungle
-      In the east you see an golden door
     look:
       - name: plate
         description: A plate with letters on it
@@ -143,7 +142,7 @@ rooms:
         look: When you look closer you hear some barking. As if a young puppy is stucked there.
         open:
           name: puppy
-          description: A little puppy with sad brown eyes is looking at you
+          description: A little puppy with sad brown eyes is looking at you. Then it jumps in your arms.
           look: It is a cute little puppy.
     junctions:
       - name: north
@@ -313,7 +312,7 @@ rooms:
             a proper change or incident ticket.'
           receive:
             - name: incident ticket
-              description: On the floor lies the incident ticket of the jungle queen.
+              description: In incident ticket, prio 1.
               look: Just an ordinary incident ticket, please solve this incident.
     junctions:
       - name: west
@@ -339,6 +338,9 @@ rooms:
     description: |
       You enter the island. It is a tropical island with beautiful beaches and houses. Palm trees wave in the wind.
       And in there stand a wooden plate with something written on it.
+    look:
+      - name: plate
+        description: A wooden plate with something writen on it.
     read:
       - name: plate
         description: |
@@ -350,8 +352,8 @@ rooms:
           There stands the Master of the Island. He is busy with some kind of fighting training
           On his laptop is a youtube video about the fighting skills used by police officers
         talk: |
-          A cluster of Messaging Monsters? No that is fake. There is only one.
-          I was practicing on the beach when a sudden wave washed away the key code of my house.
+          A cluster of Messaging Monsters? No that is fake. There is only one messaging monster.
+          I was practicing black belt origami on the beach when a sudden wave washed away the key code of my house.
           So it is lost and I'm afraid that I can never enter my house again.
           Please can you help me find the code?
           I cold call the fireman to put me on the balcony, but what if my neighbours see that?
@@ -464,7 +466,7 @@ rooms:
       - name: north
         description: in the north you see the beach
     moveable_objects:
-      - name: creditcard
+      - name: credit card
         description: You see a credit card
         look: Is has the code 0000 on it
     junctions:
@@ -540,9 +542,9 @@ rooms:
       - name: bald man
         description: |
           In the conrner behind a desk sits a bald man with glasses. He is busy building something strange.
-          There is a terrible sound in the this. The bald man is probably busy grinding some piece of scrap metal.
-          But then you discover that is comes from the speaker on his desk that plays some music. It sounds like 
-          Edith Piaf screaming death metal.
+          There is a terrible sound in the this cave. The bald man is probably busy grinding some piece of scrap metal.
+          But then you discover that this horrible is comes from the speaker on his desk that plays some music. It 
+          sounds like Edith Piaf is screaming death metal in hyperspeed.
         talk: |
           What... what.... do you say?..
           Sorry I will turn the music softer. He goes to a tape recorder and turns the volume down.
@@ -842,7 +844,7 @@ rooms:
           - name: 5 euro
             description: A billet of 5 euro
             look: A billet of 5 euro
-      - name: jogging girl
+      - name: girl
         description: You can just avoid a collision with a blond jogging girl. She looked
           pissed off and shows her middle finger to you
         talk: |
@@ -869,18 +871,18 @@ rooms:
       - name: lady
         description: A lady who is promoting a new product
         talk: |
-          Hellooooo! Do you like to buy our newest product! We sell ' Lunox Boerenkool met Worst�'. You know
-          these days there are a lot of additions added to our food, which are v���ry unhealthy!
+          Hellooooo! Do you like to buy our newest product! We sell ' Lunox Boerenkool met Worst'. You know
+          these days there are a lot of additions added to our food, which are veeery unhealthy!
           And in our laboratory we have developed a very special and method to remove all the
-          additions from our 'Lunox Boerenkool met Worst�' so that we only keep the potatoes, boerenkool and worst.
+          additions from our 'Lunox Boerenkool met Worst' so that we only keep the potatoes, boerenkool and worst.
           Wonderful isn't it!!
           A test package for one meal is 5 euro. The price is a little higher then the ordinary
-          'Lunox Boerenkool met Worst classic�' we sell. But you know, your health is priceless!
+          'Lunox Boerenkool met Worst classic' we sell. But you know, your health is priceless!
         give:
           object: 5 euro
           response: |
-            Thank you and here is your 'Boerenkool met Worst�. I will really like it!
-            And she hands you over a sealed bag with 'Boerenkool met Worst�'
+            Thank you and here is your 'Boerenkool met Worst. I will really like it!
+            And she hands you over a sealed bag with 'Boerenkool met Worst'
           receive:
             - name: boerenkool met worst
               description: A sealed bag with 'Boerenkool met Worst�'
@@ -1083,9 +1085,9 @@ rooms:
         goes_to: h3
         description: To the east. In the east are the hills
     persons:
-      - name: master of the hills
+      - name: master
         description: |
-          There stands the master of hills. But then you see a pile of diapers, used diapers. You wonder why the master
+          There stands the master of the hills. But then you see a pile of diapers, used diapers. You wonder why the master
           of the hills stands beneath a pile of used diapers.
         talk: |
           QUIET!!! He screams. My little baby needs to sleep!
@@ -1112,7 +1114,8 @@ rooms:
       cats.
     junctions:
       - name: west
-        goes_to: In the west you see the hills
+        description: The west goes to the hills
+        goes_to: h8
       - name: east
         goes_to: castle
         blocked: yes
