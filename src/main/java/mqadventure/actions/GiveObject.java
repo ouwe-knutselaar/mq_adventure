@@ -52,6 +52,7 @@ public class GiveObject extends Callback implements Action {
                     callBackFunctions.getInventory().add(objectToReceive);
                     callBackFunctions.toOutput(objectToReceive.getDescription());
                 });
+        person.setJob_done(true);
         callBackFunctions.getInventory().removeIf(inventoryObject -> inventoryObject.getName().equals(objectNameToGive));
     }
 

@@ -28,8 +28,7 @@ public class TalkToObject extends Callback implements Action{
 
         currentRoom.getPersons().stream().
                 filter(persons -> persons.getName().equals(personToTalkTo)).
-                peek(persons -> callBackFunctions.toOutput(persons.getTalk())).
+                peek(persons -> callBackFunctions.toOutput(persons.isJob_done()?persons.getTalk_when_done():persons.getTalk())).
                 forEach(persons -> persons.getReceive().forEach(object -> callBackFunctions.getInventory().add(object)));
-
     }
 }

@@ -35,6 +35,8 @@ rooms:
       \ from India, the guardian of the hills and the old iron wizard.\nPlease, you\
       \ are our last hope....\nThen the poor product owner hides his face behind his\
       \ hands and starts crying out of sheer desperation\n"
+    talk_when_done: "No signs of interrest"
+    job_done: false
     give:
       object: ""
       response: ""
@@ -46,9 +48,7 @@ rooms:
 - name: "great_hall"
   description: "You are in a great Hall. The roof is made of glass and you can see\
     \ the blue sky. In the middle is a statue of a\nbig lion.\nOn the statue is a\
-    \ plate with something written on it. The is a door in the south side of the wall.\n\
-    In the north you see an opening in the wall that leads to a jungle\nIn the east\
-    \ you see an golden door\n"
+    \ plate with something written on it. \n"
   junctions:
   - name: "north"
     description: "You enter the deep green jungle if you go north"
@@ -58,7 +58,7 @@ rooms:
     object_name: ""
     spell: ""
   - name: "west"
-    description: "You go the this door, you really want to go back?"
+    description: "You go to west trough this door, you really want to go back?"
     goes_to: "startingpoint"
     blocked: "no"
     unblock: "none"
@@ -84,7 +84,7 @@ rooms:
   read:
   - name: "plate"
     description: "Go to the jungle in the to the north east corner to meet the queen\
-      \ on the jungle\nShe is the keeper of the first spells. But beware, her beauty\
+      \ on the jungle\nShe is the keeper of the first spell. But beware, her beauty\
       \ will blind your eyes.\n"
   monster: []
 - name: "j1"
@@ -92,28 +92,28 @@ rooms:
     behind every leaf something is watching you\n"
   junctions:
   - name: "north"
-    description: "Go deeper between the leaves"
+    description: "Go north and deeper between the leaves"
     goes_to: "j2"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "east"
-    description: "Go deeper in the jungle"
+    description: "Go west and deeper in the jungle"
     goes_to: "j4"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "south"
-    description: "You enter the great hall"
+    description: "You south to enter the great hall"
     goes_to: "great_hall"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "Go deeper in the jungle"
+    description: "Go west and deeper in the jungle"
     goes_to: "j1"
     blocked: "no"
     unblock: "none"
@@ -172,7 +172,7 @@ rooms:
   description: "It look like a jungle from the Tarzan books."
   junctions:
   - name: "north"
-    description: "Go deeper in the green hell"
+    description: "Go deeper in the green hell when you go north"
     goes_to: "j3"
     blocked: "no"
     unblock: "none"
@@ -207,7 +207,8 @@ rooms:
       \ there."
     open:
       name: "puppy"
-      description: "A little puppy with sad brown eyes is looking at you"
+      description: "A little puppy with sad brown eyes is looking at you. Then it\
+        \ jumps in your arms."
       look: "It is a cute little puppy."
   persons: []
   spell: []
@@ -428,7 +429,8 @@ rooms:
     spell: ""
   - name: "east"
     description: "In the east is the entrance to a palace. Two guards, wearing black\
-      \ glasses,\nwith a big blue logo on there shields look very angry to you.\n"
+      \ glasses,\nwith a big blue logo on there shields look very angry to you.\n\
+      Be careful, or you will receive an update.\n"
     goes_to: "palace"
     blocked: "no"
     unblock: "none"
@@ -464,7 +466,8 @@ rooms:
     \ fountains.\n"
   junctions:
   - name: "west"
-    description: "If you go west you leave the palace and go back to the jungle"
+    description: "If you go west you leave the palace and the queen to go back to\
+      \ the jungle.\nAre you emotionally stable enough to leave her?\n"
     goes_to: "j9"
     blocked: "no"
     unblock: "none"
@@ -486,6 +489,10 @@ rooms:
       \ puppy. He saw the Messaging Monster and runned away into the jungle.\nPlease\
       \ help me to find it.\nI will reward you with everything you wish and the first\
       \ spell to defeat the Messaging Monster.\n"
+    talk_when_done: "She looks up and shows a happy smile. Not because of you, but\
+      \ the little doggy did something cute. You can\nbetter give it up. There is\
+      \ no way you can be more cute than a little puppy.\n"
+    job_done: false
     give:
       object: "puppy"
       response: "Oh, my cute puppy! I'm so happy!\nThen she jumps of her throne, opens\
@@ -500,7 +507,7 @@ rooms:
         \ place without\na proper change or incident ticket.'\n"
       receive:
       - name: "incident ticket"
-        description: "On the floor lies the incident ticket of the jungle queen."
+        description: "In incident ticket, prio 1."
         look: "Just an ordinary incident ticket, please solve this incident."
     receive: []
   spell: []
@@ -560,19 +567,24 @@ rooms:
     unblock: "key"
     object_name: "door"
     spell: ""
-  look: []
+  look:
+  - name: "plate"
+    description: "A wooden plate with something writen on it."
   moveable_objects: []
   persons:
   - name: "master"
     description: "There stands the Master of the Island. He is busy with some kind\
       \ of fighting training\nOn his laptop is a youtube video about the fighting\
       \ skills used by police officers\n"
-    talk: "A cluster of Messaging Monsters? No that is fake. There is only one.\n\
-      I was practicing on the beach when a sudden wave washed away the key code of\
-      \ my house.\nSo it is lost and I'm afraid that I can never enter my house again.\n\
-      Please can you help me find the code?\nI cold call the fireman to put me on\
-      \ the balcony, but what if my neighbours see that?\nSo embarrassing!\nYou see,\
-      \ that is no option for me.\n"
+    talk: "A cluster of Messaging Monsters? No that is fake. There is only one messaging\
+      \ monster.\nI was practicing black belt origami on the beach when a sudden wave\
+      \ washed away the key code of my house.\nSo it is lost and I'm afraid that I\
+      \ can never enter my house again.\nPlease can you help me find the code?\nI\
+      \ cold call the fireman to put me on the balcony, but what if my neighbours\
+      \ see that?\nSo embarrassing!\nYou see, that is no option for me.\n"
+    talk_when_done: "Hey, It is you again. And did you already defeated the messaging\
+      \ monster.\n"
+    job_done: false
     give:
       object: "badge"
       response: "My badge, finally I've the key code for my house. You see, it was\
@@ -743,7 +755,7 @@ rooms:
     object_name: ""
     spell: ""
   - name: "west"
-    description: "In the east is also more seashore"
+    description: "In the west is also more seashore"
     goes_to: "seashore1"
     blocked: "no"
     unblock: "none"
@@ -764,7 +776,7 @@ rooms:
   - name: "north"
     description: "in the north you see the beach"
   moveable_objects:
-  - name: "creditcard"
+  - name: "credit card"
     description: "You see a credit card"
     look: "Is has the code 0000 on it"
   persons: []
@@ -782,7 +794,7 @@ rooms:
     object_name: ""
     spell: ""
   - name: "west"
-    description: "in the east you see more beautiful beaches and waves"
+    description: "in the west you see more beautiful beaches and waves"
     goes_to: "seashore2"
     blocked: "no"
     unblock: "none"
@@ -908,18 +920,23 @@ rooms:
   persons:
   - name: "bald man"
     description: "In the conrner behind a desk sits a bald man with glasses. He is\
-      \ busy building something strange.\nThere is a terrible sound in the this. The\
-      \ bald man is probably busy grinding some piece of scrap metal.\nBut then you\
-      \ discover that is comes from the speaker on his desk that plays some music.\
-      \ It sounds like \nEdith Piaf screaming death metal.\n"
+      \ busy building something strange.\nThere is a terrible sound in the this cave.\
+      \ The bald man is probably busy grinding some piece of scrap metal.\nBut then\
+      \ you discover that this horrible is comes from the speaker on his desk that\
+      \ plays some music. It \nsounds like Edith Piaf is screaming death metal in\
+      \ hyperspeed.\n"
     talk: "What... what.... do you say?..\nSorry I will turn the music softer. He\
       \ goes to a tape recorder and turns the volume down.\nNow get to the point,\
       \ what do you want and no bullshit please?\nCause I try to automate my automatic\
-      \ automate builder but I dropped a transistor that I really need somewhere in\n\
-      the mines to the east. I need that to automate my automatic automate builder\
-      \ so that I can automatically try to\ndefeat the messaging monster.\nCan you\
+      \ automate builder but I dropped a transistor that I really need somewhere \n\
+      in the mines to the east. I need that to automate my automatic automate builder\
+      \ so that I can automatically \ntry to defeat the messaging monster.\nCan you\
       \ help me find it?\nHere, take the flashlight.\nAnd that's it. He turns around\
       \ and continues with it work.\n"
+    talk_when_done: "What? Sorry, no time. One of my ethernet cables dropped out of\
+      \ my computer and one of the data frames is lost.\nHe bends down to the ground\
+      \ and starts looking on the ground to search for his lost ethernet data frame.\n"
+    job_done: false
     give:
       object: "transistor"
       response: "You found my transistor!\nI will give you the next magic phases to\
@@ -1112,8 +1129,8 @@ rooms:
     spell: "ajax forever"
   look:
   - name: "sign"
-    description: "You would expect some legendary to see, but it is a very ordinary\
-      \ ANWB sign."
+    description: "You would expect some legendary sign to see, but it is a very ordinary\
+      \ ANWB plate."
   moveable_objects: []
   persons: []
   spell: []
@@ -1170,6 +1187,9 @@ rooms:
       \ is a manual that states, If you can't cast the spells to defeat the dragon\n\
       then switch to the carrot who has the all the rights to do it.\n\nTell me my\
       \ novice, what is the phrase?\n"
+    talk_when_done: "The fool asks, the wise man just smiles.....\nUntil the messaging\
+      \ monster eats him.\n"
+    job_done: false
     give:
       object: ""
       response: ""
@@ -1260,8 +1280,7 @@ rooms:
     \ with incense makes your head a\nlittle lighter then normal.\n"
   junctions:
   - name: "south"
-    description: "Swinging among a crowd of meditating people you leave the seat besides\
-      \ the throne of the guru"
+    description: "Go south trough a swinging crowd of meditating people .\n"
     goes_to: "vondelpark"
     blocked: "no"
     unblock: "none"
@@ -1279,6 +1298,9 @@ rooms:
       \ I'm from India they serve me the\nwhole time vegetarian curries!\nI hate these\
       \ bloody vegetarian curries with all these tasteless lumps of tofu!\nPlease,\
       \ can you bring me a decent Dutch meal with a good piece of meat?\n"
+    talk_when_done: "Mmmmh.... dammed, that tastes good! And he continues with his\
+      \ Boerenkool met Worst\n"
+    job_done: false
     give:
       object: "boerenkool met worst"
       response: "Oh my god, real 'boerenkool met worst'. I love it!\nHet rips the\
@@ -1338,6 +1360,8 @@ rooms:
       \ she stops to breathe and before she continues you say goodbye and you walk\
       \ away.\nYou just hear her complaining that people don't talk to each other\
       \ anymore like before.\n"
+    talk_when_done: "No signs of interrest"
+    job_done: false
     give:
       object: ""
       response: ""
@@ -1348,8 +1372,10 @@ rooms:
       \ music music"
     talk: "You look like a UB40 listener. That's no reggae music. Here listen to this.\n\
       He takes of his headphone and dumps it on your head. As the deep psychedelic\
-      \ music goes to\nyour brain he sticks a big joint in your mouth.\nOke, you are\
-      \ really in Amsterdam now.\n"
+      \ music goes to\nyour brain, he sticks a big joint in your mouth.\nOke, you\
+      \ are really in Amsterdam now.\n"
+    talk_when_done: "No signs of interrest"
+    job_done: false
     give:
       object: ""
       response: ""
@@ -1361,6 +1387,8 @@ rooms:
       \ container barista bar\nmust be opened. My delivery of goi berries and japanese\
       \ peanut butter seeds were to late.\nMan, those suppliers do not know what normal\
       \ food is?\n"
+    talk_when_done: "No signs of interrest"
+    job_done: false
     give:
       object: ""
       response: ""
@@ -1374,6 +1402,8 @@ rooms:
       \ talk to mee, can you imagine?\n....\nYeh, these locals here always try to\
       \ get our attention...\n....\nI know, funny isn't it? You know I will give him\
       \ 5 euro's. See how he will respond...\n\nThen he gives you 5 euro's\n"
+    talk_when_done: "I just gave you 5 euros so don't piss me off or I call my lawyer!\n"
+    job_done: false
     give:
       object: ""
       response: ""
@@ -1382,13 +1412,15 @@ rooms:
     - name: "5 euro"
       description: "A billet of 5 euro"
       look: "A billet of 5 euro"
-  - name: "jogging girl"
+  - name: "girl"
     description: "You can just avoid a collision with a blond jogging girl. She looked\
       \ pissed off and shows her middle finger to you"
     talk: "Go away,pervert! Or I scan your image, find you on facebook and put you\
       \ on #metoo.\nI'll make sure that you are fully cancelled and banned from every\
       \ social media site!\nYou will hear from my lawyer!\nMy god, she must be living\
       \ here.\n"
+    talk_when_done: "No signs of interrest"
+    job_done: false
     give:
       object: ""
       response: ""
@@ -1414,18 +1446,19 @@ rooms:
   - name: "lady"
     description: "A lady who is promoting a new product"
     talk: "Hellooooo! Do you like to buy our newest product! We sell ' Lunox Boerenkool\
-      \ met Worst�'. You know\nthese days there are a lot of additions added to our\
-      \ food, which are v���ry unhealthy!\nAnd in our laboratory we have developed\
+      \ met Worst'. You know\nthese days there are a lot of additions added to our\
+      \ food, which are veeery unhealthy!\nAnd in our laboratory we have developed\
       \ a very special and method to remove all the\nadditions from our 'Lunox Boerenkool\
-      \ met Worst�' so that we only keep the potatoes, boerenkool and worst.\nWonderful\
+      \ met Worst' so that we only keep the potatoes, boerenkool and worst.\nWonderful\
       \ isn't it!!\nA test package for one meal is 5 euro. The price is a little higher\
-      \ then the ordinary\n'Lunox Boerenkool met Worst classic�' we sell. But you\
-      \ know, your health is priceless!\n"
+      \ then the ordinary\n'Lunox Boerenkool met Worst classic' we sell. But you know,\
+      \ your health is priceless!\n"
+    talk_when_done: "Sorry, only one package of Lunox Boerenkool met Worst per person"
+    job_done: false
     give:
       object: "5 euro"
-      response: "Thank you and here is your 'Boerenkool met Worst�. I will really\
-        \ like it!\nAnd she hands you over a sealed bag with 'Boerenkool met Worst�\
-        '\n"
+      response: "Thank you and here is your 'Boerenkool met Worst. I will really like\
+        \ it!\nAnd she hands you over a sealed bag with 'Boerenkool met Worst'\n"
       receive:
       - name: "boerenkool met worst"
         description: "A sealed bag with 'Boerenkool met Worst�'"
@@ -1436,7 +1469,7 @@ rooms:
   read: []
   monster: []
 - name: "tramstop"
-  description: "tramstop. Tot east is the kinkerstraat. South is the station"
+  description: "You are at the tramstop at the kinkerstraat"
   junctions:
   - name: "east"
     description: "In the east is the Kinkerstraat"
@@ -1494,21 +1527,21 @@ rooms:
     object_name: ""
     spell: ""
   - name: "east"
-    description: "You go deeper in to the hills."
+    description: "To the east. You go deeper in to the hills."
     goes_to: "h4"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "south"
-    description: "You go deeper in to the hills."
+    description: "To the south. You go deeper in to the hills."
     goes_to: "h2"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "You go deeper in to the hills."
+    description: "To the west. You go deeper in to the hills."
     goes_to: "h1"
     blocked: "no"
     unblock: "none"
@@ -1526,28 +1559,28 @@ rooms:
   description: "You are at the hills"
   junctions:
   - name: "north"
-    description: "You go deeper in to the hills."
+    description: "To the north. You go deeper in to the hills."
     goes_to: "h1"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "east"
-    description: "You go deeper in to the hills."
+    description: "To the east. You go deeper in to the hills."
     goes_to: "h5"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "south"
-    description: "You go deeper in to the hills."
+    description: "To the south. You go deeper in to the hills."
     goes_to: "h3"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "You go deeper in to the hills."
+    description: "To the west. You go deeper in to the hills."
     goes_to: "h2"
     blocked: "no"
     unblock: "none"
@@ -1563,28 +1596,29 @@ rooms:
   description: "You are at the hills"
   junctions:
   - name: "north"
-    description: "You go deeper in to the hills."
+    description: "To the north. You go deeper in to the hills."
     goes_to: "h2"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "east"
-    description: "You go deeper in to the hills."
+    description: "To the east. You go deeper in to the hills."
     goes_to: "h6"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "south"
-    description: "You go deeper in to the hills."
+    description: "To the south. You go deeper in to the hills."
     goes_to: "h3"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "You go deeper in to the hills."
+    description: "To the west. You go deeper in to the hills. It looks like someone\
+      \ stands there"
     goes_to: "hilltop"
     blocked: "no"
     unblock: "none"
@@ -1602,28 +1636,28 @@ rooms:
   description: "You are at the hills"
   junctions:
   - name: "north"
-    description: "You go deeper in to the hills."
+    description: "To the north. You go deeper in to the hills."
     goes_to: "h4"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "east"
-    description: "You go deeper in to the hills."
+    description: "To the east. You go deeper in to the hills."
     goes_to: "h7"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "south"
-    description: "You go deeper in to the hills."
+    description: "To the south. You go deeper in to the hills."
     goes_to: "h5"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "You go deeper in to the hills."
+    description: "To the west. You go deeper in to the hills."
     goes_to: "h1"
     blocked: "no"
     unblock: "none"
@@ -1642,28 +1676,28 @@ rooms:
   description: "You are at the hills"
   junctions:
   - name: "north"
-    description: "You go deeper in to the hills."
+    description: "To the north. You go deeper in to the hills."
     goes_to: "h4"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "east"
-    description: "You go deeper in to the hills."
+    description: "To the east. You go deeper in to the hills."
     goes_to: "h8"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "south"
-    description: "You go deeper in to the hills."
+    description: "To the south. You go deeper in to the hills."
     goes_to: "h6"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "You go deeper in to the hills."
+    description: "To the west. You go deeper in to the hills."
     goes_to: "h2"
     blocked: "no"
     unblock: "none"
@@ -1681,28 +1715,28 @@ rooms:
   description: "You are at the hills"
   junctions:
   - name: "north"
-    description: "You go deeper in to the hills."
+    description: "To the north. You go deeper in to the hills."
     goes_to: "h5"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "east"
-    description: "You go deeper in to the hills."
+    description: "To the east. You go deeper in to the hills."
     goes_to: "h9"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "south"
-    description: "You go deeper in to the hills."
+    description: "To the south. You go deeper in to the hills."
     goes_to: "h6"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "You go deeper in to the hills."
+    description: "To the west. You go deeper in to the hills."
     goes_to: "h3"
     blocked: "no"
     unblock: "none"
@@ -1721,28 +1755,28 @@ rooms:
   description: "You are at the hills"
   junctions:
   - name: "north"
-    description: "You go deeper in to the hills."
+    description: "To the north. You go deeper in to the hills."
     goes_to: "h7"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "east"
-    description: "You go deeper in to the hills."
+    description: "To the east. You go deeper in to the hills."
     goes_to: "h7"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "south"
-    description: "You go deeper in to the hills."
+    description: "To the south. You go deeper in to the hills."
     goes_to: "h8"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "You go deeper in to the hills."
+    description: "To the west. You go deeper in to the hills."
     goes_to: "h4"
     blocked: "no"
     unblock: "none"
@@ -1758,28 +1792,28 @@ rooms:
   description: "You are at the hills"
   junctions:
   - name: "north"
-    description: "You go deeper in to the hills."
+    description: "To the north. You go deeper in to the hills."
     goes_to: "h7"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "east"
-    description: "You go deeper in to the hills."
+    description: "To the east. In the east is a special hill. Full of bicycles."
     goes_to: "bicycle_hill"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "south"
-    description: "You go deeper in to the hills."
+    description: "To the south. You go deeper in to the hills."
     goes_to: "h9"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "You go deeper in to the hills."
+    description: "To the west. You go deeper in to the hills."
     goes_to: "h5"
     blocked: "no"
     unblock: "none"
@@ -1797,28 +1831,28 @@ rooms:
   description: "You are at the hills"
   junctions:
   - name: "north"
-    description: "You go deeper in to the hills."
+    description: "To the north. You go deeper in to the hills."
     goes_to: "h8"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "east"
-    description: "You go deeper in to the hills."
+    description: "To the east. You go deeper in to the hills."
     goes_to: "h9"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "south"
-    description: "You go deeper in to the hills."
+    description: "To the south. You go deeper in to the hills."
     goes_to: "h9"
     blocked: "no"
     unblock: "none"
     object_name: ""
     spell: ""
   - name: "west"
-    description: "You go deeper in to the hills."
+    description: "To the west. You go deeper in to the hills."
     goes_to: "h6"
     blocked: "no"
     unblock: "none"
@@ -1834,7 +1868,7 @@ rooms:
   description: "You enter the top of the hills."
   junctions:
   - name: "east"
-    description: "In the east are the hills"
+    description: "To the east. In the east are the hills"
     goes_to: "h3"
     blocked: "no"
     unblock: "none"
@@ -1843,13 +1877,15 @@ rooms:
   look: []
   moveable_objects: []
   persons:
-  - name: "master of the hills"
-    description: "There stands the master of hills. But then you see a pile of diapers,\
-      \ used diapers. You wonder why the master\nof the hills stands beneath a pile\
-      \ of used diapers.\n"
+  - name: "master"
+    description: "There stands the master of the hills. But then you see a pile of\
+      \ diapers, used diapers. You wonder why the master\nof the hills stands beneath\
+      \ a pile of used diapers.\n"
     talk: "QUIET!!! He screams. My little baby needs to sleep!\nWithout my security\
       \ statement I cannot guarantee the safety that he needs to get asleep. I'm waiting\
       \ now\nfor two years on this stupid document!\n"
+    talk_when_done: "SHUT YOUR HEAD!!! my baby sleeps."
+    job_done: false
     give:
       object: "document"
       response: "You have the security document! Thank you very very much. I've waited\
@@ -1874,8 +1910,8 @@ rooms:
     \ but two\ncats.\n"
   junctions:
   - name: "west"
-    description: ""
-    goes_to: "in the west you see the hills"
+    description: "The west goes to the hills"
+    goes_to: "h8"
     blocked: "no"
     unblock: "none"
     object_name: ""
@@ -1893,6 +1929,8 @@ rooms:
   - name: "cats"
     description: "Two mean looking cats with sharp nails. They will not let you pass"
     talk: "Grrrrrrrrr! You just can avoid a hit of a claw"
+    talk_when_done: "No signs of interrest"
+    job_done: false
     give:
       object: "carton box"
       response: "Mieuw! And two happy cats jumps in to the carton box"
@@ -1907,7 +1945,7 @@ rooms:
 - name: "castle"
   description: "You are in the castle of the old iron wizard on the bicycle hill.\
     \ Every wall has some bicycle like trophees on the\nwall. In the corner you see\
-    \ a switched off mainframe\n"
+    \ a switched off mainframe iwth P001 written on it.\n"
   junctions:
   - name: "west"
     description: "In the west is the bicycle hill."
@@ -1930,128 +1968,131 @@ rooms:
     description: "There stands the old Iron wizard. He is busy upgrading his High\
       \ Power Not Stop tandem."
     talk: "He looks up and sees you.\nHello young novice, you came to defeat the Messaging\
-      \ Monster?\nLet me tell you short about it's origins\nWebSphere MQ is the market-leading\
-      \ messaging integration middleware product. Originally introduced in\n1993 (under\
-      \ the MQSeries name), it always focused on providing an available, reliable,\
-      \ scalable, secure, and\nhigh-performance transport mechanism to address the\
-      \ requirements that we discussed in the previous chapter.\nWebSphere MQ always\
-      \ connected systems and applications, regardless of the platform or environment.\
-      \ It is\nessential to be able to communicate between a GUI desktop applicationthat\
-      \ is running on Microsoft Windows and\nan IBM CICS® transaction that is running\
-      \ on IBM z/OS®. That value of universality is core to the product, and\nthis\
-      \ value has not changed in all the time that it has been available. What has\
-      \ changed is the range of\nenvironments in which WebSphere MQ can or must live.\
-      \ There are newer platforms, environments, requirements for\nqualities of service\
-      \ (QoS), and newer messaging patterns. Security has become more important as\
-      \ systems are made\naccessible to more users across an enterprise and beyond\
-      \ it. Performance and scalability requirements have\nincreased. Regulators and\
-      \ auditors have imposed more controls on what can or must be done. Systems,\
-      \ which\nneed access to enterprise data, have become bothmore powerful (faster,\
-      \ more processors, and so on) and much\nless powerful (sensors, tablets,and\
-      \ mobile phones).Therefore, WebSphere MQ has evolved.There are now more\nways\
-      \ for applications to reach a WebSphere MQ queue manager and toaccess any existing\
-      \ applications that were\nalready WebSphere MQ enabled. Newapplications can\
-      \ be written that use alternative interfaces and still maximize\nthe reliability\
-      \ andperformance of WebSphere MQ. Those new applications do not need a completereplacement\
-      \ of\nexisting infrastructure. The applications work with what you already have\
-      \ andwhat you know how to manage.At the\nsame time as adding new interfaces,\
-      \ protocols, and environments, a large amount ofthe WebSphere MQ workload\n\
-      continues to be executed in mainframe-based data centers.The efficient use of,\
-      \ and integration with, the\ncapabilities of the IBM z hardware and operatingsystems\
-      \ is critical. As this book shows, WebSphere MQ V7.1\nfor z/OS significantly\
-      \ improvesthe performance, capacity, and availability that can be achieved when\
-      \ running\nin a sysplexWebSphere MQ V7.0, in 2008, was a major release with\
-      \ significantly enhanced applicationprogramming\ninterfaces (APIs) and a fully\
-      \ integrated publish/subscribe component. Theseenhancements made that messaging\n\
-      pattern a first-class way of working. WebSphere MQV7.0.1, in 2009, was primarily\
-      \ an update to improve\navailability and performance.Even though there was nearly\
-      \ a 2 ½ year gap before V7.1 in 2011, there were\nstillincremental improvements.\
-      \ The improvements were to both the core WebSphere MQ productand new products.\n\
-      WebSphere MQ File Transfer Edition is a solution for the integration of applications\
-      \ that arefile-based,\nmaking it possible to reliably transfer files between\
-      \ systems. WebSphere MQ FileTransfer Edition provides\nmanagement, monitoring,\
-      \ and security of those transfers.WebSphere MQ File Transfer Edition uses existing\n\
-      skills and infrastructure as it usesWebSphere MQ as its backbone transfer medium.Advanced\
-      \ Message Security (AMS)\nis a solution to the problem of securing messagecontents,\
-      \ even when those messages are at rest in queues or logs.\nSeveral regulatoryframeworks\
-      \ require data to be protected from viewing, changing, or being stored on disks\
-      \ inthe\nclear even during processing. One example of these regulations is the\
-      \ Payment CardIndustry (PCI) for dealing\nwith credit card data. There are other\
-      \ regulatory bodies for othertypes of data, for example, healthcare, that\n\
-      have similar requirements.Both WebSphere MQ File Transfer Edition and WebSphere\
-      \ MQ Advanced Message Securityhave\nbeen integrated into the WebSphere MQ V7.5\
-      \ package. WebSphere MQ File Transferfunctionally identical but that\nhave different\
-      \ licensing terms. The WebSphere MQ Advancedoffering can be ordered under a\
-      \ single part number\nand price and it includes licenses to usethe Managed File\
-      \ Transfer and AMS features. The original V7.5 offering\nhas these features\
-      \ asseparately orderable and priced components.Data is transferred between applications\
-      \ in\nmessages. A message is a container that consistsof three parts: WebSphere\
-      \ MQ Message Descriptor (MQMD):\nIdentifies the message and containsadditional\
-      \ control information. Examples of additional information are the\ntype of messageand\
-      \ the priority that is assigned to the message by the sending application. Message\
-      \ properties:\nAn optional set of user-definable elements that describes themessage\
-      \ without being part of the payload.\nApplications that receive messages canchoose\
-      \ whether to inspect these properties. Message data: Contains the\napplication\
-      \ data. The structure of the data is defined by theapplication programs that\
-      \ use it, and\nWebSphere MQ is largely unconcerned with itsformat or content.The\
-      \ nodes, within a WebSphere MQ message queuing\ninfrastructure, are called queuemanagers.\
-      \ The queue manager is responsible for accepting and delivering\nmessages.Multiple\
-      \ queue managers can run on a single physical server or on a wide network of\
-      \ serversacross a\nlarge variety of different hardware and operating system\
-      \ platforms.Each queue manager provides facilities for\nreliable messaging.The\
-      \ queue manager maintains queues of all messages that are waiting to be processed\
-      \ orrouted.\nQueue managers are tolerant of failures and maintain the integrity\
-      \ of business-criticaldata that flows through\nthe message queuing infrastructure.\
-      \ In the event of failures, such as afailure of the queue manager, machine\n\
-      failures, or a power loss, messages can be recovered.Recovery occurs when the\
-      \ queue manager is restarted and\nany transactions are brought to aconsistent\
-      \ state.The queue managers, within the infrastructure, are connected\nby logical\
-      \ channels over acommunications network. Messages automatically flow across\
-      \ these channels from the\ninitialproducer of a message to the eventual consumer\
-      \ of that message based on the configurationof the queue\nmanagers in the infrastructure.\
-      \ Changes can be made to the configuration ofqueues and channels transparently\n\
-      for the applications. For example, a receiving applicationcan be moved to a\
-      \ new machine, and a route to that\nmachine can be defined without needingany\
-      \ changes to sending applications.Two applications that must\ncommunicate, whether\
-      \ hosted on the same machine or separatemachines, might have originally been\
-      \ designed to do\nso directly and synchronously. This wasa common messaging\
-      \ technique that was used before the introduction of\nWebSphere MQand is still\
-      \ used often. For example, using HTTP as a communications protocol is asynchronous\n\
-      operation.In the synchronous model, the two applications exchange information\
-      \ by waiting for thepartner\napplication to become available and then sending\
-      \ the information. If the partnerapplication is unavailable for\nany reason,\
-      \ including if it is busy communicating with otherapplications, the information\
-      \ cannot be sent.All\nintercommunication failures that can occur between the\
-      \ two applications must beconsidered individually by the\napplications. This\
-      \ consideration happens whether theapplications are on the same machine or on\
-      \ different\nmachines that are connected by anetwork. The process requires a\
-      \ protocol for sending the information,\nconfirming receipt ofthe information,\
-      \ and sending any subsequent reply.Placing a WebSphere MQ infrastructure\nbetween\
-      \ the two applications allows thiscommunication to become asynchronous. One\
-      \ application places\ninformation for the partnerin a message on a queue, and\
-      \ the partner application processes this information\nwhen it isavailable to\
-      \ do so. If required, it can then send a reply message back to the originator.\n\
-      Theapplications do not need to be concerned with communication failures or recovery.\
-      \ A WebSphere MQ client is\na lightweight component of WebSphere MQ that does\
-      \ not requirethe queue manager runtime code to reside on the\nclient system.\
-      \ It enables an application,running on a machine where only the client runtime\
-      \ code is installed,\nto connect to a queuemanager that is running on another\
-      \ machine and perform messaging operations with thatqueue\nmanager. Such an\
-      \ application is called a client and the queue manager is referred toas a server.Using\
-      \ a\nWebSphere MQ client is an effective way of implementing WebSphere MQmessaging\
-      \ and queuing. The following\nbenefits are available by using a WebSphere MQclient:\
-      \ There is no need for a licensed WebSphere MQ server\ninstallation on the client\
-      \ machine. Hardware requirements on the client system are reduced. System\n\
-      administration requirements on the client system are reduced. An application\
-      \ that uses a WebSphere MQ client\ncan connect to multiple queue managerson\
-      \ different machines.There are several implementations of the\nWebSphere MQ\
-      \ client that allow work in differentlanguage environments, including Java and\
-      \ .Net classes. There\nis no client for z/OS. On the z/OS platform, applications\
-      \ can only connect to queue managers within the same\nlogicalpartition (LPAR).\n\
-      I want to give you the final spell. But the spells is in the safe and I not\
-      \ know the password anymore.\nNot many people pass by these days who survived\
-      \ the road to my castle.\nBut I thought is was the name of this guy who won\
-      \ the Tour de France in 1980.\n"
+      \ Monster? Not many people pass by these days who \nsurvived the road to my\
+      \ castle.\nLet me tell you short about the origin of the Messaging Monster\n\
+      WebSphere MQ is the market-leading messaging integration middleware product.\
+      \ Originally introduced in\n1993 (under the MQSeries name), it always focused\
+      \ on providing an available, reliable, scalable, secure, and\nhigh-performance\
+      \ transport mechanism to address the requirements that we discussed in the previous\
+      \ chapter.\nWebSphere MQ always connected systems and applications, regardless\
+      \ of the platform or environment. It is\nessential to be able to communicate\
+      \ between a GUI desktop applicationthat is running on Microsoft Windows and\n\
+      an IBM CICS® transaction that is running on IBM z/OS®. That value of universality\
+      \ is core to the product, and\nthis value has not changed in all the time that\
+      \ it has been available. What has changed is the range of\nenvironments in which\
+      \ WebSphere MQ can or must live. There are newer platforms, environments, requirements\
+      \ for\nqualities of service (QoS), and newer messaging patterns. Security has\
+      \ become more important as systems are made\naccessible to more users across\
+      \ an enterprise and beyond it. Performance and scalability requirements have\n\
+      increased. Regulators and auditors have imposed more controls on what can or\
+      \ must be done. Systems, which\nneed access to enterprise data, have become\
+      \ bothmore powerful (faster, more processors, and so on) and much\nless powerful\
+      \ (sensors, tablets,and mobile phones).Therefore, WebSphere MQ has evolved.There\
+      \ are now more\nways for applications to reach a WebSphere MQ queue manager\
+      \ and toaccess any existing applications that were\nalready WebSphere MQ enabled.\
+      \ Newapplications can be written that use alternative interfaces and still maximize\n\
+      the reliability andperformance of WebSphere MQ. Those new applications do not\
+      \ need a completereplacement of\nexisting infrastructure. The applications work\
+      \ with what you already have andwhat you know how to manage.At the\nsame time\
+      \ as adding new interfaces, protocols, and environments, a large amount ofthe\
+      \ WebSphere MQ workload\ncontinues to be executed in mainframe-based data centers.The\
+      \ efficient use of, and integration with, the\ncapabilities of the IBM z hardware\
+      \ and operatingsystems is critical. As this book shows, WebSphere MQ V7.1\n\
+      for z/OS significantly improvesthe performance, capacity, and availability that\
+      \ can be achieved when running\nin a sysplexWebSphere MQ V7.0, in 2008, was\
+      \ a major release with significantly enhanced applicationprogramming\ninterfaces\
+      \ (APIs) and a fully integrated publish/subscribe component. Theseenhancements\
+      \ made that messaging\npattern a first-class way of working. WebSphere MQV7.0.1,\
+      \ in 2009, was primarily an update to improve\navailability and performance.Even\
+      \ though there was nearly a 2 ½ year gap before V7.1 in 2011, there were\nstillincremental\
+      \ improvements. The improvements were to both the core WebSphere MQ productand\
+      \ new products.\nWebSphere MQ File Transfer Edition is a solution for the integration\
+      \ of applications that arefile-based,\nmaking it possible to reliably transfer\
+      \ files between systems. WebSphere MQ FileTransfer Edition provides\nmanagement,\
+      \ monitoring, and security of those transfers.WebSphere MQ File Transfer Edition\
+      \ uses existing\nskills and infrastructure as it usesWebSphere MQ as its backbone\
+      \ transfer medium.Advanced Message Security (AMS)\nis a solution to the problem\
+      \ of securing messagecontents, even when those messages are at rest in queues\
+      \ or logs.\nSeveral regulatoryframeworks require data to be protected from viewing,\
+      \ changing, or being stored on disks inthe\nclear even during processing. One\
+      \ example of these regulations is the Payment CardIndustry (PCI) for dealing\n\
+      with credit card data. There are other regulatory bodies for othertypes of data,\
+      \ for example, healthcare, that\nhave similar requirements.Both WebSphere MQ\
+      \ File Transfer Edition and WebSphere MQ Advanced Message Securityhave\nbeen\
+      \ integrated into the WebSphere MQ V7.5 package. WebSphere MQ File Transferfunctionally\
+      \ identical but that\nhave different licensing terms. The WebSphere MQ Advancedoffering\
+      \ can be ordered under a single part number\nand price and it includes licenses\
+      \ to usethe Managed File Transfer and AMS features. The original V7.5 offering\n\
+      has these features asseparately orderable and priced components.Data is transferred\
+      \ between applications in\nmessages. A message is a container that consistsof\
+      \ three parts: WebSphere MQ Message Descriptor (MQMD):\nIdentifies the message\
+      \ and containsadditional control information. Examples of additional information\
+      \ are the\ntype of messageand the priority that is assigned to the message by\
+      \ the sending application. Message properties:\nAn optional set of user-definable\
+      \ elements that describes themessage without being part of the payload.\nApplications\
+      \ that receive messages canchoose whether to inspect these properties. Message\
+      \ data: Contains the\napplication data. The structure of the data is defined\
+      \ by theapplication programs that use it, and\nWebSphere MQ is largely unconcerned\
+      \ with itsformat or content.The nodes, within a WebSphere MQ message queuing\n\
+      infrastructure, are called queuemanagers. The queue manager is responsible for\
+      \ accepting and delivering\nmessages.Multiple queue managers can run on a single\
+      \ physical server or on a wide network of serversacross a\nlarge variety of\
+      \ different hardware and operating system platforms.Each queue manager provides\
+      \ facilities for\nreliable messaging.The queue manager maintains queues of all\
+      \ messages that are waiting to be processed orrouted.\nQueue managers are tolerant\
+      \ of failures and maintain the integrity of business-criticaldata that flows\
+      \ through\nthe message queuing infrastructure. In the event of failures, such\
+      \ as afailure of the queue manager, machine\nfailures, or a power loss, messages\
+      \ can be recovered.Recovery occurs when the queue manager is restarted and\n\
+      any transactions are brought to aconsistent state.The queue managers, within\
+      \ the infrastructure, are connected\nby logical channels over acommunications\
+      \ network. Messages automatically flow across these channels from the\ninitialproducer\
+      \ of a message to the eventual consumer of that message based on the configurationof\
+      \ the queue\nmanagers in the infrastructure. Changes can be made to the configuration\
+      \ ofqueues and channels transparently\nfor the applications. For example, a\
+      \ receiving applicationcan be moved to a new machine, and a route to that\n\
+      machine can be defined without needingany changes to sending applications.Two\
+      \ applications that must\ncommunicate, whether hosted on the same machine or\
+      \ separatemachines, might have originally been designed to do\nso directly and\
+      \ synchronously. This wasa common messaging technique that was used before the\
+      \ introduction of\nWebSphere MQand is still used often. For example, using HTTP\
+      \ as a communications protocol is asynchronous\noperation.In the synchronous\
+      \ model, the two applications exchange information by waiting for thepartner\n\
+      application to become available and then sending the information. If the partnerapplication\
+      \ is unavailable for\nany reason, including if it is busy communicating with\
+      \ otherapplications, the information cannot be sent.All\nintercommunication\
+      \ failures that can occur between the two applications must beconsidered individually\
+      \ by the\napplications. This consideration happens whether theapplications are\
+      \ on the same machine or on different\nmachines that are connected by anetwork.\
+      \ The process requires a protocol for sending the information,\nconfirming receipt\
+      \ ofthe information, and sending any subsequent reply.Placing a WebSphere MQ\
+      \ infrastructure\nbetween the two applications allows thiscommunication to become\
+      \ asynchronous. One application places\ninformation for the partnerin a message\
+      \ on a queue, and the partner application processes this information\nwhen it\
+      \ isavailable to do so. If required, it can then send a reply message back to\
+      \ the originator.\nTheapplications do not need to be concerned with communication\
+      \ failures or recovery. A WebSphere MQ client is\na lightweight component of\
+      \ WebSphere MQ that does not requirethe queue manager runtime code to reside\
+      \ on the\nclient system. It enables an application,running on a machine where\
+      \ only the client runtime code is installed,\nto connect to a queuemanager that\
+      \ is running on another machine and perform messaging operations with thatqueue\n\
+      manager. Such an application is called a client and the queue manager is referred\
+      \ toas a server.Using a\nWebSphere MQ client is an effective way of implementing\
+      \ WebSphere MQmessaging and queuing. The following\nbenefits are available by\
+      \ using a WebSphere MQclient: There is no need for a licensed WebSphere MQ server\n\
+      installation on the client machine. Hardware requirements on the client system\
+      \ are reduced. System\nadministration requirements on the client system are\
+      \ reduced. An application that uses a WebSphere MQ client\ncan connect to multiple\
+      \ queue managerson different machines.There are several implementations of the\n\
+      WebSphere MQ client that allow work in differentlanguage environments, including\
+      \ Java and .Net classes. There\nis no client for z/OS. On the z/OS platform,\
+      \ applications can only connect to queue managers within the same\nlogicalpartition\
+      \ (LPAR).\nI want to give you the final spell. But the spells is in the safe\
+      \ and I not know the password anymore.\n\nBut I thought is was the name of this\
+      \ guy who won the Tour de France in 1980.\n"
+    talk_when_done: "Well I also want to say the following about MQ. MQ is also useable\
+      \ in.... You quickly sneak away. You don't want another long story"
+    job_done: false
     give:
       object: ""
       response: ""
@@ -2065,12 +2106,12 @@ rooms:
       \ want to open the door to the cave of the messaging monster say 'open sesame'\n"
   - name: "open sesame"
     description: "spell"
-    response: "The old big door in the east crack and opens the lock"
+    response: "The old big door in the east cracks and opens the lock"
   read: []
   monster: []
 - name: "entrance_cave"
   description: "You are in the cave of the messaging monster. It is dark here. The\
-    \ smell of sulphur and rotten bodies fill the air.\n"
+    \ smell of sulphur and rotten bodies fills the air.\n"
   junctions:
   - name: "west"
     description: "In the west is the entrance to the castle of the old iron wizard"
@@ -2143,7 +2184,7 @@ rooms:
       \ a stream of beautiful light the messages leave slowly the monster. All the\
       \ captured messages that it\nhad kept for so many years finally have a channel\
       \ to escape. Now they can reach their final destination.\nBut suddenly there\
-      \ is a last move from the monster. And with it last breath is screams\n\"REFRESH\
+      \ is a last move from the monster. And with it last breath it screams\n\"REFRESH\
       \ QMGR\"\n"
 - name: "endpoint"
   description: "You finally leave this world, that is now free of the messaging monster.\n\
@@ -2160,12 +2201,14 @@ startMessage: "MQ Adventure\nMortal, give me thou name......\n"
 helpMessage: "help   This help text\nlook   Look around\nlook <object>   look a little\
   \ closer\npick <object>   pick up an object\ndrop <object>   drop an object\nuse\
   \ <object> on <object>   see if it works\nnorth, east, south, west   Go in that\
-  \ direction\ninventory   Show what you got\nread <object>   Read a paper of plate\n\
-  talk <person>   try to talk to someone\ngive <object> to <person>   Give something\
-  \ to someone\ncast <spell>   Cast a spell\nsay <something>   Say something tot he\
-  \ world\nopen <object>   Open something\nsave   Save you legacy\nexit   Exit this\
-  \ world and go back to your miserable life.\n\nTo open a door of gate you can use\
-  \ an object on it, but sometimes you have to cast a spell.\n"
+  \ direction, trough a door or gate\ninventory   Show what you got\nread <object>\
+  \   Read a paper of plate\ntalk <person>   try to talk to someone\ngive <object>\
+  \ to <person>   Give something to someone\ncast <spell>   Cast a spell\nsay <something>\
+  \   Say something tot he world\nopen <object>   Open something\nsave   Save you\
+  \ legacy\nexit   Exit this world and go back to your miserable life.\n\nTo open\
+  \ a door of gate you can use an object on it, but sometimes you have to say or cast\
+  \ a spell.\nIf for example 'talk man' doesn't do anything then try 'talk old man'\
+  \ \n"
 name: "erwin"
 password: "^�H��(\x04qQ��o��)'s`=\rj���*\x11�r\x1d\x15B�"
 currentRoomName: "startingpoint"

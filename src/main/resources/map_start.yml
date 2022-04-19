@@ -295,6 +295,9 @@ rooms:
           My little cute puppy. He saw the Messaging Monster and runned away into the jungle.
           Please help me to find it.
           I will reward you with everything you wish and the first spell to defeat the Messaging Monster.
+        talk_when_done: |
+          She looks up and shows a happy smile. Not because of you, but the little doggy did something cute. You can
+          better give it up. There is no way you can be more cute than a little puppy.
         give:
           object: puppy
           response: |
@@ -359,6 +362,8 @@ rooms:
           I cold call the fireman to put me on the balcony, but what if my neighbours see that?
           So embarrassing!
           You see, that is no option for me.
+        talk_when_done: |
+          Hey, It is you again. And did you already defeated the messaging monster.
         give:
           object: badge
           response: |
@@ -549,12 +554,15 @@ rooms:
           What... what.... do you say?..
           Sorry I will turn the music softer. He goes to a tape recorder and turns the volume down.
           Now get to the point, what do you want and no bullshit please?
-          Cause I try to automate my automatic automate builder but I dropped a transistor that I really need somewhere in
-          the mines to the east. I need that to automate my automatic automate builder so that I can automatically try to
-          defeat the messaging monster.
+          Cause I try to automate my automatic automate builder but I dropped a transistor that I really need somewhere 
+          in the mines to the east. I need that to automate my automatic automate builder so that I can automatically 
+          try to defeat the messaging monster.
           Can you help me find it?
           Here, take the flashlight.
           And that's it. He turns around and continues with it work.
+        talk_when_done: |
+          What? Sorry, no time. One of my ethernet cables dropped out of my computer and one of the data frames is lost.
+          He bends down to the ground and starts looking on the ground to search for his lost ethernet data frame.
         give:
           object: transistor
           response: |
@@ -707,6 +715,9 @@ rooms:
           then switch to the carrot who has the all the rights to do it.
           
           Tell me my novice, what is the phrase?
+        talk_when_done: |
+          The fool asks, the wise man just smiles.....
+          Until the messaging monster eats him.
     spell:
       - name: sudo su - root
         description: spell
@@ -777,6 +788,8 @@ rooms:
           whole time vegetarian curries!
           I hate these bloody vegetarian curries with all these tasteless lumps of tofu!
           Please, can you bring me a decent Dutch meal with a good piece of meat?
+        talk_when_done: |
+          Mmmmh.... dammed, that tastes good! And he continues with his Boerenkool met Worst
         give:
           object: boerenkool met worst
           response: |
@@ -840,6 +853,8 @@ rooms:
           I know, funny isn't it? You know I will give him 5 euro's. See how he will respond...
           
           Then he gives you 5 euro's
+        talk_when_done: |
+          I just gave you 5 euros so don't piss me off or I call my lawyer!
         receive:
           - name: 5 euro
             description: A billet of 5 euro
@@ -878,6 +893,8 @@ rooms:
           Wonderful isn't it!!
           A test package for one meal is 5 euro. The price is a little higher then the ordinary
           'Lunox Boerenkool met Worst classic' we sell. But you know, your health is priceless!
+        talk_when_done:
+          Sorry, only one package of Lunox Boerenkool met Worst per person
         give:
           object: 5 euro
           response: |
@@ -1093,6 +1110,8 @@ rooms:
           QUIET!!! He screams. My little baby needs to sleep!
           Without my security statement I cannot guarantee the safety that he needs to get asleep. I'm waiting now
           for two years on this stupid document!
+        talk_when_done:
+          SHUT YOUR HEAD!!! my baby sleeps.
         give:
           object: document
           response: |
@@ -1242,6 +1261,9 @@ rooms:
           I want to give you the final spell. But the spells is in the safe and I not know the password anymore.
           
           But I thought is was the name of this guy who won the Tour de France in 1980.
+        talk_when_done:
+          Well I also want to say the following about MQ. MQ is also useable in....
+          You quickly sneak away. You don't want another long story
     spell:
       - name: Joop Zoetemelk
         description: spell

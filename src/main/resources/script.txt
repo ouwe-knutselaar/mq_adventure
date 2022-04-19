@@ -20,6 +20,7 @@ east
 talk queen
 give puppy to queen
 inventory
+talk queen
 west
 west
 south
@@ -40,6 +41,7 @@ west
 north
 north
 give badge to master
+talk master
 use key on door
 east
 east
@@ -62,6 +64,7 @@ east
 east
 talk monk
 say sudo su - root
+talk monk
 west
 west
 west
@@ -78,11 +81,13 @@ north
 talk lady
 give 5 euro to lady
 inventory
+talk lady
 south
 east
 north
 give boerenkool met worst to guru
 inventory
+talk guru
 south
 west
 west
@@ -91,8 +96,9 @@ south
 south
 south
 west
-talk master of the hills
-give document to master of the hills
+talk master
+give document to master
+talk master 
 east
 east
 east
@@ -102,12 +108,14 @@ east
 east
 talk cats
 give carton box to cats
+talk cats
 pick bicycle wheel
 inventory
 use bicycle wheel on gate
 east
 talk old iron wizard
 say Joop Zoetemelk
+talk old iron wizard
 east
 say open sesame
 east
