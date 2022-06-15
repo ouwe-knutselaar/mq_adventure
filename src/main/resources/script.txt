@@ -98,7 +98,7 @@ south
 west
 talk master
 give document to master
-talk master 
+talk master
 east
 east
 east

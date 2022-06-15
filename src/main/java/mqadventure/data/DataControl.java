@@ -19,7 +19,7 @@ public class DataControl {
     private Room currentRoom;
 
     public DataControl(){
-        sourceDir = Paths.get(".").toAbsolutePath().normalize().toString();
+        sourceDir = Paths.get(System.getProperty("user.home")).toAbsolutePath().normalize().toString();
         mapper = new ObjectMapper(new YAMLFactory());
         mapper.configure(JsonParser.Feature.IGNORE_UNDEFINED,true);
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false);
@@ -35,7 +35,7 @@ public class DataControl {
 
     public void loadYamlFile(String yamlFile) {
         try {
-            adventure = mapper.readValue(new File(sourceDir+"\\"+yamlFile+".yaml"),Adventure.class);
+            adventure = mapper.readValue(new File(sourceDir+"/."+yamlFile+".yaml"),Adventure.class);
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
@@ -44,7 +44,7 @@ public class DataControl {
 
     public void writeYamlFile(String yamlFile) {
         try {
-            File newYamlFile = new File(sourceDir+"\\"+yamlFile+".yaml");
+            File newYamlFile = new File(sourceDir+"/."+yamlFile+".yaml");
             newYamlFile.delete();
             mapper.writeValue(newYamlFile, adventure);
         } catch (IOException e) {
@@ -54,7 +54,7 @@ public class DataControl {
     }
 
     public boolean isExistingUser(String username) {
-        String file=sourceDir+"\\"+username+".yaml";
+        String file=sourceDir+"/."+username+".yaml";
         boolean exists=  Paths.get(file).toFile().exists();
         return exists;
     }
